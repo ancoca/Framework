@@ -10,6 +10,7 @@ import framework.module.menu.view.*;
 import framework.module.admin.view.List_admin;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.view.List_client;
+import framework.module.config.model.BLL.BLL_config;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import framework.module.userregister.view.List_userregister;
 import java.awt.event.WindowAdapter;
@@ -124,10 +125,6 @@ public class Config extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         lblvolver4 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        lblvolver5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -310,8 +307,18 @@ public class Config extends javax.swing.JFrame {
         £.setText("LIBRA ESTERLINA");
 
         jButton1.setText("Aceptar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         lblvolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
@@ -382,8 +389,18 @@ public class Config extends javax.swing.JFrame {
         valencia.setText("VALENCIÀ");
 
         jButton3.setText("Aceptar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Cancelar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         lblvolver1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblvolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
@@ -459,8 +476,18 @@ public class Config extends javax.swing.JFrame {
         date4.setText("yyyy-MM-dd");
 
         jButton5.setText("Aceptar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Cancelar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         lblvolver2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblvolver2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
@@ -528,7 +555,7 @@ public class Config extends javax.swing.JFrame {
 
         paneltheme.setBackground(java.awt.Color.white);
 
-        jLabel12.setText("PRECAUCIÓN: puede ser que no funciones todas las opciones");
+        jLabel12.setText("PRECAUCIÓN: puede ser que no funciones todas las opciones dependiendo del sistema operativo");
 
         jLabel13.setText("Seleccione la apariencia deseada:");
 
@@ -549,8 +576,18 @@ public class Config extends javax.swing.JFrame {
         aqua.setText("MAC AQUA");
 
         jButton7.setText("Aceptar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Cancelar");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         lblvolver3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblvolver3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
@@ -644,8 +681,18 @@ public class Config extends javax.swing.JFrame {
         decimal3.setText("3 DECIMALES");
 
         jButton9.setText("Aceptar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("Cancelar");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         lblvolver4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblvolver4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
@@ -708,55 +755,6 @@ public class Config extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Decimal", paneldecimal);
 
-        jPanel6.setBackground(java.awt.Color.white);
-
-        jButton11.setText("Guardar configuración");
-
-        jButton12.setText("Abrir configuración");
-
-        lblvolver5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblvolver5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
-        lblvolver5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblvolver5MouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblvolver5MouseExited(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblvolver5MouseEntered(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jButton11)
-                .addGap(69, 69, 69)
-                .addComponent(jButton12)
-                .addContainerGap(508, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblvolver5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11)
-                    .addComponent(jButton12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
-                .addComponent(lblvolver5)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Guardar", jPanel6);
-
         jPanel1.add(jTabbedPane1, java.awt.BorderLayout.CENTER);
 
         jScrollPane1.setViewportView(jPanel1);
@@ -774,19 +772,6 @@ public class Config extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void lblvolver5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolver5MouseEntered
-        lblvolver5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver.png")));
-    }//GEN-LAST:event_lblvolver5MouseEntered
-
-    private void lblvolver5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolver5MouseExited
-        lblvolver5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png")));
-    }//GEN-LAST:event_lblvolver5MouseExited
-
-    private void lblvolver5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolver5MouseClicked
-        this.dispose();
-        new Menu().setVisible(true);
-    }//GEN-LAST:event_lblvolver5MouseClicked
 
     private void lblvolver4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolver4MouseEntered
         lblvolver4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver.png")));
@@ -918,6 +903,60 @@ public class Config extends javax.swing.JFrame {
         jLabel10.setForeground(java.awt.Color.blue);
     }//GEN-LAST:event_jLabel16MouseEntered
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        BLL_config.setConfig();
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        BLL_config.setConfig();
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        BLL_config.setConfig();
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        BLL_config.setConfig();
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        BLL_config.setConfig();
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JRadioButton $;
@@ -934,8 +973,6 @@ public class Config extends javax.swing.JFrame {
     public static javax.swing.JRadioButton gtk;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -963,7 +1000,6 @@ public class Config extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -973,7 +1009,6 @@ public class Config extends javax.swing.JFrame {
     private javax.swing.JLabel lblvolver2;
     private javax.swing.JLabel lblvolver3;
     private javax.swing.JLabel lblvolver4;
-    private javax.swing.JLabel lblvolver5;
     public static javax.swing.JRadioButton mac;
     public static javax.swing.JRadioButton metal;
     public static javax.swing.JRadioButton motif;
