@@ -17,6 +17,7 @@ import framework.module.client.model.classes.Singleton_client;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.userregister.model.classes.User_register;
 import framework.module.config.model.classes.language2.Language_user;
+import framework.module.config.model.functions.json_auto_config;
 import framework.module.userregister.model.BLL.BLL_dummies.Make_dummies_userregister;
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
@@ -66,6 +67,8 @@ public class ClassConfig implements Serializable {
 	public static ClassConfig getInstance () {
 		if (instance == null){
 			instance = new ClassConfig ();
+                        
+                        json_auto_config.openjson_config();
 
 			Functions_theme.theme();
 			Language_general.getInstance();
