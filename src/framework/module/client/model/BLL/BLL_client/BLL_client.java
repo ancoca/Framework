@@ -10,6 +10,7 @@ import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.model.functions.json_client;
+import framework.module.client.model.functions.pagina_client;
 import framework.module.client.model.functions.txt_client;
 import framework.module.client.model.functions.xml_client;
 import framework.module.client.view.Create_client;
@@ -235,9 +236,11 @@ public class BLL_client {
     public static Client IDclient () {
 		Client c1 = null;
 		String ID = "";
-		int location1 = -1;
-		int select =List_client.TABLA.getSelectedRow();
-		String search = (String) List_client.TABLA.getModel().getValueAt(select, 0);
+		int location1 = -1, selection, inicio, selection1;
+                inicio=(pagina_client.currentPageIndex-1)*pagina_client.itemsPerPage; //nos situamos al inicio de la página en cuestión
+                selection=List_client.TABLA.getSelectedRow(); //nos situamos en la fila
+                selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
+		String search = (String) List_client.TABLA.getModel().getValueAt(selection1, 0);
 		if (search != ""){
 			for (int i = 0; i<9; i++) {
 				ID += search.charAt(i);

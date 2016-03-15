@@ -232,9 +232,11 @@ public class BLL_admin {
     public static Admin IDadmin () {
 		Admin a1 = null;
 		String ID = "";
-                int location1 = -1;
-                int select =List_admin.TABLA.getSelectedRow();
-		String search = (String) List_admin.TABLA.getModel().getValueAt(select, 0);
+                int location1 = -1, selection, inicio, selection1;
+                inicio=(pagina_admin.currentPageIndex-1)*pagina_admin.itemsPerPage; //nos situamos al inicio de la página en cuestión
+                selection=List_admin.TABLA.getSelectedRow(); //nos situamos en la fila
+                selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
+		String search = (String) List_admin.TABLA.getModel().getValueAt(selection1, 0);
 		if (search != ""){
 			for (int i = 0; i<9; i++) {
 				ID += search.charAt(i);

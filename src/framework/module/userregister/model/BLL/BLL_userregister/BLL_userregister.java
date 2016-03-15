@@ -12,6 +12,7 @@ import framework.module.config.model.classes.language2.Language_user;
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import framework.module.userregister.model.functions.json_userregister;
+import framework.module.userregister.model.functions.pagina_userregister;
 import framework.module.userregister.model.functions.txt_userregister;
 import framework.module.userregister.model.functions.xml_userregister;
 import framework.module.userregister.view.Create_userregister;
@@ -255,9 +256,11 @@ public class BLL_userregister {
     public static User_register IDuserregister () {
 		User_register u1 = null;
 		String ID = "";
-		int location1 = -1;
-		int select =List_userregister.TABLA.getSelectedRow();
-		String search = (String) List_userregister.TABLA.getModel().getValueAt(select, 0);
+		int location1 = -1, selection, inicio, selection1;
+                inicio=(pagina_userregister.currentPageIndex-1)*pagina_userregister.itemsPerPage; //nos situamos al inicio de la página en cuestión
+                selection=List_userregister.TABLA.getSelectedRow(); //nos situamos en la fila
+                selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
+		String search = (String) List_userregister.TABLA.getModel().getValueAt(selection1, 0);
 		if (search != ""){
 			for (int i = 0; i<9; i++) {
 				ID += search.charAt(i);
