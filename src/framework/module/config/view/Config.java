@@ -38,6 +38,8 @@ public class Config extends javax.swing.JFrame {
 	//Image icono=Toolkit.getDefaultToolkit().getImage("p1.jpg");
 	//this.setIconImage(icono);
         
+        BLL_config.getConfig();
+        
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
             @Override
