@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="currency">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="language">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="date">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="theme">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="decimal">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -376,6 +388,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="&#x20ac;">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="currency"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="EURO"/>
                       </Properties>
                       <AuxValues>
@@ -384,6 +399,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="$">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="currency"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="DOLLAR"/>
                       </Properties>
                       <AuxValues>
@@ -392,6 +410,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="&#xa3;">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="currency"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="LIBRA ESTERLINA"/>
                       </Properties>
                       <AuxValues>
@@ -507,6 +528,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="english">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="language"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="ENGLISH"/>
                       </Properties>
                       <AuxValues>
@@ -515,6 +539,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="castellano">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="language"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="CASTELLANO"/>
                       </Properties>
                       <AuxValues>
@@ -523,6 +550,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="valencia">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="language"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="VALENCI&#xc0;"/>
                       </Properties>
                       <AuxValues>
@@ -641,6 +671,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="date1">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="date"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="dd/MM/yyyy"/>
                       </Properties>
                       <AuxValues>
@@ -649,6 +682,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="date2">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="date"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="dd-MM-yyyy"/>
                       </Properties>
                       <AuxValues>
@@ -657,6 +693,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="date3">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="date"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="yyyy/MM/dd"/>
                       </Properties>
                       <AuxValues>
@@ -665,6 +704,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="date4">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="date"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="yyyy-MM-dd"/>
                       </Properties>
                       <AuxValues>
@@ -811,6 +853,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="metal">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="theme"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="METAL"/>
                       </Properties>
                       <AuxValues>
@@ -819,6 +864,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="gtk">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="theme"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="GTK"/>
                       </Properties>
                       <AuxValues>
@@ -827,6 +875,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="motif">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="theme"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="MOTIF"/>
                       </Properties>
                       <AuxValues>
@@ -835,6 +886,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="ninbus">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="theme"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="NINBUS"/>
                       </Properties>
                       <AuxValues>
@@ -843,6 +897,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="windowsclassic">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="theme"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="WINDOWS CLASSIC"/>
                       </Properties>
                       <AuxValues>
@@ -851,6 +908,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="windows">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="theme"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="WINDOWS"/>
                       </Properties>
                       <AuxValues>
@@ -859,6 +919,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="mac">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="theme"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="MAC"/>
                       </Properties>
                       <AuxValues>
@@ -867,6 +930,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="aqua">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="theme"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="MAC AQUA"/>
                       </Properties>
                       <AuxValues>
@@ -982,6 +1048,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="decimal1">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="decimal"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="1 DECIMAL"/>
                       </Properties>
                       <AuxValues>
@@ -990,6 +1059,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="decimal2">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="decimal"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="2 DECIMALES"/>
                       </Properties>
                       <AuxValues>
@@ -998,6 +1070,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="decimal3">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="decimal"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="3 DECIMALES"/>
                       </Properties>
                       <AuxValues>

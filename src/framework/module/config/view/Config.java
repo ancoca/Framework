@@ -63,6 +63,11 @@ public class Config extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        currency = new javax.swing.ButtonGroup();
+        language = new javax.swing.ButtonGroup();
+        date = new javax.swing.ButtonGroup();
+        theme = new javax.swing.ButtonGroup();
+        decimal = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -302,10 +307,13 @@ public class Config extends javax.swing.JFrame {
 
         jLabel9.setText("Seleccione la moneda deseada:");
 
+        currency.add(€);
         €.setText("EURO");
 
+        currency.add($);
         $.setText("DOLLAR");
 
+        currency.add(£);
         £.setText("LIBRA ESTERLINA");
 
         jButton1.setText("Aceptar");
@@ -384,10 +392,13 @@ public class Config extends javax.swing.JFrame {
 
         jLabel10.setText("Seleccione el idioma deseado:");
 
+        language.add(english);
         english.setText("ENGLISH");
 
+        language.add(castellano);
         castellano.setText("CASTELLANO");
 
+        language.add(valencia);
         valencia.setText("VALENCIÀ");
 
         jButton3.setText("Aceptar");
@@ -469,12 +480,16 @@ public class Config extends javax.swing.JFrame {
 
         jLabel11.setText("Seleccione el formato de la fecha deseada:");
 
+        date.add(date1);
         date1.setText("dd/MM/yyyy");
 
+        date.add(date2);
         date2.setText("dd-MM-yyyy");
 
+        date.add(date3);
         date3.setText("yyyy/MM/dd");
 
+        date.add(date4);
         date4.setText("yyyy-MM-dd");
 
         jButton5.setText("Aceptar");
@@ -561,20 +576,28 @@ public class Config extends javax.swing.JFrame {
 
         jLabel13.setText("Seleccione la apariencia deseada:");
 
+        theme.add(metal);
         metal.setText("METAL");
 
+        theme.add(gtk);
         gtk.setText("GTK");
 
+        theme.add(motif);
         motif.setText("MOTIF");
 
+        theme.add(ninbus);
         ninbus.setText("NINBUS");
 
+        theme.add(windowsclassic);
         windowsclassic.setText("WINDOWS CLASSIC");
 
+        theme.add(windows);
         windows.setText("WINDOWS");
 
+        theme.add(mac);
         mac.setText("MAC");
 
+        theme.add(aqua);
         aqua.setText("MAC AQUA");
 
         jButton7.setText("Aceptar");
@@ -676,10 +699,13 @@ public class Config extends javax.swing.JFrame {
 
         jLabel14.setText("Seleccione la cantidad de decimales deseada:");
 
+        decimal.add(decimal1);
         decimal1.setText("1 DECIMAL");
 
+        decimal.add(decimal2);
         decimal2.setText("2 DECIMALES");
 
+        decimal.add(decimal3);
         decimal3.setText("3 DECIMALES");
 
         jButton9.setText("Aceptar");
@@ -964,10 +990,13 @@ public class Config extends javax.swing.JFrame {
     public static javax.swing.JRadioButton $;
     public static javax.swing.JRadioButton aqua;
     public static javax.swing.JRadioButton castellano;
+    private javax.swing.ButtonGroup currency;
+    private javax.swing.ButtonGroup date;
     public static javax.swing.JRadioButton date1;
     public static javax.swing.JRadioButton date2;
     public static javax.swing.JRadioButton date3;
     public static javax.swing.JRadioButton date4;
+    private javax.swing.ButtonGroup decimal;
     public static javax.swing.JRadioButton decimal1;
     public static javax.swing.JRadioButton decimal2;
     public static javax.swing.JRadioButton decimal3;
@@ -1006,6 +1035,7 @@ public class Config extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.ButtonGroup language;
     private javax.swing.JLabel lblvolver;
     private javax.swing.JLabel lblvolver1;
     private javax.swing.JLabel lblvolver2;
@@ -1020,6 +1050,7 @@ public class Config extends javax.swing.JFrame {
     private javax.swing.JPanel paneldecimal;
     private javax.swing.JPanel panellanguage;
     private javax.swing.JPanel paneltheme;
+    private javax.swing.ButtonGroup theme;
     public static javax.swing.JRadioButton valencia;
     public static javax.swing.JRadioButton windows;
     public static javax.swing.JRadioButton windowsclassic;
