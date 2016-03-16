@@ -139,6 +139,7 @@ public class Update_userregister extends javax.swing.JFrame {
         checkactivity = new javax.swing.JLabel();
         checkpoint = new javax.swing.JLabel();
         txtactivity = new javax.swing.JTextField();
+        showpass = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -705,6 +706,17 @@ public class Update_userregister extends javax.swing.JFrame {
             }
         });
 
+        showpass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/ojo.png"))); // NOI18N
+        showpass.setPreferredSize(new java.awt.Dimension(30, 30));
+        showpass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                showpassMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                showpassMouseEntered(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -725,13 +737,16 @@ public class Update_userregister extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(statefalse))
                     .addComponent(txtname)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addComponent(txtDNI)
+                    .addComponent(txtuser)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addComponent(txtavatar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3))
-                    .addComponent(txtpass)
-                    .addComponent(txtDNI)
-                    .addComponent(txtuser))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(txtpass)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -795,10 +810,12 @@ public class Update_userregister extends javax.swing.JFrame {
                             .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(checkuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(checkpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel14)
+                                .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(checkpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
@@ -1183,6 +1200,14 @@ public class Update_userregister extends javax.swing.JFrame {
         BLL_userregister.point_update();
     }//GEN-LAST:event_txtpointFocusLost
 
+    private void showpassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showpassMouseExited
+        txtpass.setEchoChar('*');
+    }//GEN-LAST:event_showpassMouseExited
+
+    private void showpassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showpassMouseEntered
+        txtpass.setEchoChar((char)0);
+    }//GEN-LAST:event_showpassMouseEntered
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1240,6 +1265,8 @@ public class Update_userregister extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    public static javax.swing.JLabel showpas;
+    public static javax.swing.JLabel showpass;
     public static javax.swing.JRadioButton statefalse;
     public static javax.swing.JRadioButton statetrue;
     public static javax.swing.JTextField txtDNI;

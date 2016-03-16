@@ -146,6 +146,7 @@ public class Update_client extends javax.swing.JFrame {
         txtshopping = new javax.swing.JTextField();
         premiumtrue = new javax.swing.JRadioButton();
         premiumfalse = new javax.swing.JRadioButton();
+        showpass = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -761,6 +762,17 @@ public class Update_client extends javax.swing.JFrame {
         grouppremium.add(premiumfalse);
         premiumfalse.setText("No premium");
 
+        showpass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/ojo.png"))); // NOI18N
+        showpass.setPreferredSize(new java.awt.Dimension(30, 30));
+        showpass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                showpassMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                showpassMouseEntered(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -787,9 +799,12 @@ public class Update_client extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3))
                     .addComponent(txtsurname)
-                    .addComponent(txtpass)
                     .addComponent(txtDNI)
-                    .addComponent(txtuser))
+                    .addComponent(txtuser)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(txtpass)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -873,7 +888,8 @@ public class Update_client extends javax.swing.JFrame {
                                         .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(checkpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel28))
-                                    .addComponent(txtdatebirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtdatebirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(checkdatebirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1272,6 +1288,14 @@ public class Update_client extends javax.swing.JFrame {
         BLL_client.typeclient_update();
     }//GEN-LAST:event_txttype_clientFocusLost
 
+    private void showpassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showpassMouseExited
+        txtpass.setEchoChar('*');
+    }//GEN-LAST:event_showpassMouseExited
+
+    private void showpassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showpassMouseEntered
+        txtpass.setEchoChar((char)0);
+    }//GEN-LAST:event_showpassMouseEntered
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel checkDNI;
@@ -1335,6 +1359,7 @@ public class Update_client extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     public static javax.swing.JRadioButton premiumfalse;
     public static javax.swing.JRadioButton premiumtrue;
+    public static javax.swing.JLabel showpass;
     public static javax.swing.JRadioButton statefalse;
     public static javax.swing.JRadioButton statetrue;
     public static javax.swing.JTextField txtDNI;

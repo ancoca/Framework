@@ -142,6 +142,7 @@ public class Create_admin extends javax.swing.JFrame {
         checkincentive = new javax.swing.JLabel();
         checksalary = new javax.swing.JLabel();
         checkactivity = new javax.swing.JLabel();
+        showpass = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -700,6 +701,17 @@ public class Create_admin extends javax.swing.JFrame {
 
         checkactivity.setPreferredSize(new java.awt.Dimension(30, 30));
 
+        showpass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/ojo.png"))); // NOI18N
+        showpass.setPreferredSize(new java.awt.Dimension(30, 30));
+        showpass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                showpassMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                showpassMouseEntered(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -726,9 +738,12 @@ public class Create_admin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3))
                     .addComponent(txtsurname)
-                    .addComponent(txtpass)
                     .addComponent(txtDNI)
-                    .addComponent(txtuser))
+                    .addComponent(txtuser)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(txtpass)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -777,7 +792,7 @@ public class Create_admin extends javax.swing.JFrame {
                     .addComponent(checkincentive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(checksalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(checkactivity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -809,7 +824,8 @@ public class Create_admin extends javax.swing.JFrame {
                                         .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(checkpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel28))
-                                    .addComponent(txtdatebirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtdatebirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(checkdatebirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1281,6 +1297,14 @@ public class Create_admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtactivityKeyPressed
 
+    private void showpassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showpassMouseEntered
+        txtpass.setEchoChar((char)0);
+    }//GEN-LAST:event_showpassMouseEntered
+
+    private void showpassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showpassMouseExited
+        txtpass.setEchoChar('*');
+    }//GEN-LAST:event_showpassMouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser JFC_avatar;
     public static javax.swing.JLabel checkDNI;
@@ -1341,6 +1365,7 @@ public class Create_admin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    public static javax.swing.JLabel showpass;
     public static javax.swing.JRadioButton statefalse;
     public static javax.swing.JRadioButton statetrue;
     public static javax.swing.JTextField txtDNI;
