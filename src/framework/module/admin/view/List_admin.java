@@ -368,6 +368,9 @@ public class List_admin extends javax.swing.JFrame {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/edit_remove.png"))); // NOI18N
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabel12MouseExited(evt);
             }
@@ -740,8 +743,14 @@ public class List_admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        new Update_admin().setVisible(true);
-        this.dispose();
+        int select = -1;
+        select = TABLA.getSelectedRow();
+        if (select == -1){
+            JOptionPane.showMessageDialog(null, "Administrador no seleccionado");
+        }else{
+            new Update_admin().setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -769,6 +778,10 @@ public class List_admin extends javax.swing.JFrame {
         pagina_admin.currentPageIndex -= 1;
         pagina_admin.initLinkBox();
     }//GEN-LAST:event_ANTERIORActionPerformed
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        BLL_admin.delete_admin();
+    }//GEN-LAST:event_jLabel12MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton ANTERIOR;
