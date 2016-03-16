@@ -507,7 +507,7 @@ public class Read_client extends javax.swing.JFrame {
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
         this.dispose();
-        new List_admin().setVisible(true);
+        new List_userregister().setVisible(true);
     }//GEN-LAST:event_jLabel23MouseClicked
 
     private void jLabel23MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseExited
