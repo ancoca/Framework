@@ -13,6 +13,7 @@ import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.view.List_client;
+import framework.module.config.model.classes.ClassConfig;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import framework.module.userregister.view.List_userregister;
 import java.awt.Color;
@@ -566,9 +567,9 @@ public class Update_admin extends javax.swing.JFrame {
 
         jLabel32.setText("Actividad:");
 
-        txtdatecontract.setDateFormatString("dd/MM/yyyy");
+        txtdatecontract.setDateFormatString(ClassConfig.getInstance().getDate());
 
-        txtdatebirthday.setDateFormatString("dd/MM/yyyy");
+        txtdatebirthday.setDateFormatString(ClassConfig.getInstance().getDate());
 
         txtmobilephone.setText("example: 123456789");
         txtmobilephone.addFocusListener(new java.awt.event.FocusAdapter() {

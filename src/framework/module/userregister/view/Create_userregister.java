@@ -11,6 +11,7 @@ import framework.module.config.view.Config;
 import framework.module.admin.view.List_admin;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.view.List_client;
+import framework.module.config.model.classes.ClassConfig;
 import framework.module.userregister.model.BLL.BLL_userregister.BLL_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import framework.module.userregister.view.List_userregister;
@@ -598,6 +599,8 @@ public class Create_userregister extends javax.swing.JFrame {
         jLabel29.setText("Actividad:");
 
         jLabel30.setText("Puntos:");
+
+        txtdatebirthday.setDateFormatString(ClassConfig.getInstance().getDate());
 
         txtmobilephone.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
