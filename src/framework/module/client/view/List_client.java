@@ -709,8 +709,14 @@ public class List_client extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        new Update_client().setVisible(true);
-        this.dispose();
+        int select = -1;
+        select = TABLA.getSelectedRow();
+        if (select == -1){
+            JOptionPane.showMessageDialog(null, "Cliente no seleccionado");
+        }else{
+            new Update_client().setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void ANTERIORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ANTERIORActionPerformed
