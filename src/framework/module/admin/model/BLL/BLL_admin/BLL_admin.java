@@ -9,6 +9,7 @@ import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.DAO.DAO_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
+import framework.module.admin.model.classes.miniSimpleTableModel_admin;
 import framework.module.admin.model.functions.json_admin;
 import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.model.functions.txt_admin;
@@ -133,27 +134,44 @@ public class BLL_admin {
        }
     
     public static void delete_admin () {
-		int location = -1;
-		Admin a1 = null;
-		
-		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			location = -1;
-			a1 = BLL_admin.IDadmin();
-			if (a1 == null) {
-				JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("usererror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
-			}else{
-				location = BLL_admin.find_admin(a1);
-				if (location != -1) {
-					Singleton_admin.useradmin.remove(location);
-					JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("delete"));
-				}else {
-					JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("usererror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		}
-	}
+	String dni;
+        int pos;
+        int inicio, selection1;
+        int n = ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).getRowCount();
+        Admin admin = null;
+        if (n != 0) {
+
+            inicio = (pagina_admin.currentPageIndex - 1) * pagina_admin.itemsPerPage;
+            int selec = List_admin.TABLA.getSelectedRow();
+            selection1 = inicio + selec;
+
+            if (selec == -1) {
+                JOptionPane.showMessageDialog(null, "No hay una persona seleccionada", "Error!", 2);
+            } else {
+                dni = (String) List_admin.TABLA.getModel().getValueAt(selection1, 0);
+                admin = new Admin(dni);
+                pos = find_admin(admin);
+                int opc = JOptionPane.showConfirmDialog(null, "Deseas borrar a la persona con DNI: " + dni,
+                        "Info", JOptionPane.WARNING_MESSAGE);
+
+                if (opc == 0) {
+                    ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).removeRow(selection1);
+                    admin = Singleton_admin.useradmin.get(pos);
+
+                    Singleton_admin.useradmin.remove(pos);
+                    miniSimpleTableModel_admin.datosaux.remove(pos);
+                    json_auto_admin.savejson_admin();
+                    ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).cargar();
+                    List_admin.jLabel3.setText(String.valueOf(Singleton_admin.useradmin.size()));
+                    pagina_admin.initLinkBox();
+                }
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "lista vacía", "Error!", 2);
+        }
+    }
     
     public static int find_admin(Admin admin) { 
 		for (int i = 0; i<=(Singleton_admin.useradmin.size()-1); i++){
