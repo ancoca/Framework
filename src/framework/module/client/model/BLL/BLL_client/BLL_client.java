@@ -8,6 +8,7 @@ package framework.module.client.model.BLL.BLL_client;
 import framework.module.client.model.DAO.DAO_client;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
+import framework.module.client.model.classes.miniSimpleTableModel_client;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.model.functions.json_client;
 import framework.module.client.model.functions.pagina_client;
@@ -137,27 +138,44 @@ public class BLL_client {
 	}
     
     public static void delete_client () {
-		int location = -1;
-		Client c1 = null;
-		
-		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			location = -1;
-			c1 = BLL_client.IDclient();
-			if (c1 == null) {
-				JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("usererror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
-			}else{
-				location = BLL_client.find_client(c1);
-				if (location != -1) {
-					Singleton_client.userclient.remove(location);
-					JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("delete"));
-				}else {
-					JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("usererror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		}
-	}
+	String dni;
+        int pos;
+        int inicio, selection1;
+        int n = ((miniSimpleTableModel_client) List_client.TABLA.getModel()).getRowCount();
+        Client client = null;
+        if (n != 0) {
+
+            inicio = (pagina_client.currentPageIndex - 1) * pagina_client.itemsPerPage;
+            int selec = List_client.TABLA.getSelectedRow();
+            selection1 = inicio + selec;
+
+            if (selec == -1) {
+                JOptionPane.showMessageDialog(null, "No hay una persona seleccionada", "Error!", 2);
+            } else {
+                dni = (String) List_client.TABLA.getModel().getValueAt(selection1, 0);
+                client = new Client(dni);
+                pos = find_client(client);
+                int opc = JOptionPane.showConfirmDialog(null, "Deseas borrar a la persona con DNI: " + dni,
+                        "Info", JOptionPane.WARNING_MESSAGE);
+
+                if (opc == 0) {
+                    ((miniSimpleTableModel_client) List_client.TABLA.getModel()).removeRow(selection1);
+                    client = Singleton_client.userclient.get(pos);
+
+                    Singleton_client.userclient.remove(pos);
+                    miniSimpleTableModel_client.datosaux.remove(pos);
+                    json_auto_client.savejson_client();
+                    ((miniSimpleTableModel_client) List_client.TABLA.getModel()).cargar();
+                    List_client.jLabel3.setText(String.valueOf(Singleton_client.userclient.size()));
+                    pagina_client.initLinkBox();
+                }
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "lista vacía", "Error!", 2);
+        }
+    }
     
     public static int find_client(Client client) { 
 		for (int i = 0; i<=(Singleton_client.userclient.size()-1); i++){
