@@ -10,6 +10,7 @@ import framework.module.userregister.model.DAO.DAO_userregister;
 import framework.module.userregister.model.classes.User_register;
 import framework.module.config.model.classes.language2.Language_user;
 import framework.module.userregister.model.classes.Singleton_userregister;
+import framework.module.userregister.model.classes.miniSimpleTableModel_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import framework.module.userregister.model.functions.json_userregister;
 import framework.module.userregister.model.functions.pagina_userregister;
@@ -138,46 +139,44 @@ public class BLL_userregister {
 	}
     
     public static void delete_userregister () {
-		int location1 = -1, location2 = -1;
-                String dni = Update_userregister.DNI;
-		User_register u1 = new User_register (dni);
-		
-		location1 = BLL_userregister.find_user(u1);
-		if (location1 == -1) {
-                        check=false;
-                }else{
-                        if (Update_userregister.txtDNI.getText().equals(dni)){
-                                u1 = DAO_userregister.ask_user_register_update();
-                                    if (u1==null){
-                                        check=false;
-                                    } else {
-                                        Singleton_userregister.userregister.set(location1, u1);
-                                        check=true;
-                                   }
-                        }else{
-                                u1 = DAO_userregister.ask_user_registerDNI_update();
-                                if (u1==null){
-                                        Update_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
-                                        check=false;
-                                }else{
-                                        location2 = BLL_userregister.find_user(u1);
-                                        if (location2 != -1) {
-                                                Update_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
-                                                check=false;
-                                        } else {
-                                                u1 = DAO_userregister.ask_user_register_update();
-                                                if (u1==null){
-                                                    check=false;
-                                                } else {
-                                                        Singleton_userregister.userregister.set(location1, u1);
-                                                        check=true;
-                                                }
-                                        }
-                                }
-                        }
-                        
+	String dni;
+        int pos;
+        int inicio, selection1;
+        int n = ((miniSimpleTableModel_userregister) List_userregister.TABLA.getModel()).getRowCount();
+        User_register userregister = null;
+        if (n != 0) {
+
+            inicio = (pagina_userregister.currentPageIndex - 1) * pagina_userregister.itemsPerPage;
+            int selec = List_userregister.TABLA.getSelectedRow();
+            selection1 = inicio + selec;
+
+            if (selec == -1) {
+                JOptionPane.showMessageDialog(null, "No hay una persona seleccionada", "Error!", 2);
+            } else {
+                dni = (String) List_userregister.TABLA.getModel().getValueAt(selection1, 0);
+                userregister = new User_register(dni);
+                pos = find_user(userregister);
+                int opc = JOptionPane.showConfirmDialog(null, "Deseas borrar a la persona con DNI: " + dni,
+                        "Info", JOptionPane.WARNING_MESSAGE);
+
+                if (opc == 0) {
+                    ((miniSimpleTableModel_userregister) List_userregister.TABLA.getModel()).removeRow(selection1);
+                    userregister = Singleton_userregister.userregister.get(pos);
+
+                    Singleton_userregister.userregister.remove(pos);
+                    miniSimpleTableModel_userregister.datosaux.remove(pos);
+                    json_auto_userregister.savejson_userregister();
+                    ((miniSimpleTableModel_userregister) List_userregister.TABLA.getModel()).cargar();
+                    List_userregister.jLabel3.setText(String.valueOf(Singleton_userregister.userregister.size()));
+                    pagina_userregister.initLinkBox();
                 }
-	}
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "lista vacía", "Error!", 2);
+        }
+    }
     
     public static int find_user(User_register user) { 
 		for (int i = 0; i<=(Singleton_userregister.userregister.size()-1); i++){
