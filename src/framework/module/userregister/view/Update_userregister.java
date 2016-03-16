@@ -960,7 +960,7 @@ public class Update_userregister extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             txtuser.requestFocus();
         }else{
-            BLL_userregister.DNI_create();
+            BLL_userregister.DNI_update();
         }
     }//GEN-LAST:event_txtDNIKeyPressed
 
@@ -981,11 +981,11 @@ public class Update_userregister extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtDNIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDNIKeyReleased
-        BLL_userregister.DNI_create();
+        BLL_userregister.DNI_update();
     }//GEN-LAST:event_txtDNIKeyReleased
 
     private void txtDNIFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDNIFocusLost
-        BLL_userregister.DNI_create();
+        BLL_userregister.DNI_update();
     }//GEN-LAST:event_txtDNIFocusLost
 
     private void txtuserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtuserMouseClicked
@@ -1000,16 +1000,16 @@ public class Update_userregister extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             txtpass.requestFocus();
         }else{
-            BLL_userregister.user_create();
+            BLL_userregister.user_update();
         }
     }//GEN-LAST:event_txtuserKeyPressed
 
     private void txtuserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtuserKeyReleased
-        BLL_userregister.user_create();
+        BLL_userregister.user_update();
     }//GEN-LAST:event_txtuserKeyReleased
 
     private void txtuserFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtuserFocusLost
-        BLL_userregister.user_create();
+        BLL_userregister.user_update();
     }//GEN-LAST:event_txtuserFocusLost
 
     private void txtpassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMouseClicked
@@ -1024,16 +1024,16 @@ public class Update_userregister extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             txtname.requestFocus();
         }else{
-            BLL_userregister.pass_create();
+            BLL_userregister.pass_update();
         }
     }//GEN-LAST:event_txtpassKeyPressed
 
     private void txtpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyReleased
-        BLL_userregister.pass_create();
+        BLL_userregister.pass_update();
     }//GEN-LAST:event_txtpassKeyReleased
 
     private void txtpassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpassFocusLost
-        BLL_userregister.pass_create();
+        BLL_userregister.pass_update();
     }//GEN-LAST:event_txtpassFocusLost
 
     private void txtnameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnameMouseClicked
@@ -1048,16 +1048,16 @@ public class Update_userregister extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             txtsurname.requestFocus();
         }else{
-            BLL_userregister.name_create();
+            BLL_userregister.name_update();
         }
     }//GEN-LAST:event_txtnameKeyPressed
 
     private void txtnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameKeyReleased
-        BLL_userregister.name_create();
+        BLL_userregister.name_update();
     }//GEN-LAST:event_txtnameKeyReleased
 
     private void txtnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnameFocusLost
-        BLL_userregister.name_create();
+        BLL_userregister.name_update();
     }//GEN-LAST:event_txtnameFocusLost
 
     private void txtsurnameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtsurnameMouseClicked
@@ -1072,16 +1072,16 @@ public class Update_userregister extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             txtemail.requestFocus();
         }else{
-            BLL_userregister.surname_create();
+            BLL_userregister.surname_update();
         }
     }//GEN-LAST:event_txtsurnameKeyPressed
 
     private void txtsurnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsurnameKeyReleased
-        BLL_userregister.surname_create();
+        BLL_userregister.surname_update();
     }//GEN-LAST:event_txtsurnameKeyReleased
 
     private void txtsurnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtsurnameFocusLost
-        BLL_userregister.surname_create();
+        BLL_userregister.surname_update();
     }//GEN-LAST:event_txtsurnameFocusLost
 
     private void txtemailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtemailMouseClicked
@@ -1096,16 +1096,16 @@ public class Update_userregister extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             txtmobilephone.requestFocus();
         }else{
-            BLL_userregister.email_create();
+            BLL_userregister.email_update();
         }
     }//GEN-LAST:event_txtemailKeyPressed
 
     private void txtemailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtemailKeyReleased
-        BLL_userregister.email_create();
+        BLL_userregister.email_update();
     }//GEN-LAST:event_txtemailKeyReleased
 
     private void txtemailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtemailFocusLost
-        BLL_userregister.email_create();
+        BLL_userregister.email_update();
     }//GEN-LAST:event_txtemailFocusLost
 
     private void txtmobilephoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtmobilephoneMouseClicked
@@ -1120,16 +1120,16 @@ public class Update_userregister extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             txtactivity.requestFocus();
         }else{
-            BLL_userregister.mobilephone_create();
+            BLL_userregister.mobilephone_update();
         }
     }//GEN-LAST:event_txtmobilephoneKeyPressed
 
     private void txtmobilephoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmobilephoneKeyReleased
-        BLL_userregister.mobilephone_create();
+        BLL_userregister.mobilephone_update();
     }//GEN-LAST:event_txtmobilephoneKeyReleased
 
     private void txtmobilephoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtmobilephoneFocusLost
-        BLL_userregister.mobilephone_create();
+        BLL_userregister.mobilephone_update();
     }//GEN-LAST:event_txtmobilephoneFocusLost
 
     private void txtactivityMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtactivityMouseClicked
@@ -1144,16 +1144,16 @@ public class Update_userregister extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             txtpoint.requestFocus();
         }else{
-            BLL_userregister.activity_create();
+            BLL_userregister.activity_update();
         }
     }//GEN-LAST:event_txtactivityKeyPressed
 
     private void txtactivityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtactivityKeyReleased
-        BLL_userregister.activity_create();
+        BLL_userregister.activity_update();
     }//GEN-LAST:event_txtactivityKeyReleased
 
     private void txtactivityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtactivityFocusLost
-        BLL_userregister.activity_create();
+        BLL_userregister.activity_update();
     }//GEN-LAST:event_txtactivityFocusLost
 
     private void txtpointMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpointMouseClicked
@@ -1168,16 +1168,16 @@ public class Update_userregister extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             jButton1.requestFocus();
         }else{
-            BLL_userregister.point_create();
+            BLL_userregister.point_update();
         }
     }//GEN-LAST:event_txtpointKeyPressed
 
     private void txtpointKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpointKeyReleased
-        BLL_userregister.point_create();
+        BLL_userregister.point_update();
     }//GEN-LAST:event_txtpointKeyReleased
 
     private void txtpointFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpointFocusLost
-        BLL_userregister.point_create();
+        BLL_userregister.point_update();
     }//GEN-LAST:event_txtpointFocusLost
 
     
