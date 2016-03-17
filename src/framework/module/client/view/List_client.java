@@ -412,6 +412,11 @@ public class List_client extends javax.swing.JFrame {
 
             }
         ));
+        TABLA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TABLAMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(TABLA);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -744,6 +749,13 @@ public class List_client extends javax.swing.JFrame {
         pagina_client.currentPageIndex = 1;
         pagina_client.initLinkBox();
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void TABLAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TABLAMouseClicked
+        if (evt.getClickCount() == 2) {
+            new Read_client().setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_TABLAMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
