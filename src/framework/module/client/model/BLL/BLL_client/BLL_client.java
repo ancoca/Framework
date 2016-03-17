@@ -258,18 +258,13 @@ public class BLL_client {
                 inicio=(pagina_client.currentPageIndex-1)*pagina_client.itemsPerPage; //nos situamos al inicio de la página en cuestión
                 selection=List_client.TABLA.getSelectedRow(); //nos situamos en la fila
                 selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
-		String search = (String) List_client.TABLA.getModel().getValueAt(selection1, 0);
-		if (search != ""){
-			for (int i = 0; i<9; i++) {
-				ID += search.charAt(i);
-			}
-			c1 = new Client (ID);
-                        location1 = -1;
-                        location1 = BLL_client.find_client(c1);
-                        if (location1 != -1) {
-                            c1 = Singleton_client.userclient.get(location1);
-                        }
-		}
+		ID = (String) List_client.TABLA.getModel().getValueAt(selection1, 0);
+		c1 = new Client (ID);
+                location1 = -1;
+                location1 = BLL_client.find_client(c1);
+                if (location1 != -1) {
+                    c1 = Singleton_client.userclient.get(location1);
+                }
 		return c1;		
 	}
     

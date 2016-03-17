@@ -254,18 +254,13 @@ public class BLL_admin {
                 inicio=(pagina_admin.currentPageIndex-1)*pagina_admin.itemsPerPage; //nos situamos al inicio de la página en cuestión
                 selection=List_admin.TABLA.getSelectedRow(); //nos situamos en la fila
                 selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
-		String search = (String) List_admin.TABLA.getModel().getValueAt(selection1, 0);
-		if (search != ""){
-			for (int i = 0; i<9; i++) {
-				ID += search.charAt(i);
-			}
-			a1 = new Admin (ID);
-                        location1 = -1;
-                        location1 = BLL_admin.find_admin(a1);
-                        if (location1 != -1) {
-                            a1 = Singleton_admin.useradmin.get(location1);
-                        }
-		}
+		ID = (String) List_admin.TABLA.getModel().getValueAt(selection1, 0);
+		a1 = new Admin (ID);
+                location1 = -1;
+                location1 = BLL_admin.find_admin(a1);
+                if (location1 != -1) {
+                    a1 = Singleton_admin.useradmin.get(location1);
+                }
 		return a1;
 	}
         

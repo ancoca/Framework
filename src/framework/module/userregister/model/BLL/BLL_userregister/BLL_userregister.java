@@ -259,18 +259,13 @@ public class BLL_userregister {
                 inicio=(pagina_userregister.currentPageIndex-1)*pagina_userregister.itemsPerPage; //nos situamos al inicio de la página en cuestión
                 selection=List_userregister.TABLA.getSelectedRow(); //nos situamos en la fila
                 selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
-		String search = (String) List_userregister.TABLA.getModel().getValueAt(selection1, 0);
-		if (search != ""){
-			for (int i = 0; i<9; i++) {
-				ID += search.charAt(i);
-			}
-			u1 = new User_register (ID);
-                        location1 = -1;
-                        location1 = BLL_userregister.find_user(u1);
-                        if (location1 != -1) {
-                            u1 = Singleton_userregister.userregister.get(location1);
-                        }
-		}
+		ID = (String) List_userregister.TABLA.getModel().getValueAt(selection1, 0);
+		u1 = new User_register (ID);
+                location1 = -1;
+                location1 = BLL_userregister.find_user(u1);
+                if (location1 != -1) {
+                    u1 = Singleton_userregister.userregister.get(location1);
+                }
                 
 		return u1;		
 	}
