@@ -366,6 +366,9 @@ public class List_userregister extends javax.swing.JFrame {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/edit_remove.png"))); // NOI18N
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabel12MouseExited(evt);
             }
@@ -758,6 +761,10 @@ public class List_userregister extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_TABLAMouseClicked
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        BLL_userregister.delete_userregister();
+    }//GEN-LAST:event_jLabel12MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
