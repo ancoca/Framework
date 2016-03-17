@@ -16,6 +16,7 @@ import framework.module.userregister.model.classes.User_register;
 import framework.module.config.model.classes.language2.Language_user;
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.view.Create_userregister;
+import framework.module.userregister.view.Read_userregister;
 import framework.module.userregister.view.Update_userregister;
 
 /**
@@ -602,5 +603,32 @@ public class DAO_userregister {
         }
         
         return check;
+    }
+    
+            ////////////////////////////////////////////////////////////////////
+            //                                                                //
+            //                        READ_USER_REGISTER                      //
+            //                                                                //
+            ////////////////////////////////////////////////////////////////////
+
+    public static void generate_read_client () {
+        User_register userregister = BLL_userregister.IDuserregister();
+        
+        Read_userregister.txtDNI.setText("DNI: "+userregister.getDNI());
+        Read_userregister.txtuser.setText("Usuario: "+userregister.getUser());
+        Read_userregister.txtpass.setText("Contraseña: "+userregister.getPass());
+        Read_userregister.txtavatar.setText("Avatar: "+userregister.getAvatar());
+        Read_userregister.txtstate.setText("Estado: "+userregister.toStringstate());
+        Read_userregister.txtname.setText("Nombre: "+userregister.getName());
+        Read_userregister.txtsurname.setText("Apellidos: "+userregister.getSurname());
+        Read_userregister.txtemail.setText("Correo electronico: "+userregister.getEmail());
+        Read_userregister.txtmobilephone.setText("Telefono movil: "+userregister.getMobilephone());
+        Read_userregister.txtdatebirthday.setText("Fecha de nacimiento: "+userregister.getDatebirthday().toString());
+        Read_userregister.txtage.setText("Edad: "+userregister.getAge());
+        Read_userregister.txtbenefits.setText("Beneficios: "+userregister.getBenefits());
+        Read_userregister.txtmovement.setText("Actividad: "+userregister.getMovement());
+        Read_userregister.txtreputation.setText("Reputacion: "+userregister.getReputation());
+        Read_userregister.txtpoint.setText("Puntos: "+userregister.getPoint());
+        
     }
 }
