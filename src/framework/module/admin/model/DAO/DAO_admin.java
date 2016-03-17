@@ -12,6 +12,7 @@ import framework.module.admin.model.BLL.BLL_admin.BLL_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
 import framework.module.admin.view.Create_admin;
+import framework.module.admin.view.Read_admin;
 import framework.module.admin.view.Update_admin;
 
 /**
@@ -757,5 +758,34 @@ public class DAO_admin {
         }
         
         return check;
+    }
+        
+            ////////////////////////////////////////////////////////////////////
+            //                                                                //
+            //                            READ_ADMIN                          //
+            //                                                                //
+            ////////////////////////////////////////////////////////////////////
+
+    public static void generate_read_admin () {
+        Admin admin = BLL_admin.IDadmin();
+        
+        Read_admin.txtDNI.setText("DNI: "+admin.getDNI());
+        Read_admin.txtuser.setText("Usuario: "+admin.getUser());
+        Read_admin.txtpass.setText("Contraseña: "+admin.getPass());
+        Read_admin.txtavatar.setText("Avatar: "+admin.getAvatar());
+        Read_admin.txtstate.setText("Estado: "+admin.toStringstate());
+        Read_admin.txtname.setText("Nombre: "+admin.getName());
+        Read_admin.txtsurname.setText("Apellidos: "+admin.getSurname());
+        Read_admin.txtemail.setText("Correo electronico: "+admin.getEmail());
+        Read_admin.txtmobilephone.setText("Telefono movil: "+admin.getMobilephone());
+        Read_admin.txtdatebirthday.setText("Fecha de nacimiento: "+admin.getDatebirthday().toString());
+        Read_admin.txtage.setText("Edad: "+admin.getAge());
+        Read_admin.txtbenefits.setText("Beneficios: "+admin.getBenefits());
+        Read_admin.txtdatecontract.setText("Fecha de contrato: "+admin.getDatecontract().toString());
+        Read_admin.txtold.setText("Antigüedad: "+admin.getOld()+"");
+        Read_admin.txtsalary.setText("Salario: "+admin.getSalary()+"");
+        Read_admin.txtincentive.setText("Incentivo: "+admin.getIncentive()+"");
+        Read_admin.txtactivity.setText("Actividad: "+admin.getActivity()+"");
+        
     }
 }
