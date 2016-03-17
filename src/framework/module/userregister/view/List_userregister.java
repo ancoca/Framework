@@ -43,6 +43,8 @@ public class List_userregister extends javax.swing.JFrame {
     public List_userregister() {
         initComponents();
         
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
+        
         this.setTitle("Framework");
         this.setExtendedState(JFrame.MAXIMIZED_BOTH); //la aplicación se abre maximizada
 	//this.setLocationRelativeTo(null);

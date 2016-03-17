@@ -36,6 +36,8 @@ public class Update_client extends javax.swing.JFrame {
     public Update_client() {
         initComponents();
         
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
+        
         DAO_client.generate_edit_client();
         DNI = txtDNI.getText();
         

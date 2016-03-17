@@ -32,6 +32,8 @@ public class Read_userregister extends javax.swing.JFrame {
     public Read_userregister() {
         initComponents();
         
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
+        
         this.setTitle("Framework");
         this.setExtendedState(JFrame.MAXIMIZED_BOTH); //la aplicación se abre maximizada
 	//this.setLocationRelativeTo(null);

@@ -36,6 +36,8 @@ public class Update_admin extends javax.swing.JFrame {
     public Update_admin() {
         initComponents();
         
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
+        
         DAO_admin.generate_edit_admin();
         DNI = txtDNI.getText();
         

@@ -37,6 +37,8 @@ public class Update_userregister extends javax.swing.JFrame {
     public Update_userregister() {
         initComponents();
         
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
+        
         DAO_userregister.generate_edit_userregister();
         DNI = txtDNI.getText();
         

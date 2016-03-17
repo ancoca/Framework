@@ -46,6 +46,8 @@ public class List_admin extends javax.swing.JFrame {
     public List_admin() {
         initComponents();
         
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
+        
         this.setTitle("Framework");
         this.setExtendedState(JFrame.MAXIMIZED_BOTH); //la aplicación se abre maximizada
 	//this.setLocationRelativeTo(null);

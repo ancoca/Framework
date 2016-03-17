@@ -35,6 +35,8 @@ public class Create_client extends javax.swing.JFrame {
     public Create_client() {
         initComponents();
         
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
+        
         this.setTitle("Framework");
         this.setExtendedState(JFrame.MAXIMIZED_BOTH); //la aplicación se abre maximizada
 	//this.setLocationRelativeTo(null);
