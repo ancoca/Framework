@@ -419,6 +419,11 @@ public class List_admin extends javax.swing.JFrame {
 
             }
         ));
+        TABLA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TABLAMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(TABLA);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -782,6 +787,13 @@ public class List_admin extends javax.swing.JFrame {
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         BLL_admin.delete_admin();
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void TABLAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TABLAMouseClicked
+        if (evt.getClickCount() == 2) {
+            new Read_admin().setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_TABLAMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton ANTERIOR;
