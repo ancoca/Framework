@@ -5,6 +5,7 @@
  */
 package framework.module.admin.view;
 
+import framework.module.admin.model.DAO.DAO_admin;
 import framework.module.menu.view.*;
 import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.config.view.Config;
@@ -37,6 +38,8 @@ public class Read_admin extends javax.swing.JFrame {
 	//this.setResizable(false);
 	//Image icono=Toolkit.getDefaultToolkit().getImage("p1.jpg");
 	//this.setIconImage(icono);
+        
+        DAO_admin.generate_read_admin();
         
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
@@ -90,7 +93,6 @@ public class Read_admin extends javax.swing.JFrame {
         txtage = new javax.swing.JLabel();
         txtdatecontract = new javax.swing.JLabel();
         txtbenefits = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         txtold = new javax.swing.JLabel();
         txtsalary = new javax.swing.JLabel();
         txtincentive = new javax.swing.JLabel();
@@ -290,20 +292,6 @@ public class Read_admin extends javax.swing.JFrame {
         txtbenefits.setText("jLabel8");
         txtbenefits.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
-        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel23MouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel23MouseExited(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel23MouseEntered(evt);
-            }
-        });
-
         txtold.setText("jLabel8");
         txtold.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -346,9 +334,7 @@ public class Read_admin extends javax.swing.JFrame {
                         .addContainerGap(55, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel23)
-                        .addGap(22, 22, 22))
+                        .addGap(22, 473, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -364,12 +350,10 @@ public class Read_admin extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(46, 46, 46)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel23)
-                            .addComponent(txtDNI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -503,25 +487,11 @@ public class Read_admin extends javax.swing.JFrame {
         new Read_admin().setVisible(true);
     }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
-        this.dispose();
-        new List_admin().setVisible(true);
-    }//GEN-LAST:event_jLabel23MouseClicked
-
-    private void jLabel23MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseExited
-        txtuser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png")));
-    }//GEN-LAST:event_jLabel23MouseExited
-
-    private void jLabel23MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseEntered
-        txtuser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver.png")));
-    }//GEN-LAST:event_jLabel23MouseEntered
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -536,23 +506,23 @@ public class Read_admin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel txtDNI;
-    private javax.swing.JLabel txtactivity;
-    private javax.swing.JLabel txtage;
-    private javax.swing.JLabel txtavatar;
-    private javax.swing.JLabel txtbenefits;
-    private javax.swing.JLabel txtdatebirthday;
-    private javax.swing.JLabel txtdatecontract;
-    private javax.swing.JLabel txtemail;
-    private javax.swing.JLabel txtincentive;
-    private javax.swing.JLabel txtmobilephone;
-    private javax.swing.JLabel txtname;
-    private javax.swing.JLabel txtold;
-    private javax.swing.JLabel txtpass;
-    private javax.swing.JLabel txtsalary;
-    private javax.swing.JLabel txtstate;
-    private javax.swing.JLabel txtsurname;
-    private javax.swing.JLabel txtuser;
+    public static javax.swing.JLabel txtDNI;
+    public static javax.swing.JLabel txtactivity;
+    public static javax.swing.JLabel txtage;
+    public static javax.swing.JLabel txtavatar;
+    public static javax.swing.JLabel txtbenefits;
+    public static javax.swing.JLabel txtdatebirthday;
+    public static javax.swing.JLabel txtdatecontract;
+    public static javax.swing.JLabel txtemail;
+    public static javax.swing.JLabel txtincentive;
+    public static javax.swing.JLabel txtmobilephone;
+    public static javax.swing.JLabel txtname;
+    public static javax.swing.JLabel txtold;
+    public static javax.swing.JLabel txtpass;
+    public static javax.swing.JLabel txtsalary;
+    public static javax.swing.JLabel txtstate;
+    public static javax.swing.JLabel txtsurname;
+    public static javax.swing.JLabel txtuser;
     // End of variables declaration//GEN-END:variables
 
 }
