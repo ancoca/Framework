@@ -10,6 +10,7 @@ import framework.module.menu.view.*;
 import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.config.view.Config;
 import framework.module.admin.view.List_admin;
+import framework.module.client.model.DAO.DAO_client;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.view.List_client;
 import framework.module.userregister.model.functions.json_auto_userregister;
@@ -38,6 +39,8 @@ public class Read_client extends javax.swing.JFrame {
 	//this.setResizable(false);
 	//Image icono=Toolkit.getDefaultToolkit().getImage("p1.jpg");
 	//this.setIconImage(icono);
+        
+        DAO_client.generate_read_client();
         
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
