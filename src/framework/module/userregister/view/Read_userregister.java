@@ -12,6 +12,7 @@ import framework.module.config.view.Config;
 import framework.module.admin.view.List_admin;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.view.List_client;
+import framework.module.userregister.model.DAO.DAO_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import framework.module.userregister.view.List_userregister;
 import java.awt.event.WindowAdapter;
@@ -38,6 +39,8 @@ public class Read_userregister extends javax.swing.JFrame {
 	//this.setResizable(false);
 	//Image icono=Toolkit.getDefaultToolkit().getImage("p1.jpg");
 	//this.setIconImage(icono);
+        
+        DAO_userregister.generate_read_client();
         
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
