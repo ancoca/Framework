@@ -91,9 +91,9 @@ public class Read_userregister extends javax.swing.JFrame {
         txtage = new javax.swing.JLabel();
         txtmovement = new javax.swing.JLabel();
         txtbenefits = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         txtreputation = new javax.swing.JLabel();
         txtpoint = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -289,25 +289,25 @@ public class Read_userregister extends javax.swing.JFrame {
         txtbenefits.setText("jLabel8");
         txtbenefits.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
-        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel23MouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel23MouseExited(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel23MouseEntered(evt);
-            }
-        });
-
         txtreputation.setText("jLabel8");
         txtreputation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtpoint.setText("jLabel8");
         txtpoint.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel8MouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel8MouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -316,11 +316,6 @@ public class Read_userregister extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 387, Short.MAX_VALUE)
-                        .addComponent(jLabel23)
-                        .addGap(22, 22, 22))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtsurname, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,15 +334,20 @@ public class Read_userregister extends javax.swing.JFrame {
                             .addComponent(txtmovement, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtreputation, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtmobilephone, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 43, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel23)
-                    .addComponent(txtDNI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -479,30 +479,30 @@ public class Read_userregister extends javax.swing.JFrame {
         new Read_userregister().setVisible(true);
     }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         this.dispose();
         new List_userregister().setVisible(true);
-    }//GEN-LAST:event_jLabel23MouseClicked
+    }//GEN-LAST:event_jLabel8MouseClicked
 
-    private void jLabel23MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseExited
-        txtuser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png")));
-    }//GEN-LAST:event_jLabel23MouseExited
+    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png")));
+    }//GEN-LAST:event_jLabel8MouseExited
 
-    private void jLabel23MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseEntered
-        txtuser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver.png")));
-    }//GEN-LAST:event_jLabel23MouseEntered
+    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver.png")));
+    }//GEN-LAST:event_jLabel8MouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -512,21 +512,21 @@ public class Read_userregister extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel txtDNI;
-    private javax.swing.JLabel txtage;
-    private javax.swing.JLabel txtavatar;
-    private javax.swing.JLabel txtbenefits;
-    private javax.swing.JLabel txtdatebirthday;
-    private javax.swing.JLabel txtemail;
-    private javax.swing.JLabel txtmobilephone;
-    private javax.swing.JLabel txtmovement;
-    private javax.swing.JLabel txtname;
-    private javax.swing.JLabel txtpass;
-    private javax.swing.JLabel txtpoint;
-    private javax.swing.JLabel txtreputation;
-    private javax.swing.JLabel txtstate;
-    private javax.swing.JLabel txtsurname;
-    private javax.swing.JLabel txtuser;
+    public static javax.swing.JLabel txtDNI;
+    public static javax.swing.JLabel txtage;
+    public static javax.swing.JLabel txtavatar;
+    public static javax.swing.JLabel txtbenefits;
+    public static javax.swing.JLabel txtdatebirthday;
+    public static javax.swing.JLabel txtemail;
+    public static javax.swing.JLabel txtmobilephone;
+    public static javax.swing.JLabel txtmovement;
+    public static javax.swing.JLabel txtname;
+    public static javax.swing.JLabel txtpass;
+    public static javax.swing.JLabel txtpoint;
+    public static javax.swing.JLabel txtreputation;
+    public static javax.swing.JLabel txtstate;
+    public static javax.swing.JLabel txtsurname;
+    public static javax.swing.JLabel txtuser;
     // End of variables declaration//GEN-END:variables
 
 }
