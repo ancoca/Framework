@@ -165,6 +165,11 @@ public class BLL_admin {
                     List_admin.jLabel3.setText(String.valueOf(Singleton_admin.useradmin.size()));
                     pagina_admin.initLinkBox();
                 }
+                
+                if (List_admin.TABLA.getRowCount()==0){
+                    pagina_admin.currentPageIndex -= 1;
+                    pagina_admin.initLinkBox();
+                }
 
             }
 
