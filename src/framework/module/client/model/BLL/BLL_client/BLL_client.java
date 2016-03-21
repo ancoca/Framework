@@ -169,6 +169,11 @@ public class BLL_client {
                     List_client.jLabel3.setText(String.valueOf(Singleton_client.userclient.size()));
                     pagina_client.initLinkBox();
                 }
+                
+                if (List_client.TABLA.getRowCount()==0){
+                    pagina_client.currentPageIndex -= 1;
+                    pagina_client.initLinkBox();
+                }
 
             }
 

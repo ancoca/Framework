@@ -171,6 +171,10 @@ public class BLL_userregister {
                     pagina_userregister.initLinkBox();
                 }
 
+                if (List_userregister.TABLA.getRowCount()==0){
+                    pagina_userregister.currentPageIndex -= 1;
+                    pagina_userregister.initLinkBox();
+                }
             }
 
         } else {
