@@ -5,6 +5,7 @@
  */
 package framework.module.menu.view;
 
+import framework.module.menu.controller.Controller_menu;
 import java.awt.event.*;
 import javax.swing.*;
 /**
@@ -14,14 +15,16 @@ import javax.swing.*;
 public class Start extends javax.swing.JFrame {
 
     private Timer timer;
-    int cont;
+    int cont=-1,i=0;
     public final static int ONE_SECOND = 8;
     /**
      * Creates new form Initialize
      */
     public Start() {
-        cont =-1;
+        //cont =-1;
         initComponents();
+        cont =-1;
+        i=0;
         
         this.setTitle("DAW");
         this.setExtendedState(JFrame.MAXIMIZED_BOTH); //la aplicación se abre maximizada
@@ -45,7 +48,12 @@ public class Start extends javax.swing.JFrame {
             if(cont==120){
                 timer.stop();
                 dispose();
-                new Menu().setVisible(true);
+
+               
+                   if (i==0){
+                    i++;
+                    new Controller_menu(new Menu(), 0).iniciar(0);
+                }
             }
         }
     }
