@@ -9,7 +9,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class Functions_theme {
     
-    public static void theme () throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException{
+    public static void theme (){
 
         //Obtener lista look&feel disponibles en el SO
         //http://www.codigofantasma.com/blog/java-look-feel-parte-1/
@@ -54,7 +54,7 @@ public class Functions_theme {
             }
         }catch (Exception e){
                 JOptionPane.showMessageDialog(null, Language_general.getInstance().getProperty("errortheme"), Language_general.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
-                UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+                ClassConfig.getInstance().setTheme("METAL");
         }
     }
 }
