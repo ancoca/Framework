@@ -1,11 +1,11 @@
 package framework.module.admin.model.classes;
 
 import framework.classes.ClassDate;
+import framework.module.admin.controller.Controller_admin;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.view.List_admin;
-import static framework.module.admin.view.List_admin.combo;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
@@ -136,7 +136,7 @@ public class miniSimpleTableModel_admin extends AbstractTableModel {
         datos.clear();
         int cont=0;
         
-        String nom=(String) ((JComboBox)List_admin.combo).getSelectedItem();   
+        String nom=(String) ((JComboBox)Controller_admin.combo).getSelectedItem();   
         if(nom!=null){
             for(int i=0;i<datosaux.size();i++) {
                 //if(datosaux.get(i).getFirst_name().contains(nom)){
@@ -145,7 +145,7 @@ public class miniSimpleTableModel_admin extends AbstractTableModel {
                     cont++;
                 }
             }
-            List_admin.jLabel3.setText(String.valueOf(cont));
+            List_admin.lblsize.setText(String.valueOf(cont));
             System.out.println("word selected: " + nom);
             pagina_admin.initLinkBox();
         }

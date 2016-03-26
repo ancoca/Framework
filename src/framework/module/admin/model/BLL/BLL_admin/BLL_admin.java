@@ -5,6 +5,7 @@
  */
 package framework.module.admin.model.BLL.BLL_admin;
 
+import framework.module.admin.controller.Controller_admin;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.DAO.DAO_admin;
 import framework.module.admin.model.classes.Admin;
@@ -162,7 +163,7 @@ public class BLL_admin {
                     miniSimpleTableModel_admin.datosaux.remove(pos);
                     json_auto_admin.savejson_admin();
                     ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).cargar();
-                    List_admin.jLabel3.setText(String.valueOf(Singleton_admin.useradmin.size()));
+                    List_admin.lblsize.setText(String.valueOf(Singleton_admin.useradmin.size()));
                     pagina_admin.initLinkBox();
                 }
                 
@@ -275,7 +276,7 @@ public class BLL_admin {
             public void actionPerformed(ActionEvent e) {
                 json_auto_admin.savejson_admin();
                 jframe.dispose();
-                new List_admin().setVisible(true);
+                new Controller_admin(new List_admin(), 0).iniciar(0);
             }
         });
         timer.setRepeats(false);

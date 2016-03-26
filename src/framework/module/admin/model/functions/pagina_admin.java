@@ -1,4 +1,5 @@
 package framework.module.admin.model.functions;
+import framework.module.admin.controller.Controller_admin;
 import framework.module.admin.model.classes.miniSimpleTableModel_admin;
 import framework.module.admin.view.List_admin;
 import java.awt.BorderLayout;
@@ -35,7 +36,7 @@ public class pagina_admin {
     }
     
     public static void initLinkBox() {
-        List_admin.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
+        Controller_admin.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
             @Override public boolean include(RowFilter.Entry<? extends TableModel, ? extends Integer> entry) {
                 int ti = currentPageIndex - 1;
                 int ei = entry.getIdentifier();
