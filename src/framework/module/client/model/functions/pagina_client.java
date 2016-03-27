@@ -1,4 +1,5 @@
 package framework.module.client.model.functions;
+import framework.module.client.controller.Controller_client;
 import framework.module.client.model.classes.miniSimpleTableModel_client;
 import framework.module.client.view.List_client;
 import java.awt.BorderLayout;
@@ -35,7 +36,7 @@ public class pagina_client {
     }
     
     public static void initLinkBox() {
-        List_client.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
+        Controller_client.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
             @Override public boolean include(RowFilter.Entry<? extends TableModel, ? extends Integer> entry) {
                 int ti = currentPageIndex - 1;
                 int ei = entry.getIdentifier();
