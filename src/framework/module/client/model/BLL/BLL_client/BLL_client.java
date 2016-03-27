@@ -5,6 +5,7 @@
  */
 package framework.module.client.model.BLL.BLL_client;
 
+import framework.module.client.controller.Controller_client;
 import framework.module.client.model.DAO.DAO_client;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
@@ -166,7 +167,7 @@ public class BLL_client {
                     miniSimpleTableModel_client.datosaux.remove(pos);
                     json_auto_client.savejson_client();
                     ((miniSimpleTableModel_client) List_client.TABLA.getModel()).cargar();
-                    List_client.jLabel3.setText(String.valueOf(Singleton_client.userclient.size()));
+                    List_client.lblsize.setText(String.valueOf(Singleton_client.userclient.size()));
                     pagina_client.initLinkBox();
                 }
                 
@@ -274,12 +275,12 @@ public class BLL_client {
 	}
     
     public static void timer(JFrame jframe) {
-        Timer timer = new Timer (3000, new ActionListener() {
+        Timer timer = new Timer (2000, new ActionListener() {
         
             public void actionPerformed(ActionEvent e) {
                 json_auto_client.savejson_client();
                 jframe.dispose();
-                new List_client().setVisible(true);
+                new Controller_client(new List_client(), 0).iniciar(0);
             }
         });
         timer.setRepeats(false);
