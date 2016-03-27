@@ -31,31 +31,6 @@ public class Read_client extends javax.swing.JFrame {
      */
     public Read_client() {
         initComponents();
-        
-        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
-        
-        this.setTitle("Framework");
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH); //la aplicación se abre maximizada
-	//this.setLocationRelativeTo(null);
-	//this.setSize(525,425);//ancho x alto
-	//this.setResizable(false);
-	//Image icono=Toolkit.getDefaultToolkit().getImage("p1.jpg");
-	//this.setIconImage(icono);
-        
-        DAO_client.generate_read_client();
-        
-        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                json_auto_admin.savejson_admin();
-                json_auto_client.savejson_client();
-                json_auto_userregister.savejson_userregister();
-                JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
-                dispose();
-                System.exit(0);
-            }
-        });
     }
 
     /**
@@ -70,18 +45,18 @@ public class Read_client extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbltitulo = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblusuarios = new javax.swing.JLabel();
+        lbladministrador = new javax.swing.JLabel();
+        lblcliente = new javax.swing.JLabel();
+        lblusuario = new javax.swing.JLabel();
+        lblconfiguracion = new javax.swing.JLabel();
+        lblajustes = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lblinicios = new javax.swing.JLabel();
+        lblinicio = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         txtuser = new javax.swing.JLabel();
         txtDNI = new javax.swing.JLabel();
@@ -101,7 +76,7 @@ public class Read_client extends javax.swing.JFrame {
         txtdtos = new javax.swing.JLabel();
         txtpremium = new javax.swing.JLabel();
         txttypeclient = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblvolver = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -111,102 +86,102 @@ public class Read_client extends javax.swing.JFrame {
         jPanel2.setBackground(java.awt.Color.white);
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setBackground(java.awt.Color.white);
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/titulo.JPG"))); // NOI18N
-        jPanel2.add(jLabel1, java.awt.BorderLayout.CENTER);
+        lbltitulo.setBackground(java.awt.Color.white);
+        lbltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/titulo.JPG"))); // NOI18N
+        jPanel2.add(lbltitulo, java.awt.BorderLayout.CENTER);
         jPanel2.add(jSeparator2, java.awt.BorderLayout.SOUTH);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.NORTH);
 
         jPanel4.setBackground(java.awt.Color.white);
 
-        jLabel2.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
-        jLabel2.setForeground(java.awt.Color.blue);
-        jLabel2.setText("Usuarios");
+        lblusuarios.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
+        lblusuarios.setForeground(java.awt.Color.blue);
+        lblusuarios.setText("Usuarios");
 
-        jLabel3.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
-        jLabel3.setForeground(java.awt.Color.cyan);
-        jLabel3.setText("Administrador");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbladministrador.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
+        lbladministrador.setForeground(java.awt.Color.cyan);
+        lbladministrador.setText("Administrador");
+        lbladministrador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                lbladministradorMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
+                lbladministradorMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
+                lbladministradorMouseEntered(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.cyan);
-        jLabel4.setText("Clientes");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblcliente.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
+        lblcliente.setForeground(java.awt.Color.cyan);
+        lblcliente.setText("Cliente");
+        lblcliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                lblclienteMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel4MouseExited(evt);
+                lblclienteMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
+                lblclienteMouseEntered(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
-        jLabel5.setForeground(java.awt.Color.cyan);
-        jLabel5.setText("Usuarios");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblusuario.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
+        lblusuario.setForeground(java.awt.Color.cyan);
+        lblusuario.setText("Usuario");
+        lblusuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                lblusuarioMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel5MouseExited(evt);
+                lblusuarioMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel5MouseEntered(evt);
+                lblusuarioMouseEntered(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
-        jLabel6.setForeground(java.awt.Color.blue);
-        jLabel6.setText("Configuración");
+        lblconfiguracion.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
+        lblconfiguracion.setForeground(java.awt.Color.blue);
+        lblconfiguracion.setText("Configuración");
 
-        jLabel7.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
-        jLabel7.setForeground(java.awt.Color.cyan);
-        jLabel7.setText("Ajustes");
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblajustes.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
+        lblajustes.setForeground(java.awt.Color.cyan);
+        lblajustes.setText("Ajustes");
+        lblajustes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
+                lblajustesMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel7MouseExited(evt);
+                lblajustesMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel7MouseEntered(evt);
+                lblajustesMouseEntered(evt);
             }
         });
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel9.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
-        jLabel9.setForeground(java.awt.Color.blue);
-        jLabel9.setText("Inicio");
+        lblinicios.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
+        lblinicios.setForeground(java.awt.Color.blue);
+        lblinicios.setText("Inicio");
 
-        jLabel10.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
-        jLabel10.setForeground(java.awt.Color.cyan);
-        jLabel10.setText("Inicio");
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblinicio.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
+        lblinicio.setForeground(java.awt.Color.cyan);
+        lblinicio.setText("Inicio");
+        lblinicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+                lblinicioMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel10MouseExited(evt);
+                lblinicioMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel10MouseEntered(evt);
+                lblinicioMouseEntered(evt);
             }
         });
 
@@ -217,17 +192,17 @@ public class Read_client extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel6)
+                    .addComponent(lblinicios)
+                    .addComponent(lblusuarios)
+                    .addComponent(lblconfiguracion)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7))))
+                            .addComponent(lblinicio)
+                            .addComponent(lblcliente)
+                            .addComponent(lbladministrador)
+                            .addComponent(lblusuario)
+                            .addComponent(lblajustes))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -235,21 +210,21 @@ public class Read_client extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
+                .addComponent(lblinicios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
+                .addComponent(lblinicio)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(lblusuarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(lbladministrador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(lblcliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addComponent(lblusuario)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel6)
+                .addComponent(lblconfiguracion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
+                .addComponent(lblajustes)
                 .addContainerGap(234, Short.MAX_VALUE))
             .addComponent(jSeparator1)
         );
@@ -312,17 +287,17 @@ public class Read_client extends javax.swing.JFrame {
         txttypeclient.setText("jLabel8");
         txttypeclient.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblvolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png"))); // NOI18N
+        lblvolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                lblvolverMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel8MouseExited(evt);
+                lblvolverMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel8MouseEntered(evt);
+                lblvolverMouseEntered(evt);
             }
         });
 
@@ -363,14 +338,14 @@ public class Read_client extends javax.swing.JFrame {
                 .addContainerGap(61, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
+                .addComponent(lblvolver)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8)
+                .addComponent(lblvolver)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -445,104 +420,104 @@ public class Read_client extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
-        jLabel7.setForeground(java.awt.Color.blue);
-    }//GEN-LAST:event_jLabel7MouseEntered
+    private void lblajustesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblajustesMouseEntered
+        lblajustes.setForeground(java.awt.Color.blue);
+    }//GEN-LAST:event_lblajustesMouseEntered
 
-    private void jLabel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseExited
-        jLabel7.setForeground(java.awt.Color.cyan);
-    }//GEN-LAST:event_jLabel7MouseExited
+    private void lblajustesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblajustesMouseExited
+        lblajustes.setForeground(java.awt.Color.cyan);
+    }//GEN-LAST:event_lblajustesMouseExited
 
-    private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
-        jLabel5.setForeground(java.awt.Color.blue);
-    }//GEN-LAST:event_jLabel5MouseEntered
+    private void lblusuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblusuarioMouseEntered
+        lblusuario.setForeground(java.awt.Color.blue);
+    }//GEN-LAST:event_lblusuarioMouseEntered
 
-    private void jLabel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseExited
-        jLabel5.setForeground(java.awt.Color.cyan);
-    }//GEN-LAST:event_jLabel5MouseExited
+    private void lblusuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblusuarioMouseExited
+        lblusuario.setForeground(java.awt.Color.cyan);
+    }//GEN-LAST:event_lblusuarioMouseExited
 
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
-        jLabel4.setForeground(java.awt.Color.blue);
-    }//GEN-LAST:event_jLabel4MouseEntered
+    private void lblclienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclienteMouseEntered
+        lblcliente.setForeground(java.awt.Color.blue);
+    }//GEN-LAST:event_lblclienteMouseEntered
 
-    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
-        jLabel4.setForeground(java.awt.Color.cyan);
-    }//GEN-LAST:event_jLabel4MouseExited
+    private void lblclienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclienteMouseExited
+        lblcliente.setForeground(java.awt.Color.cyan);
+    }//GEN-LAST:event_lblclienteMouseExited
 
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
-        jLabel3.setForeground(java.awt.Color.blue);
-    }//GEN-LAST:event_jLabel3MouseEntered
+    private void lbladministradorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladministradorMouseEntered
+        lbladministrador.setForeground(java.awt.Color.blue);
+    }//GEN-LAST:event_lbladministradorMouseEntered
 
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        jLabel3.setForeground(java.awt.Color.cyan);
-    }//GEN-LAST:event_jLabel3MouseExited
+    private void lbladministradorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladministradorMouseExited
+        lbladministrador.setForeground(java.awt.Color.cyan);
+    }//GEN-LAST:event_lbladministradorMouseExited
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void lbladministradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladministradorMouseClicked
         new List_admin().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_lbladministradorMouseClicked
 
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+    private void lblajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblajustesMouseClicked
         new Config().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel7MouseClicked
+    }//GEN-LAST:event_lblajustesMouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void lblclienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclienteMouseClicked
         new List_client().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_lblclienteMouseClicked
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void lblusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblusuarioMouseClicked
         new List_userregister().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_lblusuarioMouseClicked
 
-    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
-        jLabel10.setForeground(java.awt.Color.blue);
-    }//GEN-LAST:event_jLabel10MouseEntered
+    private void lblinicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseEntered
+        lblinicio.setForeground(java.awt.Color.blue);
+    }//GEN-LAST:event_lblinicioMouseEntered
 
-    private void jLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseExited
-        jLabel10.setForeground(java.awt.Color.cyan);
-    }//GEN-LAST:event_jLabel10MouseExited
+    private void lblinicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseExited
+        lblinicio.setForeground(java.awt.Color.cyan);
+    }//GEN-LAST:event_lblinicioMouseExited
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+    private void lblinicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseClicked
         this.dispose();
         new Read_client().setVisible(true);
-    }//GEN-LAST:event_jLabel10MouseClicked
+    }//GEN-LAST:event_lblinicioMouseClicked
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void lblvolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolverMouseClicked
         this.dispose();
         new List_client().setVisible(true);
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_lblvolverMouseClicked
 
-    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png")));
-    }//GEN-LAST:event_jLabel8MouseExited
+    private void lblvolverMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolverMouseExited
+        lblvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png")));
+    }//GEN-LAST:event_lblvolverMouseExited
 
-    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver.png")));
-    }//GEN-LAST:event_jLabel8MouseEntered
+    private void lblvolverMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolverMouseEntered
+        lblvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver.png")));
+    }//GEN-LAST:event_lblvolverMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    public static javax.swing.JLabel lbladministrador;
+    public static javax.swing.JLabel lblajustes;
+    public static javax.swing.JLabel lblcliente;
+    public static javax.swing.JLabel lblconfiguracion;
+    public static javax.swing.JLabel lblinicio;
+    public static javax.swing.JLabel lblinicios;
+    public static javax.swing.JLabel lbltitulo;
+    public static javax.swing.JLabel lblusuario;
+    public static javax.swing.JLabel lblusuarios;
+    public static javax.swing.JLabel lblvolver;
     public static javax.swing.JLabel txtDNI;
     public static javax.swing.JLabel txtage;
     public static javax.swing.JLabel txtantique;
