@@ -114,7 +114,6 @@ public class DAO_client {
 		confirm=validate.DNI(DNI);
 		if (confirm==false) {
                     check = false;
-                    Create_client.checkDNI.setIcon(Singleton_client.cancel);
                 }else{
                     aux = "";
                     for(int i=0; i<8; i++){
@@ -126,10 +125,8 @@ public class DAO_client {
                     control = caracteres.charAt(module);
                     if(control == character){
                         check = true;
-                        Create_client.checkDNI.setIcon(Singleton_client.ok);
                     }else{
                         check = false;
-                        Create_client.checkDNI.setIcon(Singleton_client.cancel);
                     }
                 }
         
@@ -142,10 +139,8 @@ public class DAO_client {
 	confirm=validate.user(Create_client.txtuser.getText());
 	if (confirm==false) {
             check = false;
-            Create_client.checkuser.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Create_client.checkuser.setIcon(Singleton_client.ok);
         }
         
         return check;
@@ -157,10 +152,8 @@ public class DAO_client {
 	confirm=validate.pass(Create_client.txtpass.getText());
 	if (confirm==false) {
             check = false;
-            Create_client.checkpass.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Create_client.checkpass.setIcon(Singleton_client.ok);
         }
                         
         return check;
@@ -172,10 +165,8 @@ public class DAO_client {
         confirm=validate.name(Create_client.txtname.getText());
 	if (confirm==false) {
             check = false;
-            Create_client.checkname.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Create_client.checkname.setIcon(Singleton_client.ok);
         }
         
         return check;
@@ -187,10 +178,8 @@ public class DAO_client {
         confirm=validate.surname(Create_client.txtsurname.getText());
 	if (confirm==false) {
             check = false;
-            Create_client.checksurname.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Create_client.checksurname.setIcon(Singleton_client.ok);
         }
         
         return check;
@@ -202,10 +191,8 @@ public class DAO_client {
         confirm=validate.email(Create_client.txtemail.getText());
 	if (confirm==false) {
             check = false;
-            Create_client.checkemail.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Create_client.checkemail.setIcon(Singleton_client.ok);
         }
         
         return check;
@@ -217,10 +204,8 @@ public class DAO_client {
         confirm=validate.mobilephone(Create_client.txtmobilephone.getText());
 	if (confirm==false) {
             check = false;
-            Create_client.checkmobilephone.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Create_client.checkmobilephone.setIcon(Singleton_client.ok);
         }
         return check;
     }
@@ -247,21 +232,17 @@ public class DAO_client {
         confirm = validate.date(((JTextFieldDateEditor) Create_client.txtdatebirthday.getDateEditor()).getText());
 	if (confirm==false) {
             check = false;
-            Create_client.checkdatebirthday.setIcon(Singleton_client.cancel);
 	}else{
             Cdate = new ClassDate (((JTextFieldDateEditor) Create_client.txtdatebirthday.getDateEditor()).getText());
             confirm=Cdate.checkdate();
             if (confirm==false) {
                 check = false;
-                Create_client.checkdatebirthday.setIcon(Singleton_client.cancel);
             }else{
                 age = Cdate.subtractsystemdateyear();
 		if (age < year) {
                     check = false;
-                    Create_client.checkdatebirthday.setIcon(Singleton_client.cancel);
 		}else{
                     check = true;
-                    Create_client.checkdatebirthday.setIcon(Singleton_client.ok);
                 }
             }
 	}
@@ -276,15 +257,12 @@ public class DAO_client {
         try{
             if(Create_client.txtshopping.getText()==null){
                 check = false;
-                Create_client.checkshopping.setIcon(Singleton_client.cancel);
             }else {
                 i=Float.parseFloat(Create_client.txtshopping.getText());
                 check = true;
-                Create_client.checkshopping.setIcon(Singleton_client.ok);
             }
         }catch(Exception e){
             check = false;
-            Create_client.checkshopping.setIcon(Singleton_client.cancel);
         }
         
         return check;
@@ -297,15 +275,12 @@ public class DAO_client {
         try{
             if(Create_client.txtdtos.getText()==null){
                 check = false;
-                Create_client.checkdtos.setIcon(Singleton_client.cancel);
             }else {
                 i=Integer.parseInt(Create_client.txtdtos.getText());
                 check = true;
-                Create_client.checkdtos.setIcon(Singleton_client.ok);
             }
         }catch(Exception e){
             check = false;
-            Create_client.checkdtos.setIcon(Singleton_client.cancel);
         }
         
         return check;
@@ -330,10 +305,8 @@ public class DAO_client {
 	confirm=validate.typeclient(Create_client.txttype_client.getText());
 	if (confirm==false) {
             check = false;
-            Create_client.checktype_client.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Create_client.checktype_client.setIcon(Singleton_client.ok);
         }
         
         return check;
@@ -458,7 +431,6 @@ public class DAO_client {
 		confirm=validate.DNI(DNI);
 		if (confirm==false) {
                     check = false;
-                    Update_client.checkDNI.setIcon(Singleton_client.cancel);
                 }else{
                     aux = "";
                     for(int i=0; i<8; i++){
@@ -470,10 +442,8 @@ public class DAO_client {
                     control = caracteres.charAt(module);
                     if(control == character){
                         check = true;
-                        Update_client.checkDNI.setIcon(Singleton_client.ok);
                     }else{
                         check = false;
-                        Update_client.checkDNI.setIcon(Singleton_client.cancel);
                     }
                 }
         
@@ -486,10 +456,8 @@ public class DAO_client {
 	confirm=validate.user(Update_client.txtuser.getText());
 	if (confirm==false) {
             check = false;
-            Update_client.checkuser.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Update_client.checkuser.setIcon(Singleton_client.ok);
         }
         
         return check;
@@ -501,10 +469,8 @@ public class DAO_client {
 	confirm=validate.pass(Update_client.txtpass.getText());
 	if (confirm==false) {
             check = false;
-            Update_client.checkpass.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Update_client.checkpass.setIcon(Singleton_client.ok);
         }
                         
         return check;
@@ -516,10 +482,8 @@ public class DAO_client {
         confirm=validate.name(Update_client.txtname.getText());
 	if (confirm==false) {
             check = false;
-            Update_client.checkname.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Update_client.checkname.setIcon(Singleton_client.ok);
         }
         
         return check;
@@ -531,10 +495,8 @@ public class DAO_client {
         confirm=validate.surname(Update_client.txtsurname.getText());
 	if (confirm==false) {
             check = false;
-            Update_client.checksurname.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Update_client.checksurname.setIcon(Singleton_client.ok);
         }
         
         return check;
@@ -546,10 +508,8 @@ public class DAO_client {
         confirm=validate.email(Update_client.txtemail.getText());
 	if (confirm==false) {
             check = false;
-            Update_client.checkemail.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Update_client.checkemail.setIcon(Singleton_client.ok);
         }
         
         return check;
@@ -561,10 +521,8 @@ public class DAO_client {
         confirm=validate.mobilephone(Update_client.txtmobilephone.getText());
 	if (confirm==false) {
             check = false;
-            Update_client.checkmobilephone.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Update_client.checkmobilephone.setIcon(Singleton_client.ok);
         }
         return check;
     }
@@ -591,21 +549,17 @@ public class DAO_client {
         confirm = validate.date(((JTextFieldDateEditor) Update_client.txtdatebirthday.getDateEditor()).getText());
 	if (confirm==false) {
             check = false;
-            Update_client.checkdatebirthday.setIcon(Singleton_client.cancel);
 	}else{
             Cdate = new ClassDate (((JTextFieldDateEditor) Update_client.txtdatebirthday.getDateEditor()).getText());
             confirm=Cdate.checkdate();
             if (confirm==false) {
                 check = false;
-                Update_client.checkdatebirthday.setIcon(Singleton_client.cancel);
             }else{
                 age = Cdate.subtractsystemdateyear();
 		if (age < year) {
                     check = false;
-                    Update_client.checkdatebirthday.setIcon(Singleton_client.cancel);
 		}else{
                     check = true;
-                    Update_client.checkdatebirthday.setIcon(Singleton_client.ok);
                 }
             }
 	}
@@ -620,15 +574,12 @@ public class DAO_client {
         try{
             if(Update_client.txtshopping.getText()==null){
                 check = false;
-                Update_client.checkshopping.setIcon(Singleton_client.cancel);
             }else {
                 i=Float.parseFloat(Update_client.txtshopping.getText());
                 check = true;
-                Update_client.checkshopping.setIcon(Singleton_client.ok);
             }
         }catch(Exception e){
             check = false;
-            Update_client.checkshopping.setIcon(Singleton_client.cancel);
         }
         
         return check;
@@ -641,15 +592,12 @@ public class DAO_client {
         try{
             if(Update_client.txtdtos.getText()==null){
                 check = false;
-                Update_client.checkdtos.setIcon(Singleton_client.cancel);
             }else {
                 i=Integer.parseInt(Update_client.txtdtos.getText());
                 check = true;
-                Update_client.checkdtos.setIcon(Singleton_client.ok);
             }
         }catch(Exception e){
             check = false;
-            Update_client.checkdtos.setIcon(Singleton_client.cancel);
         }
         
         return check;
@@ -674,10 +622,8 @@ public class DAO_client {
 	confirm=validate.typeclient(Update_client.txttype_client.getText());
 	if (confirm==false) {
             check = false;
-            Update_client.checktype_client.setIcon(Singleton_client.cancel);
 	}else{
             check = true;
-            Update_client.checktype_client.setIcon(Singleton_client.ok);
         }
         
         return check;
