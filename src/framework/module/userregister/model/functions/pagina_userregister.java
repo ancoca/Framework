@@ -1,4 +1,5 @@
 package framework.module.userregister.model.functions;
+import framework.module.userregister.controller.Controller_userregister;
 import framework.module.userregister.model.classes.miniSimpleTableModel_userregister;
 import framework.module.userregister.view.List_userregister;
 import java.awt.BorderLayout;
@@ -35,7 +36,7 @@ public class pagina_userregister {
     }
     
     public static void initLinkBox() {
-        List_userregister.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
+        Controller_userregister.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
             @Override public boolean include(RowFilter.Entry<? extends TableModel, ? extends Integer> entry) {
                 int ti = currentPageIndex - 1;
                 int ei = entry.getIdentifier();
