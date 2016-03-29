@@ -5,6 +5,7 @@
  */
 package framework.module.config.model.DAO;
 
+import framework.module.config.model.classes.ClassConfig;
 import framework.module.config.view.Config;
 
 /**
@@ -13,7 +14,7 @@ import framework.module.config.view.Config;
  */
 public class DAO_config {
     
-    public static String language () {
+    public static String setlanguage () {
         String language = "";
         
         if (Config.english.isSelected()){
@@ -29,7 +30,7 @@ public class DAO_config {
         return language;
     }
     
-    public static String date () {
+    public static String setdate () {
         String date = "";
         
         if (Config.date1.isSelected()){
@@ -48,7 +49,7 @@ public class DAO_config {
         return date;
     }
     
-    public static char currency () {
+    public static char setcurrency () {
         char currency = ' ';
         
         if (Config.€.isSelected()){
@@ -64,7 +65,7 @@ public class DAO_config {
         return currency;
     }
     
-    public static String theme () {
+    public static String settheme () {
         String theme = "";
         
         if (Config.metal.isSelected()){
@@ -95,7 +96,7 @@ public class DAO_config {
         return theme;
     }
     
-    public static int decimal () {
+    public static int setdecimal () {
         int decimal = 0;
         
         if (Config.decimal1.isSelected()){
@@ -109,5 +110,93 @@ public class DAO_config {
         }
         
         return decimal;
+    }
+    
+    public static void getlanguage () {
+        switch (ClassConfig.getInstance().getLanguage()){
+            case "en":
+                Config.english.setSelected(true);
+                break;
+            case "es":
+                Config.castellano.setSelected(true);
+                break;
+            case "val":
+                Config.valencia.setSelected(true);
+                break;
+        }
+    }
+    
+    public static void getdate () {
+        switch (ClassConfig.getInstance().getDate()){
+            case "dd/MM/yyyy":
+                Config.date1.setSelected(true);
+                break;
+            case "dd-MM-yyyy":
+                Config.date2.setSelected(true);
+                break;
+            case "yyyy/MM/dd":
+                Config.date3.setSelected(true);
+                break;
+            case "yyyy-MM--dd":
+                Config.date4.setSelected(true);
+                break;
+        }
+    }
+    
+    public static void getcurrency () {
+        switch (ClassConfig.getInstance().getCurrency()){
+            case '€':
+                Config.€.setSelected(true);
+                break;
+            case '$':
+                Config.$.setSelected(true);
+                break;
+            case '£':
+                Config.£.setSelected(true);
+                break;
+        }
+    }
+    
+    public static void gettheme () {
+        switch (ClassConfig.getInstance().getTheme()){
+            case "METAL":// Metal - Predeterminado JAVA
+                Config.metal.setSelected(true);
+                break;
+            case "GTK":// GTK
+                Config.gtk.setSelected(true);
+                break;
+            case "MOTIF":// Motif
+                Config.motif.setSelected(true);
+                break;
+            case "NINBUS":// Nimbus - JAVA
+                Config.ninbus.setSelected(true);
+                break;	
+            case "WINDOWS95":// WINDOWS 95
+                Config.windowsclassic.setSelected(true);
+                break;
+            case "WINDOWS":// WINDOWS
+                Config.windows.setSelected(true);
+                break;
+            case "MAC OS":// MAC OS
+                Config.mac.setSelected(true);
+                break;
+            case "MAC OS X":// MAC OS X
+                Config.aqua.setSelected(true);
+                break;
+        }
+    }
+    
+    public static void getdecimal () {
+        switch (ClassConfig.getInstance().getDecimal()){
+            case 1:
+                Config.decimal1.setSelected(true);
+                break;
+            case 2:
+                Config.decimal2.setSelected(true);
+                break;
+            case 3:
+                Config.decimal3.setSelected(true);
+                break;
+        }
     }
 }
