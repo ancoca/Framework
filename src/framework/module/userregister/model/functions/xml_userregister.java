@@ -12,11 +12,6 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.Annotations;
-
-import framework.module.admin.model.classes.Admin;
-import framework.module.admin.model.classes.Singleton_admin;
-import framework.module.client.model.classes.Client;
-import framework.module.client.model.classes.Singleton_client;
 import framework.module.userregister.model.classes.User_register;
 import framework.module.config.model.classes.language2.Language_user;
 import framework.module.userregister.model.classes.Singleton_userregister;
