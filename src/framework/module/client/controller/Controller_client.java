@@ -7,10 +7,7 @@ package framework.module.client.controller;
 
 import framework.module.admin.controller.Controller_admin;
 import framework.module.admin.model.functions.json_auto_admin;
-import framework.module.admin.view.Create_admin;
 import framework.module.admin.view.List_admin;
-import framework.module.admin.view.Read_admin;
-import framework.module.admin.view.Update_admin;
 import framework.module.client.model.BLL.BLL_client.BLL_client;
 import framework.module.client.model.DAO.DAO_client;
 import framework.module.client.model.classes.Singleton_client;
@@ -961,7 +958,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case btncancelar_create:
                 create.dispose();
-                new Controller_admin(new List_admin(), 0).iniciar(0);
+                new Controller_client(new List_client(), 0).iniciar(0);
                 break;
             case btnavatar_update:
                 int respon;
@@ -989,7 +986,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case btncancelar_update:
                 update.dispose();
-                new Controller_admin(new List_admin(), 0).iniciar(0);
+                new Controller_client(new List_client(), 0).iniciar(0);
                 break;
         }
     }
