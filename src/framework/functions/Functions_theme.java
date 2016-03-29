@@ -2,10 +2,8 @@ package framework.functions;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
-
 import framework.module.config.model.classes.ClassConfig;
 import framework.module.config.model.classes.language.Language_general;
-import javax.swing.UnsupportedLookAndFeelException;
 
 public class Functions_theme {
     
