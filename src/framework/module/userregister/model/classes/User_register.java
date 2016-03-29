@@ -3,7 +3,6 @@ package framework.module.userregister.model.classes;
 import framework.module.classes.User;
 import java.io.Serializable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import framework.module.config.model.classes.ClassConfig;
 import framework.classes.ClassDate;
 import framework.module.config.model.classes.language2.Language_user;
 
