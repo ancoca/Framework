@@ -9,6 +9,7 @@ import framework.functions.Functions_menu;
 import framework.module.userregister.model.DAO.DAO_userregister;
 import framework.module.userregister.model.classes.User_register;
 import framework.module.config.model.classes.language2.Language_user;
+import framework.module.userregister.controller.Controller_userregister;
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.model.classes.miniSimpleTableModel_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
@@ -167,7 +168,7 @@ public class BLL_userregister {
                     miniSimpleTableModel_userregister.datosaux.remove(pos);
                     json_auto_userregister.savejson_userregister();
                     ((miniSimpleTableModel_userregister) List_userregister.TABLA.getModel()).cargar();
-                    List_userregister.jLabel3.setText(String.valueOf(Singleton_userregister.userregister.size()));
+                    List_userregister.lblsize.setText(String.valueOf(Singleton_userregister.userregister.size()));
                     pagina_userregister.initLinkBox();
                 }
 
@@ -280,7 +281,7 @@ public class BLL_userregister {
             public void actionPerformed(ActionEvent e) {
                 json_auto_userregister.savejson_userregister();
                 jframe.dispose();
-                new List_userregister().setVisible(true);
+                new Controller_userregister(new List_userregister(), 0).iniciar(0);
             }
         });
         timer.setRepeats(false);
