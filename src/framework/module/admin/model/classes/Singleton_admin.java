@@ -1,7 +1,5 @@
 package framework.module.admin.model.classes;
 
-import framework.module.userregister.model.classes.User_register;
-import framework.module.client.model.classes.Client;
 import framework.module.admin.model.classes.Admin;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;

@@ -6,7 +6,6 @@ import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.view.List_admin;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.table.AbstractTableModel;
