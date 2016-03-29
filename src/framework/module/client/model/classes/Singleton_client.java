@@ -1,8 +1,6 @@
 package framework.module.client.model.classes;
 
-import framework.module.userregister.model.classes.User_register;
 import framework.module.client.model.classes.Client;
-import framework.module.admin.model.classes.Admin;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -23,7 +21,7 @@ public class Singleton_client {
     public static ImageIcon ok = new ImageIcon("src/framework/img/ok.png");
     public static ImageIcon cancel = new ImageIcon("src/framework/img/cancel.png");
     public static ImageIcon add = new ImageIcon("src/framework/img/edit_add.png");
-    public static ImageIcon add_bn = new ImageIcon("src/framework/img/edit_add_bn");
+    public static ImageIcon add_bn = new ImageIcon("src/framework/img/edit_add_bn.png");
     public static ImageIcon line = new ImageIcon("src/framework/img/color_line.png");
     public static ImageIcon line_bn = new ImageIcon("src/framework/img/color_line_bn.png");
     public static ImageIcon remove = new ImageIcon("src/framework/img/edit_remove.png");
