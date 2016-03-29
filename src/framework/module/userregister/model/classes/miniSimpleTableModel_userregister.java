@@ -4,14 +4,9 @@ import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.userregister.controller.Controller_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
-import framework.module.userregister.view.List_userregister;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.table.AbstractTableModel;
-//import static pager.modules.actores.interfaz_actor.combo;
-//import static pager.modules.actores.singleton.AL_actores;
-//import pager.modules.pager.pagina;
-//import static pager.resources.fnes.fnes.*;
 
 public class miniSimpleTableModel_userregister extends AbstractTableModel {
     public static ArrayList<User_register> datos = new ArrayList<User_register>();

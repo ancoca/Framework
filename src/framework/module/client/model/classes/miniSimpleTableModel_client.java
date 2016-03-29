@@ -7,10 +7,6 @@ import framework.module.client.model.functions.json_auto_client;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.table.AbstractTableModel;
-//import static pager.modules.actores.interfaz_actor.combo;
-//import static pager.modules.actores.singleton.AL_actores;
-//import pager.modules.pager.pagina;
-//import static pager.resources.fnes.fnes.*;
 
 public class miniSimpleTableModel_client extends AbstractTableModel {
     public static ArrayList<Client> datos = new ArrayList<Client>();

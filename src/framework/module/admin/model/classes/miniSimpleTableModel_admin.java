@@ -9,11 +9,6 @@ import framework.module.admin.view.List_admin;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.table.AbstractTableModel;
-//import static pager.modules.actores.interfaz_actor.combo;
-//import static pager.modules.actores.singleton.AL_actores;
-//import pager.modules.pager.pagina;
-//import static pager.resources.fnes.fnes.*;
-
 public class miniSimpleTableModel_admin extends AbstractTableModel {
     public static ArrayList<Admin> datos = new ArrayList<Admin>();
     public static ArrayList<Admin> datosaux = new ArrayList<Admin>();
