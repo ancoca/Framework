@@ -19,7 +19,6 @@ import framework.module.config.model.classes.language2.Language_user;
 import framework.module.admin.view.Create_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.admin.view.Update_admin;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -271,7 +270,7 @@ public class BLL_admin {
 	}
         
     public static void timer(JFrame jframe) {
-        Timer timer = new Timer (3000, new ActionListener() {
+        Timer timer = new Timer (2000, new ActionListener() {
         
             public void actionPerformed(ActionEvent e) {
                 json_auto_admin.savejson_admin();
