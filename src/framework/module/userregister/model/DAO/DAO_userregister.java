@@ -7,13 +7,9 @@ package framework.module.userregister.model.DAO;
 
 import com.toedter.calendar.JTextFieldDateEditor;
 import framework.classes.ClassDate;
-import framework.functions.Functions;
-import framework.functions.Functions_menu;
 import framework.functions.validate;
-import framework.module.config.model.classes.ClassConfig;
 import framework.module.userregister.model.BLL.BLL_userregister.BLL_userregister;
 import framework.module.userregister.model.classes.User_register;
-import framework.module.config.model.classes.language2.Language_user;
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.view.Create_userregister;
 import framework.module.userregister.view.Read_userregister;
