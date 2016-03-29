@@ -5,23 +5,7 @@
  */
 package framework.module.client.view;
 
-import framework.module.admin.model.functions.json_auto_admin;
-import framework.module.menu.view.*;
-import framework.module.config.view.Config;
-import framework.module.client.model.BLL.BLL_client.BLL_client;
-import framework.module.client.model.DAO.DAO_client;
-import framework.module.admin.view.List_admin;
-import framework.module.client.model.functions.json_auto_client;
-import framework.module.client.view.List_client;
 import framework.module.config.model.classes.ClassConfig;
-import framework.module.userregister.model.functions.json_auto_userregister;
-import framework.module.userregister.view.List_userregister;
-import java.awt.Color;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *

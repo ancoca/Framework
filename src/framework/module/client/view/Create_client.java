@@ -5,23 +5,7 @@
  */
 package framework.module.client.view;
 
-import framework.module.admin.model.functions.json_auto_admin;
-import framework.module.menu.view.*;
-import framework.module.config.view.Config;
-import framework.module.client.model.BLL.BLL_client.BLL_client;
-import framework.module.client.model.DAO.DAO_client;
-import framework.module.admin.view.List_admin;
-import framework.module.client.model.functions.json_auto_client;
-import framework.module.client.view.List_client;
 import framework.module.config.model.classes.ClassConfig;
-import framework.module.userregister.model.functions.json_auto_userregister;
-import framework.module.userregister.view.List_userregister;
-import java.awt.Color;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -930,346 +914,287 @@ public class Create_client extends javax.swing.JFrame {
     }//GEN-LAST:event_lblajustesMouseEntered
 
     private void lblajustesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblajustesMouseExited
-        lblajustes.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lblajustesMouseExited
 
     private void lblusuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblusuarioMouseEntered
-        lblusuario.setForeground(java.awt.Color.blue);
+        
     }//GEN-LAST:event_lblusuarioMouseEntered
 
     private void lblusuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblusuarioMouseExited
-        lblusuario.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lblusuarioMouseExited
 
     private void lblclienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclienteMouseEntered
-        lblcliente.setForeground(java.awt.Color.blue);
+        
     }//GEN-LAST:event_lblclienteMouseEntered
 
     private void lblclienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclienteMouseExited
-        lblcliente.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lblclienteMouseExited
 
     private void lbladministradorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladministradorMouseEntered
-        lbladministrador.setForeground(java.awt.Color.blue);
+        
     }//GEN-LAST:event_lbladministradorMouseEntered
 
     private void lbladministradorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladministradorMouseExited
-        lbladministrador.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lbladministradorMouseExited
 
     private void lbladministradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladministradorMouseClicked
-        new List_admin().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_lbladministradorMouseClicked
 
     private void lblajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblajustesMouseClicked
-        new Config().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_lblajustesMouseClicked
 
     private void lblclienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclienteMouseClicked
-        new List_client().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_lblclienteMouseClicked
 
     private void lblusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblusuarioMouseClicked
-        new List_userregister().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_lblusuarioMouseClicked
 
     private void lblinicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseEntered
-        lblinicio.setForeground(java.awt.Color.blue);
+        
     }//GEN-LAST:event_lblinicioMouseEntered
 
     private void lblinicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseExited
-        lblinicio.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lblinicioMouseExited
 
     private void lblinicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseClicked
-        this.dispose();
-        new Menu().setVisible(true);
+        
     }//GEN-LAST:event_lblinicioMouseClicked
 
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
-        new List_client().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_btncancelarActionPerformed
 
     private void lblvolverMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolverMouseEntered
-        lblvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver.png")));
+        
     }//GEN-LAST:event_lblvolverMouseEntered
 
     private void lblvolverMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolverMouseExited
-        lblvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/volver_bn.png")));
+        
     }//GEN-LAST:event_lblvolverMouseExited
 
     private void lblvolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvolverMouseClicked
-        this.dispose();
-        new List_client().setVisible(true);
+        
     }//GEN-LAST:event_lblvolverMouseClicked
 
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
-        BLL_client.create_client();
-        if (BLL_client.check){
-            jPanel5.setBackground(Color.green);
-            txtconfirm.setForeground(Color.black);
-            txtconfirm.setText("Usuario creado");
-            BLL_client.timer(this);
-            
-        }else{
-            jPanel5.setBackground(Color.red);
-            txtconfirm.setForeground(Color.white);
-            txtconfirm.setText("Usuario no creado");
-            txtconfirm.requestFocus();
-        }
+        
     }//GEN-LAST:event_btnaceptarActionPerformed
 
     private void txtDNIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDNIMouseClicked
-        txtDNI.selectAll();
+        
     }//GEN-LAST:event_txtDNIMouseClicked
 
     private void txtDNIFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDNIFocusGained
-        txtDNI.selectAll();
+        
     }//GEN-LAST:event_txtDNIFocusGained
 
     private void txtDNIKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDNIKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            txtuser.requestFocus();
-        }else{
-            BLL_client.DNI_create();
-        }
+        
     }//GEN-LAST:event_txtDNIKeyPressed
 
     private void txtDNIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDNIKeyReleased
-        BLL_client.DNI_create();
+        
     }//GEN-LAST:event_txtDNIKeyReleased
 
     private void txtDNIFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDNIFocusLost
-        BLL_client.DNI_create();
+        
     }//GEN-LAST:event_txtDNIFocusLost
 
     private void txtuserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtuserMouseClicked
-        txtuser.selectAll();
+        
     }//GEN-LAST:event_txtuserMouseClicked
 
     private void txtuserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtuserFocusGained
-        txtuser.selectAll();
+        
     }//GEN-LAST:event_txtuserFocusGained
 
     private void txtuserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtuserKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-            txtpass.requestFocus();
-        }else{
-            BLL_client.user_create();
-        }
+        
     }//GEN-LAST:event_txtuserKeyPressed
 
     private void txtuserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtuserKeyReleased
-        BLL_client.user_create();
+        
     }//GEN-LAST:event_txtuserKeyReleased
 
     private void txtuserFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtuserFocusLost
-        BLL_client.user_create();
+        
     }//GEN-LAST:event_txtuserFocusLost
 
     private void txtpassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMouseClicked
-        txtpass.selectAll();
+        
     }//GEN-LAST:event_txtpassMouseClicked
 
     private void txtpassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpassFocusGained
-        txtpass.selectAll();
+        
     }//GEN-LAST:event_txtpassFocusGained
 
     private void txtpassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-            txtname.requestFocus();
-        }else{
-            BLL_client.pass_create();
-        }
+        
     }//GEN-LAST:event_txtpassKeyPressed
 
     private void txtpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyReleased
-        BLL_client.pass_create();
+        
     }//GEN-LAST:event_txtpassKeyReleased
 
     private void txtpassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpassFocusLost
-        BLL_client.pass_create();
+        
     }//GEN-LAST:event_txtpassFocusLost
 
     private void txtnameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnameMouseClicked
-        txtname.selectAll();
+        
     }//GEN-LAST:event_txtnameMouseClicked
 
     private void txtnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnameFocusGained
-        txtname.selectAll();
+        
     }//GEN-LAST:event_txtnameFocusGained
 
     private void txtnameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-            txtsurname.requestFocus();
-        }else{
-            BLL_client.name_create();
-        }
+        
     }//GEN-LAST:event_txtnameKeyPressed
 
     private void txtnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameKeyReleased
-        BLL_client.name_create();
+        
     }//GEN-LAST:event_txtnameKeyReleased
 
     private void txtnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnameFocusLost
-        BLL_client.name_create();
+        
     }//GEN-LAST:event_txtnameFocusLost
 
     private void txtsurnameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtsurnameMouseClicked
-        txtsurname.selectAll();
+        
     }//GEN-LAST:event_txtsurnameMouseClicked
 
     private void txtsurnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtsurnameFocusGained
-        txtsurname.selectAll();
+        
     }//GEN-LAST:event_txtsurnameFocusGained
 
     private void txtsurnameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsurnameKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-            txtemail.requestFocus();
-        }else{
-            BLL_client.surname_create();
-        }
+        
     }//GEN-LAST:event_txtsurnameKeyPressed
 
     private void txtsurnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsurnameKeyReleased
-        BLL_client.surname_create();
+        
     }//GEN-LAST:event_txtsurnameKeyReleased
 
     private void txtsurnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtsurnameFocusLost
-        BLL_client.surname_create();
+        
     }//GEN-LAST:event_txtsurnameFocusLost
 
     private void txtemailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtemailMouseClicked
-        txtemail.selectAll();
+        
     }//GEN-LAST:event_txtemailMouseClicked
 
     private void txtemailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtemailFocusGained
-        txtemail.selectAll();
+        
     }//GEN-LAST:event_txtemailFocusGained
 
     private void txtemailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtemailKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-            txtmobilephone.requestFocus();
-        }else{
-            BLL_client.email_create();
-        }
+        
     }//GEN-LAST:event_txtemailKeyPressed
 
     private void txtemailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtemailKeyReleased
-        BLL_client.email_create();
+        
     }//GEN-LAST:event_txtemailKeyReleased
 
     private void txtemailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtemailFocusLost
-        BLL_client.email_create();
+        
     }//GEN-LAST:event_txtemailFocusLost
 
     private void txtmobilephoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtmobilephoneMouseClicked
-        txtmobilephone.selectAll();
+        
     }//GEN-LAST:event_txtmobilephoneMouseClicked
 
     private void txtmobilephoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtmobilephoneFocusGained
-        txtmobilephone.selectAll();
+        
     }//GEN-LAST:event_txtmobilephoneFocusGained
 
     private void txtmobilephoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmobilephoneKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-            txtshopping.requestFocus();
-        }else{
-            BLL_client.mobilephone_create();
-        }
+        
     }//GEN-LAST:event_txtmobilephoneKeyPressed
 
     private void txtmobilephoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmobilephoneKeyReleased
-        BLL_client.mobilephone_create();
+        
     }//GEN-LAST:event_txtmobilephoneKeyReleased
 
     private void txtmobilephoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtmobilephoneFocusLost
-        BLL_client.mobilephone_create();
+        
     }//GEN-LAST:event_txtmobilephoneFocusLost
 
     private void txtshoppingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtshoppingMouseClicked
-        txtshopping.selectAll();
+        
     }//GEN-LAST:event_txtshoppingMouseClicked
 
     private void txtshoppingFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtshoppingFocusGained
-        txtshopping.selectAll();
+        
     }//GEN-LAST:event_txtshoppingFocusGained
 
     private void txtshoppingKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtshoppingKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-            txtdtos.requestFocus();
-        }else{
-            BLL_client.shopping_create();
-        }
+        
     }//GEN-LAST:event_txtshoppingKeyPressed
 
     private void txtshoppingKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtshoppingKeyReleased
-        BLL_client.shopping_create();
+        
     }//GEN-LAST:event_txtshoppingKeyReleased
 
     private void txtshoppingFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtshoppingFocusLost
-        BLL_client.shopping_create();
+        
     }//GEN-LAST:event_txtshoppingFocusLost
 
     private void txtdtosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtdtosMouseClicked
-        txtdtos.selectAll();
+        
     }//GEN-LAST:event_txtdtosMouseClicked
 
     private void txtdtosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtdtosFocusGained
-        txtdtos.selectAll();
+        
     }//GEN-LAST:event_txtdtosFocusGained
 
     private void txtdtosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdtosKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-            txttype_client.requestFocus();
-        }else{
-            BLL_client.dtos_create();
-        }
+        
     }//GEN-LAST:event_txtdtosKeyPressed
 
     private void txtdtosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdtosKeyReleased
-        BLL_client.dtos_create();
+        
     }//GEN-LAST:event_txtdtosKeyReleased
 
     private void txtdtosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtdtosFocusLost
-        BLL_client.dtos_create();
+        
     }//GEN-LAST:event_txtdtosFocusLost
 
     private void txttype_clientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txttype_clientMouseClicked
-        txttype_client.selectAll();
+        
     }//GEN-LAST:event_txttype_clientMouseClicked
 
     private void txttype_clientFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txttype_clientFocusGained
-        txttype_client.selectAll();
+        
     }//GEN-LAST:event_txttype_clientFocusGained
 
     private void txttype_clientKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttype_clientKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-            btnaceptar.requestFocus();
-        }else{
-            BLL_client.typeclient_create();
-        }
+        
     }//GEN-LAST:event_txttype_clientKeyPressed
 
     private void txttype_clientKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttype_clientKeyReleased
-        BLL_client.typeclient_create();
+        
     }//GEN-LAST:event_txttype_clientKeyReleased
 
     private void txttype_clientFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txttype_clientFocusLost
-        BLL_client.typeclient_create();
+        
     }//GEN-LAST:event_txttype_clientFocusLost
 
     private void showpassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showpassMouseExited
-        txtpass.setEchoChar('*');
+        
     }//GEN-LAST:event_showpassMouseExited
 
     private void showpassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showpassMouseEntered
-        txtpass.setEchoChar((char)0);
+        
     }//GEN-LAST:event_showpassMouseEntered
 
 

@@ -5,30 +5,6 @@
  */
 package framework.module.client.view;
 
-import framework.module.admin.model.functions.json_auto_admin;
-import framework.module.menu.view.*;
-import framework.module.config.view.Config;
-import framework.module.client.model.functions.pagina_client;
-import framework.module.client.model.BLL.BLL_client.BLL_client;
-import framework.module.client.model.classes.miniSimpleTableModel_client;
-import framework.module.admin.view.List_admin;
-import framework.module.client.model.classes.Singleton_client;
-import framework.module.client.model.functions.autocomplete.AutocompleteJComboBox_client;
-import framework.module.client.model.functions.autocomplete.StringSearchable_client;
-import framework.module.client.model.functions.json_auto_client;
-import framework.module.client.view.List_client;
-import framework.module.userregister.model.functions.json_auto_userregister;
-import framework.module.userregister.view.List_userregister;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
-
 /**
  *
  * @author angel
@@ -585,145 +561,123 @@ public class List_client extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbladministradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladministradorMouseClicked
-        new List_admin().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_lbladministradorMouseClicked
 
     private void lbladministradorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladministradorMouseExited
-        lbladministrador.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lbladministradorMouseExited
 
     private void lbladministradorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladministradorMouseEntered
-        lbladministrador.setForeground(java.awt.Color.blue);
+        
     }//GEN-LAST:event_lbladministradorMouseEntered
 
     private void lblclienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclienteMouseClicked
-        new List_client().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_lblclienteMouseClicked
 
     private void lblclienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclienteMouseExited
-        lblcliente.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lblclienteMouseExited
 
     private void lblclienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblclienteMouseEntered
-        lblcliente.setForeground(java.awt.Color.blue);
+        
     }//GEN-LAST:event_lblclienteMouseEntered
 
     private void lblusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblusuarioMouseClicked
-        new List_userregister().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_lblusuarioMouseClicked
 
     private void lblusuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblusuarioMouseExited
-        lblusuario.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lblusuarioMouseExited
 
     private void lblusuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblusuarioMouseEntered
-        lblusuario.setForeground(java.awt.Color.blue);
+        
     }//GEN-LAST:event_lblusuarioMouseEntered
 
     private void lblajustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblajustesMouseClicked
-        new Config().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_lblajustesMouseClicked
 
     private void lblajustesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblajustesMouseExited
-        lblajustes.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lblajustesMouseExited
 
     private void lblajustesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblajustesMouseEntered
-        lblajustes.setForeground(java.awt.Color.blue);
+        
     }//GEN-LAST:event_lblajustesMouseEntered
 
     private void lblinicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseClicked
-        this.dispose();
-        new Menu().setVisible(true);
+        
     }//GEN-LAST:event_lblinicioMouseClicked
 
     private void lblinicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseExited
-        lblinicio.setForeground(java.awt.Color.cyan);
+        
     }//GEN-LAST:event_lblinicioMouseExited
 
     private void lblinicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseEntered
-        lblinicio.setForeground(java.awt.Color.blue);
+        
     }//GEN-LAST:event_lblinicioMouseEntered
 
     private void lblcreateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblcreateMouseEntered
-        lblcreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/edit_add_bn.png")));
+        
     }//GEN-LAST:event_lblcreateMouseEntered
 
     private void lblcreateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblcreateMouseExited
-        lblcreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/edit_add.png")));
+        
     }//GEN-LAST:event_lblcreateMouseExited
 
     private void lbldeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbldeleteMouseEntered
-        lbldelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/edit_remove_bn.png")));
+        
     }//GEN-LAST:event_lbldeleteMouseEntered
 
     private void lbldeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbldeleteMouseExited
-        lbldelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/edit_remove.png")));
+        
     }//GEN-LAST:event_lbldeleteMouseExited
 
     private void lblupdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblupdateMouseEntered
-        lblupdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/color_line_bn.png")));
+        
     }//GEN-LAST:event_lblupdateMouseEntered
 
     private void lblupdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblupdateMouseExited
-        lblupdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/color_line.png")));
+        
     }//GEN-LAST:event_lblupdateMouseExited
 
     private void lblcreateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblcreateMouseClicked
-        this.dispose();
-        new Create_client().setVisible(true);
+        
     }//GEN-LAST:event_lblcreateMouseClicked
 
     private void lblupdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblupdateMouseClicked
-        int select = -1;
-        select = TABLA.getSelectedRow();
-        if (select == -1){
-            JOptionPane.showMessageDialog(null, "Cliente no seleccionado");
-        }else{
-            new Update_client().setVisible(true);
-            this.dispose();
-        }
+        
     }//GEN-LAST:event_lblupdateMouseClicked
 
     private void ANTERIORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ANTERIORActionPerformed
-        pagina_client.currentPageIndex -= 1;
-        pagina_client.initLinkBox();
+        
     }//GEN-LAST:event_ANTERIORActionPerformed
 
     private void SIGUIENTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIGUIENTEActionPerformed
-        pagina_client.currentPageIndex += 1;
-        pagina_client.initLinkBox();
+        
     }//GEN-LAST:event_SIGUIENTEActionPerformed
 
     private void primeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_primeroActionPerformed
-        pagina_client.currentPageIndex = 1;
-        pagina_client.initLinkBox();
+        
     }//GEN-LAST:event_primeroActionPerformed
 
     private void ultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultimoActionPerformed
-        pagina_client.currentPageIndex = pagina_client.maxPageIndex;
-        pagina_client.initLinkBox();
+        
     }//GEN-LAST:event_ultimoActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        pagina_client.itemsPerPage=Integer.parseInt(jComboBox2.getSelectedItem().toString());
-        pagina_client.currentPageIndex = 1;
-        pagina_client.initLinkBox();
+        
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void TABLAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TABLAMouseClicked
-        if (evt.getClickCount() == 2) {
-            new Read_client().setVisible(true);
-            this.dispose();
-        }
+        
     }//GEN-LAST:event_TABLAMouseClicked
 
     private void lbldeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbldeleteMouseClicked
-        BLL_client.delete_client();
+        
     }//GEN-LAST:event_lbldeleteMouseClicked
 
 
