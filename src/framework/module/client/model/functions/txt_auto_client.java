@@ -7,17 +7,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
-import framework.module.admin.model.classes.Admin;
-import framework.module.admin.model.classes.Singleton_admin;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
-import framework.module.userregister.model.classes.User_register;
 import framework.module.config.model.classes.language2.Language_user;
-import framework.module.userregister.model.classes.Singleton_userregister;
 
 public class txt_auto_client {
 
