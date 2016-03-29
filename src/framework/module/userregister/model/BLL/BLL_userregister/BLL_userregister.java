@@ -5,7 +5,6 @@
  */
 package framework.module.userregister.model.BLL.BLL_userregister;
 
-import framework.functions.Functions_menu;
 import framework.module.userregister.model.DAO.DAO_userregister;
 import framework.module.userregister.model.classes.User_register;
 import framework.module.config.model.classes.language2.Language_user;
