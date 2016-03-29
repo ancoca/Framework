@@ -113,7 +113,6 @@ public class DAO_admin {
 		confirm=validate.DNI(DNI);
 		if (confirm==false) {
                     check = false;
-                    Create_admin.checkDNI.setIcon(Singleton_admin.cancel);
                 }else{
                     aux = "";
                     for(int i=0; i<8; i++){
@@ -125,10 +124,8 @@ public class DAO_admin {
                     control = caracteres.charAt(module);
                     if(control == character){
                         check = true;
-                        Create_admin.checkDNI.setIcon(Singleton_admin.ok);
                     }else{
                         check = false;
-                        Create_admin.checkDNI.setIcon(Singleton_admin.cancel);
                     }
                 }
         
@@ -141,10 +138,8 @@ public class DAO_admin {
 	confirm=validate.user(Create_admin.txtuser.getText());
 	if (confirm==false) {
             check = false;
-            Create_admin.checkuser.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Create_admin.checkuser.setIcon(Singleton_admin.ok);
         }
         
         return check;
@@ -156,10 +151,8 @@ public class DAO_admin {
 	confirm=validate.pass(Create_admin.txtpass.getText());
 	if (confirm==false) {
             check = false;
-            Create_admin.checkpass.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Create_admin.checkpass.setIcon(Singleton_admin.ok);
         }
                         
         return check;
@@ -171,10 +164,8 @@ public class DAO_admin {
         confirm=validate.name(Create_admin.txtname.getText());
 	if (confirm==false) {
             check = false;
-            Create_admin.checkname.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Create_admin.checkname.setIcon(Singleton_admin.ok);
         }
         
         return check;
@@ -186,10 +177,8 @@ public class DAO_admin {
         confirm=validate.surname(Create_admin.txtsurname.getText());
 	if (confirm==false) {
             check = false;
-            Create_admin.checksurname.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Create_admin.checksurname.setIcon(Singleton_admin.ok);
         }
         
         return check;
@@ -201,10 +190,8 @@ public class DAO_admin {
         confirm=validate.email(Create_admin.txtemail.getText());
 	if (confirm==false) {
             check = false;
-            Create_admin.checkemail.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Create_admin.checkemail.setIcon(Singleton_admin.ok);
         }
         
         return check;
@@ -216,10 +203,8 @@ public class DAO_admin {
         confirm=validate.mobilephone(Create_admin.txtmobilephone.getText());
 	if (confirm==false) {
             check = false;
-            Create_admin.checkmobilephone.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Create_admin.checkmobilephone.setIcon(Singleton_admin.ok);
         }
         return check;
     }
@@ -246,21 +231,17 @@ public class DAO_admin {
         confirm = validate.date(((JTextFieldDateEditor) Create_admin.txtdatebirthday.getDateEditor()).getText());
 	if (confirm==false) {
             check = false;
-            Create_admin.checkdatebirthday.setIcon(Singleton_admin.cancel);
 	}else{
             Cdate = new ClassDate (((JTextFieldDateEditor) Create_admin.txtdatebirthday.getDateEditor()).getText());
             confirm=Cdate.checkdate();
             if (confirm==false) {
                 check = false;
-                Create_admin.checkdatebirthday.setIcon(Singleton_admin.cancel);
             }else{
                 age = Cdate.subtractsystemdateyear();
 		if (age < year) {
                     check = false;
-                    Create_admin.checkdatebirthday.setIcon(Singleton_admin.cancel);
 		}else{
                     check = true;
-                    Create_admin.checkdatebirthday.setIcon(Singleton_admin.ok);
                 }
             }
 	}
@@ -279,13 +260,11 @@ public class DAO_admin {
         confirm = validate.date(((JTextFieldDateEditor) Create_admin.txtdatecontract.getDateEditor()).getText());
 	if (confirm==false) {
             check = false;
-            Create_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
 	}else{
             Cdate = new ClassDate (((JTextFieldDateEditor) Create_admin.txtdatecontract.getDateEditor()).getText());
             confirm=Cdate.checkdate();
             if (confirm==false) {
                 check = false;
-                Create_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
             }else{
                 datebirthday = new ClassDate (((JTextFieldDateEditor) Create_admin.txtdatebirthday.getDateEditor()).getText());
                 years1 = plusage (datebirthday, age1);
@@ -295,18 +274,14 @@ public class DAO_admin {
                 i3 = years2.comparedate(Cdate);
                 if (i1 == 1) {
                     check = false;
-                    Create_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
                 }else{
                     if (i2 == 1) {
                         check = false;
-                        Create_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
                     }else{
                         if (i3 == -1) {
                             check = false;
-                            Create_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
                         }else{
                             check = true;
-                            Create_admin.checkdatecontract.setIcon(Singleton_admin.ok);
                         }
                     }
                 }
@@ -323,15 +298,12 @@ public class DAO_admin {
         try{
             if(Create_admin.txtsalary.getText()==null){
                 check = false;
-                Create_admin.checksalary.setIcon(Singleton_admin.cancel);
             }else {
                 i=Float.parseFloat(Create_admin.txtsalary.getText());
                 check = true;
-                Create_admin.checksalary.setIcon(Singleton_admin.ok);
             }
         }catch(Exception e){
             check = false;
-            Create_admin.checksalary.setIcon(Singleton_admin.cancel);
         }
         
         return check;
@@ -344,15 +316,12 @@ public class DAO_admin {
         try{
             if(Create_admin.txtincentive.getText()==null){
                 check = false;
-                Create_admin.checkincentive.setIcon(Singleton_admin.cancel);
             }else {
                 i=Float.parseFloat(Create_admin.txtincentive.getText());
                 check = true;
-                Create_admin.checkincentive.setIcon(Singleton_admin.ok);
             }
         }catch(Exception e){
             check = false;
-            Create_admin.checkincentive.setIcon(Singleton_admin.cancel);
         }
         
         return check;
@@ -365,15 +334,12 @@ public class DAO_admin {
         try{
             if(Create_admin.txtactivity.getText()==null){
                 check = false;
-                Create_admin.checkactivity.setIcon(Singleton_admin.cancel);
             }else {
                 i=Integer.parseInt(Create_admin.txtactivity.getText());
                 check = true;
-                Create_admin.checkactivity.setIcon(Singleton_admin.ok);
             }
         }catch(Exception e){
             check = false;
-            Create_admin.checkactivity.setIcon(Singleton_admin.cancel);
         }
         
         return check;
@@ -494,7 +460,6 @@ public class DAO_admin {
 		confirm=validate.DNI(DNI);
 		if (confirm==false) {
                     check = false;
-                    Update_admin.checkDNI.setIcon(Singleton_admin.cancel);
                 }else{
                     aux = "";
                     for(int i=0; i<8; i++){
@@ -506,10 +471,8 @@ public class DAO_admin {
                     control = caracteres.charAt(module);
                     if(control == character){
                         check = true;
-                        Update_admin.checkDNI.setIcon(Singleton_admin.ok);
                     }else{
                         check = false;
-                        Update_admin.checkDNI.setIcon(Singleton_admin.cancel);
                     }
                 }
         
@@ -522,10 +485,8 @@ public class DAO_admin {
 	confirm=validate.user(Update_admin.txtuser.getText());
 	if (confirm==false) {
             check = false;
-            Update_admin.checkuser.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Update_admin.checkuser.setIcon(Singleton_admin.ok);
         }
         
         return check;
@@ -537,10 +498,8 @@ public class DAO_admin {
 	confirm=validate.pass(Update_admin.txtpass.getText());
 	if (confirm==false) {
             check = false;
-            Update_admin.checkpass.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Update_admin.checkpass.setIcon(Singleton_admin.ok);
         }
                         
         return check;
@@ -552,10 +511,8 @@ public class DAO_admin {
         confirm=validate.name(Update_admin.txtname.getText());
 	if (confirm==false) {
             check = false;
-            Update_admin.checkname.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Update_admin.checkname.setIcon(Singleton_admin.ok);
         }
         
         return check;
@@ -567,10 +524,8 @@ public class DAO_admin {
         confirm=validate.surname(Update_admin.txtsurname.getText());
 	if (confirm==false) {
             check = false;
-            Update_admin.checksurname.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Update_admin.checksurname.setIcon(Singleton_admin.ok);
         }
         
         return check;
@@ -582,10 +537,8 @@ public class DAO_admin {
         confirm=validate.email(Update_admin.txtemail.getText());
 	if (confirm==false) {
             check = false;
-            Update_admin.checkemail.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Update_admin.checkemail.setIcon(Singleton_admin.ok);
         }
         
         return check;
@@ -597,10 +550,8 @@ public class DAO_admin {
         confirm=validate.mobilephone(Update_admin.txtmobilephone.getText());
 	if (confirm==false) {
             check = false;
-            Update_admin.checkmobilephone.setIcon(Singleton_admin.cancel);
 	}else{
             check = true;
-            Update_admin.checkmobilephone.setIcon(Singleton_admin.ok);
         }
         return check;
     }
@@ -627,21 +578,17 @@ public class DAO_admin {
         confirm = validate.date(((JTextFieldDateEditor) Update_admin.txtdatebirthday.getDateEditor()).getText());
 	if (confirm==false) {
             check = false;
-            Update_admin.checkdatebirthday.setIcon(Singleton_admin.cancel);
 	}else{
             Cdate = new ClassDate (((JTextFieldDateEditor) Update_admin.txtdatebirthday.getDateEditor()).getText());
             confirm=Cdate.checkdate();
             if (confirm==false) {
                 check = false;
-                Update_admin.checkdatebirthday.setIcon(Singleton_admin.cancel);
             }else{
                 age = Cdate.subtractsystemdateyear();
 		if (age < year) {
                     check = false;
-                    Update_admin.checkdatebirthday.setIcon(Singleton_admin.cancel);
 		}else{
                     check = true;
-                    Update_admin.checkdatebirthday.setIcon(Singleton_admin.ok);
                 }
             }
 	}
@@ -660,13 +607,11 @@ public class DAO_admin {
         confirm = validate.date(((JTextFieldDateEditor) Update_admin.txtdatecontract.getDateEditor()).getText());
 	if (confirm==false) {
             check = false;
-            Update_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
 	}else{
             Cdate = new ClassDate (((JTextFieldDateEditor) Update_admin.txtdatecontract.getDateEditor()).getText());
             confirm=Cdate.checkdate();
             if (confirm==false) {
                 check = false;
-                Update_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
             }else{
                 datebirthday = new ClassDate (((JTextFieldDateEditor) Update_admin.txtdatebirthday.getDateEditor()).getText());
                 years1 = plusage_update (datebirthday, age1);
@@ -676,18 +621,14 @@ public class DAO_admin {
                 i3 = years2.comparedate(Cdate);
                 if (i1 == 1) {
                     check = false;
-                    Update_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
                 }else{
                     if (i2 == 1) {
                         check = false;
-                        Update_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
                     }else{
                         if (i3 == -1) {
                             check = false;
-                            Update_admin.checkdatecontract.setIcon(Singleton_admin.cancel);
                         }else{
                             check = true;
-                            Update_admin.checkdatecontract.setIcon(Singleton_admin.ok);
                         }
                     }
                 }
@@ -704,15 +645,12 @@ public class DAO_admin {
         try{
             if(Update_admin.txtsalary.getText()==null){
                 check = false;
-                Update_admin.checksalary.setIcon(Singleton_admin.cancel);
             }else {
                 i=Float.parseFloat(Update_admin.txtsalary.getText());
                 check = true;
-                Update_admin.checksalary.setIcon(Singleton_admin.ok);
             }
         }catch(Exception e){
             check = false;
-            Update_admin.checksalary.setIcon(Singleton_admin.cancel);
         }
         
         return check;
@@ -725,15 +663,12 @@ public class DAO_admin {
         try{
             if(Update_admin.txtincentive.getText()==null){
                 check = false;
-                Update_admin.checkincentive.setIcon(Singleton_admin.cancel);
             }else {
                 i=Float.parseFloat(Update_admin.txtincentive.getText());
                 check = true;
-                Update_admin.checkincentive.setIcon(Singleton_admin.ok);
             }
         }catch(Exception e){
             check = false;
-            Update_admin.checkincentive.setIcon(Singleton_admin.cancel);
         }
         
         return check;
@@ -746,15 +681,12 @@ public class DAO_admin {
         try{
             if(Update_admin.txtactivity.getText()==null){
                 check = false;
-                Update_admin.checkactivity.setIcon(Singleton_admin.cancel);
             }else {
                 i=Integer.parseInt(Update_admin.txtactivity.getText());
                 check = true;
-                Update_admin.checkactivity.setIcon(Singleton_admin.ok);
             }
         }catch(Exception e){
             check = false;
-            Update_admin.checkactivity.setIcon(Singleton_admin.cancel);
         }
         
         return check;
