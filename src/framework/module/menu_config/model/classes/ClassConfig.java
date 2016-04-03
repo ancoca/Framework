@@ -89,7 +89,7 @@ public class ClassConfig implements Serializable {
 			json_auto_admin.openjson_admin();
                         json_auto_client.openjson_client();
                         json_auto_userregister.openjson_userregister();
-			boolean dummies = Functions_menu.YES_NO(Language_general.getInstance().getProperty("dummies"));
+			boolean dummies = Functions_menu.YES_NO(Language_menu_config.getInstance().getProperty("dummies"));
 			if (dummies == true) {
 				Make_dummies_admin.makedummies_admin();
                                 json_auto_admin.savejson_admin();
@@ -159,12 +159,12 @@ public class ClassConfig implements Serializable {
 	
 	public String toString (ClassConfig config) {
 		StringBuffer string = new StringBuffer();
-		string.append(Language_general.getInstance().getProperty("toStringlanguage")+this.getLanguage()+"\n");
-		string.append(Language_general.getInstance().getProperty("toStringformatdate")+this.getDate()+"\n");
-		string.append(Language_general.getInstance().getProperty("toStringcurrency")+this.getCurrency()+"\n");
-		string.append(Language_general.getInstance().getProperty("toStringdecimal")+this.getDecimal()+"\n");
-		string.append(Language_general.getInstance().getProperty("toStringfile")+this.getFile()+"\n");
-		string.append(Language_general.getInstance().getProperty("toStringtheme")+this.getTheme()+"\n");
+		string.append(Language_menu_config.getInstance().getProperty("language")+": "+this.getLanguage()+"\n");
+		string.append(Language_menu_config.getInstance().getProperty("date")+": "+this.getDate()+"\n");
+		string.append(Language_menu_config.getInstance().getProperty("currency")+": "+this.getCurrency()+"\n");
+		string.append(Language_menu_config.getInstance().getProperty("decimal")+": "+this.getDecimal()+"\n");
+		string.append(Language_menu_config.getInstance().getProperty("file")+": "+this.getFile()+"\n");
+		string.append(Language_menu_config.getInstance().getProperty("theme")+": "+this.getTheme()+"\n");
 		return string.toString();
 	}
 }
