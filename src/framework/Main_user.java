@@ -1,7 +1,7 @@
 package framework;
 
-import framework.module.config.model.classes.ClassConfig;
-import framework.module.menu.view.Start;
+import framework.module.menu_config.model.classes.ClassConfig;
+import framework.module.menu_config.view.Start;
 
 public class Main_user {
 	

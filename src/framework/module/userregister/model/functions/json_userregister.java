@@ -14,8 +14,8 @@ import com.google.gson.stream.JsonReader;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 import framework.module.userregister.model.classes.User_register;
-import framework.module.config.model.classes.language2.Language_user;
 import framework.module.userregister.model.classes.Singleton_userregister;
+import framework.module.userregister.model.classes.language.Language_userregister;
 
 public class json_userregister {
 
@@ -43,10 +43,10 @@ public class json_userregister {
 	                fileXml.write(json.toString());
 	                fileXml.close(); 
 	                
-	                JOptionPane.showMessageDialog(null, "Archivo JSON guardado con exito", "Archivo JSON", JOptionPane.INFORMATION_MESSAGE);
+	                JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("savejson"), "JSON", JOptionPane.INFORMATION_MESSAGE);
 	          }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("errorsave_json"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_json"), Language_userregister.getInstance().getProperty("error "), JOptionPane.ERROR_MESSAGE);
         }
     }
 	
@@ -83,7 +83,7 @@ public class json_userregister {
 	            	}
 	          } 
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("erroropen_json"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("erroropen_json"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

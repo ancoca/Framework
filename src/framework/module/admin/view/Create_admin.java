@@ -5,7 +5,8 @@
  */
 package framework.module.admin.view;
 
-import framework.module.config.model.classes.ClassConfig;
+import framework.module.admin.model.classes.language.Language_admin;
+import framework.module.menu_config.model.classes.ClassConfig;
 
 /**
  *
@@ -125,11 +126,11 @@ public class Create_admin extends javax.swing.JFrame {
 
         lblusuarios.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
         lblusuarios.setForeground(java.awt.Color.blue);
-        lblusuarios.setText("Usuarios");
+        lblusuarios.setText(Language_admin.getInstance().getProperty("users"));
 
         lbladministrador.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lbladministrador.setForeground(java.awt.Color.cyan);
-        lbladministrador.setText("Administrador");
+        lbladministrador.setText(Language_admin.getInstance().getProperty("administrator"));
         lbladministrador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbladministradorMouseClicked(evt);
@@ -144,7 +145,7 @@ public class Create_admin extends javax.swing.JFrame {
 
         lblcliente.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblcliente.setForeground(java.awt.Color.cyan);
-        lblcliente.setText("Cliente");
+        lblcliente.setText(Language_admin.getInstance().getProperty("client"));
         lblcliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblclienteMouseClicked(evt);
@@ -159,7 +160,7 @@ public class Create_admin extends javax.swing.JFrame {
 
         lblusuario.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblusuario.setForeground(java.awt.Color.cyan);
-        lblusuario.setText("Usuario");
+        lblusuario.setText(Language_admin.getInstance().getProperty("user"));
         lblusuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblusuarioMouseClicked(evt);
@@ -174,11 +175,11 @@ public class Create_admin extends javax.swing.JFrame {
 
         lblconfiguracion.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
         lblconfiguracion.setForeground(java.awt.Color.blue);
-        lblconfiguracion.setText("Configuración");
+        lblconfiguracion.setText(Language_admin.getInstance().getProperty("configuration"));
 
         lblajustes.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblajustes.setForeground(java.awt.Color.cyan);
-        lblajustes.setText("Ajustes");
+        lblajustes.setText(Language_admin.getInstance().getProperty("setting"));
         lblajustes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblajustesMouseClicked(evt);
@@ -195,11 +196,11 @@ public class Create_admin extends javax.swing.JFrame {
 
         lblinicios.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblinicios.setForeground(java.awt.Color.blue);
-        lblinicios.setText("Inicio");
+        lblinicios.setText(Language_admin.getInstance().getProperty("start"));
 
         lblinicio.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblinicio.setForeground(java.awt.Color.cyan);
-        lblinicio.setText("Inicio");
+        lblinicio.setText(Language_admin.getInstance().getProperty("start"));
         lblinicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblinicioMouseClicked(evt);
@@ -270,7 +271,7 @@ public class Create_admin extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtconfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 1023, Short.MAX_VALUE)
+                .addComponent(txtconfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 1037, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -293,7 +294,7 @@ public class Create_admin extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Liberation Sans", 3, 48)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Nuevo Administrador");
+        jLabel11.setText(Language_admin.getInstance().getProperty("createadministrator"));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -301,7 +302,7 @@ public class Create_admin extends javax.swing.JFrame {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -353,19 +354,19 @@ public class Create_admin extends javax.swing.JFrame {
 
         jPanel7.setBackground(java.awt.Color.white);
 
-        jLabel12.setText("DNI:");
+        jLabel12.setText(Language_admin.getInstance().getProperty("DNI")+": ");
 
-        jLabel13.setText("Usuario:");
+        jLabel13.setText(Language_admin.getInstance().getProperty("user")+": ");
 
-        jLabel14.setText("Contraseña:");
+        jLabel14.setText(Language_admin.getInstance().getProperty("password")+": ");
 
-        jLabel15.setText("Avatar:");
+        jLabel15.setText(Language_admin.getInstance().getProperty("avatar")+": ");
 
-        jLabel16.setText("Estado:");
+        jLabel16.setText(Language_admin.getInstance().getProperty("state")+": ");
 
-        jLabel17.setText("Nombre:");
+        jLabel17.setText(Language_admin.getInstance().getProperty("name")+": ");
 
-        jLabel18.setText("Apellidos:");
+        jLabel18.setText(Language_admin.getInstance().getProperty("surname")+": ");
 
         txtpass.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -437,7 +438,7 @@ public class Create_admin extends javax.swing.JFrame {
 
         txtavatar.setText("/root");
 
-        btnavatar.setText("Archivo");
+        btnavatar.setText(Language_admin.getInstance().getProperty("file"));
         btnavatar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnavatarActionPerformed(evt);
@@ -446,10 +447,10 @@ public class Create_admin extends javax.swing.JFrame {
 
         groupstate.add(statetrue);
         statetrue.setSelected(true);
-        statetrue.setText("Conectado");
+        statetrue.setText(Language_admin.getInstance().getProperty("connect"));
 
         groupstate.add(statefalse);
-        statefalse.setText("No conectado");
+        statefalse.setText(Language_admin.getInstance().getProperty("notconnect"));
 
         txtname.setText("example: name");
         txtname.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -511,19 +512,19 @@ public class Create_admin extends javax.swing.JFrame {
 
         checksurname.setPreferredSize(new java.awt.Dimension(30, 30));
 
-        jLabel26.setText("Correo electronico:");
+        jLabel26.setText(Language_admin.getInstance().getProperty("email")+": ");
 
-        jLabel27.setText("Telefono movil:");
+        jLabel27.setText(Language_admin.getInstance().getProperty("mobilephone")+": ");
 
-        jLabel28.setText("Fecha de nacimiento:");
+        jLabel28.setText(Language_admin.getInstance().getProperty("datebirthday")+": ");
 
-        jLabel29.setText("Fecha de contratacion:");
+        jLabel29.setText(Language_admin.getInstance().getProperty("datecontract")+": ");
 
-        jLabel30.setText("Salario:");
+        jLabel30.setText(Language_admin.getInstance().getProperty("salary")+": ");
 
-        jLabel31.setText("Incentivo:");
+        jLabel31.setText(Language_admin.getInstance().getProperty("incentive")+": ");
 
-        jLabel32.setText("Actividad:");
+        jLabel32.setText(Language_admin.getInstance().getProperty("activity")+": ");
 
         txtdatecontract.setDateFormatString(ClassConfig.getInstance().getDate());
 
@@ -749,7 +750,7 @@ public class Create_admin extends javax.swing.JFrame {
                     .addComponent(checkincentive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(checksalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(checkactivity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -830,7 +831,7 @@ public class Create_admin extends javax.swing.JFrame {
         jPanel11.setBackground(java.awt.Color.white);
         jPanel11.setPreferredSize(new java.awt.Dimension(442, 116));
 
-        btnaceptar.setText("Aceptar");
+        btnaceptar.setText(Language_admin.getInstance().getProperty("acept"));
         btnaceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnaceptarActionPerformed(evt);
@@ -844,7 +845,7 @@ public class Create_admin extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(189, 189, 189)
                 .addComponent(btnaceptar)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -859,7 +860,7 @@ public class Create_admin extends javax.swing.JFrame {
         jPanel12.setBackground(java.awt.Color.white);
         jPanel12.setPreferredSize(new java.awt.Dimension(443, 116));
 
-        btncancelar.setText("Cancelar");
+        btncancelar.setText(Language_admin.getInstance().getProperty("cancel"));
         btncancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncancelarActionPerformed(evt);
@@ -873,7 +874,7 @@ public class Create_admin extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addGap(185, 185, 185)
                 .addComponent(btncancelar)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

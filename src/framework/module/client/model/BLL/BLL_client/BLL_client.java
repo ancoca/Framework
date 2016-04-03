@@ -9,6 +9,7 @@ import framework.module.client.controller.Controller_client;
 import framework.module.client.model.DAO.DAO_client;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
+import framework.module.client.model.classes.language.Language_client;
 import framework.module.client.model.classes.miniSimpleTableModel_client;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.model.functions.json_client;
@@ -18,7 +19,6 @@ import framework.module.client.model.functions.xml_client;
 import framework.module.client.view.Create_client;
 import framework.module.client.view.List_client;
 import framework.module.client.view.Update_client;
-import framework.module.config.model.classes.language2.Language_user;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -63,7 +63,7 @@ public class BLL_client {
     public static void read_client_all (){
 		
 		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			for (int i = 0; i <Singleton_client.userclient.size();i++){
 				String cad = "";
@@ -78,19 +78,19 @@ public class BLL_client {
 		Client c1 = null;
 		
 		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			location = -1;
 			c1 = BLL_client.IDclient();
 			if (c1 == null) {
-				JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("usererror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 			}else{
 				location = BLL_client.find_client(c1);
 				if (location != -1) {
 					c1 = Singleton_client.userclient.get(location);
 					JOptionPane.showMessageDialog(null, c1.toString());
 				}else {
-					JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("usererror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		}
@@ -151,12 +151,12 @@ public class BLL_client {
             selection1 = inicio + selec;
 
             if (selec == -1) {
-                JOptionPane.showMessageDialog(null, "No hay una persona seleccionada", "Error!", 2);
+                JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("usernotselect"), Language_client.getInstance().getProperty("error"), 2);
             } else {
                 dni = (String) List_client.TABLA.getModel().getValueAt(selection1, 0);
                 client = new Client(dni);
                 pos = find_client(client);
-                int opc = JOptionPane.showConfirmDialog(null, "Deseas borrar a la persona con DNI: " + dni,
+                int opc = JOptionPane.showConfirmDialog(null, Language_client.getInstance().getProperty("userdelete?") + dni,
                         "Info", JOptionPane.WARNING_MESSAGE);
 
                 if (opc == 0) {
@@ -179,7 +179,7 @@ public class BLL_client {
             }
 
         } else {
-            JOptionPane.showMessageDialog(null, "lista vacía", "Error!", 2);
+            JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("size0"), Language_client.getInstance().getProperty("error"), 2);
         }
     }
     
@@ -202,7 +202,7 @@ public class BLL_client {
     
     public static void save_client_json () {
 		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			json_client.savejson_client();
 		}
@@ -219,7 +219,7 @@ public class BLL_client {
     
     public static void save_client_xml () {
 		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			xml_client.savexml_client();
 		}
@@ -236,7 +236,7 @@ public class BLL_client {
     
     public static void save_client_txt () {
 		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			txt_client.savetxt_client();
 		}

@@ -3,6 +3,7 @@ import framework.classes.ClassDate;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.userregister.controller.Controller_userregister;
+import framework.module.userregister.model.classes.language.Language_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
@@ -11,7 +12,9 @@ import javax.swing.table.AbstractTableModel;
 public class miniSimpleTableModel_userregister extends AbstractTableModel {
     public static ArrayList<User_register> datos = new ArrayList<User_register>();
     public static ArrayList<User_register> datosaux = new ArrayList<User_register>();
-    String[] columnas = {"DNI", "Nombre", "Apellidos", "Fecha de nacimiento", "Puntos"};
+    String[] columnas = {Language_userregister.getInstance().getProperty("DNI"), Language_userregister.getInstance().getProperty("name"), 
+        Language_userregister.getInstance().getProperty("surname"), Language_userregister.getInstance().getProperty("datebirthday"), 
+        Language_userregister.getInstance().getProperty("point")};
 
     ////////////////////estos métodos son necesarios para que jtable funcione/////////////////////
     @Override

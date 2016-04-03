@@ -11,6 +11,7 @@ import framework.functions.validate;
 import framework.module.userregister.model.BLL.BLL_userregister.BLL_userregister;
 import framework.module.userregister.model.classes.User_register;
 import framework.module.userregister.model.classes.Singleton_userregister;
+import framework.module.userregister.model.classes.language.Language_userregister;
 import framework.module.userregister.view.Create_userregister;
 import framework.module.userregister.view.Read_userregister;
 import framework.module.userregister.view.Update_userregister;
@@ -610,21 +611,21 @@ public class DAO_userregister {
     public static void generate_read_client () {
         User_register userregister = BLL_userregister.IDuserregister();
         
-        Read_userregister.txtDNI.setText("DNI: "+userregister.getDNI());
-        Read_userregister.txtuser.setText("Usuario: "+userregister.getUser());
-        Read_userregister.txtpass.setText("Contraseña: "+userregister.getPass());
-        Read_userregister.txtavatar.setText("Avatar: "+userregister.getAvatar());
-        Read_userregister.txtstate.setText("Estado: "+userregister.toStringstate());
-        Read_userregister.txtname.setText("Nombre: "+userregister.getName());
-        Read_userregister.txtsurname.setText("Apellidos: "+userregister.getSurname());
-        Read_userregister.txtemail.setText("Correo electronico: "+userregister.getEmail());
-        Read_userregister.txtmobilephone.setText("Telefono movil: "+userregister.getMobilephone());
-        Read_userregister.txtdatebirthday.setText("Fecha de nacimiento: "+userregister.getDatebirthday().toString());
-        Read_userregister.txtage.setText("Edad: "+userregister.getAge());
-        Read_userregister.txtbenefits.setText("Beneficios: "+userregister.getBenefits());
-        Read_userregister.txtmovement.setText("Actividad: "+userregister.getMovement());
-        Read_userregister.txtreputation.setText("Reputacion: "+userregister.getReputation());
-        Read_userregister.txtpoint.setText("Puntos: "+userregister.getPoint());
+        Read_userregister.txtDNI.setText(Language_userregister.getInstance().getProperty("DNI")+": "+userregister.getDNI());
+        Read_userregister.txtuser.setText(Language_userregister.getInstance().getProperty("user")+": "+userregister.getUser());
+        Read_userregister.txtpass.setText(Language_userregister.getInstance().getProperty("password")+": "+userregister.getPass());
+        Read_userregister.txtavatar.setText(Language_userregister.getInstance().getProperty("avatar")+": "+userregister.getAvatar());
+        Read_userregister.txtstate.setText(Language_userregister.getInstance().getProperty("state")+": "+userregister.toStringstate());
+        Read_userregister.txtname.setText(Language_userregister.getInstance().getProperty("name")+": "+userregister.getName());
+        Read_userregister.txtsurname.setText(Language_userregister.getInstance().getProperty("surname")+": "+userregister.getSurname());
+        Read_userregister.txtemail.setText(Language_userregister.getInstance().getProperty("email")+": "+userregister.getEmail());
+        Read_userregister.txtmobilephone.setText(Language_userregister.getInstance().getProperty("mobilephone")+": "+userregister.getMobilephone());
+        Read_userregister.txtdatebirthday.setText(Language_userregister.getInstance().getProperty("datebirthday")+": "+userregister.getDatebirthday().toString());
+        Read_userregister.txtage.setText(Language_userregister.getInstance().getProperty("age")+": "+userregister.getAge());
+        Read_userregister.txtbenefits.setText(Language_userregister.getInstance().getProperty("benefits")+": "+userregister.getBenefits());
+        Read_userregister.txtmovement.setText(Language_userregister.getInstance().getProperty("activity")+": "+userregister.getMovement());
+        Read_userregister.txtreputation.setText(Language_userregister.getInstance().getProperty("reputation")+": "+userregister.calc_reputation());
+        Read_userregister.txtpoint.setText(Language_userregister.getInstance().getProperty("point")+": "+userregister.getPoint());
         
     }
 }

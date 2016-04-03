@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
-import framework.module.config.model.classes.language2.Language_user;
+import framework.module.client.model.classes.language.Language_client;
 
 public class txt_auto_client {
 
@@ -36,7 +36,7 @@ public class txt_auto_client {
 				OOS.close();
 	            
 	        } catch (Exception e) {
-	        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("errorsave_txt"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+	        	JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("errorsave_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 	        }
         } else {
             File path = new File(PATH);
@@ -59,7 +59,7 @@ public class txt_auto_client {
     		OIS.close();
             
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("erroropen_txt"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("erroropen_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

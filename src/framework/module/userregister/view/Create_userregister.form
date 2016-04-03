@@ -166,7 +166,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Usuarios"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_userregister.getInstance().getProperty(&quot;users&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -180,7 +182,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Administrador"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_userregister.getInstance().getProperty(&quot;administrator&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbladministradorMouseClicked"/>
@@ -199,7 +203,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Cliente"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_userregister.getInstance().getProperty(&quot;client&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblclienteMouseClicked"/>
@@ -218,7 +224,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Usuario"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_userregister.getInstance().getProperty(&quot;user&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblusuarioMouseClicked"/>
@@ -237,7 +245,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Configuraci&#xf3;n"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_userregister.getInstance().getProperty(&quot;configuration&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -251,7 +261,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Ajustes"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_userregister.getInstance().getProperty(&quot;setting&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblajustesMouseClicked"/>
@@ -275,7 +287,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Inicio"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_userregister.getInstance().getProperty(&quot;start&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -289,7 +303,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Inicio"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_userregister.getInstance().getProperty(&quot;start&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblinicioMouseClicked"/>
@@ -322,7 +338,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtconfirm" pref="1023" max="32767" attributes="0"/>
+                          <Component id="txtconfirm" pref="1037" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -397,7 +413,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel11" pref="773" max="32767" attributes="0"/>
+                                  <Component id="jLabel11" pref="797" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -419,7 +435,9 @@
                               <Font name="Liberation Sans" size="48" style="3"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="Nuevo Usuario"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="Language_userregister.getInstance().getProperty(&quot;createuser&quot;)" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -512,7 +530,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
                                   <Component id="btnaceptar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="186" max="32767" attributes="0"/>
+                                  <EmptySpace pref="153" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -529,7 +547,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JButton" name="btnaceptar">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Aceptar"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="Language_userregister.getInstance().getProperty(&quot;acept&quot;)" type="code"/>
+                            </Property>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnaceptarActionPerformed"/>
@@ -561,7 +581,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
                                   <Component id="btncancelar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="184" max="32767" attributes="0"/>
+                                  <EmptySpace pref="158" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -578,7 +598,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JButton" name="btncancelar">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Cancelar"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="Language_userregister.getInstance().getProperty(&quot;cancel&quot;)" type="code"/>
+                            </Property>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncancelarActionPerformed"/>
@@ -687,7 +709,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="37" max="32767" attributes="0"/>
+                              <EmptySpace pref="116" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -730,6 +752,7 @@
                                           <Component id="txtavatar" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnavatar" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="checkavatar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -737,12 +760,16 @@
                                           <Component id="statetrue" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="statefalse" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="checkstate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtactivity" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="txtname" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="checkname" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtpoint" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -762,27 +789,16 @@
                                                           <Component id="checkmobilephone" alignment="3" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="jLabel28" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="txtdatebirthday" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
+                                                      <Component id="txtdatebirthday" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Component id="checkdatebirthday" alignment="1" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="txtactivity" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="checkactivity" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtpoint" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="checkpoint" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="checkpoint" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="60" max="32767" attributes="0"/>
@@ -793,37 +809,51 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel12">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="DNI:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;DNI&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel13">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Usuario:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;user&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel14">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;password&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel15">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Avatar:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;avatar&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel16">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Estado:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;state&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel17">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Nombre:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;name&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel18">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Apellidos:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;surname&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JPasswordField" name="txtpass">
@@ -869,7 +899,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnavatar">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Archivo"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;file&quot;)" type="code"/>
+                        </Property>
                       </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -878,7 +910,9 @@
                     <Component class="javax.swing.JRadioButton" name="statetrue">
                       <Properties>
                         <Property name="selected" type="boolean" value="true"/>
-                        <Property name="text" type="java.lang.String" value="Conectado"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;connect&quot;)" type="code"/>
+                        </Property>
                       </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -886,7 +920,9 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="statefalse">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="No conectado"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;notconnect&quot;)" type="code"/>
+                        </Property>
                       </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -988,27 +1024,37 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel26">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Correo electronico:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;email&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel27">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Telefono movil:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;mobilephone&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel28">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Fecha de nacimiento:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;datebirthday&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel29">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Actividad:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;activity&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel30">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Puntos:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="Language_userregister.getInstance().getProperty(&quot;point&quot;)+&quot;: &quot;" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="txtdatebirthday">

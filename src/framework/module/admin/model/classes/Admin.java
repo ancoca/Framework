@@ -3,10 +3,10 @@ package framework.module.admin.model.classes;
 import framework.module.classes.User;
 import java.io.Serializable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import framework.module.config.model.classes.ClassConfig;
+import framework.module.menu_config.model.classes.ClassConfig;
 import framework.classes.ClassDate;
 import framework.functions.Format;
-import framework.module.config.model.classes.language2.Language_user;
+import framework.module.admin.model.classes.language.Language_admin;
 
 @XStreamAlias("Admin")
 public class Admin extends User implements Serializable {
@@ -157,11 +157,11 @@ public class Admin extends User implements Serializable {
 		public String toString() {
 			StringBuffer string = new StringBuffer();
 			string.append(super.toString()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringdatecontract")+this.getDatecontract().toString()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringold")+this.getOld()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringsalary")+Format.formatCurrency(this.getSalary())+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringincentive")+Format.formatCurrency(this.getIncentive())+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringactivity")+this.getActivity()+"\n");
+			string.append(Language_admin.getInstance().getProperty("datecontract")+": "+this.getDatecontract().toString()+"\n");
+			string.append(Language_admin.getInstance().getProperty("old")+": "+this.getOld()+"\n");
+			string.append(Language_admin.getInstance().getProperty("salary")+": "+Format.formatCurrency(this.getSalary())+"\n");
+			string.append(Language_admin.getInstance().getProperty("incentive")+": "+Format.formatCurrency(this.getIncentive())+"\n");
+			string.append(Language_admin.getInstance().getProperty("activity")+": "+this.getActivity()+"\n");
 			
 			return string.toString();
 		}
@@ -173,7 +173,7 @@ public class Admin extends User implements Serializable {
 		public String toString (String DNI) {
 			StringBuffer string = new StringBuffer();
 			
-			string.append(Language_user.getInstance().getProperty("toStringDNI")+super.getDNI()+"\n");
+			string.append(Language_admin.getInstance().getProperty("DNI")+": "+super.getDNI()+"\n");
 			
 			return string.toString();
 		}
@@ -190,19 +190,19 @@ public class Admin extends User implements Serializable {
 			}else{
 				switch (i){
 					case 12:
-						string.append(Language_user.getInstance().getProperty("toStringdatecontract")+this.getDatecontract().toString()+"\n");
+						string.append(Language_admin.getInstance().getProperty("datecontract")+": "+this.getDatecontract().toString()+"\n");
 						break;
 					case 13:
-						string.append(Language_user.getInstance().getProperty("toStringold")+this.getOld()+"\n");
+						string.append(Language_admin.getInstance().getProperty("old")+": "+this.getOld()+"\n");
 						break;
 					case 14:
-						string.append(Language_user.getInstance().getProperty("toStringsalary")+Format.formatCurrency(this.getSalary())+"\n");
+						string.append(Language_admin.getInstance().getProperty("salary")+": "+Format.formatCurrency(this.getSalary())+"\n");
 						break;
 					case 15:
-						string.append(Language_user.getInstance().getProperty("toStringincentive")+Format.formatCurrency(this.getIncentive())+"\n");
+						string.append(Language_admin.getInstance().getProperty("incentive")+": "+Format.formatCurrency(this.getIncentive())+"\n");
 						break;
 					case 16:
-						string.append(Language_user.getInstance().getProperty("toStringactivity")+this.getActivity()+"\n");
+						string.append(Language_admin.getInstance().getProperty("activity")+": "+this.getActivity()+"\n");
 						break;
 				}
 			}

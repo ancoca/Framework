@@ -3,6 +3,7 @@ import framework.classes.ClassDate;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.client.controller.Controller_client;
+import framework.module.client.model.classes.language.Language_client;
 import framework.module.client.model.functions.json_auto_client;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
@@ -11,7 +12,9 @@ import javax.swing.table.AbstractTableModel;
 public class miniSimpleTableModel_client extends AbstractTableModel {
     public static ArrayList<Client> datos = new ArrayList<Client>();
     public static ArrayList<Client> datosaux = new ArrayList<Client>();
-    String[] columnas = {"DNI", "Nombre", "Apellidos", "Fecha de alta", "Compras"};
+    String[] columnas = {Language_client.getInstance().getProperty("DNI"), Language_client.getInstance().getProperty("name"), 
+        Language_client.getInstance().getProperty("surname"), Language_client.getInstance().getProperty("dateup"), 
+        Language_client.getInstance().getProperty("shopping")};
 
     ////////////////////estos métodos son necesarios para que jtable funcione/////////////////////
     @Override

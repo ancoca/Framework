@@ -5,6 +5,8 @@
  */
 package framework.module.admin.view;
 
+import framework.module.admin.model.classes.language.Language_admin;
+
 /**
  *
  * @author angel
@@ -84,11 +86,11 @@ public class List_admin extends javax.swing.JFrame {
 
         lblusuarios.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
         lblusuarios.setForeground(java.awt.Color.blue);
-        lblusuarios.setText("Usuarios");
+        lblusuarios.setText(Language_admin.getInstance().getProperty("users"));
 
         lbladministrador.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lbladministrador.setForeground(java.awt.Color.cyan);
-        lbladministrador.setText("Administrador");
+        lbladministrador.setText(Language_admin.getInstance().getProperty("administrator"));
         lbladministrador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbladministradorMouseClicked(evt);
@@ -103,7 +105,7 @@ public class List_admin extends javax.swing.JFrame {
 
         lblcliente.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblcliente.setForeground(java.awt.Color.cyan);
-        lblcliente.setText("Cliente");
+        lblcliente.setText(Language_admin.getInstance().getProperty("client"));
         lblcliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblclienteMouseClicked(evt);
@@ -118,7 +120,7 @@ public class List_admin extends javax.swing.JFrame {
 
         lblusuario.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblusuario.setForeground(java.awt.Color.cyan);
-        lblusuario.setText("Usuario");
+        lblusuario.setText(Language_admin.getInstance().getProperty("user"));
         lblusuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblusuarioMouseClicked(evt);
@@ -133,11 +135,11 @@ public class List_admin extends javax.swing.JFrame {
 
         lblconfiguracion.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
         lblconfiguracion.setForeground(java.awt.Color.blue);
-        lblconfiguracion.setText("Configuración");
+        lblconfiguracion.setText(Language_admin.getInstance().getProperty("configuration"));
 
         lblajustes.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblajustes.setForeground(java.awt.Color.cyan);
-        lblajustes.setText("Ajustes");
+        lblajustes.setText(Language_admin.getInstance().getProperty("setting"));
         lblajustes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblajustesMouseClicked(evt);
@@ -154,11 +156,11 @@ public class List_admin extends javax.swing.JFrame {
 
         lblinicios.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblinicios.setForeground(java.awt.Color.blue);
-        lblinicios.setText("Inicio");
+        lblinicios.setText(Language_admin.getInstance().getProperty("start"));
 
         lblinicio.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblinicio.setForeground(java.awt.Color.cyan);
-        lblinicio.setText("Inicio");
+        lblinicio.setText(Language_admin.getInstance().getProperty("start"));
         lblinicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblinicioMouseClicked(evt);
@@ -346,7 +348,7 @@ public class List_admin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 848, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -365,9 +367,9 @@ public class List_admin extends javax.swing.JFrame {
         jPanel7.setLayout(new java.awt.BorderLayout());
 
         jPanel10.setBackground(java.awt.Color.white);
-        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder("BUSCAR"));
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(Language_admin.getInstance().getProperty("find")));
 
-        jLabel1.setText("Filtra Nombre");
+        jLabel1.setText(Language_admin.getInstance().getProperty("find2"));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -386,7 +388,7 @@ public class List_admin extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 178, Short.MAX_VALUE)
+            .addGap(0, 188, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -476,7 +478,7 @@ public class List_admin extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Show entries:");
+        jLabel2.setText(Language_admin.getInstance().getProperty("entries"));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -527,7 +529,7 @@ public class List_admin extends javax.swing.JFrame {
         jPanel7.add(jPanel10, java.awt.BorderLayout.CENTER);
 
         jPanel11.setBackground(java.awt.Color.white);
-        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("GUARDAR"));
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(Language_admin.getInstance().getProperty("save")));
         jPanel11.setLayout(new java.awt.GridLayout(1, 3));
 
         lbljson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -11,6 +11,7 @@ import framework.functions.validate;
 import framework.module.client.model.BLL.BLL_client.BLL_client;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
+import framework.module.client.model.classes.language.Language_client;
 import framework.module.client.view.Create_client;
 import framework.module.client.view.Read_client;
 import framework.module.client.view.Update_client;
@@ -638,24 +639,24 @@ public class DAO_client {
     public static void generate_read_client () {
         Client client = BLL_client.IDclient();
         
-        Read_client.txtDNI.setText("DNI: "+client.getDNI());
-        Read_client.txtuser.setText("Usuario: "+client.getUser());
-        Read_client.txtpass.setText("Contraseña: "+client.getPass());
-        Read_client.txtavatar.setText("Avatar: "+client.getAvatar());
-        Read_client.txtstate.setText("Estado: "+client.toStringstate());
-        Read_client.txtname.setText("Nombre: "+client.getName());
-        Read_client.txtsurname.setText("Apellidos: "+client.getSurname());
-        Read_client.txtemail.setText("Correo electronico: "+client.getEmail());
-        Read_client.txtmobilephone.setText("Telefono movil: "+client.getMobilephone());
-        Read_client.txtdatebirthday.setText("Fecha de nacimiento: "+client.getDatebirthday().toString());
-        Read_client.txtage.setText("Edad: "+client.getAge());
-        Read_client.txtbenefits.setText("Beneficios: "+client.getBenefits());
-        Read_client.txtdateup.setText("Fecha de alta: "+client.getDateup().toString());
-        Read_client.txtantique.setText("Antigüedad: "+client.getAntique());
-        Read_client.txtshopping.setText("Compras: "+client.getShopping());
-        Read_client.txtdtos.setText("Descuentos: "+client.getDtos());
-        Read_client.txtpremium.setText("Premium: "+client.toStringpremium());
-        Read_client.txttypeclient.setText("Tipo de cliente: "+client.getTypeclient());
+        Read_client.txtDNI.setText(Language_client.getInstance().getProperty("DNI")+": "+client.getDNI());
+        Read_client.txtuser.setText(Language_client.getInstance().getProperty("user")+": "+client.getUser());
+        Read_client.txtpass.setText(Language_client.getInstance().getProperty("password")+": "+client.getPass());
+        Read_client.txtavatar.setText(Language_client.getInstance().getProperty("avatar")+": "+client.getAvatar());
+        Read_client.txtstate.setText(Language_client.getInstance().getProperty("state")+": "+client.toStringstate());
+        Read_client.txtname.setText(Language_client.getInstance().getProperty("name")+": "+client.getName());
+        Read_client.txtsurname.setText(Language_client.getInstance().getProperty("surname")+": "+client.getSurname());
+        Read_client.txtemail.setText(Language_client.getInstance().getProperty("email")+": "+client.getEmail());
+        Read_client.txtmobilephone.setText(Language_client.getInstance().getProperty("mobilephone")+": "+client.getMobilephone());
+        Read_client.txtdatebirthday.setText(Language_client.getInstance().getProperty("datebirthday")+": "+client.getDatebirthday().toString());
+        Read_client.txtage.setText(Language_client.getInstance().getProperty("age")+": "+client.getAge());
+        Read_client.txtbenefits.setText(Language_client.getInstance().getProperty("benefits")+": "+client.getBenefits());
+        Read_client.txtdateup.setText(Language_client.getInstance().getProperty("dateup")+": "+client.getDateup().toString());
+        Read_client.txtantique.setText(Language_client.getInstance().getProperty("old")+": "+client.getAntique());
+        Read_client.txtshopping.setText(Language_client.getInstance().getProperty("shopping")+": "+client.getShopping());
+        Read_client.txtdtos.setText(Language_client.getInstance().getProperty("dtos")+": "+client.getDtos());
+        Read_client.txtpremium.setText(Language_client.getInstance().getProperty("premium")+": "+client.toStringpremium());
+        Read_client.txttypeclient.setText(Language_client.getInstance().getProperty("typeclient")+": "+client.getTypeclient());
         
     }
 }

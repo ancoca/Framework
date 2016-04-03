@@ -3,10 +3,10 @@ package framework.module.client.model.classes;
 import framework.module.classes.User;
 import java.io.Serializable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import framework.module.config.model.classes.ClassConfig;
+import framework.module.menu_config.model.classes.ClassConfig;
 import framework.classes.ClassDate;
 import framework.functions.Format;
-import framework.module.config.model.classes.language2.Language_user;
+import framework.module.client.model.classes.language.Language_client;
 
 @XStreamAlias("Client")
 public class Client extends User implements Serializable {
@@ -168,12 +168,12 @@ public class Client extends User implements Serializable {
 		public String toString () {
 			StringBuffer string = new StringBuffer();
 			string.append(super.toString()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringdateup")+this.getDateup().toString()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringold")+this.getAntique()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringshopping")+Format.formatCurrency(this.getShopping())+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringdtos")+this.getDtos()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringpremium")+toStringpremium()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringtypeclient")+this.getTypeclient()+"\n");
+			string.append(Language_client.getInstance().getProperty("dateup")+": "+this.getDateup().toString()+"\n");
+			string.append(Language_client.getInstance().getProperty("old")+": "+this.getAntique()+"\n");
+			string.append(Language_client.getInstance().getProperty("shopping")+": "+Format.formatCurrency(this.getShopping())+"\n");
+			string.append(Language_client.getInstance().getProperty("dtos")+": "+this.getDtos()+"\n");
+			string.append(Language_client.getInstance().getProperty("premium")+": "+toStringpremium()+"\n");
+			string.append(Language_client.getInstance().getProperty("typeclient")+": "+this.getTypeclient()+"\n");
 			
 			return string.toString();
 		}
@@ -185,7 +185,7 @@ public class Client extends User implements Serializable {
 		public String toString (String DNI) {
 			StringBuffer string = new StringBuffer();
 			
-			string.append(Language_user.getInstance().getProperty("toStringDNI")+super.getDNI()+"\n");
+			string.append(Language_client.getInstance().getProperty("DNI")+": "+super.getDNI()+"\n");
 			
 			return string.toString();
 		}
@@ -202,22 +202,22 @@ public class Client extends User implements Serializable {
 			}else{
 				switch (i){
 					case 12:
-						string.append(Language_user.getInstance().getProperty("toStringdateup")+this.getDateup().toString()+"\n");
+						string.append(Language_client.getInstance().getProperty("dateup")+": "+this.getDateup().toString()+"\n");
 						break;
 					case 13:
-						string.append(Language_user.getInstance().getProperty("toStringold")+this.getAntique()+"\n");
+						string.append(Language_client.getInstance().getProperty("old")+": "+this.getAntique()+"\n");
 						break;
 					case 14:
-						string.append(Language_user.getInstance().getProperty("toStringshopping")+Format.formatCurrency(this.getShopping())+"\n");
+						string.append(Language_client.getInstance().getProperty("shopping")+": "+Format.formatCurrency(this.getShopping())+"\n");
 						break;
 					case 15:
-						string.append(Language_user.getInstance().getProperty("toStringdtos")+this.getDtos()+"\n");
+						string.append(Language_client.getInstance().getProperty("dtos")+": "+this.getDtos()+"\n");
 						break;
 					case 16:
-						string.append(Language_user.getInstance().getProperty("toStringpremium")+toStringpremium()+"\n");
+						string.append(Language_client.getInstance().getProperty("premium")+": "+toStringpremium()+"\n");
 						break;
 					case 17:
-						string.append(Language_user.getInstance().getProperty("toStringtypeclient")+this.getTypeclient()+"\n");
+						string.append(Language_client.getInstance().getProperty("typeclient")+": "+this.getTypeclient()+"\n");
 						break;
 				}
 			}
@@ -261,10 +261,10 @@ public class Client extends User implements Serializable {
 	public String toStringpremium (){
 		String premium="";
 		if (this.getState()==true){
-			premium = Language_user.getInstance().getProperty("premium");
+			premium = Language_client.getInstance().getProperty("premium");
 		}
 		if (this.getState()==false){
-			premium = Language_user.getInstance().getProperty("nopremium");
+			premium = Language_client.getInstance().getProperty("notpremium");
 		}
 		
 		return premium;

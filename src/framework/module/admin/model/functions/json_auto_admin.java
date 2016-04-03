@@ -14,7 +14,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
-import framework.module.config.model.classes.language2.Language_user;
+import framework.module.admin.model.classes.language.Language_admin;
 
 public class json_auto_admin {
 
@@ -41,7 +41,7 @@ public class json_auto_admin {
 		          fileXml.close(); 
 		          
 	        } catch (Exception e) {
-	        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("errorsave_json"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+	        	JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("errorsave_json"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 	        }
         } else {
             File path = new File(PATH);
@@ -76,7 +76,7 @@ public class json_auto_admin {
 	          	}
 	        
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("erroropen_json"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("erroropen_json"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

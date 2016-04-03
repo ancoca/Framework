@@ -13,8 +13,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.Annotations;
 import framework.module.userregister.model.classes.User_register;
-import framework.module.config.model.classes.language2.Language_user;
 import framework.module.userregister.model.classes.Singleton_userregister;
+import framework.module.userregister.model.classes.language.Language_userregister;
 
 public class xml_userregister {
 	private static final String ENCODING = "UTF-8";
@@ -49,10 +49,10 @@ public class xml_userregister {
                 fileXml.close();
                 OSW.close();
                 OS.close();
-                JOptionPane.showMessageDialog(null, "Archivo XML guardado con exito", "Archivo XML", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("savexml"), "XML", JOptionPane.INFORMATION_MESSAGE);
             }
 	    }catch (Exception e){
-	    	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("errorsave_xml"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+	    	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_xml"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 	    } 
     }
 	
@@ -75,7 +75,7 @@ public class xml_userregister {
             }
             
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("erroropen_xml"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("erroropen_xml"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

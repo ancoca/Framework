@@ -157,7 +157,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Usuarios"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_client.getInstance().getProperty(&quot;users&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -171,7 +173,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Administrador"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_client.getInstance().getProperty(&quot;administrator&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbladministradorMouseClicked"/>
@@ -190,7 +194,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Cliente"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_client.getInstance().getProperty(&quot;client&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblclienteMouseClicked"/>
@@ -209,7 +215,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Usuario"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_client.getInstance().getProperty(&quot;user&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblusuarioMouseClicked"/>
@@ -228,7 +236,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Configuraci&#xf3;n"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_client.getInstance().getProperty(&quot;configuration&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -242,7 +252,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Ajustes"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_client.getInstance().getProperty(&quot;setting&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblajustesMouseClicked"/>
@@ -266,7 +278,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Inicio"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_client.getInstance().getProperty(&quot;start&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -280,7 +294,9 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="cyan" palette="1" red="0" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Inicio"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="Language_client.getInstance().getProperty(&quot;start&quot;)" type="code"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblinicioMouseClicked"/>
@@ -345,7 +361,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="61" max="32767" attributes="0"/>
+                          <EmptySpace pref="71" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
@@ -409,7 +425,6 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="txtuser">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -422,7 +437,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtDNI">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -435,7 +449,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtpass">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -448,7 +461,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtavatar">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -461,7 +473,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtstate">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -474,7 +485,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtname">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -487,7 +497,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtsurname">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -500,7 +509,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtemail">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -513,7 +521,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtmobilephone">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -526,7 +533,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtdatebirthday">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -539,7 +545,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtage">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -552,7 +557,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtdateup">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -565,7 +569,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtbenefits">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -578,7 +581,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtantique">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -591,7 +593,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtshopping">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -604,7 +605,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtdtos">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -617,7 +617,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtpremium">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>
@@ -630,7 +629,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="txttypeclient">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel8"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder/>

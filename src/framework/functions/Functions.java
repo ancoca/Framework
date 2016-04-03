@@ -1,7 +1,7 @@
 package framework.functions;
 
 import javax.swing.JOptionPane;
-import framework.module.config.model.classes.language.Language_general;
+import framework.classes.language.Language_general;
 
 public class Functions {
 

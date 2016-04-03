@@ -14,7 +14,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.Annotations;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
-import framework.module.config.model.classes.language2.Language_user;
+import framework.module.admin.model.classes.language.Language_admin;
 
 public class xml_admin {
 	private static final String ENCODING = "UTF-8";
@@ -49,10 +49,10 @@ public class xml_admin {
                 fileXml.close();
                 OSW.close();
                 OS.close();
-                JOptionPane.showMessageDialog(null, "Archivo XML guardado con exito", "Archivo XML", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("savexml"), "XML", JOptionPane.INFORMATION_MESSAGE);
             }
 	    }catch (Exception e){
-	    	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("errorsave_xml"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+	    	JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("errorsave_xml"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 	    } 
     }
 	
@@ -75,7 +75,7 @@ public class xml_admin {
             }
             
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("erroropen_xml"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("erroropen_xml"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

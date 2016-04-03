@@ -2,8 +2,8 @@ package framework.functions;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
-import framework.module.config.model.classes.ClassConfig;
-import framework.module.config.model.classes.language.Language_general;
+import framework.module.menu_config.model.classes.ClassConfig;
+import framework.classes.language.Language_general;
 
 public class Functions_theme {
     

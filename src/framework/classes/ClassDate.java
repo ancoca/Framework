@@ -1,6 +1,6 @@
 package framework.classes;
 
-import framework.module.config.model.classes.ClassConfig;
+import framework.module.menu_config.model.classes.ClassConfig;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;

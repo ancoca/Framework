@@ -10,12 +10,12 @@ import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.DAO.DAO_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
+import framework.module.admin.model.classes.language.Language_admin;
 import framework.module.admin.model.classes.miniSimpleTableModel_admin;
 import framework.module.admin.model.functions.json_admin;
 import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.model.functions.txt_admin;
 import framework.module.admin.model.functions.xml_admin;
-import framework.module.config.model.classes.language2.Language_user;
 import framework.module.admin.view.Create_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.admin.view.Update_admin;
@@ -63,7 +63,7 @@ public class BLL_admin {
     public static void read_admin_all (){
 		
 		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			for (int i = 0; i <Singleton_admin.useradmin.size();i++){
 				String cad = "";
@@ -78,14 +78,14 @@ public class BLL_admin {
 		Admin a1 = null;
 		
 		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			location = BLL_admin.find_admin(a1);
 			if (location != -1) {
 				a1 = Singleton_admin.useradmin.get(location);
 				JOptionPane.showMessageDialog(null, a1.toString());
 			}else {
-				JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("usererror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		
@@ -146,12 +146,12 @@ public class BLL_admin {
             selection1 = inicio + selec;
 
             if (selec == -1) {
-                JOptionPane.showMessageDialog(null, "No hay una persona seleccionada", "Error!", 2);
+                JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("usernotselect"), Language_admin.getInstance().getProperty("error"), 2);
             } else {
                 dni = (String) List_admin.TABLA.getModel().getValueAt(selection1, 0);
                 admin = new Admin(dni);
                 pos = find_admin(admin);
-                int opc = JOptionPane.showConfirmDialog(null, "Deseas borrar a la persona con DNI: " + dni,
+                int opc = JOptionPane.showConfirmDialog(null, Language_admin.getInstance().getProperty("userdelete?") + dni + "?",
                         "Info", JOptionPane.WARNING_MESSAGE);
 
                 if (opc == 0) {
@@ -174,7 +174,7 @@ public class BLL_admin {
             }
 
         } else {
-            JOptionPane.showMessageDialog(null, "lista vacía", "Error!", 2);
+            JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("size0"), Language_admin.getInstance().getProperty("error"), 2);
         }
     }
     
@@ -197,7 +197,7 @@ public class BLL_admin {
     
     public static void save_admin_json () {
 		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			json_admin.savejson_admin();
 		}
@@ -214,7 +214,7 @@ public class BLL_admin {
     
     public static void save_admin_xml () {
 		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			xml_admin.savexml_admin();
 		}
@@ -231,7 +231,7 @@ public class BLL_admin {
     
     public static void save_admin_txt () {
 		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			txt_admin.savetxt_admin();
 		}

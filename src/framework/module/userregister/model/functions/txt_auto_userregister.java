@@ -9,8 +9,8 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import framework.module.userregister.model.classes.User_register;
-import framework.module.config.model.classes.language2.Language_user;
 import framework.module.userregister.model.classes.Singleton_userregister;
+import framework.module.userregister.model.classes.language.Language_userregister;
 
 public class txt_auto_userregister {
 
@@ -36,7 +36,7 @@ public class txt_auto_userregister {
 				OOS.close();
 	            
 	        } catch (Exception e) {
-	        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("errorsave_txt"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+	        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 	        }
         } else {
             File path = new File(PATH);
@@ -59,7 +59,7 @@ public class txt_auto_userregister {
     		OIS.close();
             
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("erroropen_txt"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("erroropen_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

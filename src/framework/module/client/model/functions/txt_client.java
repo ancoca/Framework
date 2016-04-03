@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
-import framework.module.config.model.classes.language2.Language_user;
+import framework.module.client.model.classes.language.Language_client;
 
 public class txt_client {
 
@@ -35,10 +35,10 @@ public class txt_client {
 				ObjectOutputStream OOS=new ObjectOutputStream(FOS);
 				OOS.writeObject(Singleton_client.userclient);
 				OOS.close();
-                JOptionPane.showMessageDialog(null, "Archivo TXT guardado con exito", "Archivo TXT", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("savetxt"), "TXT", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("errorsave_txt"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("errorsave_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 	
@@ -63,7 +63,7 @@ public class txt_client {
     			oi.close();
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("erroropen_txt"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("erroropen_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

@@ -11,10 +11,9 @@ import framework.module.admin.view.List_admin;
 import framework.module.client.controller.Controller_client;
 import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.view.List_client;
-import framework.module.config.controller.Controller_config;
-import framework.module.config.view.Config;
-import framework.module.menu.controller.Controller_menu;
-import framework.module.menu.view.Menu;
+import framework.module.menu_config.view.Config;
+import framework.module.menu_config.controller.Controller_menu;
+import framework.module.menu_config.view.Menu;
 import framework.module.userregister.model.BLL.BLL_userregister.BLL_userregister;
 import framework.module.userregister.model.DAO.DAO_userregister;
 import framework.module.userregister.model.classes.Singleton_userregister;
@@ -519,7 +518,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
         switch(Controller_userregister.action.valueOf(e.getComponent().getName())){
             case lblajustes:
                 list.dispose();
-                new Controller_config(new Config(), 0).iniciar(0);
+                new Controller_menu(new Config(), 1).iniciar(1);
                 break;
             case lblusuario:
                 list.dispose();
@@ -571,7 +570,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblajustes_create:
                 create.dispose();
-                new Controller_config(new Config(), 0).iniciar(0);
+                new Controller_menu(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_create:
                 create.dispose();
@@ -622,7 +621,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblajustes_update:
                 update.dispose();
-                new Controller_config(new Config(), 0).iniciar(0);
+                new Controller_menu(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_update:
                 update.dispose();
@@ -673,7 +672,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblajustes_read:
                 read.dispose();
-                new Controller_config(new Config(), 0).iniciar(0);
+                new Controller_menu(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_read:
                 read.dispose();

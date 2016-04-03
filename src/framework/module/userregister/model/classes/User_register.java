@@ -4,7 +4,7 @@ import framework.module.classes.User;
 import java.io.Serializable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import framework.classes.ClassDate;
-import framework.module.config.model.classes.language2.Language_user;
+import framework.module.userregister.model.classes.language.Language_userregister;
 
 @XStreamAlias("User_register")
 public class User_register extends User implements Serializable {
@@ -125,13 +125,13 @@ public class User_register extends User implements Serializable {
 			String s="";			
 			
 			if (this.getMovement()<=10){
-				s=("Low");
+				s=(Language_userregister.getInstance().getProperty("low"));
 			}
 			if ((this.getMovement()>10) && (this.getMovement()<=50)){
-				s=("Medium");
+				s=(Language_userregister.getInstance().getProperty("medium"));
 			}
 			if (this.getMovement()>50){
-				s=("High");
+				s=(Language_userregister.getInstance().getProperty("high"));
 			}
 			
 			return s;
@@ -149,9 +149,9 @@ public class User_register extends User implements Serializable {
 		public String toString() {
 			StringBuffer string = new StringBuffer();
 			string.append(super.toString()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringactivity")+this.getMovement()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringreputation")+this.getReputation()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringpoints")+this.getPoint()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("activity")+": "+this.getMovement()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("reputation")+": "+this.calc_reputation()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("point")+": "+this.getPoint()+"\n");
 			
 			return string.toString();
 		}
@@ -163,7 +163,7 @@ public class User_register extends User implements Serializable {
 		public String toString (String DNI) {
 			StringBuffer string = new StringBuffer();
 			
-			string.append(Language_user.getInstance().getProperty("toStringDNI")+super.getDNI()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("DNI")+": "+super.getDNI()+"\n");
 			
 			return string.toString();
 		}
@@ -180,13 +180,13 @@ public class User_register extends User implements Serializable {
 			}else{
 				switch (i){
 					case 12:
-						string.append(Language_user.getInstance().getProperty("toStringactivity")+this.getMovement()+"\n");
+						string.append(Language_userregister.getInstance().getProperty("activity")+": "+this.getMovement()+"\n");
 						break;
 					case 13:
-						string.append(Language_user.getInstance().getProperty("toStringreputation")+this.getReputation()+"\n");
+						string.append(Language_userregister.getInstance().getProperty("reputation")+": "+this.getReputation()+"\n");
 						break;
 					case 14:
-						string.append(Language_user.getInstance().getProperty("toStringpoints")+this.getPoint()+"\n");
+						string.append(Language_userregister.getInstance().getProperty("point")+": "+this.getPoint()+"\n");
 						break;
 				}
 			}

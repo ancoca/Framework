@@ -5,6 +5,8 @@
  */
 package framework.module.admin.view;
 
+import framework.module.admin.model.classes.language.Language_admin;
+
 /**
  *
  * @author angel
@@ -82,11 +84,11 @@ public class Read_admin extends javax.swing.JFrame {
 
         lblusuarios.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
         lblusuarios.setForeground(java.awt.Color.blue);
-        lblusuarios.setText("Usuarios");
+        lblusuarios.setText(Language_admin.getInstance().getProperty("users"));
 
         lbladministrador.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lbladministrador.setForeground(java.awt.Color.cyan);
-        lbladministrador.setText("Administrador");
+        lbladministrador.setText(Language_admin.getInstance().getProperty("administrator"));
         lbladministrador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbladministradorMouseClicked(evt);
@@ -101,7 +103,7 @@ public class Read_admin extends javax.swing.JFrame {
 
         lblcliente.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblcliente.setForeground(java.awt.Color.cyan);
-        lblcliente.setText("Cliente");
+        lblcliente.setText(Language_admin.getInstance().getProperty("client"));
         lblcliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblclienteMouseClicked(evt);
@@ -116,7 +118,7 @@ public class Read_admin extends javax.swing.JFrame {
 
         lblusuario.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblusuario.setForeground(java.awt.Color.cyan);
-        lblusuario.setText("Usuario");
+        lblusuario.setText(Language_admin.getInstance().getProperty("user"));
         lblusuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblusuarioMouseClicked(evt);
@@ -131,11 +133,11 @@ public class Read_admin extends javax.swing.JFrame {
 
         lblconfiguracion.setFont(new java.awt.Font("Purisa", 3, 15)); // NOI18N
         lblconfiguracion.setForeground(java.awt.Color.blue);
-        lblconfiguracion.setText("Configuración");
+        lblconfiguracion.setText(Language_admin.getInstance().getProperty("configuration"));
 
         lblajustes.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblajustes.setForeground(java.awt.Color.cyan);
-        lblajustes.setText("Ajustes");
+        lblajustes.setText(Language_admin.getInstance().getProperty("setting"));
         lblajustes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblajustesMouseClicked(evt);
@@ -152,11 +154,11 @@ public class Read_admin extends javax.swing.JFrame {
 
         lblinicios.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblinicios.setForeground(java.awt.Color.blue);
-        lblinicios.setText("Inicio");
+        lblinicios.setText(Language_admin.getInstance().getProperty("start"));
 
         lblinicio.setFont(new java.awt.Font("Purisa", 0, 15)); // NOI18N
         lblinicio.setForeground(java.awt.Color.cyan);
-        lblinicio.setText("Inicio");
+        lblinicio.setText(Language_admin.getInstance().getProperty("start"));
         lblinicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblinicioMouseClicked(evt);
@@ -217,55 +219,38 @@ public class Read_admin extends javax.swing.JFrame {
 
         jPanel3.setBackground(java.awt.Color.white);
 
-        txtuser.setText("jLabel8");
         txtuser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtDNI.setText("jLabel8");
         txtDNI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtpass.setText("jLabel8");
         txtpass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtavatar.setText("jLabel8");
         txtavatar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtstate.setText("jLabel8");
         txtstate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtname.setText("jLabel8");
         txtname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtsurname.setText("jLabel8");
         txtsurname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtemail.setText("jLabel8");
         txtemail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtmobilephone.setText("jLabel8");
         txtmobilephone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtdatebirthday.setText("jLabel8");
         txtdatebirthday.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtage.setText("jLabel8");
         txtage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtdatecontract.setText("jLabel8");
         txtdatecontract.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtbenefits.setText("jLabel8");
         txtbenefits.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtold.setText("jLabel8");
         txtold.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtsalary.setText("jLabel8");
         txtsalary.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtincentive.setText("jLabel8");
         txtincentive.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtactivity.setText("jLabel8");
         txtactivity.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblvolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -322,7 +307,7 @@ public class Read_admin extends javax.swing.JFrame {
                                             .addComponent(txtbenefits, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtdatecontract, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtold, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(0, 43, Short.MAX_VALUE))
+                                .addGap(0, 53, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

@@ -7,9 +7,9 @@ package framework.module.userregister.model.BLL.BLL_userregister;
 
 import framework.module.userregister.model.DAO.DAO_userregister;
 import framework.module.userregister.model.classes.User_register;
-import framework.module.config.model.classes.language2.Language_user;
 import framework.module.userregister.controller.Controller_userregister;
 import framework.module.userregister.model.classes.Singleton_userregister;
+import framework.module.userregister.model.classes.language.Language_userregister;
 import framework.module.userregister.model.classes.miniSimpleTableModel_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import framework.module.userregister.model.functions.json_userregister;
@@ -63,7 +63,7 @@ public class BLL_userregister {
     public static void read_userregister_all (){
 		
 		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			for (int i = 0; i <Singleton_userregister.userregister.size();i++){
 				String cad = "";
@@ -78,19 +78,19 @@ public class BLL_userregister {
 		User_register u1 = null;
 		
 		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			location = -1;
 			u1 = BLL_userregister.IDuserregister();
 			if (u1 == null) {
-				JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("usererror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 			}else{
 				location = BLL_userregister.find_user(u1);
 				if (location != -1) {
 					u1 = Singleton_userregister.userregister.get(location);
 					JOptionPane.showMessageDialog(null, u1.toString());
 				}else {
-					JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("usererror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		}
@@ -151,12 +151,12 @@ public class BLL_userregister {
             selection1 = inicio + selec;
 
             if (selec == -1) {
-                JOptionPane.showMessageDialog(null, "No hay una persona seleccionada", "Error!", 2);
+                JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("usernotselect"), Language_userregister.getInstance().getProperty("error"), 2);
             } else {
                 dni = (String) List_userregister.TABLA.getModel().getValueAt(selection1, 0);
                 userregister = new User_register(dni);
                 pos = find_user(userregister);
-                int opc = JOptionPane.showConfirmDialog(null, "Deseas borrar a la persona con DNI: " + dni,
+                int opc = JOptionPane.showConfirmDialog(null, Language_userregister.getInstance().getProperty("userdelete?") + dni,
                         "Info", JOptionPane.WARNING_MESSAGE);
 
                 if (opc == 0) {
@@ -178,7 +178,7 @@ public class BLL_userregister {
             }
 
         } else {
-            JOptionPane.showMessageDialog(null, "lista vacía", "Error!", 2);
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("size0"), Language_userregister.getInstance().getProperty("error"), 2);
         }
     }
     
@@ -201,7 +201,7 @@ public class BLL_userregister {
     
     public static void save_userregister_json () {
 		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			json_userregister.savejson_userregister();
 		}
@@ -218,7 +218,7 @@ public class BLL_userregister {
     
     public static void save_userregister_xml () {
 		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			xml_userregister.savexml_userregister();
 		}
@@ -235,7 +235,7 @@ public class BLL_userregister {
     
     public static void save_userregister_txt () {
 		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_user.getInstance().getProperty("mainerror"), Language_user.getInstance().getProperty("errortitle"), JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
 		}else{
 			txt_userregister.savetxt_userregister();
 		}

@@ -11,6 +11,7 @@ import framework.module.admin.view.List_admin;
 import framework.module.client.model.BLL.BLL_client.BLL_client;
 import framework.module.client.model.DAO.DAO_client;
 import framework.module.client.model.classes.Singleton_client;
+import framework.module.client.model.classes.language.Language_client;
 import framework.module.client.model.classes.miniSimpleTableModel_client;
 import framework.module.client.model.functions.autocomplete.AutocompleteJComboBox_client;
 import framework.module.client.model.functions.autocomplete.StringSearchable_client;
@@ -20,11 +21,11 @@ import framework.module.client.view.Create_client;
 import framework.module.client.view.List_client;
 import framework.module.client.view.Read_client;
 import framework.module.client.view.Update_client;
-import framework.module.config.controller.Controller_config;
-import framework.module.config.view.Config;
-import framework.module.menu.controller.Controller_menu;
-import framework.module.menu.view.Menu;
+import framework.module.menu_config.view.Config;
+import framework.module.menu_config.controller.Controller_menu;
+import framework.module.menu_config.view.Menu;
 import framework.module.userregister.controller.Controller_userregister;
+import framework.module.userregister.model.classes.language.Language_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import framework.module.userregister.view.List_userregister;
 import java.awt.Color;
@@ -184,7 +185,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         json_auto_admin.savejson_admin();
                         json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
-                        JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
+                        JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         list.dispose();
                         System.exit(0);
                     }
@@ -283,7 +284,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         json_auto_admin.savejson_admin();
                         json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
-                        JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
+                        JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         create.dispose();
                         System.exit(0);
                     }
@@ -393,7 +394,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         json_auto_admin.savejson_admin();
                         json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
-                        JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
+                        JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         update.dispose();
                         System.exit(0);
                     }
@@ -501,7 +502,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         json_auto_admin.savejson_admin();
                         json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
-                        JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
+                        JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         read.dispose();
                         System.exit(0);
                     }
@@ -533,7 +534,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
         switch(Controller_client.action.valueOf(e.getComponent().getName())){
             case lblajustes:
                 list.dispose();
-                new Controller_config(new Config(), 0).iniciar(0);
+                new Controller_menu(new Config(), 1).iniciar(1);
                 break;
             case lblusuario:
                 list.dispose();
@@ -559,7 +560,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 int select = -1;
                 select = list.TABLA.getSelectedRow();
                 if (select == -1){
-                    JOptionPane.showMessageDialog(null, "Cliente no seleccionado");
+                    JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("usernotselect"));
                 }else{
                     list.dispose();
                     new Controller_client(new Update_client(), 2).iniciar(2);
@@ -585,7 +586,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblajustes_create:
                 create.dispose();
-                new Controller_config(new Config(), 0).iniciar(0);
+                new Controller_menu(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_create:
                 create.dispose();
@@ -639,7 +640,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblajustes_update:
                 update.dispose();
-                new Controller_config(new Config(), 0).iniciar(0);
+                new Controller_menu(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_update:
                 update.dispose();
@@ -693,7 +694,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblajustes_read:
                 read.dispose();
-                new Controller_config(new Config(), 0).iniciar(0);
+                new Controller_menu(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_read:
                 read.dispose();
@@ -946,13 +947,13 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 if (BLL_client.check){
                     create.jPanel5.setBackground(Color.green);
                     create.txtconfirm.setForeground(Color.black);
-                    create.txtconfirm.setText("Usuario creado");
+                    create.txtconfirm.setText(Language_client.getInstance().getProperty("usercreate"));
                     BLL_client.timer(create);
 
                 }else{
                     create.jPanel5.setBackground(Color.red);
                     create.txtconfirm.setForeground(Color.white);
-                    create.txtconfirm.setText("Usuario no creado");
+                    create.txtconfirm.setText(Language_client.getInstance().getProperty("usernotcreate"));
                     create.txtconfirm.requestFocus();
                 }
                 break;
@@ -974,13 +975,13 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 if (BLL_client.check){
                     update.jPanel5.setBackground(Color.green);
                     update.txtconfirm.setForeground(Color.black);
-                    update.txtconfirm.setText("Usuario modificado");
+                    update.txtconfirm.setText(Language_client.getInstance().getProperty("userupdate"));
                     BLL_client.timer(update);
 
                 }else{
                     update.jPanel5.setBackground(Color.red);
                     update.txtconfirm.setForeground(Color.white);
-                    update.txtconfirm.setText("Usuario no modificado");
+                    update.txtconfirm.setText(Language_client.getInstance().getProperty("usernotupdate"));
                     update.txtconfirm.requestFocus();
                 }
                 break;

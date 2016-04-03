@@ -2,10 +2,9 @@ package framework.module.classes;
 
 import java.io.Serializable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import framework.module.config.model.classes.ClassConfig;
 import framework.classes.ClassDate;
 import framework.functions.Format;
-import framework.module.config.model.classes.language2.Language_user;
+import framework.module.userregister.model.classes.language.Language_userregister;
 
 @XStreamAlias("User")
 public abstract class User implements Comparable<User>, Serializable{
@@ -246,18 +245,18 @@ public abstract class User implements Comparable<User>, Serializable{
 		 */
 		public String toString() {
 			StringBuffer string = new StringBuffer();
-			string.append(Language_user.getInstance().getProperty("toStringDNI")+this.getDNI()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringuser")+this.getUser()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringpass")+this.getPass()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringavatar")+this.getAvatar()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringstate")+toStringstate()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringname")+this.getName()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringsurname")+this.getSurname()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringemail")+this.getEmail()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringphone")+this.getMobilephone()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringdatebirthday")+this.getDatebirthday().toString()+"\n");
-			string.append(Language_user.getInstance().getProperty("toStringage")+this.getAge()+" years\n");
-			string.append(Language_user.getInstance().getProperty("toStringbenefits")+Format.formatCurrency(this.getBenefits())+"\n");
+			string.append(Language_userregister.getInstance().getProperty("DNI")+": "+this.getDNI()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("user")+": "+this.getUser()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("password")+": "+this.getPass()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("avatar")+": "+this.getAvatar()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("state")+": "+toStringstate()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("name")+": "+this.getName()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("surname")+": "+this.getSurname()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("email")+": "+this.getEmail()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("mobilephone")+": "+this.getMobilephone()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("datebirthday")+": "+this.getDatebirthday().toString()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("age")+": "+this.getAge()+" years\n");
+			string.append(Language_userregister.getInstance().getProperty("benefits")+": "+Format.formatCurrency(this.getBenefits())+"\n");
 			
 			return string.toString();
 		}
@@ -269,7 +268,7 @@ public abstract class User implements Comparable<User>, Serializable{
 		public String toString (String DNI) {
 			StringBuffer string = new StringBuffer();
 			
-			string.append(Language_user.getInstance().getProperty("toStringDNI")+this.getDNI()+"\n");
+			string.append(Language_userregister.getInstance().getProperty("DNI")+": "+this.getDNI()+"\n");
 			
 			return string.toString();
 		}
@@ -283,40 +282,40 @@ public abstract class User implements Comparable<User>, Serializable{
 				
 			switch (i){
 				case 0:
-					string.append(Language_user.getInstance().getProperty("toStringDNI")+this.getDNI()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("DNI")+": "+this.getDNI()+"\n");
 					break;
 				case 1:
-					string.append(Language_user.getInstance().getProperty("toStringuser")+this.getUser()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("user")+": "+this.getUser()+"\n");
 					break;
 				case 2:
-					string.append(Language_user.getInstance().getProperty("toStringpass")+this.getPass()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("password")+": "+this.getPass()+"\n");
 					break;
 				case 3:
-					string.append(Language_user.getInstance().getProperty("toStringavatar")+this.getAvatar()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("avatar")+": "+this.getAvatar()+"\n");
 					break;
 				case 4:
-					string.append(Language_user.getInstance().getProperty("toStringstate")+toStringstate()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("state")+": "+toStringstate()+"\n");
 					break;
 				case 5:
-					string.append(Language_user.getInstance().getProperty("toStringname")+this.getName()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("name")+": "+this.getName()+"\n");
 					break;
 				case 6:
-					string.append(Language_user.getInstance().getProperty("toStringsurname")+this.getSurname()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("surname")+": "+this.getSurname()+"\n");
 					break;
 				case 7:
-					string.append(Language_user.getInstance().getProperty("toStringemail")+this.getEmail()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("email")+": "+this.getEmail()+"\n");
 					break;
 				case 8:
-					string.append(Language_user.getInstance().getProperty("toStringphone")+this.getMobilephone()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("mobilephone")+": "+this.getMobilephone()+"\n");
 					break;
 				case 9:
-					string.append(Language_user.getInstance().getProperty("toStringdatebirthday")+this.getDatebirthday().toString()+"\n");
+					string.append(Language_userregister.getInstance().getProperty("datebirthday")+": "+this.getDatebirthday().toString()+"\n");
 					break;
 				case 10:
-					string.append(Language_user.getInstance().getProperty("toStringage")+this.getAge()+" years\n");
+					string.append(Language_userregister.getInstance().getProperty("age")+": "+this.getAge()+" years\n");
 					break;
 				case 11:
-					string.append(Language_user.getInstance().getProperty("toStringbenefits")+Format.formatCurrency(this.getBenefits())+"\n");
+					string.append(Language_userregister.getInstance().getProperty("benefits")+": "+Format.formatCurrency(this.getBenefits())+"\n");
 					break;
 			}
 			
@@ -336,10 +335,10 @@ public abstract class User implements Comparable<User>, Serializable{
 	public String toStringstate (){
 		String state="";
 		if (this.getState()==true){
-			state = Language_user.getInstance().getProperty("conected");
+			state = Language_userregister.getInstance().getProperty("conected");
 		}
 		if (this.getState()==false){
-			state = Language_user.getInstance().getProperty("noconected");
+			state = Language_userregister.getInstance().getProperty("noconected");
 		}
 		
 		return state;

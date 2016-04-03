@@ -1,6 +1,6 @@
 package framework.functions;
 
-import framework.module.config.model.classes.ClassConfig;
+import framework.module.menu_config.model.classes.ClassConfig;
 
 public class validate {
 
