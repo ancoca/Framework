@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class ConexionBD {
     
-    public Connection AbrirConexion() {
+    public static Connection AbrirConexion() {
 
         Connection con = null;
         try {
@@ -30,14 +30,14 @@ public class ConexionBD {
         return con;
     }
     
-    public void CerrarConexion(Connection con) {
+    public static void CerrarConexion(Connection con) {
         try {
             if (con != null) {
                 con.close();
             }
         } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "Ha sido imposible cerrar la conexion!");
+            JOptionPane.showMessageDialog(null, "Ha sido imposible cerrar la conexion");
         }
     }
 }
