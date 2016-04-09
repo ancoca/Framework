@@ -49,13 +49,14 @@ public class BLL_admin {
                         check=false;
                 } else {
                     a1 = DAO_admin.ask_admin();
-                        if (a1==null){
-                            check=false;
-                        } else {
+                    if (a1==null){
+                        check=false;
+                    } else {
+                            check=BLL_BD.create_BD(a1);
+                            if (check == true){
                                 Singleton_admin.useradmin.add(a1);
-                                check=true;
-
-                        }
+                            }
+                    }
                 }
             }
 	}
@@ -105,8 +106,10 @@ public class BLL_admin {
                                     if (a1==null){
                                         check=false;
                                     } else {
-                                        Singleton_admin.useradmin.set(location1, a1);
-                                        check=true;
+                                        check=BLL_BD.update_BD(a1);
+                                        if (check==true){
+                                            Singleton_admin.useradmin.set(location1, a1);
+                                        }
                                    }
                         }else{
                                 a1 = DAO_admin.ask_adminDNI_update();
@@ -123,8 +126,14 @@ public class BLL_admin {
                                                 if (a1==null){
                                                     check=false;
                                                 } else {
-                                                        Singleton_admin.useradmin.set(location1, a1);
-                                                        check=true;
+                                                        check=BLL_BD.delete_BD_update(dni);
+                                                        if (check == true){
+                                                            check=BLL_BD.create_BD(a1);
+                                                            if (check == true){
+                                                                Singleton_admin.useradmin.set(location1, a1);
+                                                            }
+                                                        }
+                                                        
                                                 }
                                         }
                                 }
@@ -157,13 +166,14 @@ public class BLL_admin {
                 if (opc == 0) {
                     ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).removeRow(selection1);
                     admin = Singleton_admin.useradmin.get(pos);
-
-                    Singleton_admin.useradmin.remove(pos);
-                    miniSimpleTableModel_admin.datosaux.remove(pos);
-                    json_auto_admin.savejson_admin();
-                    ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).cargar();
-                    List_admin.lblsize.setText(String.valueOf(Singleton_admin.useradmin.size()));
-                    pagina_admin.initLinkBox();
+                    check=BLL_BD.delete_BD(admin);
+                    if (check == true){
+                        Singleton_admin.useradmin.remove(pos);
+                        miniSimpleTableModel_admin.datosaux.remove(pos);
+                        ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).cargar();
+                        List_admin.lblsize.setText(String.valueOf(Singleton_admin.useradmin.size()));
+                        pagina_admin.initLinkBox();
+                    }
                 }
                 
                 if (List_admin.TABLA.getRowCount()==0){
