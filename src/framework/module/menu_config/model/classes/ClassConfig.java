@@ -7,7 +7,6 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import framework.classes.language.Language_general;
 import framework.functions.Functions_menu;
 import framework.functions.Functions_theme;
-import framework.module.admin.model.BLL.BLL_admin.BLL_BD;
 import framework.module.admin.model.BLL.BLL_dummies.Make_dummies_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
@@ -26,7 +25,6 @@ import framework.module.userregister.model.BLL.BLL_dummies.Make_dummies_userregi
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.model.classes.language.Language_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
-import java.sql.SQLException;
 
 @XStreamAlias("ClassConfig")
 public class ClassConfig implements Serializable {
@@ -70,7 +68,7 @@ public class ClassConfig implements Serializable {
 		this.theme = "GTK";
 	}
 	
-	public static ClassConfig getInstance () throws SQLException {
+	public static ClassConfig getInstance () {
 		if (instance == null){
 			instance = new ClassConfig ();
                         
@@ -88,7 +86,7 @@ public class ClassConfig implements Serializable {
 			Singleton_client.userclient = new ArrayList <Client> ();
 			Singleton_userregister.userregister = new ArrayList <User_register> ();
 			
-			BLL_BD.BDtoArrayList();
+			json_auto_admin.openjson_admin();
                         json_auto_client.openjson_client();
                         json_auto_userregister.openjson_userregister();
 			boolean dummies = Functions_menu.YES_NO(Language_menu_config.getInstance().getProperty("dummies"));
