@@ -2,6 +2,7 @@ package framework.module.admin.model.classes;
 
 import framework.classes.ClassDate;
 import framework.module.admin.controller.Controller_admin;
+import framework.module.admin.model.BLL.BLL_admin.BLL_BD;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.language.Language_admin;
@@ -9,6 +10,7 @@ import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.view.List_admin;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 public class miniSimpleTableModel_admin extends AbstractTableModel {
     public static ArrayList<Admin> datos = new ArrayList<Admin>();
@@ -110,22 +112,26 @@ public class miniSimpleTableModel_admin extends AbstractTableModel {
     public void cargar() {
         datos.clear();
         datosaux.clear();
+        boolean correcto = false;
         
-        json_auto_admin.openjson_admin();
-        
-        Admin admin = null;
-        java.util.Date date= new java.util.Date();
-        for(int i=0;i<=(Singleton_admin.useradmin.size()-1);i++) {
-            //admin = new Admin(i, getDNI(), getCadenaAleatoria2(8), new Timestamp(date.getTime()));
-            admin = Singleton_admin.useradmin.get(i);
-            addRow(admin);
-            datosaux.add(admin);
-            //Singleton_user.useradmin.add(admin);
-            try {
-                Thread.sleep(1); //1 milliseconds
-            } catch (Exception e) {
-              System.out.println(e);
+        correcto = BLL_BD.BDtoArrayList();
+        if (correcto==true){
+            Admin admin = null;
+            java.util.Date date= new java.util.Date();
+            for(int i=0;i<=(Singleton_admin.useradmin.size()-1);i++) {
+                //admin = new Admin(i, getDNI(), getCadenaAleatoria2(8), new Timestamp(date.getTime()));
+                admin = Singleton_admin.useradmin.get(i);
+                addRow(admin);
+                datosaux.add(admin);
+                //Singleton_user.useradmin.add(admin);
+                try {
+                    Thread.sleep(1); //1 milliseconds
+                } catch (Exception e) {
+                  System.out.println(e);
+                }
             }
+        }else{
+            JOptionPane.showMessageDialog(null, "No se ha podido cargar los usuarios");
         }
     }
 

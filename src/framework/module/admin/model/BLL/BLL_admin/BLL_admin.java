@@ -6,7 +6,6 @@
 package framework.module.admin.model.BLL.BLL_admin;
 
 import framework.module.admin.controller.Controller_admin;
-import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.DAO.DAO_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
@@ -14,6 +13,7 @@ import framework.module.admin.model.classes.language.Language_admin;
 import framework.module.admin.model.classes.miniSimpleTableModel_admin;
 import framework.module.admin.model.functions.json_admin;
 import framework.module.admin.model.functions.json_auto_admin;
+import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.functions.txt_admin;
 import framework.module.admin.model.functions.xml_admin;
 import framework.module.admin.view.Create_admin;
@@ -52,9 +52,10 @@ public class BLL_admin {
                         if (a1==null){
                             check=false;
                         } else {
-                                Singleton_admin.useradmin.add(a1);
-                                check=true;
-
+                                check=BLL_BD.create_BD(a1);
+                                if (check == true){
+                                    Singleton_admin.useradmin.add(a1);
+                                }
                         }
                 }
             }
@@ -105,8 +106,10 @@ public class BLL_admin {
                                     if (a1==null){
                                         check=false;
                                     } else {
-                                        Singleton_admin.useradmin.set(location1, a1);
-                                        check=true;
+                                        check=BLL_BD.update_BD(a1);
+                                        if (check==true){
+                                            Singleton_admin.useradmin.set(location1, a1);
+                                        }
                                    }
                         }else{
                                 a1 = DAO_admin.ask_adminDNI_update();
@@ -123,8 +126,13 @@ public class BLL_admin {
                                                 if (a1==null){
                                                     check=false;
                                                 } else {
-                                                        Singleton_admin.useradmin.set(location1, a1);
-                                                        check=true;
+                                                        check=BLL_BD.delete_BD_update(dni);
+                                                        if (check == true){
+                                                            check=BLL_BD.create_BD(a1);
+                                                            if (check == true){
+                                                                Singleton_admin.useradmin.set(location1, a1);
+                                                            }
+                                                        }
                                                 }
                                         }
                                 }
@@ -157,13 +165,14 @@ public class BLL_admin {
                 if (opc == 0) {
                     ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).removeRow(selection1);
                     admin = Singleton_admin.useradmin.get(pos);
-
-                    Singleton_admin.useradmin.remove(pos);
-                    miniSimpleTableModel_admin.datosaux.remove(pos);
-                    json_auto_admin.savejson_admin();
-                    ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).cargar();
-                    List_admin.lblsize.setText(String.valueOf(Singleton_admin.useradmin.size()));
-                    pagina_admin.initLinkBox();
+                    check=BLL_BD.delete_BD(admin);
+                    if (check == true){
+                        Singleton_admin.useradmin.remove(pos);
+                        miniSimpleTableModel_admin.datosaux.remove(pos);
+                        ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).cargar();
+                        List_admin.lblsize.setText(String.valueOf(Singleton_admin.useradmin.size()));
+                        pagina_admin.initLinkBox();
+                    }
                 }
                 
                 if (List_admin.TABLA.getRowCount()==0){
