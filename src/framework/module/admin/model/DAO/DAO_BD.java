@@ -8,6 +8,7 @@ package framework.module.admin.model.DAO;
 import framework.classes.ClassDate;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
+import framework.module.admin.view.Update_admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,7 +24,7 @@ public class DAO_BD {
     public static boolean create_BD (Connection connection, Admin a1) {
         boolean correcto = false;
         PreparedStatement statement = null;
-        int state = 0;
+        int state = 0, correct =0;
         
         try{
             statement=connection.prepareStatement("INSERT INTO admin "
@@ -54,7 +55,7 @@ public class DAO_BD {
             statement.setFloat(16, a1.getIncentive());
             statement.setInt(17, a1.getActivity());
 
-            statement.executeUpdate();
+            correct=statement.executeUpdate();
             correcto = true;
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Ha habido un problema al insertar un nuevo usuario!");
@@ -76,13 +77,14 @@ public class DAO_BD {
     public static boolean update_BD (Connection connection, Admin a1) {
         boolean correcto = false;
         PreparedStatement statement = null;
-        int state = 0;
+        int state = 0, correct = 0;
         
         try{
-            statement=connection.prepareStatement("UPDATE admin SET "
-                    + "DNI=?, user=?, pass=?, avatar=?, state=?, name=?, surname=?, "
-                    + "email=?, mobilephone=?, datebirthday=?, age=?, benefits=?, "
-                    + "datecontract=?, old=?, salary=?, incentive=?, activity=? WHERE DNI=?");
+            statement=connection.prepareStatement("UPDATE admin SET" +
+                "DNI = ?,user = ?,pass = ?,avatar = ?,state = ?,name = ?," +
+                "surname = ?,email = ?,mobilephone = ?,datebirthday = ?,age = ?," +
+                "benefits = ?,datecontract = ?,old = ?,salary = ?,incentive = ?," +
+                "activity = ? WHERE DNI = ?;");
 
             statement.setString(1, a1.getDNI());
             statement.setString(2, a1.getUser());
@@ -107,10 +109,11 @@ public class DAO_BD {
             statement.setFloat(16, a1.getIncentive());
             statement.setInt(17, a1.getActivity());
 
-            statement.executeUpdate();
+            correct=statement.executeUpdate();
+            System.out.println(correct);
             correcto = true;
         }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Ha habido un problema al modificar un usuario!");
+            JOptionPane.showMessageDialog(null, "Ha habido un problema al insertar un nuevo usuario!");
             correcto = false;
         }finally{
             if (statement != null){
@@ -133,7 +136,34 @@ public class DAO_BD {
         try{
             statement = connection.prepareStatement("DELETE FROM admin WHERE DNI=?");
             statement.setString(1, a1.getDNI());
-            statement.executeUpdate();
+            int correct=statement.executeUpdate();
+            correcto = true;
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null, "Ha habido un error al eliminar el usuario!");
+            correcto = false;
+        }finally{
+            if (statement != null){
+                try{
+                    statement.close();
+                    correcto = true;
+                }catch (SQLException ex){
+                    JOptionPane.showMessageDialog(null, "Ha habido un error en la Base de Datos");
+                    correcto = false;
+                }
+            }
+        }
+        return correcto;
+    }
+    
+    public static boolean delete_BD_update (Connection connection, String dni) {
+        boolean correcto = false;
+        PreparedStatement statement = null;
+        int correct = 0;
+        
+        try{
+            statement = connection.prepareStatement("DELETE FROM admin WHERE DNI=?");
+            statement.setString(1, dni);
+            correct=statement.executeUpdate();
             correcto = true;
         }catch (SQLException ex){
             JOptionPane.showMessageDialog(null, "Ha habido un error al eliminar el usuario!");
@@ -190,8 +220,10 @@ public class DAO_BD {
                 a1.setSalary(result.getFloat("salary"));
                 a1.setIncentive(result.getFloat("incentive"));
                 a1.setActivity(result.getInt("activity"));
-                correcto = true;
+                
+                Singleton_admin.useradmin.add(a1);
             }
+            correcto = true;
         }catch (SQLException ex){
             JOptionPane.showMessageDialog(null, "Ha habido un problema al obtener los usuarios!");
             correcto = false;
