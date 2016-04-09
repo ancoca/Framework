@@ -59,6 +59,20 @@ public class BLL_BD {
         return correcto;
     }
     
+    public static boolean delete_BD_update (String dni) {
+        boolean correcto = false;
+        Connection connection = null;
+        ConexionBD conexionBD = new ConexionBD();
+        
+        connection = ConexionBD.AbrirConexion();
+        
+        correcto = DAO_BD.delete_BD_update(connection, dni);
+        
+        ConexionBD.CerrarConexion((com.mysql.jdbc.Connection) connection);
+        
+        return correcto;
+    }
+    
     public static boolean BDtoArrayList () {
         boolean correcto = false;
         Connection connection = null;
