@@ -8,6 +8,7 @@ package framework.module.admin.model.BLL.BLL_dummies;
 import framework.classes.ClassDate;
 import framework.classes.ConexionBD;
 import framework.module.admin.model.classes.Admin;
+import framework.classes.ConexionBD;
 import framework.module.admin.model.classes.Singleton_admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
