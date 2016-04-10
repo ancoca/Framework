@@ -86,7 +86,6 @@ public class ClassConfig implements Serializable {
 			Singleton_client.userclient = new ArrayList <Client> ();
 			Singleton_userregister.userregister = new ArrayList <User_register> ();
 			
-			json_auto_admin.openjson_admin();
                         json_auto_client.openjson_client();
                         json_auto_userregister.openjson_userregister();
 			boolean dummies = Functions_menu.YES_NO(Language_menu_config.getInstance().getProperty("dummies"));
