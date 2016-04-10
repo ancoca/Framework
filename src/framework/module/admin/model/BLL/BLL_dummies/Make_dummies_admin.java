@@ -5,10 +5,14 @@
  */
 package framework.module.admin.model.BLL.BLL_dummies;
 
+import com.mysql.jdbc.Connection;
 import framework.classes.ClassDate;
+import framework.classes.ConexionBD;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
+import java.sql.PreparedStatement;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -172,10 +176,56 @@ public class Make_dummies_admin {
 	 * 
 	 */
 	public static void makedummies_admin () {
-		for (int i=0; i<5; i++) {
-			Admin a1 = new Admin (DNI(), user(), pass(), avatar(), state(), name(), surname(), email(), mobilephone(),
-					datebirthday(), datecontract(), salary(), incentive(), activity());
-			Singleton_admin.useradmin.add(a1);
-		}
-	}
+            Connection connection = null;
+            ConexionBD conexion_DB = new ConexionBD();
+            PreparedStatement statement = null;
+            int resultado = 0, state = 0;
+ 	
+            try{
+                for (int i=0; i<5; i++) {
+                    connection = conexion_DB.AbrirConexion();
+                        Admin a1 = new Admin (DNI(), user(), pass(), avatar(), state(), name(), surname(), email(), mobilephone(),
+                                        datebirthday(), datecontract(), salary(), incentive(), activity());
+                        Singleton_admin.useradmin.add(a1);
+                        statement = connection.prepareStatement("INSERT INTO admin "
+                                + "(DNI, user, pass, avatar, state, name, surname, email, mobilephone, "
+                                + "datebirthday, age, benefits, datecontract, old, salary, incentive, activity) "
+                                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        statement.setString(1, a1.getDNI());
+                        statement.setString(2, a1.getUser());
+                        statement.setString(3, a1.getPass());
+                        statement.setString(4, a1.getAvatar());
+                        if (a1.getState()==true){
+                            state = 1;
+                        }else{
+                            state = 0;
+                        }
+                        statement.setInt(5, state);
+                        statement.setString(6, a1.getName());
+                        statement.setString(7, a1.getSurname());
+                        statement.setString(8, a1.getEmail());
+                        statement.setString(9, a1.getMobilephone());
+                        statement.setString(10, a1.getDatebirthday().toString());
+                        statement.setInt(11, a1.getAge());
+                        statement.setFloat(12, a1.getBenefits());
+                        statement.setString(13, a1.getDatecontract().toString());
+                        statement.setInt(14, a1.getOld());
+                        statement.setFloat(15, a1.getSalary());
+                        statement.setFloat(16, a1.getIncentive());
+                        statement.setInt(17, a1.getActivity());
+                        int correct=statement.executeUpdate();
+                        System.out.println(correct);
+                    }
+                conexion_DB.CerrarConexion((com.mysql.jdbc.Connection) connection);
+                resultado = 1;
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Ha habido un error al cargar los dummies");
+                resultado = 0;
+            }
+            
+            if (resultado == 1){
+                JOptionPane.showMessageDialog(null, "Dummies guardados correctamente en la Base de Datos");
+            }
+ 	}
 }
+

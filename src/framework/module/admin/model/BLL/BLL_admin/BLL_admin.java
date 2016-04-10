@@ -52,9 +52,10 @@ public class BLL_admin {
                         if (a1==null){
                             check=false;
                         } else {
-                                Singleton_admin.useradmin.add(a1);
-                                check=true;
-
+                                check=BLL_BD.create_BD(a1);
+                                if (check==true){
+                                    Singleton_admin.useradmin.add(a1);
+                                }
                         }
                 }
             }
@@ -105,8 +106,10 @@ public class BLL_admin {
                                     if (a1==null){
                                         check=false;
                                     } else {
-                                        Singleton_admin.useradmin.set(location1, a1);
-                                        check=true;
+                                        check=BLL_BD.update_BD(a1);
+                                        if (check=true){
+                                            Singleton_admin.useradmin.set(location1, a1);
+                                        }
                                    }
                         }else{
                                 a1 = DAO_admin.ask_adminDNI_update();
@@ -123,8 +126,13 @@ public class BLL_admin {
                                                 if (a1==null){
                                                     check=false;
                                                 } else {
-                                                        Singleton_admin.useradmin.set(location1, a1);
-                                                        check=true;
+                                                        check=BLL_BD.delete_BD_update(dni);
+                                                        if (check==true){
+                                                            check=BLL_BD.create_BD(a1);
+                                                            if (check == true){
+                                                                Singleton_admin.useradmin.set(location1, a1);
+                                                            }
+                                                        }
                                                 }
                                         }
                                 }
