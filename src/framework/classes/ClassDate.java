@@ -95,6 +95,15 @@ public class ClassDate implements Serializable{
         this.date=day+"/"+month+"/"+year;
 
     }
+    
+    public ClassDate (String date, String format) {
+        String [] datearray = new String [3];
+        datearray = date.split("/");
+        this.day=Integer.parseInt(datearray [0]);
+        this.month=Integer.parseInt(datearray [1]);
+        this.year=Integer.parseInt(datearray [2]);
+        this.date=day+"/"+month+"/"+year;
+    }
 
 
     /*
@@ -435,6 +444,12 @@ public class ClassDate implements Serializable{
                 break;
         }
         
+        return string.toString();
+    }
+    
+    public String toStringBD () {
+        StringBuffer string = new StringBuffer();
+        string.append(String.format("%02d", this.getDay())+"/"+String.format("%02d", this.getMonth())+"/"+this.getYear());
         return string.toString();
     }
 }
