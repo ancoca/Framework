@@ -187,7 +187,7 @@ public class DAO_BD {
         Singleton_admin.useradmin.clear();
         
         try {
-            statement = connection.prepareStatement("SELECT * FROM MySQL_BD.admin");
+            statement = connection.prepareStatement("SELECT * FROM admin");
             result = statement.executeQuery();
             Admin a1 = null;
             

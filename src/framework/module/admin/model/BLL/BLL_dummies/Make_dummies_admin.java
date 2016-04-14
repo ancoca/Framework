@@ -205,10 +205,10 @@ public class Make_dummies_admin {
                         statement.setString(7, a1.getSurname());
                         statement.setString(8, a1.getEmail());
                         statement.setString(9, a1.getMobilephone());
-                        statement.setString(10, a1.getDatebirthday().toString());
+                        statement.setString(10, a1.getDatebirthday().toStringBD());
                         statement.setInt(11, a1.getAge());
                         statement.setFloat(12, a1.getBenefits());
-                        statement.setString(13, a1.getDatecontract().toString());
+                        statement.setString(13, a1.getDatecontract().toStringBD());
                         statement.setInt(14, a1.getOld());
                         statement.setFloat(15, a1.getSalary());
                         statement.setFloat(16, a1.getIncentive());
