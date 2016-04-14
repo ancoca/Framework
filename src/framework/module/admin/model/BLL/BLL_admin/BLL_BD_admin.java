@@ -7,14 +7,14 @@ package framework.module.admin.model.BLL.BLL_admin;
 
 import com.mysql.jdbc.Connection;
 import framework.classes.ConexionBD;
-import framework.module.admin.model.DAO.DAO_BD;
+import framework.module.admin.model.DAO.DAO_BD_admin;
 import framework.module.admin.model.classes.Admin;
 
 /**
  *
  * @author angel
  */
-public class BLL_BD {
+public class BLL_BD_admin {
     
     public static boolean create_BD (Admin a1) {
         boolean correcto = false;
@@ -23,7 +23,7 @@ public class BLL_BD {
         
         connection = ConexionBD.AbrirConexion();
         
-        correcto = DAO_BD.create_BD(connection, a1);
+        correcto = DAO_BD_admin.create_BD(connection, a1);
         
         ConexionBD.CerrarConexion((com.mysql.jdbc.Connection) connection);
         
@@ -37,7 +37,7 @@ public class BLL_BD {
         
         connection = ConexionBD.AbrirConexion();
         
-        correcto = DAO_BD.update_BD(connection, a1);
+        correcto = DAO_BD_admin.update_BD(connection, a1);
         
         ConexionBD.CerrarConexion((com.mysql.jdbc.Connection) connection);
         
@@ -51,7 +51,7 @@ public class BLL_BD {
         
         connection = ConexionBD.AbrirConexion();
         
-        correcto = DAO_BD.delete_BD(connection, a1);
+        correcto = DAO_BD_admin.delete_BD(connection, a1);
         
         ConexionBD.CerrarConexion((com.mysql.jdbc.Connection) connection);
         
@@ -65,7 +65,7 @@ public class BLL_BD {
         
         connection = ConexionBD.AbrirConexion();
         
-        correcto = DAO_BD.delete_BD_update(connection, dni);
+        correcto = DAO_BD_admin.delete_BD_update(connection, dni);
         
         ConexionBD.CerrarConexion((com.mysql.jdbc.Connection) connection);
         
@@ -79,7 +79,7 @@ public class BLL_BD {
         
         connection = ConexionBD.AbrirConexion();
         
-        correcto = DAO_BD.BDtoArrayList(connection);
+        correcto = DAO_BD_admin.BDtoArrayList(connection);
         
         ConexionBD.CerrarConexion((com.mysql.jdbc.Connection) connection);
         
@@ -93,7 +93,7 @@ public class BLL_BD {
         
         connection = ConexionBD.AbrirConexion();
         
-        correcto = DAO_BD.find_BD(connection, a1);
+        correcto = DAO_BD_admin.find_BD(connection, a1);
         
         ConexionBD.CerrarConexion((com.mysql.jdbc.Connection) connection);
         

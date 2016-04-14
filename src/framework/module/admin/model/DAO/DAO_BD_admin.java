@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author angel
  */
-public class DAO_BD {
+public class DAO_BD_admin {
     
     public static boolean create_BD (Connection connection, Admin a1) {
         boolean correcto = false;

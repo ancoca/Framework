@@ -2,7 +2,7 @@ package framework.module.admin.model.classes;
 
 import framework.classes.ClassDate;
 import framework.module.admin.controller.Controller_admin;
-import framework.module.admin.model.BLL.BLL_admin.BLL_BD;
+import framework.module.admin.model.BLL.BLL_admin.BLL_BD_admin;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.language.Language_admin;
@@ -113,7 +113,7 @@ public class miniSimpleTableModel_admin extends AbstractTableModel {
         datos.clear();
         datosaux.clear();
         
-        boolean correcto = BLL_BD.BDtoArrayList();
+        boolean correcto = BLL_BD_admin.BDtoArrayList();
         
         if (correcto == true){
             Admin admin = null;

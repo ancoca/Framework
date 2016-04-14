@@ -52,7 +52,7 @@ public class BLL_admin {
                         if (a1==null){
                             check=false;
                         } else {
-                                check=BLL_BD.create_BD(a1);
+                                check=BLL_BD_admin.create_BD(a1);
                                 if (check==true){
                                     Singleton_admin.useradmin.add(a1);
                                 }
@@ -106,7 +106,7 @@ public class BLL_admin {
                                     if (a1==null){
                                         check=false;
                                     } else {
-                                        check=BLL_BD.update_BD(a1);
+                                        check=BLL_BD_admin.update_BD(a1);
                                         if (check=true){
                                             Singleton_admin.useradmin.set(location1, a1);
                                         }
@@ -126,9 +126,9 @@ public class BLL_admin {
                                                 if (a1==null){
                                                     check=false;
                                                 } else {
-                                                        check=BLL_BD.delete_BD_update(dni);
+                                                        check=BLL_BD_admin.delete_BD_update(dni);
                                                         if (check==true){
-                                                            check=BLL_BD.create_BD(a1);
+                                                            check=BLL_BD_admin.create_BD(a1);
                                                             if (check == true){
                                                                 Singleton_admin.useradmin.set(location1, a1);
                                                             }
