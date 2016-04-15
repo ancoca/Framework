@@ -304,6 +304,7 @@ public class DAO_BD_admin {
             a1.setSalary(result.getFloat("salary"));
             a1.setIncentive(result.getFloat("incentive"));
             a1.setActivity(result.getInt("activity"));
+            correcto=true;
         }catch (SQLException ex){
             JOptionPane.showMessageDialog(null, "Ha habido un error en la Base de Datos");
         }
