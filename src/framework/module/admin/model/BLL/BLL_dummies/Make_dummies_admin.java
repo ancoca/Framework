@@ -224,7 +224,7 @@ public class Make_dummies_admin {
             }
             
             if (resultado == 1){
-                JOptionPane.showMessageDialog(null, "Dummies guardados correctamente en la Base de Datos");
+                System.out.println("Dummies guardados correctamente en la Base de Datos");
             }
  	}
 }
