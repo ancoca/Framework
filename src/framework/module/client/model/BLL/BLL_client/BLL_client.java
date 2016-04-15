@@ -52,9 +52,10 @@ public class BLL_client {
                             if (c1==null){
                                 check=false;
                             } else {
-                                    Singleton_client.userclient.add(c1);
-                                    check=true;
-
+                                    check=BLL_BD_client.create_BD(c1);
+                                    if (check==true){
+                                        Singleton_client.userclient.add(c1);
+                                    }
                             }
                     }
                 }
@@ -110,8 +111,10 @@ public class BLL_client {
                                     if (c1==null){
                                         check=false;
                                     } else {
-                                        Singleton_client.userclient.set(location1, c1);
-                                        check=true;
+                                        check=BLL_BD_client.update_BD(c1);
+                                        if (check==true){
+                                            Singleton_client.userclient.set(location1, c1);
+                                        }
                                    }
                         }else{
                                 c1 = DAO_client.ask_clientDNI_update();
@@ -128,13 +131,17 @@ public class BLL_client {
                                                 if (c1==null){
                                                     check=false;
                                                 } else {
-                                                        Singleton_client.userclient.set(location1, c1);
-                                                        check=true;
+                                                        check=BLL_BD_client.delete_BD_update(dni);
+                                                        if (check==true){
+                                                            check=BLL_BD_client.create_BD(c1);
+                                                            if (check==true){
+                                                                Singleton_client.userclient.set(location1, c1);
+                                                            }
+                                                        }
                                                 }
                                         }
                                 }
                         }
-                        
                 }
 	}
     
@@ -163,12 +170,15 @@ public class BLL_client {
                     ((miniSimpleTableModel_client) List_client.TABLA.getModel()).removeRow(selection1);
                     client = Singleton_client.userclient.get(pos);
 
-                    Singleton_client.userclient.remove(pos);
-                    miniSimpleTableModel_client.datosaux.remove(pos);
-                    json_auto_client.savejson_client();
-                    ((miniSimpleTableModel_client) List_client.TABLA.getModel()).cargar();
-                    List_client.lblsize.setText(String.valueOf(Singleton_client.userclient.size()));
-                    pagina_client.initLinkBox();
+                    check=BLL_BD_client.delete_BD(client);
+                    if (check==true){
+                        Singleton_client.userclient.remove(pos);
+                        miniSimpleTableModel_client.datosaux.remove(pos);
+                        json_auto_client.savejson_client();
+                        ((miniSimpleTableModel_client) List_client.TABLA.getModel()).cargar();
+                        List_client.lblsize.setText(String.valueOf(Singleton_client.userclient.size()));
+                        pagina_client.initLinkBox();
+                    }
                 }
                 
                 if (List_client.TABLA.getRowCount()==0){
