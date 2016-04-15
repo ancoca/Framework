@@ -181,7 +181,6 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.list.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         list.dispose();
@@ -279,7 +278,6 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.create.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         create.dispose();
@@ -388,7 +386,6 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.update.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         update.dispose();
@@ -495,7 +492,6 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.read.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         read.dispose();
