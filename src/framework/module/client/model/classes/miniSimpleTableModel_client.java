@@ -3,10 +3,12 @@ import framework.classes.ClassDate;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.client.controller.Controller_client;
+import framework.module.client.model.BLL.BLL_client.BLL_BD_client;
 import framework.module.client.model.classes.language.Language_client;
 import framework.module.client.model.functions.json_auto_client;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
 public class miniSimpleTableModel_client extends AbstractTableModel {
@@ -110,21 +112,25 @@ public class miniSimpleTableModel_client extends AbstractTableModel {
         datos.clear();
         datosaux.clear();
         
-        json_auto_client.openjson_client();
+        boolean correcto=BLL_BD_client.BDtoArrayList();
         
-        Client client = null;
-        java.util.Date date= new java.util.Date();
-        for(int i=0;i<=(Singleton_client.userclient.size()-1);i++) {
-            //admin = new Admin(i, getDNI(), getCadenaAleatoria2(8), new Timestamp(date.getTime()));
-            client = Singleton_client.userclient.get(i);
-            addRow(client);
-            datosaux.add(client);
-            //Singleton_user.useradmin.add(admin);
-            try {
-                Thread.sleep(1); //1 milliseconds
-            } catch (Exception e) {
-              System.out.println(e);
+        if (correcto == true){
+            Client client = null;
+            java.util.Date date= new java.util.Date();
+            for(int i=0;i<=(Singleton_client.userclient.size()-1);i++) {
+                //admin = new Admin(i, getDNI(), getCadenaAleatoria2(8), new Timestamp(date.getTime()));
+                client = Singleton_client.userclient.get(i);
+                addRow(client);
+                datosaux.add(client);
+                //Singleton_user.useradmin.add(admin);
+                try {
+                    Thread.sleep(1); //1 milliseconds
+                } catch (Exception e) {
+                  System.out.println(e);
+                }
             }
+        }else{
+            JOptionPane.showMessageDialog(null, "Los usuarios no han podido ser cargados");
         }
     }
 
