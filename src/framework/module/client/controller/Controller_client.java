@@ -182,8 +182,6 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         this.list.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_admin.savejson_admin();
-                        json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         list.dispose();
@@ -281,8 +279,6 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         this.create.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_admin.savejson_admin();
-                        json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         create.dispose();
@@ -391,8 +387,6 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         this.update.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_admin.savejson_admin();
-                        json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         update.dispose();
@@ -499,8 +493,6 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         this.read.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_admin.savejson_admin();
-                        json_auto_client.savejson_client();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         read.dispose();
