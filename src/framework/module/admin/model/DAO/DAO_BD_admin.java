@@ -5,10 +5,10 @@
  */
 package framework.module.admin.model.DAO;
 
-import com.mysql.jdbc.Connection;
 import framework.classes.ClassDate;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
