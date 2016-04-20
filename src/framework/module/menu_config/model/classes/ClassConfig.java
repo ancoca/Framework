@@ -3,6 +3,7 @@ package framework.module.menu_config.model.classes;
 import java.io.Serializable;
 import java.util.ArrayList;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import framework.classes.PoolConexion;
 
 import framework.classes.language.Language_general;
 import framework.functions.Functions_menu;
@@ -73,6 +74,7 @@ public class ClassConfig implements Serializable {
 			instance = new ClassConfig ();
                         
                         json_auto_config.openjson_config();
+                        PoolConexion.iniciar_BasicDataSourceFactory();
 
 			Functions_theme.theme();
 			Language_user.getInstance();
@@ -86,14 +88,11 @@ public class ClassConfig implements Serializable {
 			Singleton_client.userclient = new ArrayList <Client> ();
 			Singleton_userregister.userregister = new ArrayList <User_register> ();
 			
-                        json_auto_client.openjson_client();
                         json_auto_userregister.openjson_userregister();
 			boolean dummies = Functions_menu.YES_NO(Language_menu_config.getInstance().getProperty("dummies"));
 			if (dummies == true) {
 				Make_dummies_admin.makedummies_admin();
-                                json_auto_admin.savejson_admin();
 				Make_dummies_client.makedummies_client();
-                                json_auto_client.savejson_client();
 				Make_dummies_userregister.makedummies_userregister();
                                 json_auto_userregister.savejson_userregister();
 			}
