@@ -281,7 +281,6 @@ public class BLL_admin {
         Timer timer = new Timer (2000, new ActionListener() {
         
             public void actionPerformed(ActionEvent e) {
-                json_auto_admin.savejson_admin();
                 jframe.dispose();
                 new Controller_admin(new List_admin(), 0).iniciar(0);
             }

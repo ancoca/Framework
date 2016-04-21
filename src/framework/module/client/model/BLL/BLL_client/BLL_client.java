@@ -281,7 +281,6 @@ public class BLL_client {
         Timer timer = new Timer (2000, new ActionListener() {
         
             public void actionPerformed(ActionEvent e) {
-                json_auto_client.savejson_client();
                 jframe.dispose();
                 new Controller_client(new List_client(), 0).iniciar(0);
             }
