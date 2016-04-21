@@ -3,7 +3,9 @@ package framework.module.menu_config.model.classes;
 import java.io.Serializable;
 import java.util.ArrayList;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import framework.classes.Mongo_BD;
 import framework.classes.PoolConexion;
+import framework.classes.Singleton_general;
 
 import framework.classes.language.Language_general;
 import framework.functions.Functions_menu;
@@ -12,13 +14,11 @@ import framework.module.admin.model.BLL.BLL_dummies.Make_dummies_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
 import framework.module.admin.model.classes.language.Language_admin;
-import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.classes.language.Language_user;
 import framework.module.client.model.BLL.BLL_dummies.Make_dummies_client;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
 import framework.module.client.model.classes.language.Language_client;
-import framework.module.client.model.functions.json_auto_client;
 import framework.module.menu_config.model.classes.language.Language_menu_config;
 import framework.module.userregister.model.classes.User_register;
 import framework.module.menu_config.model.functions.json_auto_config;
@@ -75,6 +75,8 @@ public class ClassConfig implements Serializable {
                         
                         json_auto_config.openjson_config();
                         PoolConexion.iniciar_BasicDataSourceFactory();
+                        Singleton_general.mongo = new Mongo_BD();
+                        Singleton_general.client = Mongo_BD.connect();
 
 			Functions_theme.theme();
 			Language_user.getInstance();
