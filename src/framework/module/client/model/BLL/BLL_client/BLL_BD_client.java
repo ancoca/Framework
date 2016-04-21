@@ -5,6 +5,9 @@
  */
 package framework.module.client.model.BLL.BLL_client;
 
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import framework.classes.Mongo_BD;
 import framework.classes.PoolConexion;
 import framework.module.client.model.DAO.DAO_BD_client;
 import framework.module.client.model.classes.Client;
@@ -17,81 +20,33 @@ import java.sql.Connection;
  */
 public class BLL_BD_client {
     
-    public static boolean create_BD (Client c1) {
-        boolean correcto = false;
-        Connection connection = null;
-        
-        connection = (Connection) PoolConexion.OcuparConexion();
-        
-        correcto = DAO_BD_client.create_BD(connection, c1);
-        
-        PoolConexion.LiberarConexion(connection);
-        
-        return correcto;
+    public static void create_BD (Client c1) {
+        DB db = Mongo_BD.getDb();
+        DBCollection table = Mongo_BD.getCollection();
+        DAO_BD_client.create_BD(db, table, c1);
     }
     
-    public static boolean update_BD (Client c1) {
-        boolean correcto = false;
-        Connection connection = null;
-        
-        connection = (Connection) PoolConexion.OcuparConexion();
-        
-        correcto = DAO_BD_client.update_BD(connection, c1);
-        
-        PoolConexion.LiberarConexion(connection);
-        
-        return correcto;
+    public static void update_BD (Client c1) {
+        DB db = Mongo_BD.getDb();
+        DBCollection table = Mongo_BD.getCollection();
+        DAO_BD_client.update_BD(db, table, c1);
     }
     
-    public static boolean delete_BD (Client c1) {
-        boolean correcto = false;
-        Connection connection = null;
-        
-        connection = (Connection) PoolConexion.OcuparConexion();
-        
-        correcto = DAO_BD_client.delete_BD(connection, c1);
-        
-        PoolConexion.LiberarConexion(connection);
-        
-        return correcto;
+    public static void delete_BD (Client c1) {
+        DB db = Mongo_BD.getDb();
+        DBCollection table = Mongo_BD.getCollection();
+        DAO_BD_client.delete_BD(db, table, c1);
     }
     
-    public static boolean delete_BD_update (String dni) {
-        boolean correcto = false;
-        Connection connection = null;
-        
-        connection = (Connection) PoolConexion.OcuparConexion();
-        
-        correcto = DAO_BD_client.delete_BD_update(connection, dni);
-        
-        PoolConexion.LiberarConexion(connection);
-        
-        return correcto;
+    public static void delete_BD_update (String dni) {
+        DB db = Mongo_BD.getDb();
+        DBCollection table = Mongo_BD.getCollection();
+        DAO_BD_client.delete_BD_update(db, table, dni);
     }
     
-    public static boolean BDtoArrayList () {
-        boolean correcto = false;
-        Connection connection = null;
-        
-        connection = (Connection) PoolConexion.OcuparConexion();
-        
-        correcto = DAO_BD_client.BDtoArrayList(connection);
-        
-        PoolConexion.LiberarConexion(connection);
-        
-        return correcto;
-    }
-    
-    public static boolean find_BD (Client c1) {
-        boolean correcto = false;
-        Connection connection = null;
-        
-        connection = (Connection) PoolConexion.OcuparConexion();
-        
-        correcto = DAO_BD_client.find_BD(connection, c1);
-        
-        PoolConexion.LiberarConexion(connection);
-        
-        return correcto;
+    public static void BDtoArrayList () {
+        DB db = Mongo_BD.getDb();
+        DBCollection table = Mongo_BD.getCollection();
+        DAO_BD_client.BDtoArray(db, table);
     }
 }

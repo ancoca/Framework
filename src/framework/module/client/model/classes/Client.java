@@ -1,11 +1,14 @@
 package framework.module.client.model.classes;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 import framework.module.classes.User;
 import java.io.Serializable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import framework.module.menu_config.model.classes.ClassConfig;
 import framework.classes.ClassDate;
 import framework.functions.Format;
+import framework.functions.Functions;
 import framework.module.client.model.classes.language.Language_client;
 
 @XStreamAlias("Client")
@@ -98,6 +101,54 @@ public class Client extends User implements Serializable {
 						break;
 				}
 		}
+                
+                public Client BD_to_Client (DBObject dBObjectClient){
+                    Client client = new Client();
+                    
+                    client.setDNI((String) dBObjectClient.get("DNI"));
+                    client.setUser((String) dBObjectClient.get("user"));
+                    client.setPass((String) dBObjectClient.get("pass"));
+                    client.setAvatar((String) dBObjectClient.get("avatar"));
+                    client.setState((boolean) dBObjectClient.get("state"));
+                    client.setName((String) dBObjectClient.get("name"));
+                    client.setSurname((String) dBObjectClient.get("surname"));
+                    client.setEmail((String) dBObjectClient.get("email"));
+                    client.setMobilephone((String) dBObjectClient.get("mobilephone"));
+                    client.setDatebirthday(new  ClassDate((String) dBObjectClient.get("datebirthday"), "Mongo"));
+                    client.setDateup(new ClassDate((String) dBObjectClient.get("dateup"), "Mongo"));
+                    client.setAntique((int) dBObjectClient.get("antique"));
+                    client.setShopping(Functions.Double_to_Float((double) dBObjectClient.get("shopping")));
+                    client.setDtos((int) dBObjectClient.get("dtos"));
+                    client.setPremium((boolean) dBObjectClient.get("premium"));
+                    client.setTypeclient((String) dBObjectClient.get("typeclient"));
+                    client.setBenefits(Functions.Double_to_Float((double) dBObjectClient.get("benefits")));
+                    
+                    return client;
+                }
+                
+                public BasicDBObject Client_to_BD() {
+                    BasicDBObject dBObjectClient = new BasicDBObject();
+                    dBObjectClient.append("DNI", this.getDNI());
+                    dBObjectClient.append("user", this.getUser());
+                    dBObjectClient.append("pass", this.getPass());
+                    dBObjectClient.append("avatar", this.getAvatar());
+                    dBObjectClient.append("state", this.getState());
+                    dBObjectClient.append("name", this.getName());
+                    dBObjectClient.append("surname", this.getSurname());
+                    dBObjectClient.append("email", this.getEmail());
+                    dBObjectClient.append("mobilephone", this.getMobilephone());
+                    dBObjectClient.append("datebirthday", this.getDatebirthday().toStringBD());
+                    dBObjectClient.append("dateup", this.getDateup().toStringBD());
+                    dBObjectClient.append("antique", this.getAntique());
+                    dBObjectClient.append("shopping", this.getShopping());
+                    dBObjectClient.append("dtos", this.getDtos());
+                    dBObjectClient.append("premium", this.getPremium());
+                    dBObjectClient.append("typeclient", this.getTypeclient());
+                    dBObjectClient.append("benefits", this.getBenefits());
+                    
+                    return dBObjectClient;
+                    
+                }
 		
 	/*
 	 * GETTERS & SETTERS

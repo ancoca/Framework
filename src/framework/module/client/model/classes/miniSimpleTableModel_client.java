@@ -111,26 +111,23 @@ public class miniSimpleTableModel_client extends AbstractTableModel {
     public void cargar() {
         datos.clear();
         datosaux.clear();
+        Singleton_client.userclient.clear();
         
-        boolean correcto=BLL_BD_client.BDtoArrayList();
+        BLL_BD_client.BDtoArrayList();
         
-        if (correcto == true){
-            Client client = null;
-            java.util.Date date= new java.util.Date();
-            for(int i=0;i<=(Singleton_client.userclient.size()-1);i++) {
-                //admin = new Admin(i, getDNI(), getCadenaAleatoria2(8), new Timestamp(date.getTime()));
-                client = Singleton_client.userclient.get(i);
-                addRow(client);
-                datosaux.add(client);
-                //Singleton_user.useradmin.add(admin);
-                try {
-                    Thread.sleep(1); //1 milliseconds
-                } catch (Exception e) {
-                  System.out.println(e);
-                }
+        Client client = null;
+        java.util.Date date= new java.util.Date();
+        for(int i=0;i<=(Singleton_client.userclient.size()-1);i++) {
+            //admin = new Admin(i, getDNI(), getCadenaAleatoria2(8), new Timestamp(date.getTime()));
+            client = Singleton_client.userclient.get(i);
+            addRow(client);
+            datosaux.add(client);
+            //Singleton_user.useradmin.add(admin);
+            try {
+                Thread.sleep(1); //1 milliseconds
+            } catch (Exception e) {
+              System.out.println(e);
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Los usuarios no han podido ser cargados");
         }
     }
 

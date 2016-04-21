@@ -5,15 +5,12 @@
  */
 package framework.module.client.model.BLL.BLL_dummies;
 
+import com.mongodb.DBCollection;
 import framework.classes.ClassDate;
-import framework.classes.PoolConexion;
+import framework.classes.Mongo_BD;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.Random;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -179,61 +176,13 @@ public class Make_dummies_client {
 	 * 
 	 */
         public static void makedummies_client () {
-            PreparedStatement statement = null;
-            Connection connection = PoolConexion.OcuparConexion();
-            int resultado = 0, state = 0, premium = 0;
+            DBCollection table = Mongo_BD.getCollection();
             
-            try{
 		for (int i=0; i<5; i++) {
                     Client c1 = new Client(DNI(), user(), pass(), avatar(), state(), name(), surname(), email(), mobilephone(),
                                     datebirthday(), shopping(), dtos(), premium(), typeclient());
                     Singleton_client.userclient.add(c1);
-                    statement=connection.prepareStatement("INSERT INTO client "
-                            + "(DNI, user, pass, avatar, state, name, surname, email, mobilephone, "
-                            + "datebirthday, age, benefits, dateup, old, shopping, dtos, premium, typeclient) "
-                            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-                    statement.setString(1, c1.getDNI());
-                    statement.setString(2, c1.getUser());
-                    statement.setString(3, c1.getPass());
-                    statement.setString(4, c1.getAvatar());
-                    if (c1.getState()==true){
-                        state = 1;
-                    }else{
-                        state = 0;
-                    }
-                    statement.setInt(5, state);
-                    statement.setString(6, c1.getName());
-                    statement.setString(7, c1.getSurname());
-                    statement.setString(8, c1.getEmail());
-                    statement.setString(9, c1.getMobilephone());
-                    statement.setString(10, c1.getDatebirthday().toStringBD());
-                    statement.setInt(11, c1.getAge());
-                    statement.setFloat(12, c1.getBenefits());
-                    statement.setString(13, c1.getDateup().toStringBD());
-                    statement.setInt(14, c1.getAntique());
-                    statement.setFloat(15, c1.getShopping());
-                    statement.setInt(16, c1.getDtos());
-                    if (c1.getPremium()==true){
-                        premium = 1;
-                    }else{
-                        premium = 0;
-                    }
-                    statement.setInt(17, premium);
-                    statement.setString(18, c1.getTypeclient());
-
-                    int correct=statement.executeUpdate();
-                    System.out.println(correct);
+                    table.insert(c1.Client_to_BD());
                 }
-                resultado = 1;
-            }catch(SQLException ex){
-                JOptionPane.showMessageDialog(null, "Ha habido un problema al insertar un nuevo usuario!");
-                resultado = 0;
-            }
-            
-            if (resultado == 1){
-                System.out.println("Dummies guardados correctamente en la Base de Datos");
-            }
-		
-	}
+        }
 }
