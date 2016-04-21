@@ -156,4 +156,12 @@ public class Functions {
 
         return s;
     }	
+    
+    public static float Double_to_Float (double num) {
+        float n= 0.0f;
+        
+        n=Float.parseFloat(num+"");
+        
+        return n;
+    }
 }
