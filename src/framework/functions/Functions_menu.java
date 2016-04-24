@@ -3,11 +3,18 @@ package framework.functions;
 import javax.swing.JOptionPane;
 import framework.classes.language.Language_general;
 
+/**
+ * 
+ * @author angel
+ */
 public class Functions_menu {
 
-    /*
-     * validar combobox
-     * 
+    /**
+     * CHECK COMBOBOX
+     * @param mensdesp
+     * @param titldesp
+     * @param opciones
+     * @return 
      */
     public static String combobox(String mensdesp, String titldesp, String [] opciones) {
         String op="";
@@ -25,9 +32,12 @@ public class Functions_menu {
     }
 
 
-    /*
-     * validar botones
-     * 
+    /**
+     * CHECK BOTON
+     * @param tipo
+     * @param mensboton
+     * @param titlboton
+     * @return 
      */
     public static int botones(String[] tipo, String mensboton, String titlboton) {
         int op=0;
@@ -38,9 +48,10 @@ public class Functions_menu {
     }
 
 
-    /*
-     * validar continuar
-     * 
+    /**
+     * CHECK CONTINUE
+     * @param s
+     * @return 
      */
     public static int continuar(String s){
         int op = 0;
@@ -72,9 +83,10 @@ public class Functions_menu {
     }
 
 
-    /*
-     * yes or no
-     * 
+    /**
+     * YES OR NO
+     * @param mensboton
+     * @return 
      */
     public static boolean YES_NO(String mensboton) {
         boolean valor=false;

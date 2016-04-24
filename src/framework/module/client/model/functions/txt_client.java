@@ -13,9 +13,16 @@ import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
 import framework.module.client.model.classes.language.Language_client;
 
+/**
+ * 
+ * @author angel
+ */
 public class txt_client {
 
-	public static void savetxt_client() {
+    /**
+     * SAVE FILE TXT
+     */
+    public static void savetxt_client() {
         String PATH = null;
         try {
             File file;
@@ -32,17 +39,20 @@ public class txt_client {
                 file = new File(PATH);
                 
                 FileOutputStream FOS=new FileOutputStream(file);
-				ObjectOutputStream OOS=new ObjectOutputStream(FOS);
-				OOS.writeObject(Singleton_client.userclient);
-				OOS.close();
+                ObjectOutputStream OOS=new ObjectOutputStream(FOS);
+                OOS.writeObject(Singleton_client.userclient);
+                OOS.close();
                 JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("savetxt"), "TXT", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("errorsave_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("errorsave_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 	
-	public static void opentxt_client() {
+    /**
+     * OPEN FILE TXT
+     */
+    public static void opentxt_client() {
     	String PATH = null;
         try {
             File f;
@@ -58,12 +68,12 @@ public class txt_client {
                 f = new File(PATH);
                 
                 FileInputStream fi=new FileInputStream(f);
-    			ObjectInputStream oi=new ObjectInputStream(fi);
-    			Singleton_client.userclient = (ArrayList<Client>)oi.readObject();
-    			oi.close();
+                ObjectInputStream oi=new ObjectInputStream(fi);
+                Singleton_client.userclient = (ArrayList<Client>)oi.readObject();
+                oi.close();
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("erroropen_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("erroropen_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

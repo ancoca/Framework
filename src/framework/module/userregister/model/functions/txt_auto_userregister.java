@@ -12,9 +12,16 @@ import framework.module.userregister.model.classes.User_register;
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.model.classes.language.Language_userregister;
 
+/**
+ * 
+ * @author angel
+ */
 public class txt_auto_userregister {
 
-	public static void savetxt_userregister() {
+    /**
+     * SAVE FILE TXT
+     */
+    public static void savetxt_userregister() {
         String PATH = null;
         
         try {
@@ -25,27 +32,29 @@ public class txt_auto_userregister {
         }
 
         if (Singleton_userregister.userregister.size() > 0) {
-	        try {
-	            File file;
-	            
-	            file = new File(PATH);
-	            
-	            FileOutputStream FOS=new FileOutputStream(file);
-				ObjectOutputStream OOS=new ObjectOutputStream(FOS);
-				OOS.writeObject(Singleton_userregister.userregister);
-				OOS.close();
-	            
-	        } catch (Exception e) {
-	        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-	        }
+            try {
+                File file;
+
+                file = new File(PATH);
+
+                FileOutputStream FOS=new FileOutputStream(file);
+                ObjectOutputStream OOS=new ObjectOutputStream(FOS);
+                OOS.writeObject(Singleton_userregister.userregister);
+                OOS.close();
+
+            } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            }
         } else {
             File path = new File(PATH);
-
             path.delete();
         }
     }
 	
-	public static void opentxt_userregister() {
+    /**
+     * OPEN FILE TXT
+     */
+    public static void opentxt_userregister() {
     	String PATH = null;
         try {
             File file;
@@ -54,12 +63,12 @@ public class txt_auto_userregister {
             file = new File(PATH);
             
             FileInputStream FIS=new FileInputStream(file);
-    		ObjectInputStream OIS=new ObjectInputStream(FIS);
-    		Singleton_userregister.userregister = (ArrayList<User_register>)OIS.readObject();
-    		OIS.close();
+            ObjectInputStream OIS=new ObjectInputStream(FIS);
+            Singleton_userregister.userregister = (ArrayList<User_register>)OIS.readObject();
+            OIS.close();
             
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("erroropen_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("erroropen_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

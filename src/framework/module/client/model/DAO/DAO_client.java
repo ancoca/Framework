@@ -10,7 +10,6 @@ import framework.classes.ClassDate;
 import framework.functions.validate;
 import framework.module.client.model.BLL.BLL_client.BLL_client;
 import framework.module.client.model.classes.Client;
-import framework.module.client.model.classes.Singleton_client;
 import framework.module.client.model.classes.language.Language_client;
 import framework.module.client.view.Create_client;
 import framework.module.client.view.Read_client;
@@ -28,6 +27,10 @@ public class DAO_client {
             //                                                                //
             ////////////////////////////////////////////////////////////////////
   
+    /**
+     * CHECK AND CREATE DATA OF THE USER
+     * @return 
+     */
     public static Client ask_client () {
 		
 	//Check
@@ -84,6 +87,10 @@ public class DAO_client {
         return client;
     }
     
+    /**
+     * CREATE USER WITH DNI ONLY
+     * @return 
+     */
     public static Client ask_clientDNI () {	
         boolean checkDNI;
         String DNI;
@@ -97,43 +104,57 @@ public class DAO_client {
         return client;
     }
     
+    /**
+     * CALCULATE DATE
+     * @param param1
+     * @param param2
+     * @return 
+     */
     public static ClassDate plusage (ClassDate param1, int param2) {
 	
 	return new ClassDate (param1.getDay(), param1.getMonth(), (param1.getYear()+param2));
 	
     }
     
+    /**
+     * CHECK DNI
+     * @return 
+     */
     public static boolean DNI () {
         boolean check=true;
         
         String DNI = "", aux = "", caracteres = "TRWAGMYFPDXBNJZSQVHLCKET";
-		boolean confirm;
-		int number = 0, module = 0;
-		char character = ' ', control = ' ';
-		
-		DNI=Create_client.txtDNI.getText();
-		confirm=validate.DNI(DNI);
-		if (confirm==false) {
-                    check = false;
-                }else{
-                    aux = "";
-                    for(int i=0; i<8; i++){
-                        aux += DNI.charAt(i);
-                    }	
-                    character = DNI.charAt(8);			
-                    number = Integer.parseInt(aux);
-                    module= number % 23;
-                    control = caracteres.charAt(module);
-                    if(control == character){
-                        check = true;
-                    }else{
-                        check = false;
-                    }
-                }
+        boolean confirm;
+        int number = 0, module = 0;
+        char character = ' ', control = ' ';
+
+        DNI=Create_client.txtDNI.getText();
+        confirm=validate.DNI(DNI);
+        if (confirm==false) {
+            check = false;
+        }else{
+            aux = "";
+            for(int i=0; i<8; i++){
+                aux += DNI.charAt(i);
+            }	
+            character = DNI.charAt(8);			
+            number = Integer.parseInt(aux);
+            module= number % 23;
+            control = caracteres.charAt(module);
+            if(control == character){
+                check = true;
+            }else{
+                check = false;
+            }
+        }
         
         return check;
     }
     
+    /**
+     * CHECK USER
+     * @return 
+     */
     public static boolean user () {
         boolean check=true, confirm=false;
         
@@ -147,6 +168,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK PASSWORD
+     * @return 
+     */
     public static boolean pass () {
         boolean check=true, confirm=false;
 		
@@ -160,6 +185,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK NAME
+     * @return 
+     */
     public static boolean name () {
         boolean check=true, confirm=false;
         
@@ -173,6 +202,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK SURNAME
+     * @return 
+     */
     public static boolean surname () {
         boolean check=true, confirm=false;
         
@@ -186,6 +219,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK EMAIL
+     * @return 
+     */
     public static boolean email () {
         boolean check=true, confirm=false;
         
@@ -199,6 +236,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK MOBILE TELEPHONE
+     * @return 
+     */
     public static boolean mobilephone () {
         boolean check=true, confirm=false;
         
@@ -211,6 +252,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK STATE
+     * @return 
+     */
     public static boolean state () {
         boolean check=true;
         
@@ -223,7 +268,11 @@ public class DAO_client {
         
         return check;
     }
-    
+    /**
+     * CHECK BIRTHDATE
+     * @param year
+     * @return 
+     */
     public static boolean datebirthday (int year) {
         boolean check=true, confirm=false;
         ClassDate Cdate=null;
@@ -251,6 +300,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK SHOPPING
+     * @return 
+     */
     public static boolean shopping () {
         boolean check=true;
         float i;
@@ -269,6 +322,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK DTOS
+     * @return 
+     */
     public static boolean dtos () {
         boolean check=true;
         int i;
@@ -287,6 +344,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK PREMIUM
+     * @return 
+     */
     public static boolean premium () {
         boolean check=true;
         
@@ -300,6 +361,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK TYPE CLIENT
+     * @return 
+     */
     public static boolean typeclient () {
         boolean check=true, confirm=false;
         
@@ -319,33 +384,40 @@ public class DAO_client {
             //                                                                //
             ////////////////////////////////////////////////////////////////////
  
+    /**
+     * GENERATE DATA OF THE USER
+     */
     public static void generate_edit_client (){
-            Client client = BLL_client.IDclient();
-            
-            Update_client.txtDNI.setText(client.getDNI());
-            Update_client.txtuser.setText(client.getUser());
-            Update_client.txtpass.setText(client.getPass());
-            Update_client.txtavatar.setText(client.getAvatar());
-            if (client.getState()==true){
-                    Update_client.statetrue.setSelected(true);
-            }else{
-                    Update_client.statefalse.setSelected(true);
-            }
-            Update_client.txtname.setText(client.getName());
-            Update_client.txtsurname.setText(client.getSurname());
-            Update_client.txtemail.setText(client.getEmail());
-            Update_client.txtmobilephone.setText(client.getMobilephone());
-            Update_client.txtdatebirthday.setCalendar(client.getDatebirthday().StringtoCalendar());
-            Update_client.txtshopping.setText(client.getShopping()+"");
-            Update_client.txtdtos.setText(client.getDtos()+"");
-            if (client.getPremium()==true){
-                    Update_client.premiumtrue.setSelected(true);
-            }else{
-                    Update_client.premiumfalse.setSelected(true);
-            }
-            Update_client.txttype_client.setText(client.getTypeclient());
+        Client client = BLL_client.IDclient();
+
+        Update_client.txtDNI.setText(client.getDNI());
+        Update_client.txtuser.setText(client.getUser());
+        Update_client.txtpass.setText(client.getPass());
+        Update_client.txtavatar.setText(client.getAvatar());
+        if (client.getState()==true){
+                Update_client.statetrue.setSelected(true);
+        }else{
+                Update_client.statefalse.setSelected(true);
+        }
+        Update_client.txtname.setText(client.getName());
+        Update_client.txtsurname.setText(client.getSurname());
+        Update_client.txtemail.setText(client.getEmail());
+        Update_client.txtmobilephone.setText(client.getMobilephone());
+        Update_client.txtdatebirthday.setCalendar(client.getDatebirthday().StringtoCalendar());
+        Update_client.txtshopping.setText(client.getShopping()+"");
+        Update_client.txtdtos.setText(client.getDtos()+"");
+        if (client.getPremium()==true){
+                Update_client.premiumtrue.setSelected(true);
+        }else{
+                Update_client.premiumfalse.setSelected(true);
+        }
+        Update_client.txttype_client.setText(client.getTypeclient());
     }
     
+    /**
+     * CHECK AND CREATE DATA OF THE USER
+     * @return 
+     */
     public static Client ask_client_update () {
 		
 	//Check
@@ -401,6 +473,10 @@ public class DAO_client {
         return client;
     }
     
+    /**
+     * CREATE USER WITH DNI ONLY
+     * @return 
+     */
     public static Client ask_clientDNI_update () {	
         boolean checkDNI;
         String DNI;
@@ -414,43 +490,57 @@ public class DAO_client {
         return client;
     }
     
+    /**
+     * CALCULATE DATE
+     * @param param1
+     * @param param2
+     * @return 
+     */
     public static ClassDate plusage_update (ClassDate param1, int param2) {
 	
 	return new ClassDate (param1.getDay(), param1.getMonth(), (param1.getYear()+param2));
 	
     }
     
+    /**
+     * CHECK DNI
+     * @return 
+     */
     public static boolean DNI_update () {
         boolean check=true;
         
         String DNI = "", aux = "", caracteres = "TRWAGMYFPDXBNJZSQVHLCKET";
-		boolean confirm;
-		int number = 0, module = 0;
-		char character = ' ', control = ' ';
-		
-		DNI=Update_client.txtDNI.getText();
-		confirm=validate.DNI(DNI);
-		if (confirm==false) {
-                    check = false;
-                }else{
-                    aux = "";
-                    for(int i=0; i<8; i++){
-                        aux += DNI.charAt(i);
-                    }	
-                    character = DNI.charAt(8);			
-                    number = Integer.parseInt(aux);
-                    module= number % 23;
-                    control = caracteres.charAt(module);
-                    if(control == character){
-                        check = true;
-                    }else{
-                        check = false;
-                    }
-                }
+        boolean confirm;
+        int number = 0, module = 0;
+        char character = ' ', control = ' ';
+
+        DNI=Update_client.txtDNI.getText();
+        confirm=validate.DNI(DNI);
+        if (confirm==false) {
+            check = false;
+        }else{
+            aux = "";
+            for(int i=0; i<8; i++){
+                aux += DNI.charAt(i);
+            }	
+            character = DNI.charAt(8);			
+            number = Integer.parseInt(aux);
+            module= number % 23;
+            control = caracteres.charAt(module);
+            if(control == character){
+                check = true;
+            }else{
+                check = false;
+            }
+        }
         
         return check;
     }
     
+    /**
+     * CHECK USER
+     * @return 
+     */
     public static boolean user_update () {
         boolean check=true, confirm=false;
         
@@ -464,6 +554,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK PASSWORD
+     * @return 
+     */
     public static boolean pass_update () {
         boolean check=true, confirm=false;
 		
@@ -477,6 +571,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK NAME
+     * @return 
+     */
     public static boolean name_update () {
         boolean check=true, confirm=false;
         
@@ -490,6 +588,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK SURNAME
+     * @return 
+     */
     public static boolean surname_update () {
         boolean check=true, confirm=false;
         
@@ -503,6 +605,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK EMAIL
+     * @return 
+     */
     public static boolean email_update () {
         boolean check=true, confirm=false;
         
@@ -516,6 +622,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK MOBILE TELEPHONE
+     * @return 
+     */
     public static boolean mobilephone_update () {
         boolean check=true, confirm=false;
         
@@ -528,6 +638,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK STATE
+     * @return 
+     */
     public static boolean state_update () {
         boolean check=true;
         
@@ -541,6 +655,11 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK BIRTHDATE
+     * @param year
+     * @return 
+     */
     public static boolean datebirthday_update (int year) {
         boolean check=true, confirm=false;
         ClassDate Cdate=null;
@@ -568,6 +687,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK SHOPPING
+     * @return 
+     */
     public static boolean shopping_update () {
         boolean check=true;
         float i;
@@ -586,6 +709,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK DTOS
+     * @return 
+     */
     public static boolean dtos_update () {
         boolean check=true;
         int i;
@@ -604,6 +731,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK PREMIUM
+     * @return 
+     */
     public static boolean premium_update () {
         boolean check=true;
         
@@ -617,6 +748,10 @@ public class DAO_client {
         return check;
     }
     
+    /**
+     * CHECK TYPE CLIENT
+     * @return 
+     */
     public static boolean typeclient_update () {
         boolean check=true, confirm=false;
         
@@ -636,6 +771,9 @@ public class DAO_client {
             //                                                                //
             ////////////////////////////////////////////////////////////////////
 
+    /**
+     * GENERATE DATA OF THE USER
+     */
     public static void generate_read_client () {
         Client client = BLL_client.IDclient();
         

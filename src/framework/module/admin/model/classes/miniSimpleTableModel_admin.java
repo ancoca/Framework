@@ -6,13 +6,18 @@ import framework.module.admin.model.BLL.BLL_admin.BLL_BD_admin;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.language.Language_admin;
-import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.view.List_admin;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
+
+/**
+ * 
+ * @author angel
+ */
 public class miniSimpleTableModel_admin extends AbstractTableModel {
+    
     public static ArrayList<Admin> datos = new ArrayList<Admin>();
     public static ArrayList<Admin> datosaux = new ArrayList<Admin>();
     String[] columnas = {Language_admin.getInstance().getProperty("DNI"), Language_admin.getInstance().getProperty("name"),

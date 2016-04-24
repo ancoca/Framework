@@ -6,12 +6,10 @@
 package framework.module.client.model.DAO;
 
 import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
-
+import static framework.classes.Singleton_general.*;
 
 /**
  *
@@ -19,11 +17,19 @@ import framework.module.client.model.classes.Singleton_client;
  */
 public class DAO_BD_client {
     
-    public static void create_BD (DB db, DBCollection table, Client c1) {
-        table.insert(c1.Client_to_BD());
+    /**
+     * INSERT USER
+     * @param c1 
+     */
+    public static void create_BD (Client c1) {
+        collection.insert(c1.Client_to_BD());
     }
     
-    public static void update_BD (DB db, DBCollection table, Client c1) {
+    /**
+     * UPDATE USER
+     * @param c1 
+     */
+    public static void update_BD (Client c1) {
         //Prepara para insertar un nuevo campo
         BasicDBObject update = new BasicDBObject();
         update.append("$set", c1.Client_to_BD());
@@ -33,23 +39,34 @@ public class DAO_BD_client {
         searchById.append("DNI", c1.getDNI());
  
         //Realiza la actualización
-        table.updateMulti(searchById, update);
+        collection.updateMulti(searchById, update);
     }
     
-    public static void delete_BD (DB db, DBCollection table, Client c1) {
-        table.remove(new BasicDBObject().append("DNI", c1.getDNI()));
+    /**
+     * DELETE USER
+     * @param c1 
+     */
+    public static void delete_BD (Client c1) {
+        collection.remove(new BasicDBObject().append("DNI", c1.getDNI()));
     }
     
-    public static void delete_BD_update (DB db, DBCollection table, String dni) {
-        table.remove(new BasicDBObject().append("DNI", dni));
+    /**
+     * DELETE USER UPDATE
+     * @param dni 
+     */
+    public static void delete_BD_update (String dni) {
+        collection.remove(new BasicDBObject().append("DNI", dni));
     }
     
-    public static void BDtoArray (DB db, DBCollection table){
+    /**
+     * BD TO ARRAYLIST
+     */
+    public static void BDtoArray (){
         DBCursor cursor = null;
         String rdo = "";
         Client c1 = new Client();
         try {
-            cursor = table.find().sort(new BasicDBObject("DNI", -1)).limit(10);
+            cursor = collection.find().sort(new BasicDBObject("DNI", -1)).limit(10);
             if(cursor.count()!=0){
                 while(cursor.hasNext()){
                     BasicDBObject document = (BasicDBObject) cursor.next();

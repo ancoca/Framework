@@ -31,115 +31,131 @@ import javax.swing.Timer;
  * @author angel
  */
 public class BLL_client {
+    
     public static boolean check;
     
+    /**
+     * CREATE USER
+     */
     public static void create_client () {
-		int location = -1;
-		Client c1 = null;
+        int location = -1;
+        Client c1 = null;
+        check=false;
+
+        c1 = DAO_client.ask_clientDNI();
+        if (c1==null){
+            Create_client.checkDNI.setIcon(Singleton_client.cancel);
+            check=false;
+        }else{
+            location = BLL_client.find_client(c1);
+            if (location != -1) {
+                Create_client.checkDNI.setIcon(Singleton_client.cancel);
                 check=false;
-		
-		c1 = DAO_client.ask_clientDNI();
+            } else {
+                c1 = DAO_client.ask_client();
                 if (c1==null){
-                    Create_client.checkDNI.setIcon(Singleton_client.cancel);
                     check=false;
-                }else{
-                    location = BLL_client.find_client(c1);
-                    if (location != -1) {
-                            Create_client.checkDNI.setIcon(Singleton_client.cancel);
-                            check=false;
-                    } else {
-                            c1 = DAO_client.ask_client();
-                            if (c1==null){
-                                check=false;
-                            } else {
-                                    BLL_BD_client.create_BD(c1);
-                                    Singleton_client.userclient.add(c1);
-                                    check=true;
-                            }
-                    }
+                } else {
+                    BLL_BD_client.create_BD(c1);
+                    Singleton_client.userclient.add(c1);
+                    check=true;
                 }
-	}
+            }
+        }
+    }
     
+    /**
+     * SHOW ALL USERS
+     */
     public static void read_client_all (){
 		
-		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			for (int i = 0; i <Singleton_client.userclient.size();i++){
-				String cad = "";
-				cad = cad + (Singleton_client.userclient.get(i).toString());
-				JOptionPane.showMessageDialog(null, cad);
-			}
-		}
-	}
+        if(Singleton_client.userclient.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            for (int i = 0; i <Singleton_client.userclient.size();i++){
+                String cad = "";
+                cad = cad + (Singleton_client.userclient.get(i).toString());
+                JOptionPane.showMessageDialog(null, cad);
+            }
+        }
+    }
     
+    /**
+     * SHOW USER
+     */
     public static void read_client (){
-		int location = -1;
-		Client c1 = null;
-		
-		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			location = -1;
-			c1 = BLL_client.IDclient();
-			if (c1 == null) {
-				JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-			}else{
-				location = BLL_client.find_client(c1);
-				if (location != -1) {
-					c1 = Singleton_client.userclient.get(location);
-					JOptionPane.showMessageDialog(null, c1.toString());
-				}else {
-					JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		}
-	}
-    
-    public static void update_client () {
-		int location1 = -1, location2 = -1;
-                String dni = Update_client.DNI;
-		Client c1 = new Client (dni);
-		
-		location1 = BLL_client.find_client(c1);
-		if (location1 == -1) {
-                        check=false;
-                }else{
-                        if (Update_client.txtDNI.getText().equals(dni)){
-                                c1 = DAO_client.ask_client_update();
-                                    if (c1==null){
-                                        check=false;
-                                    } else {
-                                        BLL_BD_client.update_BD(c1);
-                                        Singleton_client.userclient.set(location1, c1);
-                                        check=true;
-                                   }
-                        }else{
-                                c1 = DAO_client.ask_clientDNI_update();
-                                if (c1==null){
-                                        Update_client.checkDNI.setIcon(Singleton_client.cancel);
-                                        check=false;
-                                }else{
-                                        location2 = BLL_client.find_client(c1);
-                                        if (location2 != -1) {
-                                                Update_client.checkDNI.setIcon(Singleton_client.cancel);
-                                                check=false;
-                                        } else {
-                                                c1 = DAO_client.ask_client_update();
-                                                if (c1==null){
-                                                    check=false;
-                                                } else {
-                                                        BLL_BD_client.delete_BD_update(dni);
-                                                        BLL_BD_client.create_BD(c1);
-                                                        Singleton_client.userclient.set(location1, c1);
-                                                        check=true;
-                                                }
-                                        }
-                                }
-                        }
+        int location = -1;
+        Client c1 = null;
+
+        if(Singleton_client.userclient.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            location = -1;
+            c1 = BLL_client.IDclient();
+            if (c1 == null) {
+                JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            }else{
+                location = BLL_client.find_client(c1);
+                if (location != -1) {
+                    c1 = Singleton_client.userclient.get(location);
+                    JOptionPane.showMessageDialog(null, c1.toString());
+                }else {
+                    JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
                 }
-	}
+            }
+        }
+    }
     
+    /**
+     * UPDATE USER
+     */
+    public static void update_client () {
+        int location1 = -1, location2 = -1;
+        String dni = Update_client.DNI;
+        Client c1 = new Client (dni);
+
+        location1 = BLL_client.find_client(c1);
+        if (location1 == -1) {
+            check=false;
+        }else{
+            if (Update_client.txtDNI.getText().equals(dni)){
+                c1 = DAO_client.ask_client_update();
+                if (c1==null){
+                    check=false;
+                } else {
+                    BLL_BD_client.update_BD(c1);
+                    Singleton_client.userclient.set(location1, c1);
+                    check=true;
+               }
+            }else{
+                c1 = DAO_client.ask_clientDNI_update();
+                if (c1==null){
+                    Update_client.checkDNI.setIcon(Singleton_client.cancel);
+                    check=false;
+                }else{
+                    location2 = BLL_client.find_client(c1);
+                    if (location2 != -1) {
+                        Update_client.checkDNI.setIcon(Singleton_client.cancel);
+                        check=false;
+                    } else {
+                        c1 = DAO_client.ask_client_update();
+                        if (c1==null){
+                            check=false;
+                        } else {
+                            BLL_BD_client.delete_BD_update(dni);
+                            BLL_BD_client.create_BD(c1);
+                            Singleton_client.userclient.set(location1, c1);
+                            check=true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /**
+     * DELETE USER
+     */
     public static void delete_client () {
 	String dni;
         int pos;
@@ -186,97 +202,133 @@ public class BLL_client {
         }
     }
     
+    /**
+     * FIND USER
+     * @param client
+     * @return 
+     */
     public static int find_client(Client client) { 
-		for (int i = 0; i<=(Singleton_client.userclient.size()-1); i++){
-			if((Singleton_client.userclient.get(i)).equals(client) )
-				return i;
-		}
-		return -1;
-	}
+        for (int i = 0; i<=(Singleton_client.userclient.size()-1); i++){
+            if((Singleton_client.userclient.get(i)).equals(client) ) {
+                return i;
+            }
+        }
+        return -1;
+    }
     
+    /**
+     * OPEN FILE JSON
+     */
     public static void open_client_json () {
-		if(Singleton_client.userclient.isEmpty()){
-			json_client.openjson_client();
-		}else{
-			json_client.savejson_client();
-                        json_client.openjson_client();
-		}
-	}
+        if(Singleton_client.userclient.isEmpty()){
+            json_client.openjson_client();
+        }else{
+            json_client.savejson_client();
+            json_client.openjson_client();
+        }
+    }
     
+    /**
+     * SAVE FILE JSON
+     */
     public static void save_client_json () {
-		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			json_client.savejson_client();
-		}
-	}
+        if(Singleton_client.userclient.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            json_client.savejson_client();
+        }
+    }
     
+    /**
+     * OPEN FILE XML
+     */
     public static void open_client_xml () {
-		if(Singleton_client.userclient.isEmpty()){
-			xml_client.openxml_client();
-		}else{
-			xml_client.savexml_client();
-                        xml_client.openxml_client();
-		}
-	}
+        if(Singleton_client.userclient.isEmpty()){
+            xml_client.openxml_client();
+        }else{
+            xml_client.savexml_client();
+            xml_client.openxml_client();
+        }
+    }
     
+    /**
+     * SAVE FILE XML
+     */
     public static void save_client_xml () {
-		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			xml_client.savexml_client();
-		}
-	}
+        if(Singleton_client.userclient.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            xml_client.savexml_client();
+        }
+    }
     
+    /**
+     * OPEN FILE TXT
+     */
     public static void open_client_txt () {
-		if(Singleton_client.userclient.isEmpty()){
-			txt_client.opentxt_client();
-		}else{
-			txt_client.savetxt_client();
-                        txt_client.opentxt_client();
-		}
-	}
+        if(Singleton_client.userclient.isEmpty()){
+            txt_client.opentxt_client();
+        }else{
+            txt_client.savetxt_client();
+            txt_client.opentxt_client();
+        }
+    }
     
+    /**
+     * SAVE FILE TXT
+     */
     public static void save_client_txt () {
-		if(Singleton_client.userclient.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			txt_client.savetxt_client();
-		}
-	}
+        if(Singleton_client.userclient.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("user0"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            txt_client.savetxt_client();
+        }
+    }
     
+    /**
+     * GENERATE LIST USERS
+     * @return 
+     */
     public static DefaultComboBoxModel generate_vector_client () {
-		Client c1 = null;
-		String s = "";
-		
-		int arraylist =Singleton_client.userclient.size();
-                DefaultComboBoxModel object = new DefaultComboBoxModel();
-		for (int i = 0; i<arraylist; i++) {
-			c1 = (Client) Singleton_client.userclient.get(i);
-			s=c1.getDNI()+"-----"+c1.getName()+" "+c1.getSurname();
-			object.addElement(s);
-		}
-		
-		return object;
-	}
+        Client c1 = null;
+        String s = "";
+        
+        int arraylist =Singleton_client.userclient.size();
+        DefaultComboBoxModel object = new DefaultComboBoxModel();
+        for (int i = 0; i<arraylist; i++) {
+            c1 = (Client) Singleton_client.userclient.get(i);
+            s=c1.getDNI()+"-----"+c1.getName()+" "+c1.getSurname();
+            object.addElement(s);
+        }
+
+        return object;
+    }
     
+    /**
+     * FIND USER IN TABLE
+     * @return 
+     */
     public static Client IDclient () {
-		Client c1 = null;
-		String ID = "";
-		int location1 = -1, selection, inicio, selection1;
-                inicio=(pagina_client.currentPageIndex-1)*pagina_client.itemsPerPage; //nos situamos al inicio de la página en cuestión
-                selection=List_client.TABLA.getSelectedRow(); //nos situamos en la fila
-                selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
-		ID = (String) List_client.TABLA.getModel().getValueAt(selection1, 0);
-		c1 = new Client (ID);
-                location1 = -1;
-                location1 = BLL_client.find_client(c1);
-                if (location1 != -1) {
-                    c1 = Singleton_client.userclient.get(location1);
-                }
-		return c1;		
-	}
+        Client c1 = null;
+        String ID = "";
+        int location1 = -1, selection, inicio, selection1;
+        inicio=(pagina_client.currentPageIndex-1)*pagina_client.itemsPerPage; //nos situamos al inicio de la página en cuestión
+        selection=List_client.TABLA.getSelectedRow(); //nos situamos en la fila
+        selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
+        ID = (String) List_client.TABLA.getModel().getValueAt(selection1, 0);
+        c1 = new Client (ID);
+        location1 = -1;
+        location1 = BLL_client.find_client(c1);
+        if (location1 != -1) {
+            c1 = Singleton_client.userclient.get(location1);
+        }
+        return c1;		
+    }
     
+    /**
+     * TIMER CLIENT
+     * @param jframe 
+     */
     public static void timer(JFrame jframe) {
         Timer timer = new Timer (2000, new ActionListener() {
         

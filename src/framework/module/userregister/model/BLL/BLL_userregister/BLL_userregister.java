@@ -31,113 +31,128 @@ import javax.swing.Timer;
  * @author angel
  */
 public class BLL_userregister {
+    
     public static boolean check;
     
+    /**
+     * CREATE USER
+     */
     public static void create_userregister () {
 	int location = -1;
 	User_register u1 = null;
         check=true;
 	
 	u1 = DAO_userregister.ask_user_registerDNI();
-            if (u1==null){
-                Create_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
-                check=false;
+        if (u1==null){
+            Create_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
+            check=false;
+        }else{
+            location = BLL_userregister.find_user(u1);
+            if (location != -1) {
+                    Create_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
+                    check=false;
+            } else {
+                u1 = DAO_userregister.ask_user_register();
+                    if (u1==null){
+                        check=false;
+                    } else {
+                            Singleton_userregister.userregister.add(u1);
+                            check=true;
+
+                    }
+            }
+        }
+    }
+    
+    /**
+     * SHOW ALL USERS
+     */
+    public static void read_userregister_all (){
+
+        if(Singleton_userregister.userregister.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            for (int i = 0; i <Singleton_userregister.userregister.size();i++){
+                String cad = "";
+                cad = cad + (Singleton_userregister.userregister.get(i).toString());
+                JOptionPane.showMessageDialog(null, cad);
+            }
+        }
+    }
+    
+    /**
+     * SHOW USER
+     */
+    public static void read_userregister (){
+        int location = -1;
+        User_register u1 = null;
+
+        if(Singleton_userregister.userregister.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            location = -1;
+            u1 = BLL_userregister.IDuserregister();
+            if (u1 == null) {
+                JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
             }else{
                 location = BLL_userregister.find_user(u1);
                 if (location != -1) {
-                        Create_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
-                        check=false;
+                    u1 = Singleton_userregister.userregister.get(location);
+                    JOptionPane.showMessageDialog(null, u1.toString());
+                }else {
+                    JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+    }
+    
+    /**
+     * UPDATE USER
+     */
+    public static void update_userregister () {
+        int location1 = -1, location2 = -1;
+        String dni = Update_userregister.DNI;
+        User_register u1 = new User_register (dni);
+
+        location1 = BLL_userregister.find_user(u1);
+        if (location1 == -1) {
+            check=false;
+        }else{
+            if (Update_userregister.txtDNI.getText().equals(dni)){
+                u1 = DAO_userregister.ask_user_register_update();
+                if (u1==null){
+                    check=false;
                 } else {
-                    u1 = DAO_userregister.ask_user_register();
+                    Singleton_userregister.userregister.set(location1, u1);
+                    check=true;
+                }
+            }else{
+                u1 = DAO_userregister.ask_user_registerDNI_update();
+                if (u1==null){
+                    Update_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
+                    check=false;
+                }else{
+                    location2 = BLL_userregister.find_user(u1);
+                    if (location2 != -1) {
+                        Update_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
+                        check=false;
+                    } else {
+                        u1 = DAO_userregister.ask_user_register_update();
                         if (u1==null){
                             check=false;
                         } else {
-                                Singleton_userregister.userregister.add(u1);
-                                check=true;
-
+                            Singleton_userregister.userregister.set(location1, u1);
+                            check=true;
                         }
+                    }
                 }
             }
-	}
+        }
+    }
     
-    public static void read_userregister_all (){
-		
-		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			for (int i = 0; i <Singleton_userregister.userregister.size();i++){
-				String cad = "";
-				cad = cad + (Singleton_userregister.userregister.get(i).toString());
-				JOptionPane.showMessageDialog(null, cad);
-			}
-		}
-	}
-    
-    public static void read_userregister (){
-		int location = -1;
-		User_register u1 = null;
-		
-		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			location = -1;
-			u1 = BLL_userregister.IDuserregister();
-			if (u1 == null) {
-				JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-			}else{
-				location = BLL_userregister.find_user(u1);
-				if (location != -1) {
-					u1 = Singleton_userregister.userregister.get(location);
-					JOptionPane.showMessageDialog(null, u1.toString());
-				}else {
-					JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		}
-	}
-    
-    public static void update_userregister () {
-		int location1 = -1, location2 = -1;
-                String dni = Update_userregister.DNI;
-		User_register u1 = new User_register (dni);
-		
-		location1 = BLL_userregister.find_user(u1);
-		if (location1 == -1) {
-                        check=false;
-                }else{
-                        if (Update_userregister.txtDNI.getText().equals(dni)){
-                                u1 = DAO_userregister.ask_user_register_update();
-                                    if (u1==null){
-                                        check=false;
-                                    } else {
-                                        Singleton_userregister.userregister.set(location1, u1);
-                                        check=true;
-                                   }
-                        }else{
-                                u1 = DAO_userregister.ask_user_registerDNI_update();
-                                if (u1==null){
-                                        Update_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
-                                        check=false;
-                                }else{
-                                        location2 = BLL_userregister.find_user(u1);
-                                        if (location2 != -1) {
-                                                Update_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
-                                                check=false;
-                                        } else {
-                                                u1 = DAO_userregister.ask_user_register_update();
-                                                if (u1==null){
-                                                    check=false;
-                                                } else {
-                                                        Singleton_userregister.userregister.set(location1, u1);
-                                                        check=true;
-                                                }
-                                        }
-                                }
-                        }
-                        
-                }
-	}
-    
+    /**
+     * DELETE USER
+     */
     public static void delete_userregister () {
 	String dni;
         int pos;
@@ -182,98 +197,134 @@ public class BLL_userregister {
         }
     }
     
+    /**
+     * FIND USER
+     * @param user
+     * @return 
+     */
     public static int find_user(User_register user) { 
-		for (int i = 0; i<=(Singleton_userregister.userregister.size()-1); i++){
-			if((Singleton_userregister.userregister.get(i)).equals(user) )
-				return i;
-		}
-		return -1;
-	}
+        for (int i = 0; i<=(Singleton_userregister.userregister.size()-1); i++){
+            if((Singleton_userregister.userregister.get(i)).equals(user) ) {
+                return i;
+            }
+        }
+        return -1;
+    }
     
+    /**
+     * OPEN FILE JSON
+     */
     public static void open_userregister_json () {
-		if(Singleton_userregister.userregister.isEmpty()){
-			json_userregister.openjson_userregister();
-		}else{
-			json_userregister.savejson_userregister();
-                        json_userregister.openjson_userregister();
-		}
-	}
+        if(Singleton_userregister.userregister.isEmpty()){
+            json_userregister.openjson_userregister();
+        }else{
+            json_userregister.savejson_userregister();
+            json_userregister.openjson_userregister();
+        }
+    }
     
+    /**
+     * SAVE FILE JSON
+     */
     public static void save_userregister_json () {
-		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			json_userregister.savejson_userregister();
-		}
-	}
+        if(Singleton_userregister.userregister.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            json_userregister.savejson_userregister();
+        }
+    }
     
+    /**
+     * OPEN FILE XML
+     */
     public static void open_userregister_xml () {
-		if(Singleton_userregister.userregister.isEmpty()){
-			xml_userregister.openxml_userregister();
-		}else{
-			xml_userregister.savexml_userregister();
-                        xml_userregister.openxml_userregister();
-		}
-	}
+        if(Singleton_userregister.userregister.isEmpty()){
+            xml_userregister.openxml_userregister();
+        }else{
+            xml_userregister.savexml_userregister();
+            xml_userregister.openxml_userregister();
+        }
+    }
     
+    /**
+     * SAVE FILE XML
+     */
     public static void save_userregister_xml () {
-		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			xml_userregister.savexml_userregister();
-		}
-	}
+        if(Singleton_userregister.userregister.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            xml_userregister.savexml_userregister();
+        }
+    }
     
+    /**
+     * OPEN FILE TXT
+     */
     public static void open_userregister_txt () {
-		if(Singleton_userregister.userregister.isEmpty()){
-			txt_userregister.opentxt_userregister();
-		}else{
-			txt_userregister.savetxt_userregister();
-                        txt_userregister.opentxt_userregister();
-		}
-	}
+        if(Singleton_userregister.userregister.isEmpty()){
+            txt_userregister.opentxt_userregister();
+        }else{
+            txt_userregister.savetxt_userregister();
+            txt_userregister.opentxt_userregister();
+        }
+    }
     
+    /**
+     * SAVE FILE TXT
+     */
     public static void save_userregister_txt () {
-		if(Singleton_userregister.userregister.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			txt_userregister.savetxt_userregister();
-		}
-	}
+        if(Singleton_userregister.userregister.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("user0"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            txt_userregister.savetxt_userregister();
+        }
+    }
     
+    /**
+     * GENERATE LIST USERS
+     * @return 
+     */
     public static DefaultComboBoxModel generate_vector_userregister () {
-		User_register u1 = null;
-		String s = "";
-		
-		int arraylist =Singleton_userregister.userregister.size();
-                DefaultComboBoxModel object = new DefaultComboBoxModel();
-		for (int i = 0; i<arraylist; i++) {
-			u1 = (User_register) Singleton_userregister.userregister.get(i);
-			s=u1.getDNI()+"-----"+u1.getName()+" "+u1.getSurname();
-			object.addElement(s);
-		}
-                
-		return object;
-	}
+        User_register u1 = null;
+        String s = "";
+
+        int arraylist =Singleton_userregister.userregister.size();
+        DefaultComboBoxModel object = new DefaultComboBoxModel();
+        for (int i = 0; i<arraylist; i++) {
+            u1 = (User_register) Singleton_userregister.userregister.get(i);
+            s=u1.getDNI()+"-----"+u1.getName()+" "+u1.getSurname();
+            object.addElement(s);
+        }
+
+        return object;
+    }
     
+    /**
+     * FIND USER IN TABLE
+     * @return 
+     */
     public static User_register IDuserregister () {
-		User_register u1 = null;
-		String ID = "";
-		int location1 = -1, selection, inicio, selection1;
-                inicio=(pagina_userregister.currentPageIndex-1)*pagina_userregister.itemsPerPage; //nos situamos al inicio de la página en cuestión
-                selection=List_userregister.TABLA.getSelectedRow(); //nos situamos en la fila
-                selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
-		ID = (String) List_userregister.TABLA.getModel().getValueAt(selection1, 0);
-		u1 = new User_register (ID);
-                location1 = -1;
-                location1 = BLL_userregister.find_user(u1);
-                if (location1 != -1) {
-                    u1 = Singleton_userregister.userregister.get(location1);
-                }
-                
-		return u1;		
-	}
+        User_register u1 = null;
+        String ID = "";
+        int location1 = -1, selection, inicio, selection1;
+        inicio=(pagina_userregister.currentPageIndex-1)*pagina_userregister.itemsPerPage; //nos situamos al inicio de la página en cuestión
+        selection=List_userregister.TABLA.getSelectedRow(); //nos situamos en la fila
+        selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
+        ID = (String) List_userregister.TABLA.getModel().getValueAt(selection1, 0);
+        u1 = new User_register (ID);
+        location1 = -1;
+        location1 = BLL_userregister.find_user(u1);
+        if (location1 != -1) {
+            u1 = Singleton_userregister.userregister.get(location1);
+        }
+
+        return u1;		
+    }
     
+    /**
+     * TIMER USER REGISTER
+     * @param jframe 
+     */
     public static void timer(JFrame jframe) {
         Timer timer = new Timer (3000, new ActionListener() {
         

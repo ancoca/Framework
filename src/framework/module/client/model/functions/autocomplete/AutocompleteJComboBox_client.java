@@ -1,4 +1,5 @@
 package framework.module.client.model.functions.autocomplete;
+
 import java.awt.Component;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -13,7 +14,12 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.JTextComponent;
 
+/**
+ * 
+ * @author angel
+ */
 public class AutocompleteJComboBox_client extends JComboBox{
+    
     private final Searchable_client<String,String> searchable;
 
     public AutocompleteJComboBox_client(Searchable_client<String,String> s){

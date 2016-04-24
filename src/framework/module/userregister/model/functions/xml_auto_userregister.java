@@ -15,10 +15,18 @@ import framework.module.userregister.model.classes.User_register;
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.model.classes.language.Language_userregister;
 
+/**
+ * 
+ * @author angel
+ */
 public class xml_auto_userregister {
-	private static final String ENCODING = "UTF-8";
-	
-	public static void savexml_userregister() {
+    
+    private static final String ENCODING = "UTF-8";
+
+    /**
+     * SAVE FILE XML
+     */
+    public static void savexml_userregister() {
         String PATH=null;
 		
         try {
@@ -29,35 +37,37 @@ public class xml_auto_userregister {
         }
 
         if (Singleton_userregister.userregister.size() > 0) {
-	        try {
-				OutputStream OS = new ByteArrayOutputStream();
-				OutputStreamWriter OSW = new OutputStreamWriter(OS);
-				XStream xstream = new XStream();
-				Annotations.configureAliases(xstream, User_register.class);
-	
-	            String header = "<?xml version=\"1.0\" encoding=\"" + ENCODING + "\"?>\n";
-	            xstream.toXML(Singleton_userregister.userregister, OSW);
-	            StringBuffer xml = new StringBuffer();
-	            xml.append(header);
-	            xml.append(OS.toString());
-	            
-	            FileWriter fileXml = new FileWriter(PATH);
-	            fileXml.write(xml.toString());
-	            fileXml.close();
-	            OSW.close();
-	            OS.close();
-	            
-		    }catch (Exception e){
-		    	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_xml"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		    }
+            try {
+                OutputStream OS = new ByteArrayOutputStream();
+                OutputStreamWriter OSW = new OutputStreamWriter(OS);
+                XStream xstream = new XStream();
+                Annotations.configureAliases(xstream, User_register.class);
+
+                String header = "<?xml version=\"1.0\" encoding=\"" + ENCODING + "\"?>\n";
+                xstream.toXML(Singleton_userregister.userregister, OSW);
+                StringBuffer xml = new StringBuffer();
+                xml.append(header);
+                xml.append(OS.toString());
+
+                FileWriter fileXml = new FileWriter(PATH);
+                fileXml.write(xml.toString());
+                fileXml.close();
+                OSW.close();
+                OS.close();
+
+            }catch (Exception e){
+                JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_xml"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            }
         } else {
             File path = new File(PATH);
-
             path.delete();
         }
     }
 	
-	public static void openxml_userregister() {
+    /**
+     * OPEN FILE XML
+     */
+    public static void openxml_userregister() {
     	String PATH=null;
     	try {
             XStream xstream = new XStream();

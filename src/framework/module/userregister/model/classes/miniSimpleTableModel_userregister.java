@@ -1,4 +1,5 @@
 package framework.module.userregister.model.classes;
+
 import framework.classes.ClassDate;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.view.List_admin;
@@ -9,7 +10,12 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.table.AbstractTableModel;
 
+/**
+ * 
+ * @author angel
+ */
 public class miniSimpleTableModel_userregister extends AbstractTableModel {
+    
     public static ArrayList<User_register> datos = new ArrayList<User_register>();
     public static ArrayList<User_register> datosaux = new ArrayList<User_register>();
     String[] columnas = {Language_userregister.getInstance().getProperty("DNI"), Language_userregister.getInstance().getProperty("name"), 

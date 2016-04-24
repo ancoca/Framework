@@ -10,11 +10,15 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * 
  * @author angel
  */
 public class ConexionBD {
     
+    /**
+     * OPEN CONNECTION
+     * @return 
+     */
     public static Connection AbrirConexion() {
 
         Connection connection = null;
@@ -30,6 +34,10 @@ public class ConexionBD {
         return connection;
     }
 
+    /**
+     * CLOSE CONNECTION
+     * @param connection 
+     */
     public static void CerrarConexion(Connection connection) {
         try {
             if (connection != null) {

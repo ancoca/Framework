@@ -12,9 +12,16 @@ import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
 import framework.module.client.model.classes.language.Language_client;
 
+/**
+ * 
+ * @author angel
+ */
 public class txt_auto_client {
 
-	public static void savetxt_client() {
+    /**
+     * SAVE FILE TXT
+     */
+    public static void savetxt_client() {
         String PATH = null;
         
         try {
@@ -31,9 +38,9 @@ public class txt_auto_client {
 	            file = new File(PATH);
 	            
 	            FileOutputStream FOS=new FileOutputStream(file);
-				ObjectOutputStream OOS=new ObjectOutputStream(FOS);
-				OOS.writeObject(Singleton_client.userclient);
-				OOS.close();
+                    ObjectOutputStream OOS=new ObjectOutputStream(FOS);
+                    OOS.writeObject(Singleton_client.userclient);
+                    OOS.close();
 	            
 	        } catch (Exception e) {
 	        	JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("errorsave_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
@@ -45,7 +52,10 @@ public class txt_auto_client {
         }
     }
 	
-	public static void opentxt_client() {
+    /**
+     * OPEN FILE TXT
+     */
+    public static void opentxt_client() {
     	String PATH = null;
         try {
             File file;
@@ -54,12 +64,12 @@ public class txt_auto_client {
             file = new File(PATH);
             
             FileInputStream FIS=new FileInputStream(file);
-    		ObjectInputStream OIS=new ObjectInputStream(FIS);
-    		Singleton_client.userclient = (ArrayList<Client>)OIS.readObject();
-    		OIS.close();
+            ObjectInputStream OIS=new ObjectInputStream(FIS);
+            Singleton_client.userclient = (ArrayList<Client>)OIS.readObject();
+            OIS.close();
             
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("erroropen_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("erroropen_txt"), Language_client.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

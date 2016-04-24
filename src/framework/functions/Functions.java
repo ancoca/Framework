@@ -3,11 +3,17 @@ package framework.functions;
 import javax.swing.JOptionPane;
 import framework.classes.language.Language_general;
 
+/**
+ * 
+ * @author angel
+ */
 public class Functions {
 
-    /*
-     * validar int
-     * 
+    /**
+     * CHECK INT
+     * @param mensaje
+     * @param titulo
+     * @return 
      */
     public static int validaint(String mensaje, String titulo) {
         String s="";
@@ -34,9 +40,11 @@ public class Functions {
         return n;
     }
 
-    /*
-     * validar int distinto de 0
-     * 
+    /**
+     * CHECK INT DISTINT 0
+     * @param mensaje
+     * @param titulo
+     * @return 
      */
     public static int validaintdistint0(String mensaje, String titulo) {
         String s="";
@@ -69,9 +77,11 @@ public class Functions {
         return n;
     }
 
-    /*
-     * validar float
-     * 
+    /**
+     * CHECK FLOAT
+     * @param mensaje
+     * @param titulo
+     * @return 
      */
     public static float validafloat(String mensaje, String titulo) {
         String s="";
@@ -98,9 +108,11 @@ public class Functions {
         return n;
     }
 
-    /*
-     * validar char
-     * 
+    /**
+     * CHECK CHAR
+     * @param mensaje
+     * @param titulo
+     * @return 
      */
     public static char validachar(String mensaje, String titulo) {
         String s="";
@@ -127,9 +139,11 @@ public class Functions {
         return c;
     }
 
-    /*
-     * validar string
-     * 
+    /**
+     * CHECK STRING
+     * @param mensaje
+     * @param titulo
+     * @return 
      */
     public static String validaString(String mensaje, String titulo) {
         String s="";
@@ -157,6 +171,11 @@ public class Functions {
         return s;
     }	
     
+    /**
+     * DOUBLE TO FLOAT
+     * @param num
+     * @return 
+     */
     public static float Double_to_Float (double num) {
         float n= 0.0f;
         

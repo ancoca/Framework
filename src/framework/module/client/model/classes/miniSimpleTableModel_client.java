@@ -1,17 +1,21 @@
 package framework.module.client.model.classes;
+
 import framework.classes.ClassDate;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.client.controller.Controller_client;
 import framework.module.client.model.BLL.BLL_client.BLL_BD_client;
 import framework.module.client.model.classes.language.Language_client;
-import framework.module.client.model.functions.json_auto_client;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
+/**
+ * 
+ * @author angel
+ */
 public class miniSimpleTableModel_client extends AbstractTableModel {
+    
     public static ArrayList<Client> datos = new ArrayList<Client>();
     public static ArrayList<Client> datosaux = new ArrayList<Client>();
     String[] columnas = {Language_client.getInstance().getProperty("DNI"), Language_client.getInstance().getProperty("name"), 

@@ -13,9 +13,16 @@ import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
 import framework.module.admin.model.classes.language.Language_admin;
 
+/**
+ * 
+ * @author angel
+ */
 public class txt_admin {
 
-	public static void savetxt_admin() {
+    /**
+     * SAVE FILE TXT
+     */
+    public static void savetxt_admin() {
         String PATH = null;
         try {
             File file;
@@ -32,17 +39,20 @@ public class txt_admin {
                 file = new File(PATH);
                 
                 FileOutputStream FOS=new FileOutputStream(file);
-				ObjectOutputStream OOS=new ObjectOutputStream(FOS);
-				OOS.writeObject(Singleton_admin.useradmin);
-				OOS.close();
+                ObjectOutputStream OOS=new ObjectOutputStream(FOS);
+                OOS.writeObject(Singleton_admin.useradmin);
+                OOS.close();
                 JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("savetxt"), "TXT", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("errorsave_txt"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("errorsave_txt"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 	
-	public static void opentxt_admin() {
+    /**
+     * OPEN FILE TXT
+     */
+    public static void opentxt_admin() {
     	String PATH = null;
         try {
             File file;
@@ -58,12 +68,12 @@ public class txt_admin {
                 file = new File(PATH);
                 
                 FileInputStream FIS=new FileInputStream(file);
-    			ObjectInputStream OIS=new ObjectInputStream(FIS);
-    			Singleton_admin.useradmin = (ArrayList<Admin>)OIS.readObject();
-    			OIS.close();
+                ObjectInputStream OIS=new ObjectInputStream(FIS);
+                Singleton_admin.useradmin = (ArrayList<Admin>)OIS.readObject();
+                OIS.close();
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("erroropen_txt"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("erroropen_txt"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

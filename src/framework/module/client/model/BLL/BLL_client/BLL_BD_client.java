@@ -5,14 +5,8 @@
  */
 package framework.module.client.model.BLL.BLL_client;
 
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import framework.classes.Mongo_BD;
-import framework.classes.PoolConexion;
 import framework.module.client.model.DAO.DAO_BD_client;
 import framework.module.client.model.classes.Client;
-import java.sql.Connection;
-
 
 /**
  *
@@ -20,33 +14,42 @@ import java.sql.Connection;
  */
 public class BLL_BD_client {
     
+    /**
+     * CREATE USER
+     * @param c1 
+     */
     public static void create_BD (Client c1) {
-        DB db = Mongo_BD.getDb();
-        DBCollection table = Mongo_BD.getCollection();
-        DAO_BD_client.create_BD(db, table, c1);
+        DAO_BD_client.create_BD(c1);
     }
     
+    /**
+     * UPDATE USER
+     * @param c1 
+     */
     public static void update_BD (Client c1) {
-        DB db = Mongo_BD.getDb();
-        DBCollection table = Mongo_BD.getCollection();
-        DAO_BD_client.update_BD(db, table, c1);
+        DAO_BD_client.update_BD(c1);
     }
     
+    /**
+     * DELETE USER
+     * @param c1 
+     */
     public static void delete_BD (Client c1) {
-        DB db = Mongo_BD.getDb();
-        DBCollection table = Mongo_BD.getCollection();
-        DAO_BD_client.delete_BD(db, table, c1);
+        DAO_BD_client.delete_BD(c1);
     }
     
+    /**
+     * DELETE USER UPDATE
+     * @param dni 
+     */
     public static void delete_BD_update (String dni) {
-        DB db = Mongo_BD.getDb();
-        DBCollection table = Mongo_BD.getCollection();
-        DAO_BD_client.delete_BD_update(db, table, dni);
+        DAO_BD_client.delete_BD_update(dni);
     }
     
+    /**
+     * BD TO ARRAYLIST
+     */
     public static void BDtoArrayList () {
-        DB db = Mongo_BD.getDb();
-        DBCollection table = Mongo_BD.getCollection();
-        DAO_BD_client.BDtoArray(db, table);
+        DAO_BD_client.BDtoArray();
     }
 }

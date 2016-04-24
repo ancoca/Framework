@@ -16,16 +16,24 @@ import framework.module.userregister.model.classes.User_register;
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.model.classes.language.Language_userregister;
 
+/**
+ * 
+ * @author angel
+ */
 public class xml_userregister {
-	private static final String ENCODING = "UTF-8";
+    
+    private static final String ENCODING = "UTF-8";
 	
-	public static void savexml_userregister() {
+    /**
+     * SAVE FILE XML
+     */
+    public static void savexml_userregister() {
         String PATH=null;
-		try {
-			OutputStream OS = new ByteArrayOutputStream();
-			OutputStreamWriter OSW = new OutputStreamWriter(OS);
-			XStream xstream = new XStream();
-			Annotations.configureAliases(xstream, User_register.class);
+        try {
+            OutputStream OS = new ByteArrayOutputStream();
+            OutputStreamWriter OSW = new OutputStreamWriter(OS);
+            XStream xstream = new XStream();
+            Annotations.configureAliases(xstream, User_register.class);
 
             String header = "<?xml version=\"1.0\" encoding=\"" + ENCODING + "\"?>\n";
             xstream.toXML(Singleton_userregister.userregister, OSW);
@@ -51,12 +59,15 @@ public class xml_userregister {
                 OS.close();
                 JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("savexml"), "XML", JOptionPane.INFORMATION_MESSAGE);
             }
-	    }catch (Exception e){
-	    	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_xml"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-	    } 
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_xml"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        } 
     }
 	
-	public static void openxml_userregister() {
+    /**
+     * OPEN FILE XML
+     */
+    public static void openxml_userregister() {
     	String PATH=null;
     	try {
             XStream xstream = new XStream();
@@ -75,7 +86,7 @@ public class xml_userregister {
             }
             
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("erroropen_xml"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("erroropen_xml"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

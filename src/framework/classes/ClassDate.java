@@ -6,12 +6,15 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+/**
+ * 
+ * @author angel
+ */
 @XStreamAlias("ClassDate")
 public class ClassDate implements Serializable{
 
-    /*
+    /**
      * ATTRIBUTES
-     * 
      */
 
     @XStreamAlias("day")
@@ -23,11 +26,9 @@ public class ClassDate implements Serializable{
     @XStreamAlias("date")
     private String date;
 
-    /*
+    /**
      * BUILDING
-     * When the user sign in a date
-     * @param date: sign in date
-     * @return ClassDate
+     * @param date 
      */
     public ClassDate (String date) {
         String [] datearray = new String [3];
@@ -68,8 +69,6 @@ public class ClassDate implements Serializable{
 
     /*
      * BUILDING
-     * Create ClassDate with system date
-     * @return ClassDate
      */
     public ClassDate () {
         Calendar cal = Calendar.getInstance();
@@ -83,10 +82,11 @@ public class ClassDate implements Serializable{
 
     }
 
-    /* 
+    /**
      * BUILDING
-     * Create ClassDate for Dummies without config
-     * @return ClassDate
+     * @param day
+     * @param month
+     * @param year 
      */
     public ClassDate (int day, int month, int year) {
         this.day=day;
@@ -96,6 +96,11 @@ public class ClassDate implements Serializable{
 
     }
     
+    /**
+     * BUILDING
+     * @param date
+     * @param format 
+     */
     public ClassDate (String date, String format) {
         String [] datearray = new String [3];
         datearray = date.split("/");
@@ -106,9 +111,9 @@ public class ClassDate implements Serializable{
     }
 
 
-    /*
-     * GETTERS & SETTERS
-     * 
+    /**
+     * GETS AND SETS
+     * @return 
      */
     public int getDay() {
         return day;
@@ -178,9 +183,9 @@ public class ClassDate implements Serializable{
         }
     }
 
-    /*
-     * CHECK
-     * 
+    /**
+     * CHECK DAY
+     * @return 
      */
     public boolean checkday () {
         int [] day = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -199,6 +204,10 @@ public class ClassDate implements Serializable{
         return confirm;
     }
 
+    /**
+     * CHECK MONTH
+     * @return 
+     */
     public boolean checkmonth () {
         boolean confirm = false;
 
@@ -211,6 +220,10 @@ public class ClassDate implements Serializable{
         return confirm;
     }
 
+    /**
+     * CHECK YEAR
+     * @return 
+     */
     public boolean checkyear () {
         boolean confirm = false;
 
@@ -223,6 +236,10 @@ public class ClassDate implements Serializable{
         return confirm;
     }
 
+    /**
+     * CHECK COMPLETE DATE
+     * @return 
+     */
     public boolean checkdate () {
         boolean confirm = true;
 
@@ -240,9 +257,10 @@ public class ClassDate implements Serializable{
 
     }
 
-    /*
-     * COMPARE
-     * 
+    /**
+     * COMPARE DATES
+     * @param date
+     * @return 
      */
     public int comparedate (ClassDate date) {
         Calendar date1 = null;
@@ -264,6 +282,10 @@ public class ClassDate implements Serializable{
         return i;
     }
 
+    /**
+     * COMPARE DATE WIHT SYSTEM DATE
+     * @return 
+     */
     public int comparesystemdate () {
         Calendar date1 = null;
         Calendar date2 = null;
@@ -284,9 +306,10 @@ public class ClassDate implements Serializable{
         return i;
     }
 
-    /*
-     * SUBTRACT
-     * 
+    /**
+     * DIFFERENCE BETWEEN YEARS
+     * @param date
+     * @return 
      */
     public int subtractdateyear (ClassDate date) {
         int leastyear=0, year=0, completeyear=0, days=0, cont=0;
@@ -310,6 +333,11 @@ public class ClassDate implements Serializable{
         return completeyear;
     }
 
+    /**
+     * DIFFERENCE BETWEEN MONTHS
+     * @param date
+     * @return 
+     */
     public int subtractdatemonth (ClassDate date) {
         Calendar date1 = null;
         Calendar date2 = null;
@@ -323,6 +351,11 @@ public class ClassDate implements Serializable{
         return contrast;
     }
 
+    /**
+     * DIFFERENCE BETWEEN DAYS
+     * @param date
+     * @return 
+     */
     public int subtractdateday (ClassDate date) {
         int  days=0;
         GregorianCalendar date1 = new GregorianCalendar ();
@@ -336,6 +369,10 @@ public class ClassDate implements Serializable{
         return days;
     }
 
+    /**
+     * DIFFERENCE BETWEEN YEAR AND SYSTEM YEAR
+     * @return 
+     */
     public int subtractsystemdateyear () {
         int leastyear=0, year=0, completeyear=0, cont=0;
         long days=0;
@@ -359,6 +396,10 @@ public class ClassDate implements Serializable{
         return completeyear;
     }
 
+    /**
+     * DIFFERENCE BETWEEN MONTH AND SYSTEM MONTH
+     * @return 
+     */
     public int subtractsystemdatemonth () {
         Calendar date1 = null;
         Calendar date2 = null;
@@ -372,6 +413,10 @@ public class ClassDate implements Serializable{
         return contrast;
     }
 
+    /**
+     * DIFFERENCE BETWEEN DAY AND SYSTEM DAY
+     * @return 
+     */
     public int subtractsystemdateday () {
         int  days=0;
         GregorianCalendar date1 = new GregorianCalendar ();
@@ -384,9 +429,10 @@ public class ClassDate implements Serializable{
         return days;
     }
 
-    /*
+    /**
      * CONVERT CALENDAR TO STRING
-     * 
+     * @param date
+     * @return 
      */
     public String CalendartoString (Calendar date) {
         int day, month, year;
@@ -404,9 +450,9 @@ public class ClassDate implements Serializable{
         return dateS;
     }
 
-    /*
+    /**
      * CONVERT STRING TO CALENDAR
-     * 
+     * @return 
      */
     public Calendar StringtoCalendar () {
         Calendar date = Calendar.getInstance();
@@ -420,9 +466,9 @@ public class ClassDate implements Serializable{
         return date;
     }
 
-    /*
-     * TOSTRING(non-Javadoc)
-     * @see java.lang.Object#toString()
+    /**
+     * TOSTRING
+     * @return 
      */
     public String toString () {
         StringBuffer string = new StringBuffer();
@@ -447,6 +493,10 @@ public class ClassDate implements Serializable{
         return string.toString();
     }
     
+    /**
+     * TO STRING DATA BASE
+     * @return 
+     */
     public String toStringBD () {
         StringBuffer string = new StringBuffer();
         string.append(String.format("%02d", this.getDay())+"/"+String.format("%02d", this.getMonth())+"/"+this.getYear());

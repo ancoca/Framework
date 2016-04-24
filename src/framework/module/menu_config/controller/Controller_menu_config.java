@@ -5,11 +5,10 @@
  */
 package framework.module.menu_config.controller;
 
+import framework.classes.Mongo_BD;
 import framework.module.admin.controller.Controller_admin;
-import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.client.controller.Controller_client;
-import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.view.List_client;
 import framework.module.menu_config.model.BLL.BLL_config;
 import framework.module.menu_config.model.classes.Singleton_config;
@@ -33,11 +32,12 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
  *
  * @author angel
  */
-public class Controller_menu implements MouseListener, ActionListener{
+public class Controller_menu_config implements MouseListener, ActionListener{
+    
     public static Menu inicio;
     public static Config config;
     
-    public Controller_menu (JFrame jframe, int i) {
+    public Controller_menu_config (JFrame jframe, int i) {
         if (i==0){
             inicio = (Menu) jframe;
         }
@@ -98,8 +98,7 @@ public class Controller_menu implements MouseListener, ActionListener{
                     this.inicio.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
-                    json_auto_admin.savejson_admin();
-                    json_auto_client.savejson_client();
+                    Mongo_BD.disconnect();
                     json_auto_userregister.savejson_userregister();
                     JOptionPane.showMessageDialog(null,Language_menu_config.getInstance().getProperty("exit"));
                     inicio.dispose();
@@ -141,8 +140,7 @@ public class Controller_menu implements MouseListener, ActionListener{
                     this.config.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
-                    json_auto_admin.savejson_admin();
-                    json_auto_client.savejson_client();
+                    Mongo_BD.disconnect();
                     json_auto_userregister.savejson_userregister();
                     JOptionPane.showMessageDialog(null,Language_menu_config.getInstance().getProperty("exit"));
                     config.dispose();
@@ -214,10 +212,10 @@ public class Controller_menu implements MouseListener, ActionListener{
     
     @Override
     public void mouseClicked(MouseEvent e) {
-        switch(Controller_menu.action.valueOf(e.getComponent().getName())){
+        switch(Controller_menu_config.action.valueOf(e.getComponent().getName())){
             case lblajustes:
                 inicio.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario:
                 inicio.dispose();
@@ -233,11 +231,11 @@ public class Controller_menu implements MouseListener, ActionListener{
                 break;
             case lblinicio:
                 inicio.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblajustes_config:
                 config.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_config:
                 config.dispose();
@@ -253,27 +251,27 @@ public class Controller_menu implements MouseListener, ActionListener{
                 break;
             case lblinicio_config:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver1:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver2:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver3:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver4:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
         }
     }
@@ -290,7 +288,7 @@ public class Controller_menu implements MouseListener, ActionListener{
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        switch(Controller_menu.action.valueOf(e.getComponent().getName())){
+        switch(Controller_menu_config.action.valueOf(e.getComponent().getName())){
             case lblajustes:
                 inicio.lblajustes.setForeground(java.awt.Color.blue);
                 break;
@@ -341,7 +339,7 @@ public class Controller_menu implements MouseListener, ActionListener{
 
     @Override
     public void mouseExited(MouseEvent e) {
-        switch(Controller_menu.action.valueOf(e.getComponent().getName())){
+        switch(Controller_menu_config.action.valueOf(e.getComponent().getName())){
             case lblajustes:
                 inicio.lblajustes.setForeground(java.awt.Color.cyan);
                 break;
@@ -392,51 +390,51 @@ public class Controller_menu implements MouseListener, ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (Controller_menu.action.valueOf(e.getActionCommand())) {
+        switch (Controller_menu_config.action.valueOf(e.getActionCommand())) {
             case btnaceptar:
                 BLL_config.setConfig();
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case btncancelar:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case btnaceptar1:
                 BLL_config.setConfig();
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case btncancelar1:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case btnaceptar2:
                 BLL_config.setConfig();
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case btncancelar2:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case btnaceptar3:
                 BLL_config.setConfig();
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case btncancelar3:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case btnaceptar4:
                 BLL_config.setConfig();
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case btncancelar4:
                 config.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
         }
     }

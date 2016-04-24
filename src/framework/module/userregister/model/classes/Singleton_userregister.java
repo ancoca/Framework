@@ -18,10 +18,7 @@ import javax.swing.ImageIcon;
  */
 public class Singleton_userregister {
     
-    public static ArrayList <Admin> useradmin;
-    public static ArrayList <Client> userclient;
     public static ArrayList <User_register> userregister;
-    
     public static ImageIcon ok = new ImageIcon("src/framework/img/ok.png");
     public static ImageIcon cancel = new ImageIcon("src/framework/img/cancel.png");
     public static ImageIcon add = new ImageIcon("src/framework/img/edit_add.png");

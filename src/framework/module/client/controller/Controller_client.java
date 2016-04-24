@@ -5,8 +5,8 @@
  */
 package framework.module.client.controller;
 
+import framework.classes.Mongo_BD;
 import framework.module.admin.controller.Controller_admin;
-import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.client.model.BLL.BLL_client.BLL_client;
 import framework.module.client.model.DAO.DAO_client;
@@ -15,17 +15,15 @@ import framework.module.client.model.classes.language.Language_client;
 import framework.module.client.model.classes.miniSimpleTableModel_client;
 import framework.module.client.model.functions.autocomplete.AutocompleteJComboBox_client;
 import framework.module.client.model.functions.autocomplete.StringSearchable_client;
-import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.model.functions.pagina_client;
 import framework.module.client.view.Create_client;
 import framework.module.client.view.List_client;
 import framework.module.client.view.Read_client;
 import framework.module.client.view.Update_client;
 import framework.module.menu_config.view.Config;
-import framework.module.menu_config.controller.Controller_menu;
+import framework.module.menu_config.controller.Controller_menu_config;
 import framework.module.menu_config.view.Menu;
 import framework.module.userregister.controller.Controller_userregister;
-import framework.module.userregister.model.classes.language.Language_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
 import framework.module.userregister.view.List_userregister;
 import java.awt.Color;
@@ -182,6 +180,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         this.list.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         list.dispose();
@@ -279,6 +278,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         this.create.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         create.dispose();
@@ -387,6 +387,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         this.update.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         update.dispose();
@@ -493,6 +494,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                         this.read.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("exit"));
                         read.dispose();
@@ -526,7 +528,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
         switch(Controller_client.action.valueOf(e.getComponent().getName())){
             case lblajustes:
                 list.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario:
                 list.dispose();
@@ -542,7 +544,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblinicio:
                 list.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblcreate:
                 list.dispose();
@@ -578,7 +580,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblajustes_create:
                 create.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_create:
                 create.dispose();
@@ -594,7 +596,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblinicio_create:
                 create.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver_create:
                 create.dispose();
@@ -632,7 +634,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblajustes_update:
                 update.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_update:
                 update.dispose();
@@ -648,7 +650,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblinicio_update:
                 update.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver_update:
                 update.dispose();
@@ -686,7 +688,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblajustes_read:
                 read.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_read:
                 read.dispose();
@@ -702,7 +704,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblinicio_read:
                 read.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver_read:
                 read.dispose();

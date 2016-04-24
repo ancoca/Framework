@@ -20,6 +20,12 @@ import javax.swing.JOptionPane;
  */
 public class DAO_BD_admin {
     
+    /**
+     * INSERT USER
+     * @param connection
+     * @param a1
+     * @return 
+     */
     public static boolean create_BD (Connection connection, Admin a1) {
         boolean correcto = false;
         PreparedStatement statement = null;
@@ -73,6 +79,12 @@ public class DAO_BD_admin {
         return correcto;
     }
     
+    /**
+     * UPDATE USER
+     * @param connection
+     * @param a1
+     * @return 
+     */
     public static boolean update_BD (Connection connection, Admin a1) {
         boolean correcto = false;
         PreparedStatement statement = null;
@@ -127,6 +139,12 @@ public class DAO_BD_admin {
         return correcto;
     }
     
+    /**
+     * DELETE USER
+     * @param connection
+     * @param a1
+     * @return 
+     */
     public static boolean delete_BD (Connection connection, Admin a1) {
         boolean correcto = false;
         PreparedStatement statement = null;
@@ -153,6 +171,12 @@ public class DAO_BD_admin {
         return correcto;
     }
     
+    /**
+     * DELETE USER UPDATE
+     * @param connection
+     * @param dni
+     * @return 
+     */
     public static boolean delete_BD_update (Connection connection, String dni) {
         boolean correcto = false;
         PreparedStatement statement = null;
@@ -179,6 +203,11 @@ public class DAO_BD_admin {
         return correcto;
     }
     
+    /**
+     * BD TO ARRAY LIST
+     * @param connection
+     * @return 
+     */
     public static boolean BDtoArrayList (Connection connection) {
         boolean correcto = false;
         ResultSet result = null;
@@ -238,6 +267,12 @@ public class DAO_BD_admin {
         return correcto;
     }
     
+    /**
+     * FIND USER IN DATA BASE
+     * @param connection
+     * @param a1
+     * @return 
+     */
     public static boolean find_BD (Connection connection, Admin a1) {
         boolean correcto = false;
         PreparedStatement statement = null;
@@ -279,6 +314,12 @@ public class DAO_BD_admin {
         return correcto;
     }
     
+    /**
+     * SHOW USER
+     * @param result
+     * @param a1
+     * @return 
+     */
     private static boolean show_BD (ResultSet result, Admin a1) {
         boolean correcto = false, state = false;
         try {

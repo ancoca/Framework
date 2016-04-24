@@ -1,4 +1,5 @@
 package framework.module.admin.model.functions;
+
 import framework.module.admin.controller.Controller_admin;
 import framework.module.admin.model.classes.miniSimpleTableModel_admin;
 import framework.module.admin.view.List_admin;
@@ -14,11 +15,15 @@ import javax.swing.JRadioButton;
 import javax.swing.RowFilter;
 import javax.swing.table.TableModel;
 
+/**
+ * 
+ * @author angel
+ */
 public class pagina_admin {
+    
     public static final LinkViewRadioButtonUI_admin ui = new LinkViewRadioButtonUI_admin();
     public static int LR_PAGE_SIZE = 5;
     public static Box box = Box.createHorizontalBox();
-
     public static int currentPageIndex = 1;
     public static int itemsPerPage = 5;
     public static int maxPageIndex;

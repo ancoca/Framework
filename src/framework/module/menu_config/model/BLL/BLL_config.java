@@ -15,6 +15,9 @@ import framework.module.menu_config.model.functions.json_auto_config;
  */
 public class BLL_config {
     
+    /**
+     * UPDATE CONFIG
+     */
     public static void setConfig () {
         ClassConfig.getInstance().setLanguage(DAO_config.setlanguage());
         ClassConfig.getInstance().setDate(DAO_config.setdate());
@@ -24,6 +27,9 @@ public class BLL_config {
         json_auto_config.savejson_config();
     }
     
+    /**
+     * SHOW CONFIG
+     */
     public static void getConfig () {
         DAO_config.getlanguage();
         DAO_config.getdate();

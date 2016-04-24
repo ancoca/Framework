@@ -13,7 +13,6 @@ import framework.module.admin.model.classes.Singleton_admin;
 import framework.module.admin.model.classes.language.Language_admin;
 import framework.module.admin.model.classes.miniSimpleTableModel_admin;
 import framework.module.admin.model.functions.json_admin;
-import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.model.functions.txt_admin;
 import framework.module.admin.model.functions.xml_admin;
 import framework.module.admin.view.Create_admin;
@@ -31,8 +30,12 @@ import javax.swing.Timer;
  * @author angel
  */
 public class BLL_admin {
+    
     public static boolean check;
     
+    /**
+     * CREATE USER
+     */
     public static void create_admin () {
 	int location = -1;
 	Admin a1 = null;
@@ -45,102 +48,112 @@ public class BLL_admin {
             }else{
                 location = BLL_admin.find_admin(a1);
                 if (location != -1) {
-                        Create_admin.checkDNI.setIcon(Singleton_admin.cancel);
-                        check=false;
+                    Create_admin.checkDNI.setIcon(Singleton_admin.cancel);
+                    check=false;
                 } else {
                     a1 = DAO_admin.ask_admin();
-                        if (a1==null){
-                            check=false;
-                        } else {
-                                check=BLL_BD_admin.create_BD(a1);
-                                if (check==true){
-                                    Singleton_admin.useradmin.add(a1);
-                                }
+                    if (a1==null){
+                        check=false;
+                    } else {
+                        check=BLL_BD_admin.create_BD(a1);
+                        if (check==true){
+                            Singleton_admin.useradmin.add(a1);
                         }
+                    }
                 }
             }
 	}
     
+    /**
+     * SHOW ALL USERS
+     */
     public static void read_admin_all (){
 		
-		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			for (int i = 0; i <Singleton_admin.useradmin.size();i++){
-				String cad = "";
-				cad = cad + (Singleton_admin.useradmin.get(i).toString());
-				JOptionPane.showMessageDialog(null, cad);
-			}
-		}
-	}
+        if(Singleton_admin.useradmin.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            for (int i = 0; i <Singleton_admin.useradmin.size();i++){
+                String cad = "";
+                cad = cad + (Singleton_admin.useradmin.get(i).toString());
+                JOptionPane.showMessageDialog(null, cad);
+            }
+        }
+    }
     
+    /**
+     * SHOW USER
+     */
     public static void read_admin (){
-		int location = -1;
-		Admin a1 = null;
-		
-		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			location = BLL_admin.find_admin(a1);
-			if (location != -1) {
-				a1 = Singleton_admin.useradmin.get(location);
-				JOptionPane.showMessageDialog(null, a1.toString());
-			}else {
-				JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-			}
-		}
-		
-	}
+        int location = -1;
+        Admin a1 = null;
+
+        if(Singleton_admin.useradmin.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            location = BLL_admin.find_admin(a1);
+            if (location != -1) {
+                a1 = Singleton_admin.useradmin.get(location);
+                JOptionPane.showMessageDialog(null, a1.toString());
+            }else {
+                JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
     
+    /**
+     * UPDATE USER
+     */
     public static void update_admin () {
-		int location1 = -1, location2 = -1;
-                String dni = Update_admin.DNI;
-		Admin a1 = new Admin (dni);
-		
-		location1 = BLL_admin.find_admin(a1);
-		if (location1 == -1) {
-                        check=false;
+        int location1 = -1, location2 = -1;
+        String dni = Update_admin.DNI;
+        Admin a1 = new Admin (dni);
+
+        location1 = BLL_admin.find_admin(a1);
+        if (location1 == -1) {
+            check=false;
+        }else{
+            if (Update_admin.txtDNI.getText().equals(dni)){
+                a1 = DAO_admin.ask_admin_update();
+                if (a1==null){
+                    check=false;
+                } else {
+                    check=BLL_BD_admin.update_BD(a1);
+                    if (check=true){
+                        Singleton_admin.useradmin.set(location1, a1);
+                    }
+               }
+            }else{
+                a1 = DAO_admin.ask_adminDNI_update();
+                if (a1==null){
+                    Update_admin.checkDNI.setIcon(Singleton_admin.cancel);
+                    check=false;
                 }else{
-                        if (Update_admin.txtDNI.getText().equals(dni)){
-                                a1 = DAO_admin.ask_admin_update();
-                                    if (a1==null){
-                                        check=false;
-                                    } else {
-                                        check=BLL_BD_admin.update_BD(a1);
-                                        if (check=true){
-                                            Singleton_admin.useradmin.set(location1, a1);
-                                        }
-                                   }
-                        }else{
-                                a1 = DAO_admin.ask_adminDNI_update();
-                                if (a1==null){
-                                        Update_admin.checkDNI.setIcon(Singleton_admin.cancel);
-                                        check=false;
-                                }else{
-                                        location2 = BLL_admin.find_admin(a1);
-                                        if (location2 != -1) {
-                                                Update_admin.checkDNI.setIcon(Singleton_admin.cancel);
-                                                check=false;
-                                        } else {
-                                                a1 = DAO_admin.ask_admin_update();
-                                                if (a1==null){
-                                                    check=false;
-                                                } else {
-                                                        check=BLL_BD_admin.delete_BD_update(dni);
-                                                        if (check==true){
-                                                            check=BLL_BD_admin.create_BD(a1);
-                                                            if (check == true){
-                                                                Singleton_admin.useradmin.set(location1, a1);
-                                                            }
-                                                        }
-                                                }
-                                        }
+                    location2 = BLL_admin.find_admin(a1);
+                    if (location2 != -1) {
+                        Update_admin.checkDNI.setIcon(Singleton_admin.cancel);
+                        check=false;
+                    } else {
+                        a1 = DAO_admin.ask_admin_update();
+                        if (a1==null){
+                            check=false;
+                        } else {
+                            check=BLL_BD_admin.delete_BD_update(dni);
+                            if (check==true){
+                                check=BLL_BD_admin.create_BD(a1);
+                                if (check == true){
+                                    Singleton_admin.useradmin.set(location1, a1);
                                 }
+                            }
                         }
-                        
+                    }
                 }
-       }
+            }
+        }
+   }
     
+    /**
+     * DELETE USER
+     */
     public static void delete_admin () {
 	String dni;
         int pos;
@@ -148,7 +161,6 @@ public class BLL_admin {
         int n = ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).getRowCount();
         Admin admin = null;
         if (n != 0) {
-
             inicio = (pagina_admin.currentPageIndex - 1) * pagina_admin.itemsPerPage;
             int selec = List_admin.TABLA.getSelectedRow();
             selection1 = inicio + selec;
@@ -166,12 +178,14 @@ public class BLL_admin {
                     ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).removeRow(selection1);
                     admin = Singleton_admin.useradmin.get(pos);
 
-                    Singleton_admin.useradmin.remove(pos);
-                    miniSimpleTableModel_admin.datosaux.remove(pos);
-                    json_auto_admin.savejson_admin();
-                    ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).cargar();
-                    List_admin.lblsize.setText(String.valueOf(Singleton_admin.useradmin.size()));
-                    pagina_admin.initLinkBox();
+                    boolean correct = BLL_BD_admin.delete_BD(admin);
+                    if  (correct==true){
+                        Singleton_admin.useradmin.remove(pos);
+                        miniSimpleTableModel_admin.datosaux.remove(pos);
+                        ((miniSimpleTableModel_admin) List_admin.TABLA.getModel()).cargar();
+                        List_admin.lblsize.setText(String.valueOf(Singleton_admin.useradmin.size()));
+                        pagina_admin.initLinkBox();
+                    }
                 }
                 
                 if (List_admin.TABLA.getRowCount()==0){
@@ -186,97 +200,133 @@ public class BLL_admin {
         }
     }
     
+    /**
+     * FIND USER
+     * @param admin
+     * @return 
+     */
     public static int find_admin(Admin admin) { 
-		for (int i = 0; i<=(Singleton_admin.useradmin.size()-1); i++){
-			if((Singleton_admin.useradmin.get(i)).equals(admin) )
-				return i;
-		}
-		return -1;
-	}
+        for (int i = 0; i<=(Singleton_admin.useradmin.size()-1); i++){
+            if((Singleton_admin.useradmin.get(i)).equals(admin) ) {
+                return i;
+            }
+        }
+        return -1;
+    }
     
+    /**
+     * OPEN FILE JSON
+     */
     public static void open_admin_json () {
-		if(Singleton_admin.useradmin.isEmpty()){
-			json_admin.openjson_admin();
-		}else{
-			json_admin.savejson_admin();
-                        json_admin.openjson_admin();
-		}
-	}
+        if(Singleton_admin.useradmin.isEmpty()){
+            json_admin.openjson_admin();
+        }else{
+            json_admin.savejson_admin();
+            json_admin.openjson_admin();
+        }
+    }
     
+    /**
+     * SAVE FILE JSON
+     */
     public static void save_admin_json () {
-		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			json_admin.savejson_admin();
-		}
-	}
+        if(Singleton_admin.useradmin.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            json_admin.savejson_admin();
+        }
+    }
     
+    /**
+     * OPEN FILE XML
+     */
     public static void open_admin_xml () {
-		if(Singleton_admin.useradmin.isEmpty()){
-			xml_admin.openxml_admin();
-		}else{
-			xml_admin.savexml_admin();
-                        xml_admin.openxml_admin();
-		}
-	}
+        if(Singleton_admin.useradmin.isEmpty()){
+            xml_admin.openxml_admin();
+        }else{
+            xml_admin.savexml_admin();
+            xml_admin.openxml_admin();
+        }
+    }
     
+    /**
+     * SAVE FILE XML
+     */
     public static void save_admin_xml () {
-		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			xml_admin.savexml_admin();
-		}
-	}
+        if(Singleton_admin.useradmin.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            xml_admin.savexml_admin();
+        }
+    }
     
+    /**
+     * OPEN FILE TXT
+     */
     public static void open_admin_txt () {
-		if(Singleton_admin.useradmin.isEmpty()){
-			txt_admin.opentxt_admin();
-		}else{
-			txt_admin.savetxt_admin();
-                        txt_admin.opentxt_admin();
-		}
-	}
+        if(Singleton_admin.useradmin.isEmpty()){
+            txt_admin.opentxt_admin();
+        }else{
+            txt_admin.savetxt_admin();
+            txt_admin.opentxt_admin();
+        }
+    }
     
+    /**
+     * SAVE FILE TXT
+     */
     public static void save_admin_txt () {
-		if(Singleton_admin.useradmin.isEmpty()){
-			JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
-		}else{
-			txt_admin.savetxt_admin();
-		}
-	}
+        if(Singleton_admin.useradmin.isEmpty()){
+            JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("user0"), Language_admin.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+        }else{
+            txt_admin.savetxt_admin();
+        }
+    }
     
+    /**
+     * GENERATE LIST USERS
+     * @return 
+     */
     public static DefaultComboBoxModel generate_vector_admin () {
-		Admin a1 = null;
-		String s = "";
-                
-		int arraylist =Singleton_admin.useradmin.size();
-                DefaultComboBoxModel object = new DefaultComboBoxModel();
-		for (int i = 0; i<arraylist; i++) {
-			a1 = (Admin) Singleton_admin.useradmin.get(i);
-			s=a1.getDNI()+"-----"+a1.getName()+" "+a1.getSurname();
-			object.addElement(s);
-		}
-		
-		return object;
-	}
+        Admin a1 = null;
+        String s = "";
+
+        int arraylist =Singleton_admin.useradmin.size();
+        DefaultComboBoxModel object = new DefaultComboBoxModel();
+        for (int i = 0; i<arraylist; i++) {
+            a1 = (Admin) Singleton_admin.useradmin.get(i);
+            s=a1.getDNI()+"-----"+a1.getName()+" "+a1.getSurname();
+            object.addElement(s);
+        }
+
+        return object;
+    }
     
+    /**
+     * FIND USER IN TABLE
+     * @return 
+     */
     public static Admin IDadmin () {
-		Admin a1 = null;
-		String ID = "";
-                int location1 = -1, selection, inicio, selection1;
-                inicio=(pagina_admin.currentPageIndex-1)*pagina_admin.itemsPerPage; //nos situamos al inicio de la página en cuestión
-                selection=List_admin.TABLA.getSelectedRow(); //nos situamos en la fila
-                selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
-		ID = (String) List_admin.TABLA.getModel().getValueAt(selection1, 0);
-		a1 = new Admin (ID);
-                location1 = -1;
-                location1 = BLL_admin.find_admin(a1);
-                if (location1 != -1) {
-                    a1 = Singleton_admin.useradmin.get(location1);
-                }
-		return a1;
-	}
+        Admin a1 = null;
+        String ID = "";
+        int location1 = -1, selection, inicio, selection1;
+        inicio=(pagina_admin.currentPageIndex-1)*pagina_admin.itemsPerPage; //nos situamos al inicio de la página en cuestión
+        selection=List_admin.TABLA.getSelectedRow(); //nos situamos en la fila
+        selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
+        ID = (String) List_admin.TABLA.getModel().getValueAt(selection1, 0);
+        a1 = new Admin (ID);
+        location1 = -1;
+        location1 = BLL_admin.find_admin(a1);
+        if (location1 != -1) {
+            a1 = Singleton_admin.useradmin.get(location1);
+        }
+        return a1;
+    }
         
+    /**
+     * TIMER ADMIN
+     * @param jframe 
+     */
     public static void timer(JFrame jframe) {
         Timer timer = new Timer (2000, new ActionListener() {
         

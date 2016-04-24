@@ -20,6 +20,9 @@ import static framework.classes.Singleton_general.*;
  */
 public class Mongo_BD {
    
+    /**
+     * CONFIGURE CONNECTION
+     */
     public Mongo_BD() {
         try {
             input = new FileInputStream("src/framework/classes/mongo.properties"); 
@@ -48,6 +51,10 @@ public class Mongo_BD {
 	}
     }
     
+    /**
+     * OPEN CONNECTION
+     * @return 
+     */
     public static Mongo connect() {
         try {
             client = new Mongo(getMachine(), Integer.parseInt(getPort()));
@@ -68,10 +75,18 @@ public class Mongo_BD {
         return client;
     }
     
+    /**
+     * CLOSE CONNECTION
+     */
     public static void disconnect() {
 	client.close();
     }
 
+    
+    /**
+     * GETS AND SETS
+     * @return 
+     */
     public static Properties getProp() {
         return prop;
     }

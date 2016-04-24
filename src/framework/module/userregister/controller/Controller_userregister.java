@@ -5,14 +5,13 @@
  */
 package framework.module.userregister.controller;
 
+import framework.classes.Mongo_BD;
 import framework.module.admin.controller.Controller_admin;
-import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.client.controller.Controller_client;
-import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.view.List_client;
 import framework.module.menu_config.view.Config;
-import framework.module.menu_config.controller.Controller_menu;
+import framework.module.menu_config.controller.Controller_menu_config;
 import framework.module.menu_config.view.Menu;
 import framework.module.userregister.model.BLL.BLL_userregister.BLL_userregister;
 import framework.module.userregister.model.DAO.DAO_userregister;
@@ -178,8 +177,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                         this.list.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_admin.savejson_admin();
-                        json_auto_client.savejson_client();
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
                         list.dispose();
@@ -276,8 +274,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                         this.create.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_admin.savejson_admin();
-                        json_auto_client.savejson_client();
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
                         create.dispose();
@@ -380,8 +377,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                         this.update.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_admin.savejson_admin();
-                        json_auto_client.savejson_client();
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
                         update.dispose();
@@ -483,8 +479,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                         this.read.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        json_auto_admin.savejson_admin();
-                        json_auto_client.savejson_client();
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
                         read.dispose();
@@ -518,7 +513,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
         switch(Controller_userregister.action.valueOf(e.getComponent().getName())){
             case lblajustes:
                 list.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario:
                 list.dispose();
@@ -534,7 +529,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblinicio:
                 list.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblcreate:
                 list.dispose();
@@ -570,7 +565,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblajustes_create:
                 create.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_create:
                 create.dispose();
@@ -586,7 +581,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblinicio_create:
                 create.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver_create:
                 create.dispose();
@@ -621,7 +616,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblajustes_update:
                 update.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_update:
                 update.dispose();
@@ -637,7 +632,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblinicio_update:
                 update.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver_update:
                 update.dispose();
@@ -672,7 +667,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblajustes_read:
                 read.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_read:
                 read.dispose();
@@ -688,7 +683,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 break;
             case lblinicio_read:
                 read.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver_read:
                 read.dispose();

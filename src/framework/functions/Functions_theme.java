@@ -5,6 +5,10 @@ import javax.swing.UIManager;
 import framework.module.menu_config.model.classes.ClassConfig;
 import framework.classes.language.Language_general;
 
+/**
+ * 
+ * @author angel
+ */
 public class Functions_theme {
     
     public static void theme (){

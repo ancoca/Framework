@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.commons.dbcp.BasicDataSourceFactory;
 
-
 /**
  *
  * @author angel
@@ -23,6 +22,9 @@ public class PoolConexion {
     public static BasicDataSource dataSource;
     private static final Logger log = Logger.getLogger("ejemplo2");
     
+    /**
+     * CONFIGURE CONNECTION
+     */
     public static void iniciar_BasicDataSourceFactory() {
         Properties propiedades = new Properties();
         /*
@@ -54,6 +56,10 @@ public class PoolConexion {
         }
     }
     
+    /**
+     * OPEN CONNECTION
+     * @return 
+     */
     public static Connection OcuparConexion() {
         Connection conexion=null;
         try {
@@ -64,6 +70,10 @@ public class PoolConexion {
         return conexion;
     }
     
+    /**
+     * CLOSE CONNECTION
+     * @param conexion 
+     */
     public static void LiberarConexion(Connection conexion) {
         try {
             if (null != conexion) 

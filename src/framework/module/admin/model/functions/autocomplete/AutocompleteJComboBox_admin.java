@@ -1,4 +1,5 @@
 package framework.module.admin.model.functions.autocomplete;
+
 import java.awt.Component;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -13,7 +14,12 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.JTextComponent;
 
+/**
+ * 
+ * @author angel
+ */
 public class AutocompleteJComboBox_admin extends JComboBox{
+    
     private final Searchable_admin<String,String> searchable;
 
     public AutocompleteJComboBox_admin(Searchable_admin<String,String> s){

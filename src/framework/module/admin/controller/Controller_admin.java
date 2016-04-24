@@ -5,6 +5,7 @@
  */
 package framework.module.admin.controller;
 
+import framework.classes.Mongo_BD;
 import framework.module.admin.model.BLL.BLL_admin.BLL_admin;
 import framework.module.admin.model.DAO.DAO_admin;
 import framework.module.admin.model.classes.Singleton_admin;
@@ -12,17 +13,15 @@ import framework.module.admin.model.classes.language.Language_admin;
 import framework.module.admin.model.classes.miniSimpleTableModel_admin;
 import framework.module.admin.model.functions.autocomplete.AutocompleteJComboBox_admin;
 import framework.module.admin.model.functions.autocomplete.StringSearchable_admin;
-import framework.module.admin.model.functions.json_auto_admin;
 import framework.module.admin.model.functions.pagina_admin;
 import framework.module.admin.view.Create_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.admin.view.Read_admin;
 import framework.module.admin.view.Update_admin;
 import framework.module.client.controller.Controller_client;
-import framework.module.client.model.functions.json_auto_client;
 import framework.module.client.view.List_client;
 import framework.module.menu_config.view.Config;
-import framework.module.menu_config.controller.Controller_menu;
+import framework.module.menu_config.controller.Controller_menu_config;
 import framework.module.menu_config.view.Menu;
 import framework.module.userregister.controller.Controller_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
@@ -52,6 +51,7 @@ import javax.swing.table.TableRowSorter;
  * @author angel
  */
 public class Controller_admin implements MouseListener, ActionListener, FocusListener, KeyListener{
+    
     public static Create_admin create;
     public static List_admin list;
     public static Read_admin read;
@@ -181,6 +181,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.list.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         list.dispose();
@@ -278,6 +279,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.create.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         create.dispose();
@@ -386,6 +388,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.update.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         update.dispose();
@@ -492,6 +495,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.read.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
+                        Mongo_BD.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         read.dispose();
@@ -525,7 +529,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
         switch(Controller_admin.action.valueOf(e.getComponent().getName())){
             case lblajustes:
                 list.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario:
                 list.dispose();
@@ -541,7 +545,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblinicio:
                 list.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblcreate:
                 list.dispose();
@@ -577,7 +581,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblajustes_create:
                 create.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_create:
                 create.dispose();
@@ -593,7 +597,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblinicio_create:
                 create.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver_create:
                 create.dispose();
@@ -631,7 +635,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblajustes_update:
                 update.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_update:
                 update.dispose();
@@ -647,7 +651,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblinicio_update:
                 update.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver_update:
                 update.dispose();
@@ -685,7 +689,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblajustes_read:
                 read.dispose();
-                new Controller_menu(new Config(), 1).iniciar(1);
+                new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_read:
                 read.dispose();
@@ -701,7 +705,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblinicio_read:
                 read.dispose();
-                new Controller_menu(new Menu(), 0).iniciar(0);
+                new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case lblvolver_read:
                 read.dispose();

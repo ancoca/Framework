@@ -10,7 +10,6 @@ import framework.classes.ClassDate;
 import framework.functions.validate;
 import framework.module.admin.model.BLL.BLL_admin.BLL_admin;
 import framework.module.admin.model.classes.Admin;
-import framework.module.admin.model.classes.Singleton_admin;
 import framework.module.admin.model.classes.language.Language_admin;
 import framework.module.admin.view.Create_admin;
 import framework.module.admin.view.Read_admin;
@@ -28,6 +27,10 @@ public class DAO_admin {
             //                                                                //
             ////////////////////////////////////////////////////////////////////
     
+    /**
+     * CHECK AND CREATE DATA OF THE USER
+     * @return 
+     */
     public static Admin ask_admin () {
 		
 	//Check
@@ -83,6 +86,10 @@ public class DAO_admin {
         return admin;
     }
     
+    /**
+     * CREATE USER WIHT DNI ONLY
+     * @return 
+     */
     public static Admin ask_adminDNI () {
 	boolean checkDNI;
         String DNI;
@@ -96,12 +103,22 @@ public class DAO_admin {
         return admin;
     }
     
+    /**
+     * CALCULATE DATE
+     * @param param1
+     * @param param2
+     * @return 
+     */
     public static ClassDate plusage (ClassDate param1, int param2) {
 	
 	return new ClassDate (param1.getDay(), param1.getMonth(), (param1.getYear()+param2));
 	
     }
     
+    /**
+     * CHECK DNI
+     * @return 
+     */
     public static boolean DNI () {
         boolean check=true;
         
@@ -133,6 +150,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK USER
+     * @return 
+     */
     public static boolean user () {
         boolean check=true, confirm=false;
         
@@ -146,6 +167,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK PASSWORD
+     * @return 
+     */
     public static boolean pass () {
         boolean check=true, confirm=false;
 		
@@ -159,6 +184,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK NAME
+     * @return 
+     */
     public static boolean name () {
         boolean check=true, confirm=false;
         
@@ -172,6 +201,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK SURNAME
+     * @return 
+     */
     public static boolean surname () {
         boolean check=true, confirm=false;
         
@@ -185,6 +218,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK EMAIL
+     * @return 
+     */
     public static boolean email () {
         boolean check=true, confirm=false;
         
@@ -198,6 +235,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK MOBILE TELEPHONE
+     * @return 
+     */
     public static boolean mobilephone () {
         boolean check=true, confirm=false;
         
@@ -210,6 +251,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK STATE
+     * @return 
+     */
     public static boolean state () {
         boolean check=true;
         
@@ -223,6 +268,11 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHACK BIRTHDATE
+     * @param year
+     * @return 
+     */
     public static boolean datebirthday (int year) {
         boolean check=true, confirm=false;
         ClassDate Cdate=null;
@@ -250,6 +300,12 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK DATECONTRACT
+     * @param age1
+     * @param age2
+     * @return 
+     */
     public static boolean datecontract (int age1, int age2) {
         boolean check=true, confirm=false;
         ClassDate Cdate = null;
@@ -292,6 +348,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK SALARY
+     * @return 
+     */
     public static boolean salary () {
         boolean check=true;
         float i;
@@ -310,6 +370,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK INCENTIVE
+     * @return 
+     */
     public static boolean incentive () {
         boolean check=true;
         float i;
@@ -328,6 +392,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK ACTIVITY
+     * @return 
+     */
     public static boolean activity () {
         boolean check=true;
         int i;
@@ -352,6 +420,9 @@ public class DAO_admin {
             //                                                                //
             ////////////////////////////////////////////////////////////////////
     
+    /**
+     * GENERATE DATA OF THE USER
+     */
     public static void generate_edit_admin (){
         Admin admin = BLL_admin.IDadmin();
         
@@ -375,6 +446,10 @@ public class DAO_admin {
         Update_admin.txtactivity.setText(admin.getActivity()+"");
     }
     
+    /**
+     * CHECK AND CREATE DATA OF DE USER
+     * @return 
+     */
     public static Admin ask_admin_update () {
 		
 	//Check
@@ -430,6 +505,10 @@ public class DAO_admin {
         return admin;
     }
     
+    /**
+     * CREATE USER WITH DNI ONLY
+     * @return 
+     */
     public static Admin ask_adminDNI_update () {
 	boolean checkDNI;
         String DNI;
@@ -443,12 +522,22 @@ public class DAO_admin {
         return admin;
     }
     
+    /**
+     * CALCULATE DATE
+     * @param param1
+     * @param param2
+     * @return 
+     */
     public static ClassDate plusage_update (ClassDate param1, int param2) {
 	
 	return new ClassDate (param1.getDay(), param1.getMonth(), (param1.getYear()+param2));
 	
     }
     
+    /**
+     * CHECK DNI
+     * @return 
+     */
     public static boolean DNI_update () {
         boolean check=true;
         
@@ -480,6 +569,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK USER
+     * @return 
+     */
     public static boolean user_update () {
         boolean check=true, confirm=false;
         
@@ -493,6 +586,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK PASSWORD
+     * @return 
+     */
     public static boolean pass_update () {
         boolean check=true, confirm=false;
 		
@@ -506,6 +603,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK NAME
+     * @return 
+     */
     public static boolean name_update () {
         boolean check=true, confirm=false;
         
@@ -519,6 +620,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK SURNAME
+     * @return 
+     */
     public static boolean surname_update () {
         boolean check=true, confirm=false;
         
@@ -532,6 +637,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK EMAIL
+     * @return 
+     */
     public static boolean email_update () {
         boolean check=true, confirm=false;
         
@@ -545,6 +654,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK MOBILE TELEPHONE
+     * @return 
+     */
     public static boolean mobilephone_update () {
         boolean check=true, confirm=false;
         
@@ -557,6 +670,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK STATE
+     * @return 
+     */
     public static boolean state_update () {
         boolean check=true;
         
@@ -570,6 +687,11 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK BIRTHDATE
+     * @param year
+     * @return 
+     */
     public static boolean datebirthday_update (int year) {
         boolean check=true, confirm=false;
         ClassDate Cdate=null;
@@ -597,6 +719,12 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK DATE CONTRACT
+     * @param age1
+     * @param age2
+     * @return 
+     */
     public static boolean datecontract_update (int age1, int age2) {
         boolean check=true, confirm=false;
         ClassDate Cdate = null;
@@ -639,6 +767,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK SALARY
+     * @return 
+     */
     public static boolean salary_update () {
         boolean check=true;
         float i;
@@ -657,6 +789,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CHECK INCENTIVE
+     * @return 
+     */
     public static boolean incentive_update () {
         boolean check=true;
         float i;
@@ -675,6 +811,10 @@ public class DAO_admin {
         return check;
     }
     
+    /**
+     * CEHCK ACTIVITY
+     * @return 
+     */
     public static boolean activity_update () {
         boolean check=true;
         int i;
@@ -699,6 +839,9 @@ public class DAO_admin {
             //                                                                //
             ////////////////////////////////////////////////////////////////////
 
+    /**
+     * GENERATE DATA OF THE USER
+     */
     public static void generate_read_admin () {
         Admin admin = BLL_admin.IDadmin();
         

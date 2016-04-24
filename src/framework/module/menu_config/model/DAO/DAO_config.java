@@ -14,6 +14,10 @@ import framework.module.menu_config.view.Config;
  */
 public class DAO_config {
     
+    /**
+     * UPDATE LANGUAGE
+     * @return 
+     */
     public static String setlanguage () {
         String language = "";
         
@@ -30,6 +34,10 @@ public class DAO_config {
         return language;
     }
     
+    /**
+     * UPDATE DATE
+     * @return 
+     */
     public static String setdate () {
         String date = "";
         
@@ -49,6 +57,10 @@ public class DAO_config {
         return date;
     }
     
+    /**
+     * UPDATE CURRENCY
+     * @return 
+     */
     public static char setcurrency () {
         char currency = ' ';
         
@@ -65,6 +77,10 @@ public class DAO_config {
         return currency;
     }
     
+    /**
+     * UPDATE THEME
+     * @return 
+     */
     public static String settheme () {
         String theme = "";
         
@@ -96,6 +112,10 @@ public class DAO_config {
         return theme;
     }
     
+    /**
+     * UPDATE DECIMAL
+     * @return 
+     */
     public static int setdecimal () {
         int decimal = 0;
         
@@ -112,6 +132,9 @@ public class DAO_config {
         return decimal;
     }
     
+    /**
+     * SHOW LANGUAGE
+     */
     public static void getlanguage () {
         switch (ClassConfig.getInstance().getLanguage()){
             case "en":
@@ -126,6 +149,9 @@ public class DAO_config {
         }
     }
     
+    /**
+     * SHOW DATE
+     */
     public static void getdate () {
         switch (ClassConfig.getInstance().getDate()){
             case "dd/MM/yyyy":
@@ -143,6 +169,9 @@ public class DAO_config {
         }
     }
     
+    /**
+     * SHOW CURRENCY
+     */
     public static void getcurrency () {
         switch (ClassConfig.getInstance().getCurrency()){
             case '€':
@@ -157,6 +186,9 @@ public class DAO_config {
         }
     }
     
+    /**
+     * SHOW THEME
+     */
     public static void gettheme () {
         switch (ClassConfig.getInstance().getTheme()){
             case "METAL":// Metal - Predeterminado JAVA
@@ -186,6 +218,9 @@ public class DAO_config {
         }
     }
     
+    /**
+     * SHOW DECIMAL
+     */
     public static void getdecimal () {
         switch (ClassConfig.getInstance().getDecimal()){
             case 1:

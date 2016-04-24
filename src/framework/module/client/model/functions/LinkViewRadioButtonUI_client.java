@@ -1,4 +1,5 @@
 package framework.module.client.model.functions;
+
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
@@ -14,7 +15,12 @@ import javax.swing.plaf.basic.BasicHTML;
 import javax.swing.plaf.basic.BasicRadioButtonUI;
 import javax.swing.text.View;
 
+/**
+ * 
+ * @author angel
+ */
 public class LinkViewRadioButtonUI_client extends BasicRadioButtonUI {
+    
     private static Dimension size = new Dimension();
     private static Rectangle viewRect = new Rectangle();
     private static Rectangle iconRect = new Rectangle();

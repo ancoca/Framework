@@ -5,7 +5,7 @@
  */
 package framework.module.menu_config.view;
 
-import framework.module.menu_config.controller.Controller_menu;
+import framework.module.menu_config.controller.Controller_menu_config;
 import java.awt.event.*;
 import javax.swing.*;
 /**
@@ -52,7 +52,7 @@ public class Start extends javax.swing.JFrame {
                
                    if (i==0){
                     i++;
-                    new Controller_menu(new Menu(), 0).iniciar(0);
+                    new Controller_menu_config(new Menu(), 0).iniciar(0);
                 }
             }
         }

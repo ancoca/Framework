@@ -1,4 +1,5 @@
 package framework.module.client.model.functions;
+
 import framework.module.client.controller.Controller_client;
 import framework.module.client.model.classes.miniSimpleTableModel_client;
 import framework.module.client.view.List_client;
@@ -14,7 +15,12 @@ import javax.swing.JRadioButton;
 import javax.swing.RowFilter;
 import javax.swing.table.TableModel;
 
+/**
+ * 
+ * @author angel
+ */
 public class pagina_client {
+    
     public static final LinkViewRadioButtonUI_client ui = new LinkViewRadioButtonUI_client();
     public static int LR_PAGE_SIZE = 5;
     public static Box box = Box.createHorizontalBox();

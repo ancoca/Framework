@@ -13,9 +13,16 @@ import framework.module.userregister.model.classes.User_register;
 import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.model.classes.language.Language_userregister;
 
+/**
+ * 
+ * @author angel
+ */
 public class txt_userregister {
 
-	public static void savetxt_userregister() {
+    /**
+     * SAVE FILE TXT
+     */
+    public static void savetxt_userregister() {
         String PATH = null;
         try {
             File file;
@@ -32,17 +39,20 @@ public class txt_userregister {
                 file = new File(PATH);
                 
                 FileOutputStream FOS=new FileOutputStream(file);
-				ObjectOutputStream OOS=new ObjectOutputStream(FOS);
-				OOS.writeObject(Singleton_userregister.userregister);
-				OOS.close();
+                ObjectOutputStream OOS=new ObjectOutputStream(FOS);
+                OOS.writeObject(Singleton_userregister.userregister);
+                OOS.close();
                 JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("savetxt"), "TXT", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("errorsave_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 	
-	public static void opentxt_userregister() {
+    /**
+     * OPEN FILE TXT
+     */
+    public static void opentxt_userregister() {
     	String PATH = null;
         try {
             File f;
@@ -58,12 +68,12 @@ public class txt_userregister {
                 f = new File(PATH);
                 
                 FileInputStream fi=new FileInputStream(f);
-    			ObjectInputStream oi=new ObjectInputStream(fi);
-    			Singleton_userregister.userregister = (ArrayList<User_register>)oi.readObject();
-    			oi.close();
+                ObjectInputStream oi=new ObjectInputStream(fi);
+                Singleton_userregister.userregister = (ArrayList<User_register>)oi.readObject();
+                oi.close();
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("erroropen_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, Language_userregister.getInstance().getProperty("erroropen_txt"), Language_userregister.getInstance().getProperty("error"), JOptionPane.ERROR_MESSAGE);
         }
     }
 }

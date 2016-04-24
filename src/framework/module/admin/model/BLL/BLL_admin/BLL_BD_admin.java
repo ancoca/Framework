@@ -10,26 +10,35 @@ import framework.module.admin.model.DAO.DAO_BD_admin;
 import framework.module.admin.model.classes.Admin;
 import java.sql.Connection;
 
-
 /**
  *
  * @author angel
  */
 public class BLL_BD_admin {
     
+    /**
+     * CREATE USER
+     * @param a1
+     * @return 
+     */
     public static boolean create_BD (Admin a1) {
         boolean correcto = false;
         Connection connection = null;
         
         connection = PoolConexion.OcuparConexion();
         
-        correcto = DAO_BD_admin.create_BD((com.mysql.jdbc.Connection) connection, a1);
+        correcto = DAO_BD_admin.create_BD(connection, a1);
         
         PoolConexion.LiberarConexion(connection);
         
         return correcto;
     }
     
+    /**
+     * UPDATE USER
+     * @param a1
+     * @return 
+     */
     public static boolean update_BD (Admin a1) {
         boolean correcto = false;
         Connection connection = null;
@@ -43,6 +52,11 @@ public class BLL_BD_admin {
         return correcto;
     }
     
+    /**
+     * DELETE USER
+     * @param a1
+     * @return 
+     */
     public static boolean delete_BD (Admin a1) {
         boolean correcto = false;
         Connection connection = null;
@@ -56,6 +70,11 @@ public class BLL_BD_admin {
         return correcto;
     }
     
+    /**
+     * DELETE USER UPDATE
+     * @param dni
+     * @return 
+     */
     public static boolean delete_BD_update (String dni) {
         boolean correcto = false;
         Connection connection = null;
@@ -69,6 +88,10 @@ public class BLL_BD_admin {
         return correcto;
     }
     
+    /**
+     * BD TO ARRAYLIST
+     * @return 
+     */
     public static boolean BDtoArrayList () {
         boolean correcto = false;
         Connection connection = null;
@@ -82,6 +105,11 @@ public class BLL_BD_admin {
         return correcto;
     }
     
+    /**
+     * FIND USER IN THE DATA BASE
+     * @param a1
+     * @return 
+     */
     public static boolean find_BD (Admin a1) {
         boolean correcto = false;
         Connection connection = null;

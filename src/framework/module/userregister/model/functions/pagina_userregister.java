@@ -1,4 +1,5 @@
 package framework.module.userregister.model.functions;
+
 import framework.module.userregister.controller.Controller_userregister;
 import framework.module.userregister.model.classes.miniSimpleTableModel_userregister;
 import framework.module.userregister.view.List_userregister;
@@ -14,11 +15,15 @@ import javax.swing.JRadioButton;
 import javax.swing.RowFilter;
 import javax.swing.table.TableModel;
 
+/**
+ * 
+ * @author angel
+ */
 public class pagina_userregister {
+    
     public static final LinkViewRadioButtonUI_userregister ui = new LinkViewRadioButtonUI_userregister();
     public static int LR_PAGE_SIZE = 5;
     public static Box box = Box.createHorizontalBox();
-
     public static int currentPageIndex = 1;
     public static int itemsPerPage = 5;
     public static int maxPageIndex;

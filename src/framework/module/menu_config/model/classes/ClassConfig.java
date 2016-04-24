@@ -6,7 +6,6 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import framework.classes.Mongo_BD;
 import framework.classes.PoolConexion;
 import framework.classes.Singleton_general;
-
 import framework.classes.language.Language_general;
 import framework.functions.Functions_menu;
 import framework.functions.Functions_theme;
@@ -27,144 +26,172 @@ import framework.module.userregister.model.classes.Singleton_userregister;
 import framework.module.userregister.model.classes.language.Language_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
 
+/**
+ * 
+ * @author angel
+ */
 @XStreamAlias("ClassConfig")
 public class ClassConfig implements Serializable {
 
-	/*
-	 * ATTRIBUTES
-	 * 
-	 */
-	
-	@XStreamAlias("language")
-	private String language;
-	@XStreamAlias("decimal")
-	private int decimal;
-	@XStreamAlias("currency")
-	private char currency;
-	@XStreamAlias("date")
-	private String date;
-	@XStreamAlias("file")
-	private String file;
-	@XStreamAlias("theme")
-	private String theme;
-	@XStreamAlias("instance")
-	private static ClassConfig instance;
-	
-	public ClassConfig (String language, String date, char currency, int decimal, String file, String theme) {
-		this.language = language;
-		this.date = date;
-		this.currency = currency;
-		this.decimal = decimal;
-		this.file = file;
-		this.theme = theme;
-		
-	}
-	
-	protected ClassConfig () {
-		this.language = "en";
-		this.date = "dd/MM/yyyy";
-		this.currency = '€';
-		this.decimal = 2;
-		this.file = "json";
-		this.theme = "GTK";
-	}
-	
-	public static ClassConfig getInstance () {
-		if (instance == null){
-			instance = new ClassConfig ();
-                        
-                        json_auto_config.openjson_config();
-                        PoolConexion.iniciar_BasicDataSourceFactory();
-                        Singleton_general.mongo = new Mongo_BD();
-                        Singleton_general.client = Mongo_BD.connect();
+    /**
+     * ATTRIBUTES
+     */
 
-			Functions_theme.theme();
-			Language_user.getInstance();
-                        Language_admin.getInstance();
-                        Language_client.getInstance();
-                        Language_userregister.getInstance();
-                        Language_menu_config.getInstance();
-                        Language_general.getInstance();
-			
-			Singleton_admin.useradmin = new ArrayList <Admin> ();
-			Singleton_client.userclient = new ArrayList <Client> ();
-			Singleton_userregister.userregister = new ArrayList <User_register> ();
-			
-                        json_auto_userregister.openjson_userregister();
-			boolean dummies = Functions_menu.YES_NO(Language_menu_config.getInstance().getProperty("dummies"));
-			if (dummies == true) {
-				Make_dummies_admin.makedummies_admin();
-				Make_dummies_client.makedummies_client();
-				Make_dummies_userregister.makedummies_userregister();
-                                json_auto_userregister.savejson_userregister();
-			}
-		}
-		return instance;
-	}
-	
-	public String getLanguage() {
-		return language;
-	}
+    @XStreamAlias("language")
+    private String language;
+    @XStreamAlias("decimal")
+    private int decimal;
+    @XStreamAlias("currency")
+    private char currency;
+    @XStreamAlias("date")
+    private String date;
+    @XStreamAlias("file")
+    private String file;
+    @XStreamAlias("theme")
+    private String theme;
+    @XStreamAlias("instance")
+    private static ClassConfig instance;
 
-	public void setLanguage(String language) {
-		this.language = language;
-		Language_user.getInstance().setLanguage();
-		Language_admin.getInstance().setLanguage();
-                Language_client.getInstance().setLanguage();
-                Language_userregister.getInstance().setLanguage();
-                Language_menu_config.getInstance().setLanguage();
-                Language_general.getInstance().setLanguage();
-	}
+    /**
+     * BUILDING
+     * @param language
+     * @param date
+     * @param currency
+     * @param decimal
+     * @param file
+     * @param theme 
+     */
+    public ClassConfig (String language, String date, char currency, int decimal, String file, String theme) {
+        this.language = language;
+        this.date = date;
+        this.currency = currency;
+        this.decimal = decimal;
+        this.file = file;
+        this.theme = theme;
+    }
 
-	public int getDecimal() {
-		return decimal;
-	}
+    /**
+     * BUILDING DEFAULT
+     */
+    protected ClassConfig () {
+        this.language = "en";
+        this.date = "dd/MM/yyyy";
+        this.currency = '€';
+        this.decimal = 2;
+        this.file = "json";
+        this.theme = "GTK";
+    }
 
-	public void setDecimal(int decimal) {
-		this.decimal = decimal;
-	}
+    /**
+     * GET INSTANCE
+     * @return 
+     */
+    public static ClassConfig getInstance () {
+        if (instance == null){
+            instance = new ClassConfig ();
 
-	public char getCurrency() {
-		return currency;
-	}
+            json_auto_config.openjson_config();
+            PoolConexion.iniciar_BasicDataSourceFactory();
+            Singleton_general.mongo = new Mongo_BD();
+            Singleton_general.client = Mongo_BD.connect();
 
-	public void setCurrency(char currency) {
-		this.currency = currency;
-	}
+            Functions_theme.theme();
+            Language_user.getInstance();
+            Language_admin.getInstance();
+            Language_client.getInstance();
+            Language_userregister.getInstance();
+            Language_menu_config.getInstance();
+            Language_general.getInstance();
 
-	public String getDate() {
-		return date;
-	}
+            Singleton_admin.useradmin = new ArrayList <Admin> ();
+            Singleton_client.userclient = new ArrayList <Client> ();
+            Singleton_userregister.userregister = new ArrayList <User_register> ();
 
-	public void setDate(String date) {
-		this.date = date;
-	}
+            json_auto_userregister.openjson_userregister();
+            boolean dummies = Functions_menu.YES_NO(Language_menu_config.getInstance().getProperty("dummies"));
+            if (dummies == true) {
+                Make_dummies_admin.makedummies_admin();
+                Make_dummies_client.makedummies_client();
+                Make_dummies_userregister.makedummies_userregister();
+                json_auto_userregister.savejson_userregister();
+            }
+        }
+        return instance;
+    }
 
-	public String getFile() {
-		return file;
-	}
+    /**
+     * GETS AND SETS
+     * @return 
+     */
+    
+    public String getLanguage() {
+            return language;
+    }
 
-	public void setFile(String file) {
-		this.file = file;
-	}
-	
-	public String getTheme() {
-		return theme;
-	}
+    public void setLanguage(String language) {
+            this.language = language;
+            Language_user.getInstance().setLanguage();
+            Language_admin.getInstance().setLanguage();
+            Language_client.getInstance().setLanguage();
+            Language_userregister.getInstance().setLanguage();
+            Language_menu_config.getInstance().setLanguage();
+            Language_general.getInstance().setLanguage();
+    }
 
-	public void setTheme(String theme) {
-		this.theme = theme;
-		Functions_theme.theme();
-	}
-	
-	public String toString (ClassConfig config) {
-		StringBuffer string = new StringBuffer();
-		string.append(Language_menu_config.getInstance().getProperty("language")+": "+this.getLanguage()+"\n");
-		string.append(Language_menu_config.getInstance().getProperty("date")+": "+this.getDate()+"\n");
-		string.append(Language_menu_config.getInstance().getProperty("currency")+": "+this.getCurrency()+"\n");
-		string.append(Language_menu_config.getInstance().getProperty("decimal")+": "+this.getDecimal()+"\n");
-		string.append(Language_menu_config.getInstance().getProperty("file")+": "+this.getFile()+"\n");
-		string.append(Language_menu_config.getInstance().getProperty("theme")+": "+this.getTheme()+"\n");
-		return string.toString();
-	}
+    public int getDecimal() {
+            return decimal;
+    }
+
+    public void setDecimal(int decimal) {
+            this.decimal = decimal;
+    }
+
+    public char getCurrency() {
+            return currency;
+    }
+
+    public void setCurrency(char currency) {
+            this.currency = currency;
+    }
+
+    public String getDate() {
+            return date;
+    }
+
+    public void setDate(String date) {
+            this.date = date;
+    }
+
+    public String getFile() {
+            return file;
+    }
+
+    public void setFile(String file) {
+            this.file = file;
+    }
+
+    public String getTheme() {
+            return theme;
+    }
+
+    public void setTheme(String theme) {
+            this.theme = theme;
+            Functions_theme.theme();
+    }
+
+    /**
+     * TO STRING
+     * @param config
+     * @return 
+     */
+    public String toString () {
+        StringBuffer string = new StringBuffer();
+        string.append(Language_menu_config.getInstance().getProperty("language")+": "+this.getLanguage()+"\n");
+        string.append(Language_menu_config.getInstance().getProperty("date")+": "+this.getDate()+"\n");
+        string.append(Language_menu_config.getInstance().getProperty("currency")+": "+this.getCurrency()+"\n");
+        string.append(Language_menu_config.getInstance().getProperty("decimal")+": "+this.getDecimal()+"\n");
+        string.append(Language_menu_config.getInstance().getProperty("file")+": "+this.getFile()+"\n");
+        string.append(Language_menu_config.getInstance().getProperty("theme")+": "+this.getTheme()+"\n");
+        return string.toString();
+    }
 }
