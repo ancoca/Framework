@@ -66,7 +66,7 @@ public class DAO_BD_client {
         String rdo = "";
         Client c1 = new Client();
         try {
-            cursor = collection.find().sort(new BasicDBObject("DNI", -1)).limit(10);
+            cursor = collection.find().sort(new BasicDBObject("DNI", -1));
             if(cursor.count()!=0){
                 while(cursor.hasNext()){
                     BasicDBObject document = (BasicDBObject) cursor.next();

@@ -5,7 +5,7 @@
  */
 package framework.module.userregister.controller;
 
-import framework.classes.Mongo_BD;
+import static framework.classes.Singleton_general.mongo;
 import framework.module.admin.controller.Controller_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.client.controller.Controller_client;
@@ -177,7 +177,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                         this.list.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        Mongo_BD.disconnect();
+                        mongo.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
                         list.dispose();
@@ -274,7 +274,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                         this.create.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        Mongo_BD.disconnect();
+                        mongo.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
                         create.dispose();
@@ -377,7 +377,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                         this.update.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        Mongo_BD.disconnect();
+                        mongo.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
                         update.dispose();
@@ -479,7 +479,7 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                         this.read.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        Mongo_BD.disconnect();
+                        mongo.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,"Saliendo de la aplicación");
                         read.dispose();

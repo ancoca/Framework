@@ -5,7 +5,7 @@
  */
 package framework.module.menu_config.controller;
 
-import framework.classes.Mongo_BD;
+import static framework.classes.Singleton_general.mongo;
 import framework.module.admin.controller.Controller_admin;
 import framework.module.admin.view.List_admin;
 import framework.module.client.controller.Controller_client;
@@ -98,7 +98,7 @@ public class Controller_menu_config implements MouseListener, ActionListener{
                     this.inicio.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
-                    Mongo_BD.disconnect();
+                    mongo.disconnect();
                     json_auto_userregister.savejson_userregister();
                     JOptionPane.showMessageDialog(null,Language_menu_config.getInstance().getProperty("exit"));
                     inicio.dispose();
@@ -140,7 +140,7 @@ public class Controller_menu_config implements MouseListener, ActionListener{
                     this.config.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
-                    Mongo_BD.disconnect();
+                    mongo.disconnect();
                     json_auto_userregister.savejson_userregister();
                     JOptionPane.showMessageDialog(null,Language_menu_config.getInstance().getProperty("exit"));
                     config.dispose();

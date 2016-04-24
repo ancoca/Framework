@@ -5,7 +5,7 @@
  */
 package framework.module.admin.controller;
 
-import framework.classes.Mongo_BD;
+import static framework.classes.Singleton_general.mongo;
 import framework.module.admin.model.BLL.BLL_admin.BLL_admin;
 import framework.module.admin.model.DAO.DAO_admin;
 import framework.module.admin.model.classes.Singleton_admin;
@@ -181,7 +181,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.list.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        Mongo_BD.disconnect();
+                        mongo.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         list.dispose();
@@ -279,7 +279,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.create.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        Mongo_BD.disconnect();
+                        mongo.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         create.dispose();
@@ -388,7 +388,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.update.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        Mongo_BD.disconnect();
+                        mongo.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         update.dispose();
@@ -495,7 +495,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                         this.read.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
-                        Mongo_BD.disconnect();
+                        mongo.disconnect();
                         json_auto_userregister.savejson_userregister();
                         JOptionPane.showMessageDialog(null,Language_admin.getInstance().getProperty("exit"));
                         read.dispose();
