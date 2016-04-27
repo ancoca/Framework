@@ -16,8 +16,8 @@ import javax.swing.ImageIcon;
  */
 public class Singleton_admin {
     
+    public static Admin admin;
     public static ArrayList <Admin> useradmin;
-    
     public static ImageIcon ok = new ImageIcon("src/framework/img/ok.png");
     public static ImageIcon cancel = new ImageIcon("src/framework/img/cancel.png");
     public static ImageIcon add = new ImageIcon("src/framework/img/edit_add.png");
