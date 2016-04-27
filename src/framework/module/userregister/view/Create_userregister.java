@@ -447,6 +447,7 @@ public class Create_userregister extends javax.swing.JFrame {
             }
         });
 
+        txtuser.setText("example: user");
         txtuser.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtuserFocusGained(evt);
@@ -469,6 +470,7 @@ public class Create_userregister extends javax.swing.JFrame {
             }
         });
 
+        txtDNI.setText("example: 12345678Z");
         txtDNI.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtDNIFocusGained(evt);
@@ -491,13 +493,18 @@ public class Create_userregister extends javax.swing.JFrame {
             }
         });
 
+        txtavatar.setText("/root");
+
         btnavatar.setText(Language_userregister.getInstance().getProperty("file"));
 
+        groupstate.add(statetrue);
         statetrue.setSelected(true);
         statetrue.setText(Language_userregister.getInstance().getProperty("connect"));
 
+        groupstate.add(statefalse);
         statefalse.setText(Language_userregister.getInstance().getProperty("notconnect"));
 
+        txtname.setText("example: name");
         txtname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtnameFocusGained(evt);
@@ -520,6 +527,7 @@ public class Create_userregister extends javax.swing.JFrame {
             }
         });
 
+        txtsurname.setText("example: surname");
         txtsurname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtsurnameFocusGained(evt);
@@ -568,6 +576,7 @@ public class Create_userregister extends javax.swing.JFrame {
 
         txtdatebirthday.setDateFormatString(ClassConfig.getInstance().getDate());
 
+        txtmobilephone.setText("example: 123456789");
         txtmobilephone.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtmobilephoneFocusGained(evt);
@@ -590,6 +599,7 @@ public class Create_userregister extends javax.swing.JFrame {
             }
         });
 
+        txtemail.setText("example@example.com");
         txtemail.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtemailFocusGained(evt);
@@ -612,6 +622,7 @@ public class Create_userregister extends javax.swing.JFrame {
             }
         });
 
+        txtpoint.setText("example: 100");
         txtpoint.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtpointFocusGained(evt);
@@ -644,6 +655,7 @@ public class Create_userregister extends javax.swing.JFrame {
 
         checkpoint.setPreferredSize(new java.awt.Dimension(30, 30));
 
+        txtactivity.setText("example: 100");
         txtactivity.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtactivityFocusGained(evt);
