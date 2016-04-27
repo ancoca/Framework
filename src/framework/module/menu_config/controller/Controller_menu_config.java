@@ -6,18 +6,14 @@
 package framework.module.menu_config.controller;
 
 import static framework.classes.Singleton_general.mongo;
-import framework.module.admin.controller.Controller_admin;
-import framework.module.admin.view.List_admin;
-import framework.module.client.controller.Controller_client;
-import framework.module.client.view.List_client;
+import framework.module.login.controller.Controller_login;
+import framework.module.login.view.Login;
 import framework.module.menu_config.model.BLL.BLL_config;
 import framework.module.menu_config.model.classes.Singleton_config;
 import framework.module.menu_config.model.classes.language.Language_menu_config;
 import framework.module.menu_config.view.Config;
 import framework.module.menu_config.view.Menu;
-import framework.module.userregister.controller.Controller_userregister;
 import framework.module.userregister.model.functions.json_auto_userregister;
-import framework.module.userregister.view.List_userregister;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -219,15 +215,15 @@ public class Controller_menu_config implements MouseListener, ActionListener{
                 break;
             case lblusuario:
                 inicio.dispose();
-                new Controller_userregister(new List_userregister(), 0).iniciar(0);
+                new Controller_login(new Login(), 2).iniciar(2);
                 break;
             case lblcliente:
                 inicio.dispose();
-                new Controller_client(new List_client(), 0).iniciar(0);
+                new Controller_login(new Login(), 1).iniciar(1);
                 break;
             case lbladministrador:
                 inicio.dispose();
-                new Controller_admin(new List_admin(), 0).iniciar(0);
+                new Controller_login(new Login(), 0).iniciar(0);
                 break;
             case lblinicio:
                 inicio.dispose();
@@ -239,15 +235,15 @@ public class Controller_menu_config implements MouseListener, ActionListener{
                 break;
             case lblusuario_config:
                 config.dispose();
-                new Controller_userregister(new List_userregister(), 0).iniciar(0);
+                new Controller_login(new Login(), 2).iniciar(2);
                 break;
             case lblcliente_config:
                 config.dispose();
-                new Controller_client(new List_client(), 0).iniciar(0);
+                new Controller_login(new Login(), 1).iniciar(1);
                 break;
             case lbladministrador_config:
                 config.dispose();
-                new Controller_admin(new List_admin(), 0).iniciar(0);
+                new Controller_login(new Login(), 0).iniciar(0);
                 break;
             case lblinicio_config:
                 config.dispose();
