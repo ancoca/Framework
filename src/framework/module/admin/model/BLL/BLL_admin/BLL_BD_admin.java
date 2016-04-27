@@ -110,13 +110,13 @@ public class BLL_BD_admin {
      * @param a1
      * @return 
      */
-    public static boolean find_BD (Admin a1) {
+    public static boolean find_BD (String dni) {
         boolean correcto = false;
         Connection connection = null;
         
         connection = PoolConexion.OcuparConexion();
         
-        correcto = DAO_BD_admin.find_BD(connection, a1);
+        correcto = DAO_BD_admin.find_BD(connection, dni);
         
         PoolConexion.LiberarConexion(connection);
         
