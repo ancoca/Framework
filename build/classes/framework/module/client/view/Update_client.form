@@ -704,7 +704,6 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="txtmobilephone" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtdatebirthday" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtdtos" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtemail" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txttype_client" alignment="0" max="32767" attributes="0"/>
@@ -714,6 +713,7 @@
                                       <Component id="premiumfalse" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtshopping" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtdatebirthday" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -764,8 +764,8 @@
                                                       <Component id="checkpass" alignment="3" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="txtdatebirthday" alignment="1" min="-2" max="-2" attributes="0"/>
                                                   <Component id="showpass" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="txtdatebirthday" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Component id="checkdatebirthday" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -1102,16 +1102,6 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="txtdatebirthday">
-                      <Properties>
-                        <Property name="dateFormatString" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="ClassConfig.getInstance().getDate()" type="code"/>
-                        </Property>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                      </AuxValues>
-                    </Component>
                     <Component class="javax.swing.JTextField" name="txtmobilephone">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="example: 123456789"/>
@@ -1297,6 +1287,16 @@
                         <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="showpassMouseExited"/>
                         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="showpassMouseEntered"/>
                       </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="com.toedter.calendar.JDateChooser" name="txtdatebirthday">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="ClassConfig.getInstance().getDate()" type="code"/>
+                        </Property>
+                      </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                       </AuxValues>
