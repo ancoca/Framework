@@ -1,7 +1,6 @@
 package framework.module.userregister.model.classes;
 
 import framework.module.userregister.model.classes.User_register;
-import framework.module.client.model.classes.Client;
 import framework.module.admin.model.classes.Admin;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -18,6 +17,7 @@ import javax.swing.ImageIcon;
  */
 public class Singleton_userregister {
     
+    public static User_register user_register;
     public static ArrayList <User_register> userregister;
     public static ImageIcon ok = new ImageIcon("src/framework/img/ok.png");
     public static ImageIcon cancel = new ImageIcon("src/framework/img/cancel.png");
