@@ -82,4 +82,31 @@ public class DAO_BD_client {
             }
 	}
     }
+    
+    /**
+     * FIND USER
+     * @param dni 
+     */
+    public static void find_BD (String dni) {
+        DBCursor cursor = null;
+        String rdo = "";
+        try {
+            BasicDBObject query = new BasicDBObject("DNI", dni);
+            cursor = collection.find(query);
+            if(cursor.count()!=0){
+                Singleton_client.client=new Client();
+                while(cursor.hasNext()){
+                    BasicDBObject document = (BasicDBObject) cursor.next();
+                    Singleton_client.client = Singleton_client.client.BD_to_Client(document);
+                }
+            }else{
+                Singleton_client.client=null;
+                System.out.println("NOT DATA"); 
+            }
+        } finally {
+            if (cursor != null){
+		cursor.close();
+            }
+	}
+    }
 }
