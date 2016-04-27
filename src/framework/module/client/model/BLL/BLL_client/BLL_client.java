@@ -187,7 +187,6 @@ public class BLL_client {
                     BLL_BD_client.delete_BD(client);
                     Singleton_client.userclient.remove(pos);
                     miniSimpleTableModel_client.datosaux.remove(pos);
-                    json_auto_client.savejson_client();
                     ((miniSimpleTableModel_client) List_client.TABLA.getModel()).cargar();
                     List_client.lblsize.setText(String.valueOf(Singleton_client.userclient.size()));
                     pagina_client.initLinkBox();
