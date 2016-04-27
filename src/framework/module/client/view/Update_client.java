@@ -93,7 +93,6 @@ public class Update_client extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        txtdatebirthday = new com.toedter.calendar.JDateChooser();
         txtmobilephone = new javax.swing.JTextField();
         txtemail = new javax.swing.JTextField();
         txtdtos = new javax.swing.JTextField();
@@ -109,6 +108,7 @@ public class Update_client extends javax.swing.JFrame {
         premiumtrue = new javax.swing.JRadioButton();
         premiumfalse = new javax.swing.JRadioButton();
         showpass = new javax.swing.JLabel();
+        txtdatebirthday = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -587,8 +587,6 @@ public class Update_client extends javax.swing.JFrame {
 
         jLabel32.setText(Language_client.getInstance().getProperty("typeclient")+": ");
 
-        txtdatebirthday.setDateFormatString(ClassConfig.getInstance().getDate());
-
         txtmobilephone.setText("example: 123456789");
         txtmobilephone.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -736,6 +734,8 @@ public class Update_client extends javax.swing.JFrame {
             }
         });
 
+        txtdatebirthday.setDateFormatString(ClassConfig.getInstance().getDate());
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -801,7 +801,6 @@ public class Update_client extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtmobilephone)
-                    .addComponent(txtdatebirthday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtdtos)
                     .addComponent(txtemail)
                     .addComponent(txttype_client)
@@ -809,7 +808,8 @@ public class Update_client extends javax.swing.JFrame {
                         .addComponent(premiumtrue)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(premiumfalse))
-                    .addComponent(txtshopping))
+                    .addComponent(txtshopping)
+                    .addComponent(txtdatebirthday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -852,8 +852,8 @@ public class Update_client extends javax.swing.JFrame {
                                         .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(checkpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel28))
-                                    .addComponent(txtdatebirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(showpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtdatebirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(checkdatebirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
