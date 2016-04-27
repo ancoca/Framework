@@ -18,6 +18,7 @@ import framework.module.client.model.BLL.BLL_dummies.Make_dummies_client;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
 import framework.module.client.model.classes.language.Language_client;
+import framework.module.login.model.classes.language.Language_login;
 import framework.module.menu_config.model.classes.language.Language_menu_config;
 import framework.module.userregister.model.classes.User_register;
 import framework.module.menu_config.model.functions.json_auto_config;
@@ -102,6 +103,7 @@ public class ClassConfig implements Serializable {
             Language_userregister.getInstance();
             Language_menu_config.getInstance();
             Language_general.getInstance();
+            Language_login.getInstance();
 
             Singleton_admin.useradmin = new ArrayList <Admin> ();
             Singleton_client.userclient = new ArrayList <Client> ();
@@ -136,6 +138,7 @@ public class ClassConfig implements Serializable {
             Language_userregister.getInstance().setLanguage();
             Language_menu_config.getInstance().setLanguage();
             Language_general.getInstance().setLanguage();
+            Language_login.getInstance().setLanguage();
     }
 
     public int getDecimal() {
