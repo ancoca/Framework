@@ -8,6 +8,7 @@ package framework.module.admin.model.DAO;
 import framework.classes.ClassDate;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
+import static framework.module.admin.model.classes.Singleton_admin.admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -273,23 +274,24 @@ public class DAO_BD_admin {
      * @param a1
      * @return 
      */
-    public static boolean find_BD (Connection connection, Admin a1) {
+    public static boolean find_BD (Connection connection, String dni) {
         boolean correcto = false;
         PreparedStatement statement = null;
         ResultSet result = null;
         
         try{
             statement = connection.prepareStatement("SELECT * FROM admin WHERE DNI=?");
-            statement.setString(1, a1.getDNI());
+            statement.setString(1, dni);
             result = statement.executeQuery();
             
+            admin = null;
             while (result.next()){
-                show_BD(result, a1);
+                show_BD(result);
             }
             
             correcto = true;
         }catch (SQLException ex){
-            JOptionPane.showMessageDialog(null, "Ha habido un error al eliminar el usuario!");
+            JOptionPane.showMessageDialog(null, "Ha habido un error al buscar el usuario!");
             correcto = false;
         }finally{
             if (result != null){
@@ -320,31 +322,32 @@ public class DAO_BD_admin {
      * @param a1
      * @return 
      */
-    private static boolean show_BD (ResultSet result, Admin a1) {
+    private static boolean show_BD (ResultSet result) {
         boolean correcto = false, state = false;
         try {
-            a1.setDNI(result.getString("DNI"));
-            a1.setUser(result.getString("user"));
-            a1.setPass(result.getString("pass"));
-            a1.setAvatar(result.getString("avatar"));
+            admin = new Admin();
+            admin.setDNI(result.getString("DNI"));
+            admin.setUser(result.getString("user"));
+            admin.setPass(result.getString("pass"));
+            admin.setAvatar(result.getString("avatar"));
             if (result.getInt("state")==1){
                 state = true;
             }else{
                 state = false;
             }
-            a1.setState(state);
-            a1.setName(result.getString("name"));
-            a1.setSurname(result.getString("surname"));
-            a1.setEmail(result.getString("email"));
-            a1.setMobilephone(result.getString("mobilephone"));
-            a1.setDatebirthday(new ClassDate(result.getString("datebirthday"), "BD"));
-            a1.setAge(result.getInt("age"));
-            a1.setBenefits(result.getFloat("benefits"));
-            a1.setDate_contract(new ClassDate(result.getString("datecontract"), "BD"));
-            a1.setOld(result.getInt("old"));
-            a1.setSalary(result.getFloat("salary"));
-            a1.setIncentive(result.getFloat("incentive"));
-            a1.setActivity(result.getInt("activity"));
+            admin.setState(state);
+            admin.setName(result.getString("name"));
+            admin.setSurname(result.getString("surname"));
+            admin.setEmail(result.getString("email"));
+            admin.setMobilephone(result.getString("mobilephone"));
+            admin.setDatebirthday(new ClassDate(result.getString("datebirthday"), "BD"));
+            admin.setAge(result.getInt("age"));
+            admin.setBenefits(result.getFloat("benefits"));
+            admin.setDate_contract(new ClassDate(result.getString("datecontract"), "BD"));
+            admin.setOld(result.getInt("old"));
+            admin.setSalary(result.getFloat("salary"));
+            admin.setIncentive(result.getFloat("incentive"));
+            admin.setActivity(result.getInt("activity"));
             correcto=true;
         }catch (SQLException ex){
             JOptionPane.showMessageDialog(null, "Ha habido un error en la Base de Datos");
