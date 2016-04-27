@@ -5,6 +5,7 @@
  */
 package framework.module.client.model.BLL.BLL_client;
 
+import framework.classes.Singleton_general;
 import framework.module.client.controller.Controller_client;
 import framework.module.client.model.DAO.DAO_client;
 import framework.module.client.model.classes.Client;
@@ -19,6 +20,8 @@ import framework.module.client.model.functions.xml_client;
 import framework.module.client.view.Create_client;
 import framework.module.client.view.List_client;
 import framework.module.client.view.Update_client;
+import framework.module.menu_config.controller.Controller_menu_config;
+import framework.module.menu_config.view.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -305,18 +308,23 @@ public class BLL_client {
     }
     
     /**
-     * FIND USER IN TABLE
+     * FIND USER
      * @return 
      */
     public static Client IDclient () {
         Client c1 = null;
         String ID = "";
         int location1 = -1, selection, inicio, selection1;
+        if (Singleton_general.tabla==true){
         inicio=(pagina_client.currentPageIndex-1)*pagina_client.itemsPerPage; //nos situamos al inicio de la página en cuestión
         selection=List_client.TABLA.getSelectedRow(); //nos situamos en la fila
         selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
         ID = (String) List_client.TABLA.getModel().getValueAt(selection1, 0);
         c1 = new Client (ID);
+        }else{
+            c1 = new Client (Singleton_general.dni);
+        }
+        BLL_BD_client.BDtoArrayList();
         location1 = -1;
         location1 = BLL_client.find_client(c1);
         if (location1 != -1) {
@@ -334,7 +342,11 @@ public class BLL_client {
         
             public void actionPerformed(ActionEvent e) {
                 jframe.dispose();
-                new Controller_client(new List_client(), 0).iniciar(0);
+                if (Singleton_general.admin==true){
+                    new Controller_client(new List_client(), 0).iniciar(0);
+                }else{
+                    new Controller_menu_config(new Menu(), 0).iniciar(0);
+                }
             }
         });
         timer.setRepeats(false);
