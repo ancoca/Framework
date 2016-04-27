@@ -52,4 +52,11 @@ public class BLL_BD_client {
     public static void BDtoArrayList () {
         DAO_BD_client.BDtoArray();
     }
+    
+    /**
+     * FIND USER
+     */
+    public static void find_BD (String dni) {
+        DAO_BD_client.find_BD(dni);
+    }
 }
