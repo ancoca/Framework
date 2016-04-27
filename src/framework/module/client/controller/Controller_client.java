@@ -22,6 +22,7 @@ import framework.module.client.view.List_client;
 import framework.module.client.view.Read_client;
 import framework.module.client.view.Update_client;
 import framework.module.login.controller.Controller_login;
+import framework.module.login.model.classes.Singleton_login;
 import framework.module.login.view.Login;
 import framework.module.menu_config.view.Config;
 import framework.module.menu_config.controller.Controller_menu_config;
@@ -559,7 +560,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 if (select == -1){
                     JOptionPane.showMessageDialog(null, Language_client.getInstance().getProperty("usernotselect"));
                 }else{
-                    Singleton_general.tabla = true;
+                    Singleton_login.tabla = true;
                     list.dispose();
                     new Controller_client(new Update_client(), 2).iniciar(2);
                 }
@@ -569,7 +570,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case TABLA:
                 if (e.getClickCount() == 2) {
-                    Singleton_general.tabla = true;
+                    Singleton_login.tabla = true;
                     list.dispose();
                     new Controller_client(new Read_client(), 3).iniciar(3);
                 }
@@ -605,7 +606,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblvolver_create:
                 create.dispose();
-                if (Singleton_general.admin==true){
+                if (Singleton_login.admin==true){
                     new Controller_client(new List_client(), 0).iniciar(0);
                 }else{
                     new Controller_menu_config(new Menu(), 0).iniciar(0);
@@ -663,7 +664,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblvolver_update:
                 update.dispose();
-                if (Singleton_general.admin==true){
+                if (Singleton_login.admin==true){
                     new Controller_client(new List_client(), 0).iniciar(0);
                 }else{
                     new Controller_menu_config(new Menu(), 0).iniciar(0);
@@ -721,7 +722,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case lblvolver_read:
                 read.dispose();
-                if (Singleton_general.admin==true){
+                if (Singleton_login.admin==true){
                     new Controller_client(new List_client(), 0).iniciar(0);
                 }else{
                     new Controller_menu_config(new Menu(), 0).iniciar(0);
@@ -970,7 +971,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case btncancelar_create:
                 create.dispose();
-                if (Singleton_general.admin==true){
+                if (Singleton_login.admin==true){
                     new Controller_client(new List_client(), 0).iniciar(0);
                 }else{
                     new Controller_menu_config(new Menu(), 0).iniciar(0);
@@ -1002,7 +1003,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                 break;
             case btncancelar_update:
                 update.dispose();
-                if (Singleton_general.admin==true){
+                if (Singleton_login.admin==true){
                     new Controller_client(new List_client(), 0).iniciar(0);
                 }else{
                     new Controller_menu_config(new Menu(), 0).iniciar(0);

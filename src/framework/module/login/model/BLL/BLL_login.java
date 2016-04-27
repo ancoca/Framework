@@ -12,6 +12,7 @@ import framework.module.client.controller.Controller_client;
 import framework.module.client.view.List_client;
 import framework.module.client.view.Update_client;
 import framework.module.login.model.DAO.DAO_login;
+import framework.module.login.model.classes.Singleton_login;
 import framework.module.login.model.classes.language.Language_login;
 import framework.module.login.view.Login;
 import framework.module.userregister.controller.Controller_userregister;
@@ -33,7 +34,7 @@ public class BLL_login {
         boolean correcto = DAO_login.login_admin();
         
         if (correcto == true){
-            Singleton_general.admin = true;
+            Singleton_login.admin = true;
             jframe.dispose();
             new Controller_admin(new List_admin(), 0).iniciar(0);
         }else{
@@ -49,15 +50,15 @@ public class BLL_login {
         boolean correcto1 = DAO_login.login_client();
         
         if (correcto1 == true){
-            Singleton_general.admin = false;
-            Singleton_general.dni = Login.txtDNI.getText();
-            Singleton_general.tabla = false;
+            Singleton_login.admin = false;
+            Singleton_login.dni = Login.txtDNI.getText();
+            Singleton_login.tabla = false;
             jframe.dispose();
             new Controller_client(new Update_client(), 2).iniciar(2);
         }else{
             boolean correcto2 = DAO_login.login_admin();
             if (correcto2 == true){
-                Singleton_general.admin = true;
+                Singleton_login.admin = true;
                 jframe.dispose();
                 new Controller_client(new List_client(), 0).iniciar(0);
             }else{
@@ -74,15 +75,15 @@ public class BLL_login {
         boolean correcto1 = DAO_login.login_userregister();
         
         if (correcto1 == true){
-            Singleton_general.admin = false;
-            Singleton_general.dni = Login.txtDNI.getText();
-            Singleton_general.tabla = false;
+            Singleton_login.admin = false;
+            Singleton_login.dni = Login.txtDNI.getText();
+            Singleton_login.tabla = false;
             jframe.dispose();
             new Controller_userregister(new Update_userregister(), 2).iniciar(2);
         }else{
             boolean correcto2 = DAO_login.login_admin();
             if (correcto2 == true){
-                Singleton_general.admin = true;
+                Singleton_login.admin = true;
                 jframe.dispose();
                 new Controller_userregister(new List_userregister(), 0).iniciar(0);
             }else{

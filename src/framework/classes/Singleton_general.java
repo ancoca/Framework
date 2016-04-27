@@ -28,8 +28,5 @@ public class Singleton_general {
     public static String nom_table = null;
     public static Mongo_BD mongo = null;
     
-    public static boolean tabla;
-    public static String dni;
-    public static boolean admin;
     
 }

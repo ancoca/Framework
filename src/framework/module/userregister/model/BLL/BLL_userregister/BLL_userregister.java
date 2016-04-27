@@ -6,6 +6,7 @@
 package framework.module.userregister.model.BLL.BLL_userregister;
 
 import framework.classes.Singleton_general;
+import framework.module.login.model.classes.Singleton_login;
 import framework.module.menu_config.controller.Controller_menu_config;
 import framework.module.menu_config.view.Menu;
 import framework.module.userregister.model.DAO.DAO_userregister;
@@ -310,14 +311,14 @@ public class BLL_userregister {
         User_register u1 = null;
         String ID = "";
         int location1 = -1, selection, inicio, selection1;
-        if (Singleton_general.tabla==true){
+        if (Singleton_login.tabla==true){
             inicio=(pagina_userregister.currentPageIndex-1)*pagina_userregister.itemsPerPage; //nos situamos al inicio de la página en cuestión
             selection=List_userregister.TABLA.getSelectedRow(); //nos situamos en la fila
             selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
             ID = (String) List_userregister.TABLA.getModel().getValueAt(selection1, 0);
             u1 = new User_register (ID);
         }else{
-            u1 = new User_register (Singleton_general.dni);
+            u1 = new User_register (Singleton_login.dni);
         }
         location1 = -1;
         location1 = BLL_userregister.find_user(u1);
@@ -338,7 +339,7 @@ public class BLL_userregister {
             public void actionPerformed(ActionEvent e) {
                 json_auto_userregister.savejson_userregister();
                 jframe.dispose();
-                if (Singleton_general.admin==true){
+                if (Singleton_login.admin==true){
                     new Controller_userregister(new List_userregister(), 0).iniciar(0);
                 }else{
                     new Controller_menu_config(new Menu(), 0).iniciar(0);

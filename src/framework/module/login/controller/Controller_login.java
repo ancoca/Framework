@@ -12,6 +12,7 @@ import framework.module.admin.view.Create_admin;
 import framework.module.client.controller.Controller_client;
 import framework.module.client.view.Create_client;
 import framework.module.login.model.BLL.BLL_login;
+import framework.module.login.model.classes.Singleton_login;
 import framework.module.login.model.classes.language.Language_login;
 import framework.module.login.view.Login;
 import framework.module.menu_config.controller.Controller_menu_config;
@@ -446,7 +447,7 @@ public class Controller_login implements MouseListener, ActionListener{
     public void actionPerformed(ActionEvent e) {
         switch (action.valueOf(e.getActionCommand())) {
             case acept_admin:
-                Singleton_general.tabla = false;
+                Singleton_login.tabla = false;
                 BLL_login.login_admin(login_admin);
                 break;
             case cancel_admin:
@@ -454,7 +455,7 @@ public class Controller_login implements MouseListener, ActionListener{
                 new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case acept_client:
-                Singleton_general.tabla = false;
+                Singleton_login.tabla = false;
                 BLL_login.login_client(login_client);
                 break;
             case cancel_client:
@@ -462,7 +463,7 @@ public class Controller_login implements MouseListener, ActionListener{
                 new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
             case acept_userregister:
-                Singleton_general.tabla = false;
+                Singleton_login.tabla = false;
                 BLL_login.login_userregister(login_userregister);
                 break;
             case cancel_userregister:

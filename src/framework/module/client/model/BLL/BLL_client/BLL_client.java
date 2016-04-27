@@ -20,6 +20,7 @@ import framework.module.client.model.functions.xml_client;
 import framework.module.client.view.Create_client;
 import framework.module.client.view.List_client;
 import framework.module.client.view.Update_client;
+import framework.module.login.model.classes.Singleton_login;
 import framework.module.menu_config.controller.Controller_menu_config;
 import framework.module.menu_config.view.Menu;
 import java.awt.event.ActionEvent;
@@ -314,14 +315,14 @@ public class BLL_client {
         Client c1 = null;
         String ID = "";
         int location1 = -1, selection, inicio, selection1;
-        if (Singleton_general.tabla==true){
+        if (Singleton_login.tabla==true){
         inicio=(pagina_client.currentPageIndex-1)*pagina_client.itemsPerPage; //nos situamos al inicio de la página en cuestión
         selection=List_client.TABLA.getSelectedRow(); //nos situamos en la fila
         selection1=inicio+selection; //nos situamos en la fila correspondiente de esa página
         ID = (String) List_client.TABLA.getModel().getValueAt(selection1, 0);
         c1 = new Client (ID);
         }else{
-            c1 = new Client (Singleton_general.dni);
+            c1 = new Client (Singleton_login.dni);
         }
         location1 = -1;
         location1 = BLL_client.find_client(c1);
@@ -340,7 +341,7 @@ public class BLL_client {
         
             public void actionPerformed(ActionEvent e) {
                 jframe.dispose();
-                if (Singleton_general.admin==true){
+                if (Singleton_login.admin==true){
                     new Controller_client(new List_client(), 0).iniciar(0);
                 }else{
                     new Controller_menu_config(new Menu(), 0).iniciar(0);
