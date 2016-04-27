@@ -5,6 +5,7 @@
  */
 package framework.module.admin.controller;
 
+import framework.classes.Singleton_general;
 import static framework.classes.Singleton_general.mongo;
 import framework.module.admin.model.BLL.BLL_admin.BLL_admin;
 import framework.module.admin.model.DAO.DAO_admin;
@@ -20,6 +21,8 @@ import framework.module.admin.view.Read_admin;
 import framework.module.admin.view.Update_admin;
 import framework.module.client.controller.Controller_client;
 import framework.module.client.view.List_client;
+import framework.module.login.controller.Controller_login;
+import framework.module.login.view.Login;
 import framework.module.menu_config.view.Config;
 import framework.module.menu_config.controller.Controller_menu_config;
 import framework.module.menu_config.view.Menu;
@@ -533,15 +536,15 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblusuario:
                 list.dispose();
-                new Controller_userregister(new List_userregister(), 0).iniciar(0);
+                new Controller_login(new Login(), 2).iniciar(2);
                 break;
             case lblcliente:
                 list.dispose();
-                new Controller_client(new List_client(), 0).iniciar(0);
+                new Controller_login(new Login(), 1).iniciar(1);
                 break;
             case lbladministrador:
                 list.dispose();
-                new Controller_admin(new List_admin(), 0).iniciar(0);
+                new Controller_login(new Login(), 0).iniciar(0);
                 break;
             case lblinicio:
                 list.dispose();
@@ -557,6 +560,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 if (select == -1){
                     JOptionPane.showMessageDialog(null, Language_admin.getInstance().getProperty("usernotselect"));
                 }else{
+                    Singleton_general.tabla = true;
                     list.dispose();
                     new Controller_admin(new Update_admin(), 2).iniciar(2);
                 }
@@ -566,6 +570,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case TABLA:
                 if (e.getClickCount() == 2) {
+                    Singleton_general.tabla = true;
                     list.dispose();
                     new Controller_admin(new Read_admin(), 3).iniciar(3);
                 }
@@ -585,15 +590,15 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblusuario_create:
                 create.dispose();
-                new Controller_userregister(new List_userregister(), 0).iniciar(0);
+                new Controller_login(new Login(), 2).iniciar(2);
                 break;
             case lblcliente_create:
                 create.dispose();
-                new Controller_client(new List_client(), 0).iniciar(0);
+                new Controller_login(new Login(), 1).iniciar(1);
                 break;
             case lbladministrador_create:
                 create.dispose();
-                new Controller_admin(new List_admin(), 0).iniciar(0);
+                new Controller_login(new Login(), 0).iniciar(0);
                 break;
             case lblinicio_create:
                 create.dispose();
@@ -639,15 +644,15 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblusuario_update:
                 update.dispose();
-                new Controller_userregister(new List_userregister(), 0).iniciar(0);
+                new Controller_login(new Login(), 2).iniciar(2);
                 break;
             case lblcliente_update:
                 update.dispose();
-                new Controller_client(new List_client(), 0).iniciar(0);
+                new Controller_login(new Login(), 1).iniciar(1);
                 break;
             case lbladministrador_update:
                 update.dispose();
-                new Controller_admin(new List_admin(), 0).iniciar(0);
+                new Controller_login(new Login(), 0).iniciar(0);
                 break;
             case lblinicio_update:
                 update.dispose();
@@ -693,15 +698,15 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                 break;
             case lblusuario_read:
                 read.dispose();
-                new Controller_userregister(new List_userregister(), 0).iniciar(0);
+                new Controller_login(new Login(), 2).iniciar(2);
                 break;
             case lblcliente_read:
                 read.dispose();
-                new Controller_client(new List_client(), 0).iniciar(0);
+                new Controller_login(new Login(), 1).iniciar(1);
                 break;
             case lbladministrador_read:
                 read.dispose();
-                new Controller_admin(new List_admin(), 0).iniciar(0);
+                new Controller_login(new Login(), 0).iniciar(0);
                 break;
             case lblinicio_read:
                 read.dispose();
