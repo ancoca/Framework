@@ -9,11 +9,13 @@ import framework.classes.Singleton_general;
 import framework.classes.language.Language_general;
 import framework.functions.Functions_menu;
 import framework.functions.Functions_theme;
+import framework.module.admin.model.BLL.BLL_admin.BLL_BD_admin;
 import framework.module.admin.model.BLL.BLL_dummies.Make_dummies_admin;
 import framework.module.admin.model.classes.Admin;
 import framework.module.admin.model.classes.Singleton_admin;
 import framework.module.admin.model.classes.language.Language_admin;
 import framework.module.classes.language.Language_user;
+import framework.module.client.model.BLL.BLL_client.BLL_BD_client;
 import framework.module.client.model.BLL.BLL_dummies.Make_dummies_client;
 import framework.module.client.model.classes.Client;
 import framework.module.client.model.classes.Singleton_client;
@@ -109,6 +111,8 @@ public class ClassConfig implements Serializable {
             Singleton_client.userclient = new ArrayList <Client> ();
             Singleton_userregister.userregister = new ArrayList <User_register> ();
 
+            BLL_BD_admin.BDtoArrayList();
+            BLL_BD_client.BDtoArrayList();
             json_auto_userregister.openjson_userregister();
             boolean dummies = Functions_menu.YES_NO(Language_menu_config.getInstance().getProperty("dummies"));
             if (dummies == true) {

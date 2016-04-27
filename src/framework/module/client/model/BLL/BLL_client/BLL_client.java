@@ -324,7 +324,6 @@ public class BLL_client {
         }else{
             c1 = new Client (Singleton_general.dni);
         }
-        BLL_BD_client.BDtoArrayList();
         location1 = -1;
         location1 = BLL_client.find_client(c1);
         if (location1 != -1) {
