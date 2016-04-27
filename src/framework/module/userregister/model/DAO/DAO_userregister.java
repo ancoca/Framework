@@ -414,7 +414,7 @@ public class DAO_userregister {
         checkmobilephone=mobilephone_update();
         checkdatebirthday=datebirthday_update(12);
         checkmovement=activity_update();
-        checkpoint=point();
+        checkpoint=point_update();
 
         if (checkDNI==true && checkname==true && checksurname==true && checkmobilephone==true &&
             checkemail==true && checkuser==true && checkpass==true && checkdatebirthday==true &&
@@ -424,7 +424,7 @@ public class DAO_userregister {
             user=Update_userregister.txtuser.getText();
             pass=Update_userregister.txtpass.getText();
             avatar=Update_userregister.txtavatar.getText();
-            state=state();
+            state=state_update();
             name=Update_userregister.txtname.getText();
             surname=Update_userregister.txtsurname.getText();
             email=Update_userregister.txtemail.getText();
@@ -674,7 +674,7 @@ public class DAO_userregister {
                 check = false;
                 Update_userregister.checkactivity.setIcon(Singleton_userregister.cancel);
             }else {
-                i=Integer.parseInt(Create_userregister.txtactivity.getText());
+                i=Integer.parseInt(Update_userregister.txtactivity.getText());
                 check = true;
                 Update_userregister.checkactivity.setIcon(Singleton_userregister.ok);
             }
@@ -699,7 +699,7 @@ public class DAO_userregister {
                 check = false;
                 Update_userregister.checkpoint.setIcon(Singleton_userregister.cancel);
             }else {
-                i=Integer.parseInt(Create_userregister.txtpoint.getText());
+                i=Integer.parseInt(Update_userregister.txtpoint.getText());
                 check = true;
                 Update_userregister.checkpoint.setIcon(Singleton_userregister.ok);
             }
