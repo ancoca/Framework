@@ -5,14 +5,16 @@
  */
 package framework.module.login.model.DAO;
 
-import framework.module.admin.model.BLL.BLL_admin.BLL_BD_admin;
-import framework.module.admin.model.classes.Singleton_admin;
-import framework.module.client.model.BLL.BLL_client.BLL_BD_client;
-import framework.module.client.model.classes.Singleton_client;
+import framework.module.login.model.classes.Singleton_login;
+import framework.module.users.admin.model.BLL.BLL_admin.BLL_BD_admin;
+import framework.module.users.admin.model.classes.Singleton_admin;
+import framework.module.users.client.model.BLL.BLL_client.BLL_BD_client;
+import framework.module.users.client.model.classes.Singleton_client;
 import framework.module.login.view.Login;
-import framework.module.userregister.model.classes.Singleton_userregister;
-import framework.module.userregister.model.classes.User_register;
-import framework.module.userregister.model.functions.json_auto_userregister;
+import framework.module.users.userregister.model.BLL.BLL_userregister.BLL_userregister;
+import framework.module.users.userregister.model.classes.Singleton_userregister;
+import framework.module.users.userregister.model.classes.User_register;
+import framework.module.users.userregister.model.functions.json_auto_userregister;
 
 /**
  *
@@ -73,10 +75,13 @@ public class DAO_login {
         User_register u1 = null;
         String s = "";
 
-        json_auto_userregister.openjson_userregister();
-        int arraylist =Singleton_userregister.userregister.size();
-        for (int i = 0; i<arraylist; i++) {
-            u1 = (User_register) Singleton_userregister.userregister.get(i);
+        Singleton_login.tabla=false;
+        Singleton_login.dni = Login.txtDNI.getText();
+        u1 = BLL_userregister.IDuserregister();
+        Singleton_userregister.user_register = u1;
+        if (u1==null){
+            correcto=false;
+        }else{
             if (u1.getDNI().equals(Login.txtDNI.getText())) {
                 correcto=true;
                 if (u1.getPass().equals(Login.txtpass.getText())) {

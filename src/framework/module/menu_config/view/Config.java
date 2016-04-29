@@ -5,14 +5,14 @@
  */
 package framework.module.menu_config.view;
 
-import framework.module.admin.model.functions.json_auto_admin;
-import framework.module.admin.view.List_admin;
-import framework.module.client.model.functions.json_auto_client;
-import framework.module.client.view.List_client;
+import framework.module.users.admin.model.functions.json_auto_admin;
+import framework.module.users.admin.view.List_admin;
+import framework.module.users.client.model.functions.json_auto_client;
+import framework.module.users.client.view.List_client;
 import framework.module.menu_config.model.BLL.BLL_config;
 import framework.module.menu_config.model.classes.language.Language_menu_config;
-import framework.module.userregister.model.functions.json_auto_userregister;
-import framework.module.userregister.view.List_userregister;
+import framework.module.users.userregister.model.functions.json_auto_userregister;
+import framework.module.users.userregister.view.List_userregister;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
@@ -50,6 +50,9 @@ public class Config extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lbltitulo = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        jPanel13 = new javax.swing.JPanel();
+        logout = new javax.swing.JLabel();
+        user_name = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         lblusuarios = new javax.swing.JLabel();
@@ -120,8 +123,39 @@ public class Config extends javax.swing.JFrame {
         lbltitulo.setBackground(java.awt.Color.white);
         lbltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbltitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/titulo.JPG"))); // NOI18N
-        jPanel2.add(lbltitulo, java.awt.BorderLayout.CENTER);
+        jPanel2.add(lbltitulo, java.awt.BorderLayout.NORTH);
         jPanel2.add(jSeparator2, java.awt.BorderLayout.SOUTH);
+
+        jPanel13.setBackground(java.awt.Color.white);
+
+        logout.setFont(new java.awt.Font("Purisa", 0, 12)); // NOI18N
+        logout.setForeground(java.awt.Color.cyan);
+        logout.setText("(LOG OUT)");
+
+        user_name.setFont(new java.awt.Font("Purisa", 0, 12)); // NOI18N
+        user_name.setForeground(java.awt.Color.green);
+        user_name.setText("jLabel2");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(0, 984, Short.MAX_VALUE)
+                .addComponent(user_name)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logout))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(logout)
+                    .addComponent(user_name)))
+        );
+
+        jPanel2.add(jPanel13, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.NORTH);
 
@@ -971,6 +1005,7 @@ public class Config extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -993,6 +1028,7 @@ public class Config extends javax.swing.JFrame {
     public static javax.swing.JLabel lblvolver2;
     public static javax.swing.JLabel lblvolver3;
     public static javax.swing.JLabel lblvolver4;
+    public static javax.swing.JLabel logout;
     public static javax.swing.JRadioButton mac;
     public static javax.swing.JRadioButton metal;
     public static javax.swing.JRadioButton motif;
@@ -1003,6 +1039,7 @@ public class Config extends javax.swing.JFrame {
     private javax.swing.JPanel panellanguage;
     private javax.swing.JPanel paneltheme;
     private javax.swing.ButtonGroup theme;
+    public static javax.swing.JLabel user_name;
     public static javax.swing.JRadioButton valencia;
     public static javax.swing.JRadioButton windows;
     public static javax.swing.JRadioButton windowsclassic;

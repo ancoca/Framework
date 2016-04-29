@@ -34,6 +34,9 @@ public class Menu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lbltitulo = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        jPanel13 = new javax.swing.JPanel();
+        logout = new javax.swing.JLabel();
+        user_name = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lblusuarios = new javax.swing.JLabel();
         lbladministrador = new javax.swing.JLabel();
@@ -58,8 +61,39 @@ public class Menu extends javax.swing.JFrame {
         lbltitulo.setBackground(java.awt.Color.white);
         lbltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbltitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/framework/img/titulo.JPG"))); // NOI18N
-        jPanel2.add(lbltitulo, java.awt.BorderLayout.CENTER);
+        jPanel2.add(lbltitulo, java.awt.BorderLayout.NORTH);
         jPanel2.add(jSeparator2, java.awt.BorderLayout.SOUTH);
+
+        jPanel13.setBackground(java.awt.Color.white);
+
+        logout.setFont(new java.awt.Font("Purisa", 0, 12)); // NOI18N
+        logout.setForeground(java.awt.Color.cyan);
+        logout.setText("(LOG OUT)");
+
+        user_name.setFont(new java.awt.Font("Purisa", 0, 12)); // NOI18N
+        user_name.setForeground(java.awt.Color.green);
+        user_name.setText("jLabel2");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(0, 950, Short.MAX_VALUE)
+                .addComponent(user_name)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logout))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(logout)
+                    .addComponent(user_name)))
+        );
+
+        jPanel2.add(jPanel13, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.NORTH);
 
@@ -211,7 +245,7 @@ public class Menu extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblimagen, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
+                .addComponent(lblimagen, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -230,7 +264,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1047, Short.MAX_VALUE)
+            .addGap(0, 1081, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,6 +352,7 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -335,6 +370,8 @@ public class Menu extends javax.swing.JFrame {
     public static javax.swing.JLabel lbltitulo;
     public static javax.swing.JLabel lblusuario;
     public static javax.swing.JLabel lblusuarios;
+    public static javax.swing.JLabel logout;
+    public static javax.swing.JLabel user_name;
     // End of variables declaration//GEN-END:variables
 
 }

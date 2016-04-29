@@ -6,14 +6,15 @@
 package framework.module.menu_config.controller;
 
 import static framework.classes.Singleton_general.mongo;
-import framework.module.login.controller.Controller_login;
-import framework.module.login.view.Login;
+import framework.module.login.model.classes.Singleton_login;
+import framework.module.login.model.functions.Function_login;
+import framework.module.login.model.functions.Function_logout;
 import framework.module.menu_config.model.BLL.BLL_config;
 import framework.module.menu_config.model.classes.Singleton_config;
 import framework.module.menu_config.model.classes.language.Language_menu_config;
 import framework.module.menu_config.view.Config;
 import framework.module.menu_config.view.Menu;
-import framework.module.userregister.model.functions.json_auto_userregister;
+import framework.module.users.userregister.model.functions.json_auto_userregister;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -49,6 +50,7 @@ public class Controller_menu_config implements MouseListener, ActionListener{
         lblcliente,
         lbladministrador,
         lblinicio,
+        logout,
         
         //VISTA CONFIGURACION
         lblajustes_config,
@@ -70,7 +72,8 @@ public class Controller_menu_config implements MouseListener, ActionListener{
         btncancelar3,
         lblvolver4,
         btnaceptar4,
-        btncancelar4
+        btncancelar4,
+        logout_config
         
     }
     
@@ -90,6 +93,7 @@ public class Controller_menu_config implements MouseListener, ActionListener{
             //Image icono=Toolkit.getDefaultToolkit().getImage("p1.jpg");
             //inicio.setIconImage(icono);
             
+            logout_inicio();
             this.inicio.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
                     this.inicio.addWindowListener(new WindowAdapter() {
                 @Override
@@ -116,6 +120,9 @@ public class Controller_menu_config implements MouseListener, ActionListener{
             
             this.inicio.lblinicio.setName("lblinicio");
             this.inicio.lblinicio.addMouseListener(this);
+            
+            this.inicio.logout.setName("logout");
+            this.inicio.logout.addMouseListener(this);
         }
         
         if (i==1){
@@ -130,6 +137,7 @@ public class Controller_menu_config implements MouseListener, ActionListener{
             //Image icono=Toolkit.getDefaultToolkit().getImage("p1.jpg");
             //this.config.setIconImage(icono);
 
+            logout_config();
             BLL_config.getConfig();
 
             this.config.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -203,6 +211,9 @@ public class Controller_menu_config implements MouseListener, ActionListener{
             
             this.config.btncancelar4.setActionCommand("btncancelar4");
             this.config.btncancelar4.addActionListener(this);
+            
+            this.config.logout.setName("logout_config");
+            this.config.logout.addMouseListener(this);
         }
     }
     
@@ -214,36 +225,33 @@ public class Controller_menu_config implements MouseListener, ActionListener{
                 new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario:
-                inicio.dispose();
-                new Controller_login(new Login(), 2).iniciar(2);
+                Function_login.login_userregister(inicio);
                 break;
             case lblcliente:
-                inicio.dispose();
-                new Controller_login(new Login(), 1).iniciar(1);
+                Function_login.login_client(inicio);
                 break;
             case lbladministrador:
-                inicio.dispose();
-                new Controller_login(new Login(), 0).iniciar(0);
+                Function_login.login_admin(inicio);
                 break;
             case lblinicio:
                 inicio.dispose();
                 new Controller_menu_config(new Menu(), 0).iniciar(0);
+                break;
+            case logout:
+                Function_logout.logout(inicio);
                 break;
             case lblajustes_config:
                 config.dispose();
                 new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_config:
-                config.dispose();
-                new Controller_login(new Login(), 2).iniciar(2);
+                Function_login.login_userregister(config);
                 break;
             case lblcliente_config:
-                config.dispose();
-                new Controller_login(new Login(), 1).iniciar(1);
+                Function_login.login_client(config);
                 break;
             case lbladministrador_config:
-                config.dispose();
-                new Controller_login(new Login(), 0).iniciar(0);
+                Function_login.login_admin(config);
                 break;
             case lblinicio_config:
                 config.dispose();
@@ -268,6 +276,9 @@ public class Controller_menu_config implements MouseListener, ActionListener{
             case lblvolver4:
                 config.dispose();
                 new Controller_menu_config(new Menu(), 0).iniciar(0);
+                break;
+            case logout_config:
+                Function_logout.logout(config);
                 break;
         }
     }
@@ -300,6 +311,9 @@ public class Controller_menu_config implements MouseListener, ActionListener{
             case lblinicio:
                 inicio.lblinicio.setForeground(java.awt.Color.blue);
                 break;
+            case logout:
+                inicio.logout.setForeground(java.awt.Color.blue);
+                break;
             case lblajustes_config:
                 config.lblajustes.setForeground(java.awt.Color.blue);
                 break;
@@ -330,6 +344,9 @@ public class Controller_menu_config implements MouseListener, ActionListener{
             case lblvolver4:
                 config.lblvolver4.setIcon(Singleton_config.volver);
                 break;
+            case logout_config:
+                config.logout.setForeground(java.awt.Color.blue);
+                break;
         }
     }
 
@@ -350,6 +367,9 @@ public class Controller_menu_config implements MouseListener, ActionListener{
                 break;
             case lblinicio:
                 inicio.lblinicio.setForeground(java.awt.Color.cyan);
+                break;
+            case logout:
+                inicio.logout.setForeground(java.awt.Color.cyan);
                 break;
             case lblajustes_config:
                 config.lblajustes.setForeground(java.awt.Color.cyan);
@@ -380,6 +400,9 @@ public class Controller_menu_config implements MouseListener, ActionListener{
                 break;
             case lblvolver4:
                 config.lblvolver4.setIcon(Singleton_config.volver_bn);
+                break;
+            case logout_config:
+                config.logout.setForeground(java.awt.Color.cyan);
                 break;
         }
     }
@@ -432,6 +455,64 @@ public class Controller_menu_config implements MouseListener, ActionListener{
                 config.dispose();
                 new Controller_menu_config(new Menu(), 0).iniciar(0);
                 break;
+        }
+    }
+    
+    public static void logout_inicio () {
+        if (Singleton_login.login==false) {
+            inicio.lbladministrador.setEnabled(true);
+            inicio.lblcliente.setEnabled(true);
+            inicio.lblusuario.setEnabled(true);
+            inicio.user_name.setVisible(false);
+            inicio.logout.setVisible(false);
+        }else{
+            inicio.user_name.setVisible(true);
+            inicio.user_name.setText(Singleton_login.name+" "+Singleton_login.surname);
+            inicio.logout.setVisible(true);
+            if (Singleton_login.tipo=='a'){
+                inicio.lbladministrador.setEnabled(true);
+                inicio.lblcliente.setEnabled(true);
+                inicio.lblusuario.setEnabled(true);
+            }
+            if (Singleton_login.tipo=='c'){
+                inicio.lbladministrador.setEnabled(false);
+                inicio.lblcliente.setEnabled(true);
+                inicio.lblusuario.setEnabled(false);
+            }
+            if (Singleton_login.tipo=='u'){
+                inicio.lbladministrador.setEnabled(false);
+                inicio.lblcliente.setEnabled(false);
+                inicio.lblusuario.setEnabled(true);
+            }
+        }
+    }
+    
+    public static void logout_config () {
+        if (Singleton_login.login==false) {
+            config.lbladministrador.setEnabled(true);
+            config.lblcliente.setEnabled(true);
+            config.lblusuario.setEnabled(true);
+            config.user_name.setVisible(false);
+            config.logout.setVisible(false);
+        }else{
+            config.user_name.setVisible(true);
+            config.user_name.setText(Singleton_login.name+" "+Singleton_login.surname);
+            config.logout.setVisible(true);
+            if (Singleton_login.tipo=='a'){
+                config.lbladministrador.setEnabled(true);
+                config.lblcliente.setEnabled(true);
+                config.lblusuario.setEnabled(true);
+            }
+            if (Singleton_login.tipo=='c'){
+                config.lbladministrador.setEnabled(false);
+                config.lblcliente.setEnabled(true);
+                config.lblusuario.setEnabled(false);
+            }
+            if (Singleton_login.tipo=='u'){
+                config.lbladministrador.setEnabled(false);
+                config.lblcliente.setEnabled(false);
+                config.lblusuario.setEnabled(true);
+            }
         }
     }
 }

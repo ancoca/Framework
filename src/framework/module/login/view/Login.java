@@ -48,7 +48,6 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtDNI = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtpass = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
@@ -56,6 +55,7 @@ public class Login extends javax.swing.JFrame {
         cancel = new javax.swing.JButton();
         new_user = new javax.swing.JLabel();
         error_login = new javax.swing.JLabel();
+        txtpass = new javax.swing.JPasswordField();
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -215,12 +215,6 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText(Language_login.getInstance().getProperty("DNI")+": ");
 
         jLabel2.setText(Language_login.getInstance().getProperty("password")+": ");
-
-        txtpass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtpassActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Purisa", 1, 48)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -399,10 +393,6 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_lblinicioMouseClicked
 
-    private void txtpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtpassActionPerformed
-
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelActionPerformed
@@ -436,7 +426,7 @@ public class Login extends javax.swing.JFrame {
     public static javax.swing.JLabel lblusuarios;
     public static javax.swing.JLabel new_user;
     public static javax.swing.JTextField txtDNI;
-    public static javax.swing.JTextField txtpass;
+    public static javax.swing.JPasswordField txtpass;
     // End of variables declaration//GEN-END:variables
 
 }

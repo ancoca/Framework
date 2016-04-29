@@ -5,22 +5,22 @@
  */
 package framework.module.login.controller;
 
-import framework.classes.Singleton_general;
 import static framework.classes.Singleton_general.mongo;
-import framework.module.admin.controller.Controller_admin;
-import framework.module.admin.view.Create_admin;
-import framework.module.client.controller.Controller_client;
-import framework.module.client.view.Create_client;
+import framework.module.users.admin.controller.Controller_admin;
+import framework.module.users.admin.view.Create_admin;
+import framework.module.users.client.controller.Controller_client;
+import framework.module.users.client.view.Create_client;
 import framework.module.login.model.BLL.BLL_login;
 import framework.module.login.model.classes.Singleton_login;
 import framework.module.login.model.classes.language.Language_login;
+import framework.module.login.model.functions.Function_login;
 import framework.module.login.view.Login;
 import framework.module.menu_config.controller.Controller_menu_config;
 import framework.module.menu_config.view.Config;
 import framework.module.menu_config.view.Menu;
-import framework.module.userregister.controller.Controller_userregister;
-import framework.module.userregister.model.functions.json_auto_userregister;
-import framework.module.userregister.view.Create_userregister;
+import framework.module.users.userregister.controller.Controller_userregister;
+import framework.module.users.userregister.model.functions.json_auto_userregister;
+import framework.module.users.userregister.view.Create_userregister;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -243,16 +243,13 @@ public class Controller_login implements MouseListener, ActionListener{
                 new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_admin:
-                login_admin.dispose();
-                new Controller_login(new Login(), 2).iniciar(2);
+                Function_login.login_userregister(login_admin);
                 break;
             case lblcliente_admin:
-                login_admin.dispose();
-                new Controller_login(new Login(), 1).iniciar(1);
+                Function_login.login_client(login_admin);
                 break;
             case lbladministrador_admin:
-                login_admin.dispose();
-                new Controller_login(new Login(), 0).iniciar(0);
+                Function_login.login_admin(login_admin);
                 break;
             case lblinicio_admin:
                 login_admin.dispose();
@@ -267,16 +264,13 @@ public class Controller_login implements MouseListener, ActionListener{
                 new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_client:
-                login_client.dispose();
-                new Controller_login(new Login(), 2).iniciar(2);
+                Function_login.login_userregister(login_client);
                 break;
             case lblcliente_client:
-                login_client.dispose();
-                new Controller_login(new Login(), 1).iniciar(1);
+                Function_login.login_client(login_client);
                 break;
             case lbladministrador_client:
-                login_client.dispose();
-                new Controller_login(new Login(), 0).iniciar(0);
+                Function_login.login_admin(login_client);
                 break;
             case lblinicio_client:
                 login_client.dispose();
@@ -291,16 +285,13 @@ public class Controller_login implements MouseListener, ActionListener{
                 new Controller_menu_config(new Config(), 1).iniciar(1);
                 break;
             case lblusuario_userregister:
-                login_userregister.dispose();
-                new Controller_login(new Login(), 2).iniciar(2);
+                Function_login.login_userregister(login_userregister);
                 break;
             case lblcliente_userregister:
-                login_userregister.dispose();
-                new Controller_login(new Login(), 1).iniciar(1);
+                Function_login.login_client(login_userregister);
                 break;
             case lbladministrador_userregister:
-                login_userregister.dispose();
-                new Controller_login(new Login(), 0).iniciar(0);
+                Function_login.login_admin(login_userregister);
                 break;
             case lblinicio_userregister:
                 login_userregister.dispose();

@@ -12,7 +12,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 import framework.module.menu_config.model.classes.ClassConfig;
 import framework.classes.language.Language_general;
-import framework.module.admin.model.classes.Admin;
+import framework.module.users.admin.model.classes.Admin;
 
 /**
  * 
