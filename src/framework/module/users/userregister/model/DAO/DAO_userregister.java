@@ -116,7 +116,6 @@ public class DAO_userregister {
         confirm=validate.DNI(DNI);
         if (confirm==false) {
             check = false;
-            Create_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
         }else{
             aux = "";
             for(int i=0; i<8; i++){
@@ -128,10 +127,8 @@ public class DAO_userregister {
             control = caracteres.charAt(module);
             if(control == character){
                 check = true;
-                Create_userregister.checkDNI.setIcon(Singleton_userregister.ok);
             }else{
                 check = false;
-                Create_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
             }
         }
         
@@ -148,10 +145,8 @@ public class DAO_userregister {
 	confirm=validate.user(Create_userregister.txtuser.getText());
 	if (confirm==false) {
             check = false;
-            Create_userregister.checkuser.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Create_userregister.checkuser.setIcon(Singleton_userregister.ok);
         }
         
         return check;
@@ -167,10 +162,8 @@ public class DAO_userregister {
 	confirm=validate.pass(Create_userregister.txtpass.getText());
 	if (confirm==false) {
             check = false;
-            Create_userregister.checkpass.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Create_userregister.checkpass.setIcon(Singleton_userregister.ok);
         }
                         
         return check;
@@ -186,10 +179,8 @@ public class DAO_userregister {
         confirm=validate.name(Create_userregister.txtname.getText());
 	if (confirm==false) {
             check = false;
-            Create_userregister.checkname.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Create_userregister.checkname.setIcon(Singleton_userregister.ok);
         }
         
         return check;
@@ -205,10 +196,8 @@ public class DAO_userregister {
         confirm=validate.surname(Create_userregister.txtsurname.getText());
 	if (confirm==false) {
             check = false;
-            Create_userregister.checksurname.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Create_userregister.checksurname.setIcon(Singleton_userregister.ok);
         }
         
         return check;
@@ -224,10 +213,8 @@ public class DAO_userregister {
         confirm=validate.email(Create_userregister.txtemail.getText());
 	if (confirm==false) {
             check = false;
-            Create_userregister.checkemail.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Create_userregister.checkemail.setIcon(Singleton_userregister.ok);
         }
         
         return check;
@@ -243,10 +230,8 @@ public class DAO_userregister {
         confirm=validate.mobilephone(Create_userregister.txtmobilephone.getText());
 	if (confirm==false) {
             check = false;
-            Create_userregister.checkmobilephone.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Create_userregister.checkmobilephone.setIcon(Singleton_userregister.ok);
         }
         return check;
     }
@@ -282,21 +267,17 @@ public class DAO_userregister {
         confirm = validate.date(((JTextFieldDateEditor) Create_userregister.txtdatebirthday.getDateEditor()).getText());
 	if (confirm==false) {
             check = false;
-            Create_userregister.checkdatebirthday.setIcon(Singleton_userregister.cancel);
 	}else{
             Cdate = new ClassDate (((JTextFieldDateEditor) Create_userregister.txtdatebirthday.getDateEditor()).getText());
             confirm=Cdate.checkdate();
             if (confirm==false) {
                 check = false;
-                Create_userregister.checkdatebirthday.setIcon(Singleton_userregister.cancel);
             }else{
                 age = Cdate.subtractsystemdateyear();
 		if (age < year) {
                     check = false;
-                    Create_userregister.checkdatebirthday.setIcon(Singleton_userregister.cancel);
 		}else{
                     check = true;
-                    Create_userregister.checkdatebirthday.setIcon(Singleton_userregister.ok);
                 }
             }
 	}
@@ -315,15 +296,12 @@ public class DAO_userregister {
         try{
             if(Create_userregister.txtactivity.getText()==null){
                 check = false;
-                Create_userregister.checkactivity.setIcon(Singleton_userregister.cancel);
             }else {
                 i=Integer.parseInt(Create_userregister.txtactivity.getText());
                 check = true;
-                Create_userregister.checkactivity.setIcon(Singleton_userregister.ok);
             }
         }catch(Exception e){
             check = false;
-            Create_userregister.checkactivity.setIcon(Singleton_userregister.cancel);
         }
         
         return check;
@@ -340,15 +318,12 @@ public class DAO_userregister {
         try{
             if(Create_userregister.txtpoint.getText()==null){
                 check = false;
-                Create_userregister.checkpoint.setIcon(Singleton_userregister.cancel);
             }else {
                 i=Integer.parseInt(Create_userregister.txtpoint.getText());
                 check = true;
-                Create_userregister.checkpoint.setIcon(Singleton_userregister.ok);
             }
         }catch(Exception e){
             check = false;
-            Create_userregister.checkpoint.setIcon(Singleton_userregister.cancel);
         }
         
         return check;
@@ -473,7 +448,6 @@ public class DAO_userregister {
         confirm=validate.DNI(DNI);
         if (confirm==false) {
             check = false;
-            Update_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
         }else{
             aux = "";
             for(int i=0; i<8; i++){
@@ -485,10 +459,8 @@ public class DAO_userregister {
             control = caracteres.charAt(module);
             if(control == character){
                 check = true;
-                Update_userregister.checkDNI.setIcon(Singleton_userregister.ok);
             }else{
                 check = false;
-                Update_userregister.checkDNI.setIcon(Singleton_userregister.cancel);
             }
         }
         
@@ -505,10 +477,8 @@ public class DAO_userregister {
 	confirm=validate.user(Update_userregister.txtuser.getText());
 	if (confirm==false) {
             check = false;
-            Update_userregister.checkuser.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Update_userregister.checkuser.setIcon(Singleton_userregister.ok);
         }
         
         return check;
@@ -524,10 +494,8 @@ public class DAO_userregister {
 	confirm=validate.pass(Update_userregister.txtpass.getText());
 	if (confirm==false) {
             check = false;
-            Update_userregister.checkpass.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Update_userregister.checkpass.setIcon(Singleton_userregister.ok);
         }
                         
         return check;
@@ -543,10 +511,8 @@ public class DAO_userregister {
         confirm=validate.name(Update_userregister.txtname.getText());
 	if (confirm==false) {
             check = false;
-            Update_userregister.checkname.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Update_userregister.checkname.setIcon(Singleton_userregister.ok);
         }
         
         return check;
@@ -562,10 +528,8 @@ public class DAO_userregister {
         confirm=validate.surname(Update_userregister.txtsurname.getText());
 	if (confirm==false) {
             check = false;
-            Update_userregister.checksurname.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Update_userregister.checksurname.setIcon(Singleton_userregister.ok);
         }
         
         return check;
@@ -581,10 +545,8 @@ public class DAO_userregister {
         confirm=validate.email(Update_userregister.txtemail.getText());
 	if (confirm==false) {
             check = false;
-            Update_userregister.checkemail.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Update_userregister.checkemail.setIcon(Singleton_userregister.ok);
         }
         
         return check;
@@ -600,10 +562,8 @@ public class DAO_userregister {
         confirm=validate.mobilephone(Update_userregister.txtmobilephone.getText());
 	if (confirm==false) {
             check = false;
-            Update_userregister.checkmobilephone.setIcon(Singleton_userregister.cancel);
 	}else{
             check = true;
-            Update_userregister.checkmobilephone.setIcon(Singleton_userregister.ok);
         }
         return check;
     }
@@ -639,21 +599,17 @@ public class DAO_userregister {
         confirm = validate.date(((JTextFieldDateEditor) Update_userregister.txtdatebirthday.getDateEditor()).getText());
 	if (confirm==false) {
             check = false;
-            Update_userregister.checkdatebirthday.setIcon(Singleton_userregister.cancel);
 	}else{
             Cdate = new ClassDate (((JTextFieldDateEditor) Update_userregister.txtdatebirthday.getDateEditor()).getText());
             confirm=Cdate.checkdate();
             if (confirm==false) {
                 check = false;
-                Update_userregister.checkdatebirthday.setIcon(Singleton_userregister.cancel);
             }else{
                 age = Cdate.subtractsystemdateyear();
 		if (age < year) {
                     check = false;
-                    Update_userregister.checkdatebirthday.setIcon(Singleton_userregister.cancel);
 		}else{
                     check = true;
-                    Update_userregister.checkdatebirthday.setIcon(Singleton_userregister.ok);
                 }
             }
 	}
@@ -672,15 +628,12 @@ public class DAO_userregister {
         try{
             if(Update_userregister.txtactivity.getText()==null){
                 check = false;
-                Update_userregister.checkactivity.setIcon(Singleton_userregister.cancel);
             }else {
                 i=Integer.parseInt(Update_userregister.txtactivity.getText());
                 check = true;
-                Update_userregister.checkactivity.setIcon(Singleton_userregister.ok);
             }
         }catch(Exception e){
             check = false;
-            Update_userregister.checkactivity.setIcon(Singleton_userregister.cancel);
         }
         
         return check;
@@ -697,15 +650,12 @@ public class DAO_userregister {
         try{
             if(Update_userregister.txtpoint.getText()==null){
                 check = false;
-                Update_userregister.checkpoint.setIcon(Singleton_userregister.cancel);
             }else {
                 i=Integer.parseInt(Update_userregister.txtpoint.getText());
                 check = true;
-                Update_userregister.checkpoint.setIcon(Singleton_userregister.ok);
             }
         }catch(Exception e){
             check = false;
-            Update_userregister.checkpoint.setIcon(Singleton_userregister.cancel);
         }
         
         return check;

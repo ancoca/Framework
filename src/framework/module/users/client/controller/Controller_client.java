@@ -999,6 +999,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                     create.jPanel5.setBackground(Color.green);
                     create.txtconfirm.setForeground(Color.black);
                     create.txtconfirm.setText(Language_client.getInstance().getProperty("usercreate"));
+                    create.txtconfirm.requestFocus();
                     BLL_client.timer(create);
 
                 }else{
@@ -1031,6 +1032,7 @@ public class Controller_client implements MouseListener, ActionListener, FocusLi
                     update.jPanel5.setBackground(Color.green);
                     update.txtconfirm.setForeground(Color.black);
                     update.txtconfirm.setText(Language_client.getInstance().getProperty("userupdate"));
+                    update.txtconfirm.requestFocus();
                     BLL_client.timer(update);
 
                 }else{

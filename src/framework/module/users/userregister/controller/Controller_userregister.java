@@ -15,6 +15,7 @@ import framework.module.menu_config.view.Menu;
 import framework.module.users.userregister.model.BLL.BLL_userregister.BLL_userregister;
 import framework.module.users.userregister.model.DAO.DAO_userregister;
 import framework.module.users.userregister.model.classes.Singleton_userregister;
+import framework.module.users.userregister.model.classes.language.Language_userregister;
 import framework.module.users.userregister.model.classes.miniSimpleTableModel_userregister;
 import framework.module.users.userregister.model.functions.autocomplete.AutocompleteJComboBox_userregister;
 import framework.module.users.userregister.model.functions.autocomplete.StringSearchable_userregister;
@@ -977,13 +978,14 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 if (BLL_userregister.check){
                     create.jPanel5.setBackground(Color.green);
                     create.txtconfirm.setForeground(Color.black);
-                    create.txtconfirm.setText("Usuario creado");
+                    create.txtconfirm.setText(Language_userregister.getInstance().getProperty("usercreate"));
+                    create.txtconfirm.requestFocus();
                     BLL_userregister.timer(create);
 
                 }else{
                     create.jPanel5.setBackground(Color.red);
                     create.txtconfirm.setForeground(Color.white);
-                    create.txtconfirm.setText("Usuario no creado");
+                    create.txtconfirm.setText(Language_userregister.getInstance().getProperty("usernotcreate"));
                     create.txtconfirm.requestFocus();
                 }
                 break;
@@ -1009,13 +1011,14 @@ public class Controller_userregister implements MouseListener, ActionListener, F
                 if (BLL_userregister.check){
                     update.jPanel5.setBackground(Color.green);
                     update.txtconfirm.setForeground(Color.black);
-                    update.txtconfirm.setText("Usuario modificado");
+                    update.txtconfirm.setText(Language_userregister.getInstance().getProperty("userupdate"));
+                    update.txtconfirm.requestFocus();
                     BLL_userregister.timer(update);
 
                 }else{
                     update.jPanel5.setBackground(Color.red);
                     update.txtconfirm.setForeground(Color.white);
-                    update.txtconfirm.setText("Usuario no modificado");
+                    update.txtconfirm.setText(Language_userregister.getInstance().getProperty("usernotupdate"));
                     update.txtconfirm.requestFocus();
                 }
                 break;

@@ -987,6 +987,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                     create.jPanel5.setBackground(Color.green);
                     create.txtconfirm.setForeground(Color.black);
                     create.txtconfirm.setText(Language_admin.getInstance().getProperty("usercreate"));
+                    create.txtconfirm.requestFocus();
                     BLL_admin.timer(create);
 
                 }else{
@@ -1015,6 +1016,7 @@ public class Controller_admin implements MouseListener, ActionListener, FocusLis
                     update.jPanel5.setBackground(Color.green);
                     update.txtconfirm.setForeground(Color.black);
                     update.txtconfirm.setText(Language_admin.getInstance().getProperty("userupdate"));
+                    update.txtconfirm.requestFocus();
                     BLL_admin.timer(update);
 
                 }else{
