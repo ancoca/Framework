@@ -188,7 +188,6 @@ public class ClassConfig implements Serializable {
 
     /**
      * TO STRING
-     * @param config
      * @return 
      */
     public String toString () {

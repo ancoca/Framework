@@ -271,7 +271,7 @@ public class DAO_BD_admin {
     /**
      * FIND USER IN DATA BASE
      * @param connection
-     * @param a1
+     * @param dni
      * @return 
      */
     public static boolean find_BD (Connection connection, String dni) {

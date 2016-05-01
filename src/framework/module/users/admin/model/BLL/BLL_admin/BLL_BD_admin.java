@@ -107,7 +107,7 @@ public class BLL_BD_admin {
     
     /**
      * FIND USER IN THE DATA BASE
-     * @param a1
+     * @param dni
      * @return 
      */
     public static boolean find_BD (String dni) {
